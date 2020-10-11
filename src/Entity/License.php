@@ -20,11 +20,6 @@ class License extends AbstractDisplayableEntity
     private $id;
 
     /**
-     * @ORM\Column(type="text")
-     */
-    private $history;
-
-    /**
      * @ORM\OneToMany(targetEntity=Game::class, mappedBy="license")
      */
     private $games;
@@ -37,18 +32,6 @@ class License extends AbstractDisplayableEntity
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getHistory(): ?string
-    {
-        return $this->history;
-    }
-
-    public function setHistory(string $history): self
-    {
-        $this->history = $history;
-
-        return $this;
     }
 
     /**

@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\MappedSuperclass
+ * @ORM\HasLifecycleCallbacks
  */
 abstract class AbstractEntity
 {
@@ -16,7 +17,7 @@ abstract class AbstractEntity
     private $createAt;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $updateAt;
 

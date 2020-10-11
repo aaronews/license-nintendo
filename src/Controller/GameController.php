@@ -5,15 +5,17 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/games", name="games_")
+ */
 class GameController extends AbstractController
 {
     /**
-     * @Route("/game", name="game")
+     * @Route("/list", name="list")
      */
-    public function index()
+    public function list()
     {
-        return $this->render('game/index.html.twig', [
-            'controller_name' => 'GameController',
+        return $this->render('game/list.html.twig', [
         ]);
     }
 }

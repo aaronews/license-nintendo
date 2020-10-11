@@ -5,15 +5,17 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/licenses", name="licenses_")
+ */
 class LicenseController extends AbstractController
 {
     /**
-     * @Route("/license", name="license")
+     * @Route("/list", name="list")
      */
-    public function index()
+    public function list()
     {
-        return $this->render('license/index.html.twig', [
-            'controller_name' => 'LicenseController',
+        return $this->render('license/list.html.twig', [
         ]);
     }
 }

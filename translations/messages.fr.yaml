@@ -1,0 +1,9 @@
+layout:
+  header:
+    links:
+      app_name: Les licences des jeux Nintendo
+      characters: Personnages
+      items: Objets
+      games: Jeux
+      licenses: Licences
+      consoles: Consoles

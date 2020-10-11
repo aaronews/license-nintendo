@@ -29,6 +29,11 @@ class GameCharacter extends AbstractEntity
      */
     private $currentCharacter;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $thumbnail;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -54,6 +59,18 @@ class GameCharacter extends AbstractEntity
     public function setCurrentCharacter(?Character $currentCharacter): self
     {
         $this->currentCharacter = $currentCharacter;
+
+        return $this;
+    }
+
+    public function getThumbnail(): ?string
+    {
+        return $this->thumbnail;
+    }
+
+    public function setThumbnail(string $thumbnail): self
+    {
+        $this->thumbnail = $thumbnail;
 
         return $this;
     }
