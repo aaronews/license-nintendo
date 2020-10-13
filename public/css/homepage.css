@@ -1,0 +1,14 @@
+.homepage .homepage-description{
+    background-color: #2B2B2B;
+    min-height: 750px;
+}
+
+.homepage .homepage-licences{
+    background: url('/img/background-licences-homepage.jpg');
+}
+
+.homepage .homepage-description,
+.homepage .homepage-licences h2
+{
+    color : #ffffff;
+} 

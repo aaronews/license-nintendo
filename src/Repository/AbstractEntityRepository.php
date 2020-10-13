@@ -4,47 +4,44 @@ namespace App\Repository;
 
 use App\Entity\AbstractEntity;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
-use Doctrine\Persistence\ManagerRegistry;
 
-/**
- * @method AbstractEntity|null find($id, $lockMode = null, $lockVersion = null)
- * @method AbstractEntity|null findOneBy(array $criteria, array $orderBy = null)
- * @method AbstractEntity[]    findAll()
- * @method AbstractEntity[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
- */
-class AbstractEntityRepository extends ServiceEntityRepository
+abstract class AbstractEntityRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    /**
+     * Persist an entity in database
+     *
+     * @param AbstractEntity $entity
+     * @return void
+     */
+    public function createEntity(AbstractEntity $entity)
     {
-        parent::__construct($registry, AbstractEntity::class);
+        $manager = $this->getEntityManager();
+        $manager->persist($entity);
+        $manager->flush();
     }
 
-    // /**
-    //  * @return AbstractEntity[] Returns an array of AbstractEntity objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * Update an entity in database
+     *
+     * @param AbstractEntity $entity
+     * @return void
+     */
+    public function updateEntity(AbstractEntity $entity)
     {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('a.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+        $this->getEntityManager()->flush();
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?AbstractEntity
+    /**
+     * Remove an entity in database
+     *
+     * @param AbstractEntity $entity
+     * @return void
+     */
+    public function removeEntity(AbstractEntity $entity)
     {
-        return $this->createQueryBuilder('a')
-            ->andWhere('a.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
+        $manager = $this->getEntityManager();
+        $manager->remove($entity);
+        $manager->flush();
     }
-    */
+
 }
