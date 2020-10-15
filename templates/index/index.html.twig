@@ -4,35 +4,25 @@
     <link rel="stylesheet" href="{{asset('css/homepage.css')}}">
 {% endblock %}
 
-{% block title %}Index{% endblock %}
+{% block title %}{{'homepage.title'|trans}}{% endblock %}
 
 {% block body %}
     <section class="homepage" role="main">
         <div class="container-fluid p-0">
-            <div class="row ml-0 mr-0 homepage-description">
-                <div class="col-12 text-center m-2">
-                    <h2>{{'homepage.description.title'|trans}}</h2>
-                </div>
-                <div class="col-md-6 col-12">
-                    <p>{{'homepage.description.text'|trans}}</p>
+            <div class="row ml-0 mr-0 homepage-description justify-content-center">
+                <h2 class="mt-5 text-center">{{'homepage.licenses.title'|trans}}</h2>
+                <div class="col-12 text-center">
+                    <p>{{'homepage.description.text'|trans|raw}}</p>
                 </div>
             </div>
-            <div class="row ml-0 mr-0 justify-content-center homepage-licences">
-                <div class="col-12 text-center m-2">
-                    <h2>{{'homepage.licences.title'|trans}}</h2>
-                </div>
-                {% for licence in licences %}
-                    <div class="col-lg-2 col-md-6 col-12 card p-0 animated-card m-4 border-0">
-                        <a href="{# {{path('licenses_view', {id: licence.id})}} #}">
-                            <div class="animated-card-content d-flex justify-content-center align-items-center flex-column position-absolute">
-                                <span class="font-weight-bold btn btn-primary btn-lg">{{'licences.list.view_details'|trans}}</span>
-                            </div>
-                            <img src="{{asset(licence.thumbnail)}}" class="card-img-top" alt="{{licence.name}}"/>
-                        </a>
-                        <div class="card-body border-top">
-                            <h3 class="card-title text-center">{{licence.name}}</h3>
-                        </div>
-                    </div>
+            <div class="row ml-0 mr-0 justify-content-center homepage-licenses">
+                <h2 class="p-3 text-center col-md-12">{{'homepage.licenses.title'|trans}}</h2>
+                {% for license in licenses %}
+                    {% include 'layout/animated-card-content.html.twig' with {
+                        'cardThumbnail' : license.thumbnail,
+                        'cardTitle' : license.name,
+                        'cardUrl' : null,
+                    }%}
                 {% endfor %}
             </div>
         </div>

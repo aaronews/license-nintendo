@@ -1,14 +1,33 @@
 .homepage .homepage-description{
-    background-color: #2B2B2B;
-    min-height: 750px;
+    background: var(--bg-mario-object);
+    min-height: calc(100vh - 56px);
+    perspective: var(--perspective-mario-object);
+    perspective-origin: var(--perspective-origin-mario-object);
+    animation: var(--animation-mario-object);
 }
 
-.homepage .homepage-licences{
-    background: url('/img/background-licences-homepage.jpg');
+.homepage .homepage-description h2{
+    font-size: 50px;
+}
+
+.homepage .homepage-description p{
+    font-size: 35px;
+    font-family: "Roboto Regular";
+}
+
+.homepage .homepage-licenses{
+    background: url('/img/background-licenses-homepage.jpg');
 }
 
 .homepage .homepage-description,
-.homepage .homepage-licences h2
+.homepage .homepage-licenses h2
 {
     color : #ffffff;
 } 
+
+h2{
+    font-size: 32px;
+    font-family: "Roboto Bold";
+    margin-bottom: 2vh;
+    padding: 3vh 0;
+}

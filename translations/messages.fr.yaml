@@ -9,13 +9,23 @@ layout:
       consoles: Consoles
 
 homepage:
+  title: Accueil
   description:
     title: Bienvenue
     text: >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi tellus, luctus et tempus eu, fringilla vel tortor. Phasellus et viverra felis. Etiam feugiat pulvinar diam, id porta libero congue ac. Nulla tellus enim, pharetra sit amet justo ac, feugiat convallis diam. Pellentesque quis laoreet sapien, sed vulputate nisl. Ut vel ultrices velit, vitae vulputate dui. Pellentesque sagittis mattis lacus id gravida. Integer malesuada elit id orci tristique, at interdum purus aliquet nullam sodales.
-  licences: 
+      Retrouvez les licences de Nintendo et les jeux qui les composent<br/>Tel que Super Mario, The Legend of Zelda, Donkey Kong et Pokemon
+  licenses: 
     title: Les licences de jeux Nintendo
 
-licences:
+licenses:
   list: 
+    title: Liste des licences de jeux Nintendo
     view_details: Détails
+
+search:
+  licenses:
+    name: Nom de la licence
+
+form:
+  button:
+    filter: Filtrer

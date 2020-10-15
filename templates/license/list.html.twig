@@ -1,6 +1,36 @@
 {% extends 'layout/layout.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/licenses-list.css')}}">
+{% endblock %}
+
+{% block title %}{{'licenses.list.title'|trans}}{% endblock %}
 
 {% block body %}
+    <section class="licenses-list list" role="main">
+        <div class="container-fluid p-0">
+            <div class="list-header">
+                <h2 class="p-3 text-center">{{'licenses.list.title'|trans}}</h2>
+                <div class="row justify-content-center p-2">
+                    <div class="col-md-10 col-12 ">
+                        {{form_start(searchForm)}}
+                            <div class="row">
+                                {{form_row(searchForm.name)}}
+                                {{form_row(searchForm.submit)}}
+                            </div>
+                        {{form_end(searchForm)}}
+                    </div>
+                </div>
+            </div>
+            <div class="row ml-0 mr-0 justify-content-center licence-list-block">
+                {% for license in licenses %}
+                    {% include 'layout/animated-card-content.html.twig' with {
+                        'cardThumbnail' : license.thumbnail,
+                        'cardTitle' : license.name,
+                        'cardUrl' : null,
+                    }%}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 {% endblock %}

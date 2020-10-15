@@ -21,21 +21,21 @@ class AppFixtures extends Fixture
         /**
          * License
          */
-        $licence1 = new License();
-        $licence1->setName('Mario')
+        $license1 = new License();
+        $license1->setName('Mario')
             ->setSlug('mario')
             ->setDescription('Mario est une franchise médiatique constituée de jeux vidéo publiés et produits par Nintendo mettant en vedette le personnage de fiction Mario. Elle a été créée à l\'origine par le concepteur de jeu Shigeru Miyamoto avec le jeu d\'arcade Donkey Kong, sorti le 9 juillet 1981. Les jeux ont été développés par une variété de développeurs de Nintendo. La plupart des jeux Mario ont été soit sortis sur arcade, console Nintendo ou ordinateurs portables datant de la NES à la génération actuelle de consoles de jeux vidéo.<br/><br/>
             La principale série de la franchise est la série de plates-formes Super Mario, qui suit la plupart des aventures de Mario dans le monde fictif du Royaume Champignon. Ces jeux reposent généralement sur la capacité de saut de Mario pour lui permettre de progresser à travers les niveaux. La franchise a donné naissance à plus de 200 jeux de différents genres. La totalité de la franchise, y compris les séries tels que Super Mario, Mario Kart, Mario Party, Mario Tennis et Mario Golf, ont été vendues à plus de 550 millions d\'exemplaires, ce qui en fait la franchise de jeu vidéo la plus vendue de tous les temps.')
             ->setThumbnail('img/fixtures/licenses/mario.png');
-        $manager->persist($licence1);
+        $manager->persist($license1);
 
-        $licence2 = new License();
-        $licence2->setName('The Legend of Zelda')
+        $license2 = new License();
+        $license2->setName('The Legend of Zelda')
             ->setSlug('the-legend-of-zelda')
             ->setDescription('The Legend of Zelda, ou simplement Zelda, est une série de jeux vidéo d\'action-aventure produite par la société japonaise Nintendo et créée par Shigeru Miyamoto et Takashi Tezuka. Depuis 1986 et la sortie du jeu The Legend of Zelda sur la console NES, dix-neuf jeux font officiellement partie de la saga. Plusieurs rééditions, remakes et jeux dérivés ont également vu le jour.<br/><br/>
             L\'histoire qui sert de base pour la plupart des épisodes de la série est celle du héros Link qui doit libérer le royaume d\'Hyrule et sa princesse, Zelda, des mains du seigneur du Mal, Ganon. La série est connue notamment pour son côté exploration, pionnier des jeux en monde ouvert, son gameplay, la profondeur de son scénario, la multitude de quêtes secondaires et ses musiques créées par Koji Kondo.')
             ->setThumbnail('img/fixtures/licenses/the-legend-of-zelda.png');
-        $manager->persist($licence2);
+        $manager->persist($license2);
 
         /**
          * Game
@@ -50,7 +50,7 @@ class AppFixtures extends Fixture
             Après avoir terminé leur lourde tâche, les deux héros reçoivent une lettre via le roi du Pipe Land. Celle-ci vient de Bowser, qui a (une fois de plus) kidnappé la princesse. Les frères se rendent donc dans un ultime monde, le Dark Land, où réside le roi maléfique.")
             ->setNbPlayers(2)
             ->setReleaseDate($releaseDateMarioBros3->setDate(1988, 10, 23))
-            ->setLicense($licence1);
+            ->setLicense($license1);
         $manager->persist($game1);
 
         $releaseDateMario64= new DateTime();
@@ -64,7 +64,7 @@ class AppFixtures extends Fixture
             Super Mario 64 se déroule dans le château de la princesse Peach, qui se compose de trois étages, un sous-sol, des douves et une cour. La zone à l'extérieur du château est une zone d'introduction dans laquelle le joueur peut expérimenter tous les nouveaux mouvements permis par la 3D. Des peintures et des murs secrets éparpillés à travers le château permettent d'entrer dans les niveaux.")
             ->setNbPlayers(1)
             ->setReleaseDate($releaseDateMario64->setDate(1996, 06,23))
-            ->setLicense($licence1);
+            ->setLicense($license1);
         $manager->persist($game2);
 
         $releaseDateMarioGalaxy = new DateTime();
@@ -79,7 +79,7 @@ class AppFixtures extends Fixture
             Mario bat finalement Bowser. Tout le monde est joyeux et compte reprendre la fête là où elle s'était arrêtée.")
             ->setNbPlayers(2)
             ->setReleaseDate($releaseDateMarioGalaxy->setDate(2007, 11, 1))
-            ->setLicense($licence1);
+            ->setLicense($license1);
         $manager->persist($game3);
 
         $releaseDateMarioOdyssey = new DateTime();
@@ -93,7 +93,7 @@ class AppFixtures extends Fixture
             Peu de temps après, Mario se réveille sur une colline avant de tomber nez à nez avec un petit fantôme portant un chapeau. Celui-ci s'enfuit, mais Mario le rattrape. Après avoir compris que Mario ne lui veut pas de mal, le fantôme se présente. Il se révèle être un Chapiforme nommé Cappy. Il lui explique aussi que son village a été attaqué par Bowser et que ce dernier a capturé sa sœur Tiara. Mario accepte de l'aider, et Cappy prend alors la forme de sa casquette. En quête d'un vaisseau pour pourchasser le Roi des Koopas, le duo traverse le Pays des Chapeaux et escalade la Chapitour, le grand bâtiment surplombant la zone, où le plombier découvre qu'il peut chapimorphoser les ennemis grâce à son nouveau complice. Après avoir atteint le sommet de la tour, Mario et Cappy tombent sur les Broodals, qui leur expliquent qu'ils sont les ordonnateurs du mariage de Bowser et Peach. Après un affrontement contre Topper, Mario se dirige vers le Pays des Chutes en prenant possession d'une borne gzzzt, et c'est là que l'aventure commence vraiment.")
             ->setNbPlayers(2)
             ->setReleaseDate($releaseDateMarioOdyssey->setDate(2017, 10, 27))
-            ->setLicense($licence1);
+            ->setLicense($license1);
         $manager->persist($game4);
 
         $releaseDateZeldaMm = new DateTime();
@@ -109,7 +109,7 @@ class AppFixtures extends Fixture
             Dans un premier temps, transformé par Skull Kid en Peste Mojo, Link apprend des habitants de Termina que la lune va s'écraser sur la terre et qu'il ne dispose que de trois jours pour stopper l'apocalypse. Apocalypse provoquée par Skull Kid, qui possède d'ailleurs un étrange masque : le masque de Majora. En premier lieu, Link remet la main sur son ocarina du Temps, et Taya décide de continuer à l'accompagner dans sa quête, car Skull Kid est en train de devenir fou et elle veut l'arrêter. Ils devront alors remettre la main sur le masque de Majora, à la requête du vendeur de Masques, et ce en collectant les masques des boss du jeu, pour réveiller les quatre Géants.")
             ->setNbPlayers(1)
             ->setReleaseDate($releaseDateZeldaMm->setDate(2000,4,27))
-            ->setLicense($licence2);
+            ->setLicense($license2);
         $manager->persist($game5);
 
         $releaseDateZeldaTp = new DateTime();
@@ -132,7 +132,7 @@ class AppFixtures extends Fixture
             Link se prépare ensuite à affronter Ganondorf, qui a pris le contrôle du château d'Hyrule et de la princesse Zelda. Le combat final prend place au château. Après avoir triomphé, Link aperçoit la silhouette d'une jeune fille titubante au loin, qui n'est autre que Midona ayant reprise son apparence « humaine ». La scène finale montre Link, Zelda et Midona face au Miroir des Ombres, s'échangeant quelques mots d'adieux à la suite desquels Midona repart dans son royaume et détruit définitivement le miroir des Ombres, afin de couper tout lien entre le monde de la lumière et celui des ombres.")
             ->setNbPlayers(1)
             ->setReleaseDate($releaseDateZeldaTp->setDate(2006,12,2))
-            ->setLicense($licence2);
+            ->setLicense($license2);
         $manager->persist($game6);
 
         $releaseDateZeldaOtt = new DateTime();
@@ -153,7 +153,7 @@ class AppFixtures extends Fixture
             Link entonne le chant du Temps avec l'ocarina du Temps devant le piédestal des trois pierres Ancestrales. Cela fait, la porte du Temps s'ouvre et Link se retrouve dans la pièce où se trouve L'épée de Légende. Link s'en approche et la retire de son socle. Il rencontre Rauru, l'un des sept sages protecteurs de la Triforce qui lui apprend que l'épée avait endormi son âme pendant sept années, durant lesquelles le vil Ganondorf a envahi Hyrule…Link est devenu plus grand et plus puissant. Il pourra ainsi voyager dans le temps en insérant l'épée de Légende dans son socle de granit pour rajeunir ou en la retirant pour passer à l'âge adulte. À l'âge adulte, Link ne peut plus utiliser certains objets de son enfance mais en revanche, il peut monter une jument, Epona. L'épée de Légende est une lame purificatrice repoussant les forces obscures. Les êtres du mal ne peuvent donc pas la toucher et seul le Héros du Temps (l'élu) peut la retirer de son socle de granit. Sa quête est maintenant d'éveiller les six autres sages d'Hyrule pour battre Ganondorf, guidé par le mystérieux Sheik.")
             ->setNbPlayers(1)
             ->setReleaseDate($releaseDateZeldaOtt->setDate(1998,11,21))
-            ->setLicense($licence2);
+            ->setLicense($license2);
         $manager->persist($game7);
 
         $releaseDateZeldaBotw = new DateTime();
@@ -171,7 +171,7 @@ class AppFixtures extends Fixture
             Il raconte que Link était le Chevalier dévoué à la Princesse Zelda. Il combattit Ganon avec courage mais fut défait alors que la victoire était toute proche. Link, gravement blessé et au bord du trépas, fut emmené dans le sanctuaire de la Renaissance où il demeura un siècle tandis que Zelda empêchait Ganon de sortir du château. Avant de disparaître, le roi offre sa paravoile à Link et lui demande de sauver son royaume. Il dit à Link que dans l'état actuel des choses, aller affronter Ganon maintenant serait de la folie. Il guide tout d'abord Link vers une femme nommée Impa qui lui indiquera la voie.")
             ->setNbPlayers(1)
             ->setReleaseDate($releaseDateZeldaBotw->setDate(2017,3,3))
-            ->setLicense($licence2);
+            ->setLicense($license2);
         $manager->persist($game8);
 
         
