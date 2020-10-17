@@ -12,21 +12,30 @@ abstract class AbstractEntity
 {
 
     /**
+     * @var \DateTimeInterface
      * @ORM\Column(type="datetime")
      */
     private $createAt;
 
     /**
+     * @var \DateTimeInterface
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $updateAt;
 
-    public function getCreateAt(): ?\DateTimeInterface
+    /**
+     * Get create date value
+     *
+     * @return \DateTimeInterface
+     */
+    public function getCreateAt(): \DateTimeInterface
     {
         return $this->createAt;
     }
 
     /**
+     * Set create date value
+     * 
      * @ORM\PrePersist
      * @return self
      */
@@ -37,12 +46,19 @@ abstract class AbstractEntity
         return $this;
     }
 
+    /**
+     * Get update date value
+     *
+     * @return \DateTimeInterface|null
+     */
     public function getUpdateAt(): ?\DateTimeInterface
     {
         return $this->updateAt;
     }
 
     /**
+     * Set update date value
+     * 
      * @ORM\PreUpdate
      * @return self
      */

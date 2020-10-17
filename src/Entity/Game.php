@@ -13,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Game extends AbstractDisplayableEntity
 {
     /**
+     * @var integer
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -20,43 +21,51 @@ class Game extends AbstractDisplayableEntity
     private $id;
 
     /**
+     * @var string
      * @ORM\Column(type="text")
      */
     private $history;
 
     /**
+     * @var \DateTimeInterface
      * @ORM\Column(type="date")
      */
     private $releaseDate;
 
     /**
+     * @var integer
      * @ORM\Column(type="smallint")
      */
     private $nbPlayers;
 
     /**
-     * @ORM\ManyToOne(targetEntity=License::class, inversedBy="games")
+     * @var License
+     * @ORM\ManyToOne(targetEntity=License::class, inversedBy="games", fetch="EXTRA_LAZY")
      * @ORM\JoinColumn(nullable=false)
      */
     private $license;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Console::class, inversedBy="games")
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity=Console::class, inversedBy="games", fetch="EXTRA_LAZY")
      */
     private $consoles;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Genre::class, inversedBy="games")
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity=Genre::class, inversedBy="games", fetch="EXTRA_LAZY")
      */
     private $genres;
 
     /**
-     * @ORM\OneToMany(targetEntity=GameItem::class, mappedBy="game")
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity=GameItem::class, mappedBy="game", fetch="EXTRA_LAZY")
      */
     private $gameItems;
 
     /**
-     * @ORM\OneToMany(targetEntity=GameCharacter::class, mappedBy="game")
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity=GameCharacter::class, mappedBy="game", fetch="EXTRA_LAZY")
      */
     private $gameCharacters;
 
@@ -68,16 +77,32 @@ class Game extends AbstractDisplayableEntity
         $this->gameCharacters = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    /**
+     * Get id value
+     *
+     * @return integer
+     */
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getHistory(): ?string
+    /**
+     * Get history value
+     *
+     * @return string
+     */
+    public function getHistory(): string
     {
         return $this->history;
     }
 
+    /**
+     * Set history value
+     *
+     * @param string $history
+     * @return self
+     */
     public function setHistory(string $history): self
     {
         $this->history = $history;
@@ -85,11 +110,22 @@ class Game extends AbstractDisplayableEntity
         return $this;
     }
 
-    public function getReleaseDate(): ?\DateTimeInterface
+    /**
+     * Get release date value
+     *
+     * @return \DateTimeInterface
+     */
+    public function getReleaseDate(): \DateTimeInterface
     {
         return $this->releaseDate;
     }
 
+    /**
+     * Set release date value
+     *
+     * @param \DateTimeInterface $releaseDate
+     * @return self
+     */
     public function setReleaseDate(\DateTimeInterface $releaseDate): self
     {
         $this->releaseDate = $releaseDate;
@@ -97,11 +133,22 @@ class Game extends AbstractDisplayableEntity
         return $this;
     }
 
-    public function getNbPlayers(): ?int
+    /**
+     * Get maximum player numbers value
+     *
+     * @return integer
+     */
+    public function getNbPlayers(): int
     {
         return $this->nbPlayers;
     }
 
+    /**
+     * Set maximum player numbers value
+     *
+     * @param integer $nbPlayers
+     * @return self
+     */
     public function setNbPlayers(int $nbPlayers): self
     {
         $this->nbPlayers = $nbPlayers;
@@ -109,12 +156,23 @@ class Game extends AbstractDisplayableEntity
         return $this;
     }
 
-    public function getLicense(): ?License
+    /**
+     * Get license value
+     *
+     * @return License
+     */
+    public function getLicense(): License
     {
         return $this->license;
     }
 
-    public function setLicense(?License $license): self
+    /**
+     * Set license value
+     *
+     * @param License $license
+     * @return self
+     */
+    public function setLicense(License $license): self
     {
         $this->license = $license;
 
@@ -122,6 +180,8 @@ class Game extends AbstractDisplayableEntity
     }
 
     /**
+     * Get list of consoles
+     * 
      * @return Collection|Console[]
      */
     public function getConsoles(): Collection
@@ -129,6 +189,12 @@ class Game extends AbstractDisplayableEntity
         return $this->consoles;
     }
 
+    /**
+     * Add a console of collection
+     *
+     * @param Console $console
+     * @return self
+     */
     public function addConsole(Console $console): self
     {
         if (!$this->consoles->contains($console)) {
@@ -138,6 +204,12 @@ class Game extends AbstractDisplayableEntity
         return $this;
     }
 
+    /**
+     * Remove a console of collection
+     *
+     * @param Console $console
+     * @return self
+     */
     public function removeConsole(Console $console): self
     {
         if ($this->consoles->contains($console)) {
@@ -148,6 +220,8 @@ class Game extends AbstractDisplayableEntity
     }
 
     /**
+     * Get list of genre
+     * 
      * @return Collection|Genre[]
      */
     public function getGenres(): Collection
@@ -155,6 +229,12 @@ class Game extends AbstractDisplayableEntity
         return $this->genres;
     }
 
+    /**
+     * Add a genre of collection
+     *
+     * @param Genre $genre
+     * @return self
+     */
     public function addGenre(Genre $genre): self
     {
         if (!$this->genres->contains($genre)) {
@@ -164,6 +244,12 @@ class Game extends AbstractDisplayableEntity
         return $this;
     }
 
+    /**
+     * Remove a genre of collection
+     *
+     * @param Genre $genre
+     * @return self
+     */
     public function removeGenre(Genre $genre): self
     {
         if ($this->genres->contains($genre)) {
@@ -174,6 +260,8 @@ class Game extends AbstractDisplayableEntity
     }
 
     /**
+     * Get list of games items
+     * 
      * @return Collection|GameItem[]
      */
     public function getGameItems(): Collection
@@ -181,6 +269,12 @@ class Game extends AbstractDisplayableEntity
         return $this->gameItems;
     }
 
+    /**
+     * Add a game item of collection
+     *
+     * @param GameItem $gameItem
+     * @return self
+     */
     public function addGameItem(GameItem $gameItem): self
     {
         if (!$this->gameItems->contains($gameItem)) {
@@ -191,6 +285,12 @@ class Game extends AbstractDisplayableEntity
         return $this;
     }
 
+    /**
+     * Remove a game item of collection
+     *
+     * @param GameItem $gameItem
+     * @return self
+     */
     public function removeGameItem(GameItem $gameItem): self
     {
         if ($this->gameItems->contains($gameItem)) {
@@ -205,6 +305,8 @@ class Game extends AbstractDisplayableEntity
     }
 
     /**
+     * Get list of games characters
+     * 
      * @return Collection|GameCharacter[]
      */
     public function getGameCharacters(): Collection
@@ -212,6 +314,12 @@ class Game extends AbstractDisplayableEntity
         return $this->gameCharacters;
     }
 
+    /**
+     * Add a game character of collection
+     *
+     * @param GameCharacter $gameCharacter
+     * @return self
+     */
     public function addGameCharacter(GameCharacter $gameCharacter): self
     {
         if (!$this->gameCharacters->contains($gameCharacter)) {
@@ -222,6 +330,12 @@ class Game extends AbstractDisplayableEntity
         return $this;
     }
 
+    /**
+     * Remove a game character of collection
+     *
+     * @param GameCharacter $gameCharacter
+     * @return self
+     */
     public function removeGameCharacter(GameCharacter $gameCharacter): self
     {
         if ($this->gameCharacters->contains($gameCharacter)) {

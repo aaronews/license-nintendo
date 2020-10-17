@@ -24,11 +24,6 @@ class LicenseController extends AbstractController
         $form = $this->createForm(LicenseType::class, $search);
         $form->handleRequest($request);
 
-        if($form->isSubmitted() && $form->isValid()){
-        }else{
-
-        }
-
         $licenses = $paginator->paginate(
             $licensesService->findBySearchCriterias($search),
             $request->query->getInt('page', 1), 

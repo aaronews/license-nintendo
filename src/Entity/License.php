@@ -13,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class License extends AbstractDisplayableEntity
 {
     /**
+     * @var integer
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -20,7 +21,8 @@ class License extends AbstractDisplayableEntity
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity=Game::class, mappedBy="license")
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity=Game::class, mappedBy="license", fetch="EXTRA_LAZY")
      */
     private $games;
 
@@ -29,12 +31,19 @@ class License extends AbstractDisplayableEntity
         $this->games = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    /**
+     * Get id value
+     *
+     * @return integer
+     */
+    public function getId(): int
     {
         return $this->id;
     }
 
     /**
+     * Get list of games
+     * 
      * @return Collection|Game[]
      */
     public function getGames(): Collection
@@ -42,6 +51,12 @@ class License extends AbstractDisplayableEntity
         return $this->games;
     }
 
+    /**
+     * Add a game of collection
+     *
+     * @param Game $game
+     * @return self
+     */
     public function addGame(Game $game): self
     {
         if (!$this->games->contains($game)) {
@@ -52,6 +67,12 @@ class License extends AbstractDisplayableEntity
         return $this;
     }
 
+    /**
+     * Remove a game of collection
+     *
+     * @param Game $game
+     * @return self
+     */
     public function removeGame(Game $game): self
     {
         if ($this->games->contains($game)) {

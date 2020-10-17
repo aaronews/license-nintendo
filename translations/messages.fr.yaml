@@ -22,6 +22,92 @@ licenses:
     title: Liste des licences de jeux Nintendo
     view_details: Détails
 
+characters:
+  list:
+    title: Liste des personnages de jeux Nintendo
+  form:
+    game:
+      label: Apparait dans ce jeux
+      placeholder: Séléctionner un jeu
+    gender:
+      label: Sexe du personnage
+      placeholder: Séléctionner un sexe
+      options:
+        M: Masculin
+        F: Feminin
+    name:
+      label: Nom du personnage
+      placeholder: Nom
+
+consoles:
+  list:
+    title: Liste des consoles de jeu Nintendo
+  form:
+    game:
+      label: Jeu sur la console
+      placeholder: Séléctionner un jeu  
+    name:
+      label: Nom de la console
+      placeholder: Nom
+    release_date_min:
+      label: >
+        Date de sortie de :
+      placeholder: JJ/MM/AAAA
+    release_date_max:
+      label: >
+        Date de sortie à :
+      placeholder: JJ/MM/AAAA
+    release_price_min:
+      label: >
+       Prix de lancement de :
+      placeholder: 0
+    release_price_max:
+      label: >
+        Prix de lancement à :
+      placeholder: 0
+     
+games:
+  list:
+    title: Liste des jeux Nintendo
+  form:
+    console:
+      label: Jouable sur
+      placeholder: Séléctionner une console
+    name:
+      label: Nom du jeu
+      placeholder: Nom
+    licence:
+      label: Appartient à la licence de jeux
+      placeholder: Séléctionner une licence
+    genre:
+      label: Genre de jeu
+      placeholder: Séléctionner un genre
+    players_numbers_min:
+      label: Nombre de joueur minimum
+      placeholder: 0
+    players_numbers_max:
+      label: Nombre de joueur maximum
+      placeholder: 0
+    release_date_min:
+      label: >
+        Date de sortie de :
+      placeholder: JJ/MM/YYYY
+    release_date_max:
+      label: >
+        Date de sortie à :
+      placeholder: JJ/MM/YYYY
+    
+items:
+  list:
+    title: Liste des objets dans les jeux Nintendo
+  form:
+    name:
+      label: Nom de l'objet
+      placeholder: Nom
+    game:
+      label: Est présent dans le jeu
+      placeholder: Séléctionner un jeu
+
 search:
   licenses:
     name: Nom de la licence

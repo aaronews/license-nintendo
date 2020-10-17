@@ -1,6 +1,23 @@
-{% extends 'layout/layout.html.twig' %}
+{% extends 'layout/lists.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}{{'items.list.title'|trans}}{% endblock %}
 
-{% block body %}
+{% block searchForm %}
+    {{form_start(searchForm)}}
+        <div class="row">
+            {{form_row(searchForm.name)}}
+            {{form_row(searchForm.game)}}
+            {{form_row(searchForm.submit)}}
+        </div>
+    {{form_end(searchForm)}}
+{% endblock %}
+
+{% block listBlock %}
+    {% for item in items %}
+        {% include 'layout/animated-card-content.html.twig' with {
+            'cardThumbnail' : item.thumbnail,
+            'cardTitle' : item.name,
+            'cardUrl' : null,
+        }%}
+    {% endfor %}
 {% endblock %}

@@ -33,5 +33,35 @@ services:
             - App\Repository\LicenseRepository
         ]
 
+    app.items_service:
+        class : App\Service\ItemsService
+        arguments : [
+            - App\Repository\ItemRepository
+        ]
+
+    app.games_service:
+        class : App\Service\GamesService
+        arguments : [
+            - App\Repository\GameRepository
+        ]
+
+    app.consoles_service:
+        class : App\Service\ConsolesService
+        arguments : [
+            - App\Repository\ConsoleRepository
+        ]
+
+    app.characters_service:
+        class : App\Service\CharactersService
+        arguments : [
+            - App\Repository\CharacterRepository
+        ]
+
+    app.genres_service:
+        class : App\Service\GenresService
+        arguments : [
+            - App\Repository\GenreRepository
+        ]
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

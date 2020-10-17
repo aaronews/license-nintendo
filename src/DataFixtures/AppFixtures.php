@@ -272,13 +272,13 @@ class AppFixtures extends Fixture
         $genre2->setName('Aventure');
         $manager->persist($genre2);
 
-        $genre2 = new Genre();
-        $genre2->setName('Plateforme');
-        $manager->persist($genre2);
+        $genre3 = new Genre();
+        $genre3->setName('Plateforme');
+        $manager->persist($genre3);
 
-        $game1->addGenre($genre1)->addGenre($genre2);
-        $game2->addGenre($genre1)->addGenre($genre2);
-        $game3->addGenre($genre2)->addGenre($genre2);
+        $game1->addGenre($genre1)->addGenre($genre3);
+        $game2->addGenre($genre1)->addGenre($genre3);
+        $game3->addGenre($genre2)->addGenre($genre3);
         $game4->addGenre($genre2)->addGenre($genre1);
         $game5->addGenre($genre1)->addGenre($genre2);
         $game6->addGenre($genre1)->addGenre($genre2);
@@ -630,7 +630,7 @@ class AppFixtures extends Fixture
             $gameCharacter->setGame($aData['game'])
                 ->setCurrentCharacter($aData['character'])
                 ->setThumbnail($aData['thumbnail']);
-            $manager->persist($gameItem);
+            $manager->persist($gameCharacter);
         }
 
 

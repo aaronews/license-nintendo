@@ -1,6 +1,29 @@
-{% extends 'layout/layout.html.twig' %}
+{% extends 'layout/lists.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}{{'games.list.title'|trans}}{% endblock %}
 
-{% block body %}
+{% block searchForm %}
+    {{form_start(searchForm)}}
+        <div class="row">
+            {{form_row(searchForm.name)}}
+            {{form_row(searchForm.console)}}
+            {{form_row(searchForm.license)}}
+            {{form_row(searchForm.genre)}}
+            {{form_row(searchForm.nbPlayersMin)}}
+            {{form_row(searchForm.nbPlayersMax)}}
+            {{form_row(searchForm.releaseDateMin)}}
+            {{form_row(searchForm.releaseDateMax)}}
+            {{form_row(searchForm.submit)}}
+        </div>
+    {{form_end(searchForm)}}
+{% endblock %}
+
+{% block listBlock %}
+    {% for game in games %}
+        {% include 'layout/animated-card-content.html.twig' with {
+            'cardThumbnail' : game.thumbnail,
+            'cardTitle' : game.name,
+            'cardUrl' : null,
+        }%}
+    {% endfor %}
 {% endblock %}

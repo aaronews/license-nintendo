@@ -20,7 +20,7 @@ class Item extends AbstractDisplayableEntity
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity=GameItem::class, mappedBy="item")
+     * @ORM\OneToMany(targetEntity=GameItem::class, mappedBy="item", fetch="EXTRA_LAZY")
      */
     private $gameItems;
 

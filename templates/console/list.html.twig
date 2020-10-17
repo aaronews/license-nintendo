@@ -1,6 +1,29 @@
-{% extends 'layout/layout.html.twig' %}
+{% extends 'layout/lists.html.twig' %}
 
-{% block title %}{% endblock %}
+{% block title %}{{'consoles.list.title'|trans}}{% endblock %}
 
-{% block body %}
+{% block searchForm %}
+    {{form_start(searchForm)}}
+        <div class="row">
+            {{form_row(searchForm.name)}}
+            {{form_row(searchForm.game)}}
+            {{form_row(searchForm.releaseDateMin)}}
+            {{form_row(searchForm.releaseDateMax)}}
+            {{form_row(searchForm.releasePriceMin)}}
+            {{form_row(searchForm.releasePriceMax)}}
+        </div>
+        <div class="form-action">
+            {{form_row(searchForm.submit)}}
+        </div>
+    {{form_end(searchForm)}}
+{% endblock %}
+
+{% block listBlock %}
+    {% for console in consoles %}
+        {% include 'layout/animated-card-content.html.twig' with {
+            'cardThumbnail' : console.thumbnail,
+            'cardTitle' : console.name,
+            'cardUrl' : null,
+        }%}
+    {% endfor %}
 {% endblock %}

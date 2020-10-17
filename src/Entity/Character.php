@@ -14,6 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Character extends AbstractDisplayableEntity
 {
     /**
+     * @var integer
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -21,12 +22,14 @@ class Character extends AbstractDisplayableEntity
     private $id;
 
     /**
+     * @var string
      * @ORM\Column(type="string", length=255)
      */
     private $gender;
 
     /**
-     * @ORM\OneToMany(targetEntity=GameCharacter::class, mappedBy="currentCharacter")
+     * @var ArrayCollection
+     * @ORM\OneToMany(targetEntity=GameCharacter::class, mappedBy="currentCharacter", fetch="EXTRA_LAZY")
      */
     private $gameCharacters;
 
@@ -35,16 +38,32 @@ class Character extends AbstractDisplayableEntity
         $this->gameCharacters = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    /**
+     * Get id value
+     *
+     * @return integer
+     */
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getGender(): ?string
+    /**
+     * Get gender value
+     *
+     * @return string
+     */
+    public function getGender(): string
     {
         return $this->gender;
     }
 
+    /**
+     * Set gender value
+     *
+     * @param string $gender
+     * @return self
+     */
     public function setGender(string $gender): self
     {
         $this->gender = $gender;
@@ -53,6 +72,8 @@ class Character extends AbstractDisplayableEntity
     }
 
     /**
+     * Get list of games characters
+     * 
      * @return Collection|GameCharacter[]
      */
     public function getGameCharacters(): Collection
@@ -60,6 +81,12 @@ class Character extends AbstractDisplayableEntity
         return $this->gameCharacters;
     }
 
+    /**
+     * Add a game character of collection
+     *
+     * @param GameCharacter $gameCharacter
+     * @return self
+     */
     public function addGameCharacter(GameCharacter $gameCharacter): self
     {
         if (!$this->gameCharacters->contains($gameCharacter)) {
@@ -70,6 +97,12 @@ class Character extends AbstractDisplayableEntity
         return $this;
     }
 
+    /**
+     * Remove a game character of collection
+     *
+     * @param GameCharacter $gameCharacter
+     * @return self
+     */
     public function removeGameCharacter(GameCharacter $gameCharacter): self
     {
         if ($this->gameCharacters->contains($gameCharacter)) {

@@ -25,7 +25,7 @@ class Genre
     private $name;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Game::class, mappedBy="genres")
+     * @ORM\ManyToMany(targetEntity=Game::class, mappedBy="genres", fetch="EXTRA_LAZY")
      */
     private $games;
 

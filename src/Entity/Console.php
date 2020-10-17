@@ -13,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Console extends AbstractDisplayableEntity
 {
     /**
+     * @var integer
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -20,17 +21,20 @@ class Console extends AbstractDisplayableEntity
     private $id;
 
     /**
+     * @var \DateTimeInterface
      * @ORM\Column(type="date")
      */
     private $releaseDate;
 
     /**
+     * @var integer
      * @ORM\Column(type="integer")
      */
     private $releasePrice;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Game::class, mappedBy="consoles")
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity=Game::class, mappedBy="consoles", fetch="EXTRA_LAZY")
      */
     private $games;
 
@@ -39,16 +43,32 @@ class Console extends AbstractDisplayableEntity
         $this->games = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    /**
+     * Get id value
+     *
+     * @return integer
+     */
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getReleaseDate(): ?\DateTimeInterface
+    /**
+     * Get release date value
+     *
+     * @return \DateTimeInterface
+     */
+    public function getReleaseDate(): \DateTimeInterface
     {
         return $this->releaseDate;
     }
 
+    /**
+     * Set release date value
+     *
+     * @param \DateTimeInterface $releaseDate
+     * @return self
+     */
     public function setReleaseDate(\DateTimeInterface $releaseDate): self
     {
         $this->releaseDate = $releaseDate;
@@ -56,11 +76,22 @@ class Console extends AbstractDisplayableEntity
         return $this;
     }
 
-    public function getReleasePrice(): ?int
+    /**
+     * Get release price value
+     *
+     * @return integer
+     */
+    public function getReleasePrice(): int
     {
         return $this->releasePrice;
     }
 
+    /**
+     * Set release price value
+     *
+     * @param integer $releasePrice
+     * @return self
+     */
     public function setReleasePrice(int $releasePrice): self
     {
         $this->releasePrice = $releasePrice;
@@ -69,6 +100,8 @@ class Console extends AbstractDisplayableEntity
     }
 
     /**
+     * Get list of games
+     * 
      * @return Collection|Game[]
      */
     public function getGames(): Collection
@@ -76,6 +109,12 @@ class Console extends AbstractDisplayableEntity
         return $this->games;
     }
 
+    /**
+     * Add game to collection
+     *
+     * @param Game $game
+     * @return self
+     */
     public function addGame(Game $game): self
     {
         if (!$this->games->contains($game)) {
@@ -86,6 +125,12 @@ class Console extends AbstractDisplayableEntity
         return $this;
     }
 
+    /**
+     * Remove game of collection
+     *
+     * @param Game $game
+     * @return self
+     */
     public function removeGame(Game $game): self
     {
         if ($this->games->contains($game)) {

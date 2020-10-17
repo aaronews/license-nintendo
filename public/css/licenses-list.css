@@ -1,6 +1,0 @@
-.licenses-list .container-fluid{
-    background: var(--bg-mario-object);
-    perspective: var(--perspective-mario-object);
-    perspective-origin: var(--perspective-origin-mario-object);
-    animation: var(--animation-mario-object);
-}
