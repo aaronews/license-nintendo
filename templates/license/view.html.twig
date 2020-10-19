@@ -1,0 +1,35 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block title %}{{license.name}}{% endblock %}
+
+{% block body %}
+    <section class="license" role="main">
+        <div class="container-fluid p-0">
+            <div class="row ml-0 mr-0 license-description justify-content-center">
+                <h2 class="mt-5 text-center">{{license.name}}</h2>
+                <div class="col-12 text-center">
+                    <p>{{license.description|raw}}</p>
+                </div>
+            </div>
+            <div class="row ml-0 mr-0 justify-content-center license-best-games">
+                <h2 class="p-3 text-center col-md-12">{{'licenses.view.best_games.title'|trans}}</h2>
+                {% for game in bestGames %}
+                    {% include 'layout/animated-card-content.html.twig' with {
+                        'cardThumbnail' : game.thumbnail,
+                        'cardTitle' : game.name,
+                        'cardUrl' :  path('games_view', {slug: game.slug}),
+                    }%}
+                {% endfor %}
+                <div class="col-12 text-center btn-wrapper">
+                    <a class="btn btn-lg btn-more btn-primary" href="{{path('licenses_games', {slug : license.slug})}}">
+                        <i class="fa fa-2x fa-plus align-middle mr-2"></i>
+                        {{'licenses.view.best_games.btn_see_all'|trans}}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -17,7 +17,7 @@
         {% include 'layout/animated-card-content.html.twig' with {
             'cardThumbnail' : item.thumbnail,
             'cardTitle' : item.name,
-            'cardUrl' : null,
+            'cardUrl' : path('items_view', {slug : item.slug}),
         }%}
     {% endfor %}
 {% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block title %}{{item.name}}{% endblock %}
+
+{% block body %}
+    <section class="item" role="main">
+        <div class="container-fluid p-0">
+            <div class="row ml-0 mr-0 item-description justify-content-center">
+                <h2 class="mt-5 text-center">{{item.name}}</h2>
+                <div class="col-12 text-center">
+                    <p>{{item.description|raw}}</p>
+                </div>
+            </div>
+            <div class="row ml-0 mr-0 justify-content-center item-games">
+                <h2 class="p-3 text-center col-md-12">{{'items.view.items_games.title'|trans}}</h2>
+                {% for gameItem in item.gameItems %}
+                    {% include 'layout/animated-card-content.html.twig' with {
+                        'cardThumbnail' : gameItem.thumbnail,
+                        'cardTitle' : gameItem.game.name,
+                        'cardUrl' :  path('games_view', {slug: gameItem.game.slug}),
+                    }%}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

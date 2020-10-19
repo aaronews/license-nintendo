@@ -69,6 +69,11 @@ class Game extends AbstractDisplayableEntity
      */
     private $gameCharacters;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $copiesSold;
+
     public function __construct()
     {
         $this->consoles = new ArrayCollection();
@@ -345,6 +350,18 @@ class Game extends AbstractDisplayableEntity
                 $gameCharacter->setGame(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getCopiesSold(): ?int
+    {
+        return $this->copiesSold;
+    }
+
+    public function setCopiesSold(int $copiesSold): self
+    {
+        $this->copiesSold = $copiesSold;
 
         return $this;
     }

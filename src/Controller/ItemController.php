@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Item;
 use App\Form\Search\ItemType;
 use App\Service\ItemsService;
 use App\Entity\Search\Item as SearchItem;
@@ -33,6 +34,16 @@ class ItemController extends AbstractController
         return $this->render('item/list.html.twig', [
             'items' => $items,
             'searchForm' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/{slug}", name="view", requirements={"slug"="^[a-z0-9]+(\-{1}[a-z0-9]+)*$"})
+     */
+    public function view(Item $item)
+    {
+        return $this->render('item/view.html.twig', [
+            'item' => $item
         ]);
     }
 }

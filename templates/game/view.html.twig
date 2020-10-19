@@ -1,0 +1,97 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block stylesheets %}
+{% endblock %}
+
+{% block title %}{{game.name}}{% endblock %}
+
+{% block body %}
+    <section class="game" role="main">
+        <div class="container-fluid p-0">
+            <div class="row ml-0 mr-0 game-description justify-content-center">
+                <h2 class="mt-5 text-center">{{game.name}}</h2>
+                <div class="col-12 text-center">
+                    <p>{{game.description|raw}}</p>
+                </div>
+            </div>
+            <div class="row ml-0 mr-0 justify-content-center game-history">
+                <h2 class="p-3 text-center col-md-12">{{'games.view.history.title'|trans}}</h2>
+                <div class="col-12 text-center">
+                    <p>{{game.history|raw}}</p>
+                </div>
+            </div>
+            <div class="row ml-0 mr-0 justify-content-center game-character">
+                <h2 class="p-3 text-center col-md-12">{{'games.view.characters.title'|trans}}</h2>
+                {% for gameCharacter in game.gameCharacters %}
+                    {% include 'layout/animated-card-content.html.twig' with {
+                        'cardThumbnail' : gameCharacter.currentCharacter.thumbnail,
+                        'cardTitle' : gameCharacter.currentCharacter.name,
+                        'cardUrl' : path('characters_view', {slug : gameCharacter.currentCharacter.slug}),
+                    }%}
+                {% endfor %}
+            </div>
+            <div class="row ml-0 mr-0 justify-content-center game-items">
+                <h2 class="p-3 text-center col-md-12">{{'games.view.items.title'|trans}}</h2>
+                {% for gameItem in game.gameItems %}
+                    {% include 'layout/animated-card-content.html.twig' with {
+                        'cardThumbnail' : gameItem.item.thumbnail,
+                        'cardTitle' : gameItem.item.name,
+                        'cardUrl' : path('items_view', {slug : gameItem.item.slug}),
+                    }%}
+                {% endfor %}
+            </div>
+            <div class="row ml-0 mr-0 justify-content-center game-characteristics">
+                <h2 class="p-3 text-center col-md-12">{{'games.view.characteristics.title'|trans}}</h2>
+                <div class="col-md-12 characteristics-list">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <i class="far fa-2x fa-calendar-alt"></i>
+                            <h3>{{'games.view.characteristics.release_date'|trans}}</h3>
+                            <span>{{game.releaseDate|date('d/m/Y')}}</span>
+                        </div>
+                        <div class="col-md-6">
+                            <i class="fas fa-2x fa-users"></i>
+                            <h3>{{'games.view.characteristics.players'|trans}}</h3>
+                            <span>{{game.nbPlayers}}</span>
+                        </div>
+                        <div class="col-md-6">
+                            <i class="fas fa-2x fa-cog"></i>
+                            <h3>{{'games.view.characteristics.genres'|trans}}</h3>
+                            <span>
+                                {% set countGenres = game.genres.count() %}
+                                {% set genres = '' %}
+                                {% for genre in game.genres %}
+                                    {% set genres = genres ~ genre.name %}
+                                    {% if loop.index < countGenres %}
+                                        {% set genres = genres ~ ', ' %}
+                                    {% endif %}
+                                {% endfor %}
+                                {{genres}}
+                            </span>
+                        </div>
+                        <div class="col-md-6">
+                            <i class="fas fa-2x fa-gamepad"></i>
+                            <h3>{{'games.view.characteristics.consoles'|trans}}</h3>
+                            <span>
+                                {% set countConsoles = game.consoles.count() %}
+                                {% set consoles = '' %}
+                                {% for console in game.consoles %}
+                                    {% set consoles = consoles ~ console.name %}
+                                    {% if loop.index < countConsoles %}
+                                        {% set consoles = consoles ~ ', ' %}
+                                    {% endif %}
+                                {% endfor %}
+                                {{consoles}}
+                            </span>
+                        </div>
+                        <div class="col-md-6">
+                            <i class="fas fa-2x fa-shopping-basket"></i>
+                            <h3>{{'games.view.characteristics.copies_sold'|trans}}</h3>
+                            <span>{{game.copiesSold|number_format}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

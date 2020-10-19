@@ -21,6 +21,17 @@ licenses:
   list: 
     title: Liste des licences de jeux Nintendo
     view_details: Détails
+  form:
+    name:
+      label: Nom de la licence
+      placeholder: Nom
+  view:
+    best_games:
+      title: Meilleurs jeux
+      btn_see_all: Voir tout les jeux
+  games:
+    title: >
+      Jeux :
 
 characters:
   list:
@@ -38,6 +49,9 @@ characters:
     name:
       label: Nom du personnage
       placeholder: Nom
+  view:
+    game_characters:
+      title: Apparait dans les jeux
 
 consoles:
   list:
@@ -65,6 +79,9 @@ consoles:
       label: >
         Prix de lancement à :
       placeholder: 0
+  view:
+    console_games:
+      title: Jeux
      
 games:
   list:
@@ -96,6 +113,26 @@ games:
       label: >
         Date de sortie à :
       placeholder: JJ/MM/YYYY
+  view:
+    history:
+      title: Histoire
+    characters:
+      title: Personnages
+    items:
+      title: Objets
+    characteristics:
+      title: Caractéristiques téchniques
+      release_date: >
+        Date de sortie :
+      players: >
+        Joueur :
+      genres: >
+        Genre :
+      consoles: >
+        Jouable sur :
+      copies_sold: >
+        Nombre d'exemplaire vendu
+
     
 items:
   list:
@@ -107,6 +144,9 @@ items:
     game:
       label: Est présent dans le jeu
       placeholder: Séléctionner un jeu
+  view:
+    items_games:
+      title: Apparait dans les jeux
 
 search:
   licenses:
@@ -115,3 +155,10 @@ search:
 form:
   button:
     filter: Filtrer
+  sorting:
+    ASC: Croissant
+    DESC: Décroissant
+  order_way:
+    label: Sens du tri
+  order_by:
+    label: Trier par

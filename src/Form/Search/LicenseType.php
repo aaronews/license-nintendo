@@ -17,6 +17,9 @@ class LicenseType extends AbstractType
             ->add('name', TextType::class,array(
                 'required' => false,
                 'label' => 'licenses.form.name.label',
+                'attr' => array(
+                    'placeholder' => 'licenses.form.name.placeholder',
+                ),
                 'row_attr' => array(
                     'class' => 'col-sm-10'
                 ),

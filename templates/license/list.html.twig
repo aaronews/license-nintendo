@@ -16,7 +16,7 @@
         {% include 'layout/animated-card-content.html.twig' with {
             'cardThumbnail' : license.thumbnail,
             'cardTitle' : license.name,
-            'cardUrl' : null,
+            'cardUrl' : path('licenses_view', {slug : license.slug}),
         }%}
     {% endfor %}
 {% endblock %}

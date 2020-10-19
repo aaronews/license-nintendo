@@ -4,6 +4,7 @@ namespace App\Form\Search;
 
 use App\Entity\Search\AbstractSearch;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -13,12 +14,19 @@ class AbstractSearchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class,array(
+           /*  ->add('orderWay', ChoiceType::class,array(
                 'required' => false,
+                'label' => 'form.order_way.label',
+                'placeholder' => false,
+                'choices' => array(
+                    'form.sorting.ASC' => 'ASC',
+                    'form.sorting.DESC' => 'DESC',
+                ),
+                'data' => 'ASC',
                 'row_attr' => array(
                     'class' => 'col-sm-6'
                 ),
-            ))
+            )) */
         ;
     }
 

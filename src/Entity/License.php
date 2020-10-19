@@ -23,6 +23,7 @@ class License extends AbstractDisplayableEntity
     /**
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity=Game::class, mappedBy="license", fetch="EXTRA_LAZY")
+     * @ORM\OrderBy({"releaseDate"="DESC"})
      */
     private $games;
 

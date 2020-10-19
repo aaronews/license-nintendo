@@ -10,7 +10,17 @@ class AbstractSearch
     private $name;
 
     /**
-     * Get name of license
+     * @var string|null
+     */
+    private $orderBy;
+
+    /**
+     * @var string|null
+     */
+    private $orderWay;
+
+    /**
+     * Get name value
      *
      * @return string|null
      */
@@ -20,7 +30,7 @@ class AbstractSearch
     }
 
     /**
-     * Set name of license
+     * Set name value
      *
      * @param string|null $name
      * @return self
@@ -28,6 +38,52 @@ class AbstractSearch
     public function setName(?string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get order by value
+     *
+     * @return string|null
+     */
+    public function getOrderBy(): ?string
+    {
+        return $this->orderBy;
+    }
+
+    /**
+     * Set order by value
+     *
+     * @param string|null $orderBy
+     * @return self
+     */
+    public function setOrderBy(?string $orderBy): self
+    {
+        $this->orderBy = $orderBy;
+
+        return $this;
+    }
+
+    /**
+     * Get order way value
+     *
+     * @return string|null
+     */
+    public function getOrderWay(): ?string
+    {
+        return $this->orderWay;
+    }
+
+    /**
+     * Set order way value
+     *
+     * @param string|null $orderWay
+     * @return self
+     */
+    public function setOrderWay(?string $orderWay): self
+    {
+        $this->orderWay = $orderWay;
 
         return $this;
     }

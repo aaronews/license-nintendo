@@ -23,7 +23,7 @@
         {% include 'layout/animated-card-content.html.twig' with {
             'cardThumbnail' : console.thumbnail,
             'cardTitle' : console.name,
-            'cardUrl' : null,
+            'cardUrl' :  path('consoles_view', {slug: console.slug}),
         }%}
     {% endfor %}
 {% endblock %}

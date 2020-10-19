@@ -1,9 +1,9 @@
 <div class="col-lg-3 col-md-4 col-sm-6 col-12 card p-0 animated-card border-0 ">
     <div class="animated-card-content d-flex justify-content-center align-items-center flex-column position-absolute w-100 h-100">
+        <a href="{{cardUrl}}" class="text-center text-decoration-none">
             <h3 class="animated-card-title">{{cardTitle}}</h3>
             <span class="font-weight-bold btn btn-primary btn-lg">{{'licenses.list.view_details'|trans}}</span>
+        </a>
     </div>
-    <a href="{{cardUrl}}">
-        <img src="{{asset(cardThumbnail)}}" class="animated-card-thumbnail" alt="{{cardTitle}}"/>
-    </a>
+    <img src="{{asset(cardThumbnail)}}" class="animated-card-thumbnail" alt="{{cardTitle}}"/>
 </div>

@@ -48,9 +48,9 @@ abstract class AbstractEntityService{
      *
      * @return AbstractEntity[]
      */
-    public function findAll()
+    public function findAll(array $sortOptions = array())
     {
-        return $this->repository->findAll();
+        return $this->repository->findBy(array(), $sortOptions);
     }
 
     /**
@@ -61,5 +61,24 @@ abstract class AbstractEntityService{
      */
     public function findBySearchCriterias(AbstractSearch $search){
         return $this->repository->findBySearchCriterias($search);
+    }
+
+    /**
+     * Get columns list for sort
+     *
+     * @return array
+     */
+    public function getMappingFieldsForSort()
+    {
+        $columns = $this->repository->getColumnNames();
+        
+        $ignoreColumns = array('create_at','update_at','id');
+
+        foreach($columns as $key => $column){
+            if(in_array($column, $ignoreColumns)){
+                unset($columns[$key]);
+            }
+        }
+        return $columns;
     }
 }

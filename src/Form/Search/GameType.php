@@ -6,9 +6,6 @@ use App\Entity\Genre;
 use App\Entity\Console;
 use App\Entity\License;
 use App\Entity\Search\Game;
-use App\Service\GenresService;
-use App\Service\ConsolesService;
-use App\Service\LicensesService;
 use App\Repository\GenreRepository;
 use App\Repository\ConsoleRepository;
 use App\Repository\LicenseRepository;
@@ -18,6 +15,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
@@ -25,7 +23,6 @@ class GameType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $currentYear = (int) date('Y');
         $builder
             ->add('name', TextType::class,array(
                 'required' => false,
@@ -128,6 +125,17 @@ class GameType extends AbstractType
                     'class' => 'col-sm-12 text-center'
                 ),
             ))
+            /* ->add('orderBy', ChoiceType::class,array(
+                'required' => false,
+                'label' => 'form.order_by.label',
+                'placeholder' => false,
+                'choice_value' => function(GamesService $gamesService = null){
+                    return ($gamesService ? $gamesService->getMappingFieldsForSort() : 'a');
+                },
+                'row_attr' => array(
+                    'class' => 'col-sm-6'
+                ),
+            )) */
         ;
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Character;
 use App\Form\Search\CharacterType;
 use App\Service\CharactersService;
 use Knp\Component\Pager\PaginatorInterface;
@@ -33,6 +34,16 @@ class CharacterController extends AbstractController
         return $this->render('character/list.html.twig', [
             'characters' => $characters,
             'searchForm' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/{slug}", name="view", requirements={"slug"="^[a-z0-9]+(\-{1}[a-z0-9]+)*$"})
+     */
+    public function view(Character $character)
+    {
+        return $this->render('character/view.html.twig', [
+            'character' => $character
         ]);
     }
 }

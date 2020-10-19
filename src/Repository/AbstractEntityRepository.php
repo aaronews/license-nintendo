@@ -52,11 +52,20 @@ abstract class AbstractEntityRepository extends ServiceEntityRepository
      * @return AbstractEntity[]|null
      */
     public function findAllSortByProperty(string $property, string $sort = 'ASC'){
-        if(in_array($property, $this->getEntityManager()->getClassMetadata($this->getEntityName())->getColumnNames())){
+        if(in_array($property, $this->getColumnNames())){
             return $this->createQueryBuilder('E')
                         ->orderBy('E.' . $property, $sort);
         }
         return null;
+    }
+
+    /**
+     * Get colum names of entity table
+     *
+     * @return array
+     */
+    public function getColumnNames(){
+        return $this->getEntityManager()->getClassMetadata($this->getEntityName())->getColumnNames();
     }
 
 }

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Console;
 use App\Form\Search\ConsoleType;
 use App\Service\ConsolesService;
 use Knp\Component\Pager\PaginatorInterface;
@@ -32,6 +33,16 @@ class ConsoleController extends AbstractController
         return $this->render('console/list.html.twig', [
             'consoles' => $consoles,
             'searchForm' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/{slug}", name="view", requirements={"slug"="^[a-z0-9]+(\-{1}[a-z0-9]+)*$"})
+     */
+    public function view(Console $console)
+    {
+        return $this->render('console/view.html.twig', [
+            'console' => $console
         ]);
     }
 }
