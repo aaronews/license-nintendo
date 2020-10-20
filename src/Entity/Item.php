@@ -13,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Item extends AbstractDisplayableEntity
 {
     /**
+     * @var integer
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -20,6 +21,7 @@ class Item extends AbstractDisplayableEntity
     private $id;
 
     /**
+     * @var ArrayCollection
      * @ORM\OneToMany(targetEntity=GameItem::class, mappedBy="item", fetch="EXTRA_LAZY")
      */
     private $gameItems;
@@ -29,12 +31,19 @@ class Item extends AbstractDisplayableEntity
         $this->gameItems = new ArrayCollection();
     }
 
+    /**
+     * Get id value
+     *
+     * @return integer|null
+     */
     public function getId(): ?int
     {
         return $this->id;
     }
 
     /**
+     * Get list of game items
+     * 
      * @return Collection|GameItem[]
      */
     public function getGameItems(): Collection
@@ -42,6 +51,12 @@ class Item extends AbstractDisplayableEntity
         return $this->gameItems;
     }
 
+    /**
+     * Add a game item of collection
+     *
+     * @param GameItem $gameItem
+     * @return self
+     */
     public function addGameItem(GameItem $gameItem): self
     {
         if (!$this->gameItems->contains($gameItem)) {
@@ -52,6 +67,12 @@ class Item extends AbstractDisplayableEntity
         return $this;
     }
 
+    /**
+     * Remove a game item of collection
+     *
+     * @param GameItem $gameItem
+     * @return self
+     */
     public function removeGameItem(GameItem $gameItem): self
     {
         if ($this->gameItems->contains($gameItem)) {

@@ -62,9 +62,9 @@ class GameType extends AbstractType
             ))
             ->add('nbPlayersMin', IntegerType::class, array(
                 'required' => false,
-                'label' => 'games.form.players_numbers_min.label',
+                'label' => 'games.form.player_numbers_min.label',
                 'attr' => array(
-                    'placeholder' => 'games.form.players_numbers_min.placeholder',
+                    'placeholder' => 'games.form.player_numbers_min.placeholder',
                 ),
                 'row_attr' => array(
                     'class' => 'col-sm-6'
@@ -72,9 +72,9 @@ class GameType extends AbstractType
             ))
             ->add('nbPlayersMax', IntegerType::class, array(
                 'required' => false,
-                'label' => 'games.form.players_numbers_max.label',
+                'label' => 'games.form.player_numbers_max.label',
                 'attr' => array(
-                    'placeholder' => 'games.form.players_numbers_max.placeholder',
+                    'placeholder' => 'games.form.player_numbers_max.placeholder',
                 ),
                 'row_attr' => array(
                     'class' => 'col-sm-6'

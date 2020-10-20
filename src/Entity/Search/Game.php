@@ -5,26 +5,49 @@ namespace App\Entity\Search;
 use App\Entity\Genre;
 use App\Entity\Console;
 use App\Entity\License;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class Game extends AbstractSearch
 {
     /**
      * @var \DateTimeInterface|null
+     * @Assert\Expression(
+     *     "!this.getReleaseDateMax()",
+     *     message="errors.form.game.release_date.is_required_if_max_set"
+     * )
+     * @Assert\LessThanOrEqual(propertyPath="releaseDateMax", message="errors.form.game.release_date.lower_to_max")
      */
     private $releaseDateMin;
     
     /**
      * @var \DateTimeInterface|null
+     * @Assert\Expression(
+     *     "!this.getReleaseDateMin()",
+     *     message="errors.form.game.release_date.is_required_if_min_set"
+     * )
+     * @Assert\GreaterThanOrEqual(propertyPath="releaseDateMin", message="errors.form.game.release_date.greather_to_min")
      */
     private $releaseDateMax;
 
     /**
      * @var integer|null
+     * @Assert\Expression(
+     *     "!this.getNbPlayersMax()",
+     *     message="errors.form.game.player_numbers.is_required_if_max_set"
+     * )
+     * @Assert\Positive
+     * @Assert\LessThanOrEqual(propertyPath="nbPlayersMax", message="errors.form.game.player_numbers.lower_to_max")
      */
     private $nbPlayersMin;
 
     /**
      * @var integer|null
+     * @Assert\Expression(
+     *     "!this.getNbPlayersMin()",
+     *     message="errors.form.game.player_numbers.is_required_if_min_set"
+     * )
+     * @Assert\Positive
+     * @Assert\GreaterThanOrEqual(propertyPath="nbPlayersMin", message="errors.form.game.player_numbers.greather_to_min")
      */
     private $nbPlayersMax;
 

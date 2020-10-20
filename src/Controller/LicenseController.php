@@ -3,14 +3,13 @@
 namespace App\Controller;
 
 use App\Entity\License;
+use App\Service\GamesService;
 use App\Form\Search\LicenseType;
 use App\Service\LicensesService;
+use App\Entity\AbstractDisplayableEntity;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Search\License as SearchLicense;
-use App\Entity\Search\Game as SearchGame;
-use App\Form\Search\GameType;
-use App\Service\GamesService;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -28,6 +27,10 @@ class LicenseController extends AbstractController
         $form = $this->createForm(LicenseType::class, $search);
         $form->handleRequest($request);
 
+        if($form->isSubmitted() && !$form->isValid()){
+            $search = new SearchLicense();
+        }
+
         $licenses = $paginator->paginate(
             $licensesService->findBySearchCriterias($search),
             $request->query->getInt('page', 1), 
@@ -41,7 +44,7 @@ class LicenseController extends AbstractController
     }
 
     /**
-     * @Route("/{slug}", name="view", requirements={"slug"="^[a-z0-9]+(\-{1}[a-z0-9]+)*$"})
+     * @Route("/{slug}", name="view", requirements={"slug"=AbstractDisplayableEntity::SLUG_PATTERN})
      */
     public function view(License $license, GamesService $gamesService)
     {
@@ -52,7 +55,7 @@ class LicenseController extends AbstractController
     }
 
     /**
-     * @Route("/{slug}/games", name="games", requirements={"slug"="^[a-z0-9]+(\-{1}[a-z0-9]+)*$"})
+     * @Route("/{slug}/games", name="games", requirements={"slug"=AbstractDisplayableEntity::SLUG_PATTERN})
      */
     public function games(License $license, GamesService $gamesService, PaginatorInterface $paginator, Request $request)
     {

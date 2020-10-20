@@ -13,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Genre
 {
     /**
+     * @var integer
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
@@ -20,11 +21,21 @@ class Genre
     private $id;
 
     /**
+     * @var string
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\NotNull
+     * @Assert\Length(
+     *      min=3,
+     *      max=255,
+     *      minMessage="errors.form.genr.name.to_short",
+     *      maxMessage="errors.form.common.name.to_long"
+     * )
      */
     private $name;
 
     /**
+     * @var ArrayCollection
      * @ORM\ManyToMany(targetEntity=Game::class, mappedBy="genres", fetch="EXTRA_LAZY")
      */
     private $games;
@@ -34,16 +45,31 @@ class Genre
         $this->games = new ArrayCollection();
     }
 
-    public function getId(): ?int
+    /**
+     * Get id value
+     *
+     * @return integer
+     */
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    /**
+     * Get name value
+     *
+     * @return string
+     */
+    public function getName(): string
     {
         return $this->name;
     }
 
+    /**
+     * Set name value
+     *
+     * @return string
+     */
     public function setName(string $name): self
     {
         $this->name = $name;
@@ -52,6 +78,8 @@ class Genre
     }
 
     /**
+     * Get list of games
+     * 
      * @return Collection|Game[]
      */
     public function getGames(): Collection
@@ -59,6 +87,12 @@ class Genre
         return $this->games;
     }
 
+    /**
+     * Add a game of collection
+     *
+     * @param Game $game
+     * @return self
+     */
     public function addGame(Game $game): self
     {
         if (!$this->games->contains($game)) {
@@ -69,6 +103,12 @@ class Genre
         return $this;
     }
 
+    /**
+     * Remove a game of collection
+     *
+     * @param Game $game
+     * @return self
+     */
     public function removeGame(Game $game): self
     {
         if ($this->games->contains($game)) {

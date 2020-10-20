@@ -23,18 +23,22 @@ class Game extends AbstractDisplayableEntity
     /**
      * @var string
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
+     * @Assert\NotNull
      */
     private $history;
 
     /**
      * @var \DateTimeInterface
      * @ORM\Column(type="date")
+     * @Assert\Date
      */
     private $releaseDate;
 
     /**
      * @var integer
      * @ORM\Column(type="smallint")
+     * @Assert\Positive
      */
     private $nbPlayers;
 
@@ -42,6 +46,7 @@ class Game extends AbstractDisplayableEntity
      * @var License
      * @ORM\ManyToOne(targetEntity=License::class, inversedBy="games", fetch="EXTRA_LAZY")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\NotNull
      */
     private $license;
 
@@ -71,6 +76,7 @@ class Game extends AbstractDisplayableEntity
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Positive
      */
     private $copiesSold;
 

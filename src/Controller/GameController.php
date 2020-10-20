@@ -25,6 +25,10 @@ class GameController extends AbstractController
         $form = $this->createForm(GameType::class, $search);
         $form->handleRequest($request);
 
+        if($form->isSubmitted() && !$form->isValid()){
+            $search = new SearchGame();
+        }
+
         $games = $paginator->paginate(
             $gamesService->findBySearchCriterias($search),
             $request->query->getInt('page', 1), 
@@ -38,7 +42,7 @@ class GameController extends AbstractController
     }
 
     /**
-     * @Route("/{slug}", name="view", requirements={"slug"="^[a-z0-9]+(\-{1}[a-z0-9]+)*$"})
+     * @Route("/{slug}", name="view", requirements={"slug"=AbstractDisplayableEntity::SLUG_PATTERN})
      */
     public function view(Game $game)
     {

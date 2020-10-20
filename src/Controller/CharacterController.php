@@ -26,6 +26,10 @@ class CharacterController extends AbstractController
         $form = $this->createForm(CharacterType::class, $search);
         $form->handleRequest($request);
 
+        if($form->isSubmitted() && !$form->isValid()){
+            $search = new SearchCharacter();
+        }
+
         $characters = $paginator->paginate(
             $itemsService->findBySearchCriterias($search),
             $request->query->getInt('page', 1), 
@@ -38,7 +42,7 @@ class CharacterController extends AbstractController
     }
 
     /**
-     * @Route("/{slug}", name="view", requirements={"slug"="^[a-z0-9]+(\-{1}[a-z0-9]+)*$"})
+     * @Route("/{slug}", name="view", requirements={"slug"=AbstractDisplayableEntity::SLUG_PATTERN})
      */
     public function view(Character $character)
     {

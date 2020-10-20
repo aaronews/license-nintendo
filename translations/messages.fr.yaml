@@ -65,19 +65,19 @@ consoles:
       placeholder: Nom
     release_date_min:
       label: >
-        Date de sortie de :
+        Date de sortie minimale :
       placeholder: JJ/MM/AAAA
     release_date_max:
       label: >
-        Date de sortie à :
+        Date de sortie maximale :
       placeholder: JJ/MM/AAAA
     release_price_min:
       label: >
-       Prix de lancement de :
+       Prix de lancement minimun :
       placeholder: 0
     release_price_max:
       label: >
-        Prix de lancement à :
+        Prix de lancement maximun :
       placeholder: 0
   view:
     console_games:
@@ -99,10 +99,10 @@ games:
     genre:
       label: Genre de jeu
       placeholder: Séléctionner un genre
-    players_numbers_min:
+    player_numbers_min:
       label: Nombre de joueur minimum
       placeholder: 0
-    players_numbers_max:
+    player_numbers_max:
       label: Nombre de joueur maximum
       placeholder: 0
     release_date_min:

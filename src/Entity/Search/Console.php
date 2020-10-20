@@ -3,26 +3,49 @@
 namespace App\Entity\Search;
 
 use App\Entity\Game;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class Console extends AbstractSearch
 {
     /**
      * @var \DateTimeInterface|null
+     * @Assert\Expression(
+     *     "!this.getReleaseDateMax()",
+     *     message="errors.form.console.release_date.is_required_if_max_set"
+     * )
+     * @Assert\LessThanOrEqual(propertyPath="releaseDateMax", message="errors.form.console.release_date.lower_to_max")
      */
     private $releaseDateMin;
     
     /**
      * @var \DateTimeInterface|null
+     * @Assert\Expression(
+     *     "!this.getReleaseDateMin()",
+     *     message="errors.form.console.release_date.is_required_if_min_set"
+     * )
+     * @Assert\GreaterThanOrEqual(propertyPath="releaseDateMin", message="errors.form.console.release_date.greather_to_min")
      */
     private $releaseDateMax;
 
     /**
      * @var integer|null
+     * @Assert\Expression(
+     *     "!this.getReleasePriceMax()",
+     *     message="errors.form.console.release_price.is_required_if_max_set"
+     * )
+     * @Assert\Positive
+     * @Assert\LessThanOrEqual(propertyPath="releasePriceMax", message="errors.form.console.release_price.lower_to_max")
      */
     private $releasePriceMin;
 
     /**
      * @var integer|null
+     * @Assert\Expression(
+     *     "!this.getReleasePriceMin()",
+     *     message="errors.form.console.release_price.is_required_if_min_set"
+     * )
+     * @Assert\Positive
+     * @Assert\GreaterThanOrEqual(propertyPath="releasePriceMin", message="errors.form.console.release_price.greather_to_min")
      */
     private $releasePriceMax;
 

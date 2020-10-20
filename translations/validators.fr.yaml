@@ -1,0 +1,31 @@
+errors:
+  form:
+    console:
+      release_date:
+        lower_to_max: Cette date doit être inférieur ou égale à la date sortie maximale
+        greather_to_min: Cette date doit être suppérieur ou égale à la date sortie minimale
+        is_required_if_max_set: Ce champ est requit si la date sortie maximale est renseignée
+        is_required_if_min_set: Ce champ est requit si la date sortie minimale est renseignée
+      release_price:
+        lower_to_max: Ce prix doit être inférieur ou égale au prix de lancement maximal
+        greather_to_min: Ce prix doit être suppérieur ou égale au prix de lancement minimal
+        is_required_if_max_set: Ce champ est requit si le prix de lancement maximal est renseigné
+        is_required_if_min_set: Ce champ est requit si prix de lancement minimal le est renseigné
+    game:
+      release_date:
+        lower_to_max: Cette date doit être inférieur ou égale à la date sortie maximale
+        greather_to_min: Cette date doit être suppérieur ou égale à la date sortie minimale
+        is_required_if_max_set: Ce champ est requit si la date sortie maximale est renseignée
+        is_required_if_min_set: Ce champ est requit si la date sortie minimale est renseignée
+      player_numbers:
+        lower_to_max: Ce nombre doit être inférieur ou égale au nombre de joueur maximal
+        greather_to_min: Ce nombre doit être suppérieur ou égale au nombre de joueur minimun
+        is_required_if_max_set: Ce champ est requit si le nombre de joueur maximal est renseigné
+        is_required_if_min_set: Ce champ est requit si nombre de joueur minimun le est renseigné
+    common:
+      name:
+        to_short: Le nom doit contenir au moins {{limit}} caractères
+        to_long: Le nom doit contenir moins de {{limit}} caractères
+      slug:
+        already_used: Ce slug existe déjà
+        bad_format: Format non respécté, veillez n'utiliser que des caractères miniscules non spéciaux, des chiffres et des tirets

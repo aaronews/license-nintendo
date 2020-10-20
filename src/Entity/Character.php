@@ -115,4 +115,13 @@ class Character extends AbstractDisplayableEntity
 
         return $this;
     }
+
+    /**
+     * Get available genders values
+     *
+     * @return string[]
+     */
+    public static function getGenders(){
+        return array('H', 'F');
+    }
 }
