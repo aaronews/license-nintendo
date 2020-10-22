@@ -1,0 +1,83 @@
+<header class="header-backoffice">
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li>
+                <a href="{{path('homepage')}}">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    {{'admin.layout.header.links.home'|trans}}
+                </a>
+            </li>
+            <li>
+                <a href="{{path('admin_dashboard')}}">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i>
+                    {{'admin.layout.header.links.dashboard'|trans}}
+                </a>
+            </li>
+            <li class="header">{{'layout.header.links.consoles'|trans}}</li>
+            <li>
+                <a href="{{path('admin_consoles_list')}}">
+                    <i class="fa fa-list" aria-hidden="true"></i>
+                    {{'admin.consoles.list.title'|trans}}
+                </a>
+            </li>
+            <li>
+                <a href="{{path('admin_consoles_add')}}">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    {{'admin.consoles.add.title'|trans}}
+                </a>
+            </li>
+            <li class="header">{{'layout.header.links.licenses'|trans}}</li>
+            <li>
+                <a href="{{path('admin_licenses_list')}}">
+                    <i class="fa fa-list" aria-hidden="true"></i>
+                    {{'admin.licenses.list.title'|trans}}
+                </a>
+            </li>
+            <li>
+                <a href="{{path('admin_licenses_add')}}">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    {{'admin.licenses.add.title'|trans}}
+                </a>
+            </li>
+            <li class="header">{{'layout.header.links.games'|trans}}</li>
+            <li>
+                <a href="{{path('admin_games_list')}}">
+                    <i class="fa fa-list" aria-hidden="true"></i>
+                    {{'admin.games.list.title'|trans}}
+                </a>
+            </li>
+            <li>
+                <a href="{{path('admin_games_add')}}">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    {{'admin.games.add.title'|trans}}
+                </a>
+            </li>
+            <li class="header">{{'layout.header.links.items'|trans}}</li>
+            <li>
+                <a href="{{path('admin_items_list')}}">
+                    <i class="fa fa-list" aria-hidden="true"></i>
+                    {{'admin.items.list.title'|trans}}
+                </a>
+            </li>
+            <li>
+                <a href="{{path('admin_items_add')}}">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    {{'admin.items.add.title'|trans}}
+                </a>
+            </li>
+            <li class="header">{{'layout.header.links.characters'|trans}}</li>
+            <li>
+                <a href="{{path('admin_characters_list')}}">
+                    <i class="fa fa-list" aria-hidden="true"></i>
+                    {{'admin.characters.list.title'|trans}}
+                </a>
+            </li>
+            <li>
+                <a href="{{path('admin_characters_add')}}">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    {{'admin.characters.add.title'|trans}}
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>

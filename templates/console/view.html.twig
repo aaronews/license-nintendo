@@ -6,15 +6,15 @@
 {% block title %}{{console.name}}{% endblock %}
 
 {% block body %}
-    <section class="console" role="main">
+    <main class="console">
         <div class="container-fluid p-0">
-            <div class="row ml-0 mr-0 console-description justify-content-center">
+            <section class="row ml-0 mr-0 console-description justify-content-center">
                 <h2 class="mt-5 text-center">{{console.name}}</h2>
                 <div class="col-12 text-center">
                     <p>{{console.description|raw}}</p>
                 </div>
-            </div>
-            <div class="row ml-0 mr-0 justify-content-center console-games">
+            </section>
+            <section class="row ml-0 mr-0 justify-content-center console-games">
                 <h2 class="p-3 text-center col-md-12">{{'consoles.view.console_games.title'|trans}}</h2>
                 {% for game in console.games %}
                     {% include 'layout/animated-card-content.html.twig' with {
@@ -23,7 +23,7 @@
                         'cardUrl' :  path('games_view', {slug: game.slug}),
                     }%}
                 {% endfor %}
-            </div>
+            </section>
         </div>
-    </section>
+    </main>
 {% endblock %}

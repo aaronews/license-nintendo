@@ -1,0 +1,35 @@
+{% extends 'admin/layout/layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/components/lists-backoffice.css')}}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{asset('js/admin/lists.js')}}"></script>
+{% endblock %}
+
+{% block body %}
+    <main class="list">
+        <div class="container-fluid p-0">
+            {% include 'admin/layout/menu-toogle.html.twig' %}
+            <section class="list-content">
+                <h2 class="p-3 text-center">
+                    {% block title %}
+                    {% endblock %}
+                </h2>
+                <div class="row justify-content-center p-2">
+                    <div class="col-md-11">
+                        <div class="list-header block-content list-group-item">
+                            {% block listHeader %}
+                            {% endblock %}
+                        </div>
+                        <div class="list-group">
+                            {% block listRows %}
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}

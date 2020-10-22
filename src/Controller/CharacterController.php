@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Character;
 use App\Form\Search\CharacterType;
 use App\Service\CharactersService;
+use App\Entity\AbstractDisplayableEntity;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;

@@ -1,0 +1,93 @@
+#sidebar-wrapper{
+    z-index:1;
+    position: fixed;
+    width:0;
+    height:100%;
+    background: #1a1a1a;
+    color: #fff;
+    overflow-x: hidden;
+    opacity:0.9;
+    transition:all .5s;
+    display:flex;
+}
+  
+main{
+    width: 100%;	
+    padding:15px;
+    transition:all .5s;
+}
+
+#menu-toggle{
+    transition:all .3s;
+    font-size:2em;
+}
+
+body.menuDisplayed #sidebar-wrapper{
+    width:250px;
+}
+
+body.menuDisplayed main{
+    padding-left:250px;
+    overflow-y: hidden;
+}
+
+.sidebar-nav {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    position: relative;
+}
+
+.sidebar-nav li {
+    background-color: transparent;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    line-height: 20px;
+}
+
+.sidebar-nav li a {
+    padding: 10px 15px 10px 30px;
+    display: block;
+    color: #fff;
+}
+
+.sidebar-nav li .fa {
+    margin-right: 10px;
+}
+
+.sidebar-nav li a:active,
+.sidebar-nav li a:hover,
+.sidebar-nav li a:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+.sidebar-nav li::before {
+    background-color: #2574A9;
+    position: absolute;
+    content: '';
+    height: 100%;
+    left: 0;
+    top: 0;
+    -webkit-transition: width 0.2s ease-in;
+    transition: width 0.2s ease-in;
+    width: 3px;
+    z-index: -1;
+}
+
+.sidebar-nav li:hover::before {
+    width: 100%;
+}
+
+.sidebar-nav .header {
+    font-size: 12px;
+    text-transform: uppercase;
+    background-color: #151515;
+    padding: 10px 15px 10px 30px;
+}
+
+.sidebar-nav .header::before {
+    background-color: transparent;
+}
+  

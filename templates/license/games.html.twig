@@ -6,9 +6,9 @@
 {% block title %}{{'licenses.games.title'|trans ~ license.name}}{% endblock %}
 
 {% block body %}
-    <section class="license" role="main">
+    <main class="license">
         <div class="container-fluid p-0">
-            <div class="row ml-0 mr-0 license-games justify-content-center">
+            <section class="row ml-0 mr-0 license-games justify-content-center">
                 <h2 class="p-3 text-center col-md-12">{{'licenses.games.title'|trans ~ license.name}}</h2>
                 {% for game in license.games %}
                     {% include 'layout/animated-card-content.html.twig' with {
@@ -17,7 +17,7 @@
                         'cardUrl' :  path('games_view', {slug: game.slug}),
                     }%}
                 {% endfor %}
-            </div>
+            </section>
         </div>
-    </section>
+    </main>
 {% endblock %}

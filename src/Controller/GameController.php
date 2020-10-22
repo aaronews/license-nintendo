@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Game;
 use App\Form\Search\GameType;
 use App\Service\GamesService;
+use App\Entity\AbstractDisplayableEntity;
 use App\Entity\Search\Game as SearchGame;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;

@@ -1,0 +1,89 @@
+{% extends 'admin/layout/lists.html.twig' %}
+
+{% block title %}{{ 'games.list.title'|trans }}{% endblock %}
+
+{% block listHeader %}
+    <div class="row">
+        <div class="col-md-3">
+            <span>{{ 'games.list.name_and_license'|trans }}</span>
+        </div>
+        <div class="col-md-2">
+            <span>{{ 'games.form.genre.label'|trans }}</span>
+        </div>
+        <div class="col-md-2">
+            <span>{{ 'games.form.console.label'|trans }}</span>
+        </div>
+        <div class="col-md-2">
+            <span>{{ 'games.form.player_numbers.label'|trans }}</span>
+        </div>
+        <div class="col-md-2">
+            <span>{{ 'games.form.release_date.label'|trans }}</span>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+{% endblock %}
+
+{% block listRows %}
+    {% for game in games %}
+        <div class="block-content list-group-item" >
+			<div class="row">
+                <div class="col-md-3">
+                    <p>
+                        <span>{{ 'games.form.name.label'|trans }}</span> : {{ game.name }}<br/>
+                        <span>{{ 'games.form.licence.label'|trans }}</span> : {{ game.license.name }}
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <p>
+                        {% set countGenres = game.genres.count() %}
+                        {% set genres = '' %}
+                        {% for genre in game.genres %}
+                            {% set genres = genres ~ genre.name %}
+                            {% if loop.index < countGenres %}
+                                {% set genres = genres ~ '<br/>' %}
+                            {% endif %}
+                        {% endfor %}
+                        {{genres|raw}}
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <p>
+                        {% set countConsoles = game.consoles.count() %}
+                        {% set consoles = '' %}
+                        {% for console in game.consoles %}
+                            {% set consoles = consoles ~ console.name %}
+                            {% if loop.index < countConsoles %}
+                                {% set consoles = consoles ~ '<br/>' %}
+                            {% endif %}
+                        {% endfor %}
+                        {{consoles|raw}}
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <p>{{ game.nbPlayers }}</p>
+                </div>
+                <div class="col-md-2">
+                    <p>{{ game.releaseDate|date('d/m/Y') }}</p>
+                </div>
+                <div class="col-md-1 list-action">
+                    <div class="btn-group dropbottom">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{path('admin_games_edit', {id : game.id})}}">
+                               <i class="fas fa-edit"></i>
+                                {{'form.button.edit'|trans}}
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{path('admin_games_remove', {id : game.id})}}">
+                               <i class="fas fa-trash"></i>
+                                {{'form.button.remove'|trans}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

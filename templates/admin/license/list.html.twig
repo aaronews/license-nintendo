@@ -1,0 +1,57 @@
+{% extends 'admin/layout/lists.html.twig' %}
+
+{% block title %}{{ 'licenses.list.title'|trans }}{% endblock %}
+
+{% block listHeader %}
+    <div class="row">
+        <div class="col-md-2">
+            <span>{{ 'licenses.form.name.label'|trans }}</span>
+        </div>
+        <div class="col-md-9">
+            <span>{{ 'licenses.form.description.label'|trans }}</span>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+{% endblock %}
+
+{% block listRows %}
+    {% for license in licenses %}
+        <div class="block-content list-group-item" >
+			<div class="row">
+                <div class="col-md-2">
+                    <p>
+                        {{ license.name }}
+                    </p>
+                </div>
+                <div class="col-md-9 row">
+                    <div class="col-md-11">
+                        <p class="truncated-text">
+                            {{ license.description|raw }}
+                        </p>
+                    </div>
+                    <div class="col-md-1">
+                        <i class="fas fa-search-plus view-full-text"></i>
+                    </div>
+                </div>
+                <div class="col-md-1 list-action">
+                    <div class="btn-group dropbottom">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{path('admin_licenses_edit', {id : license.id})}}">
+                               <i class="fas fa-edit"></i>
+                                {{'form.button.edit'|trans}}
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{path('admin_licenses_remove', {id : license.id})}}">
+                               <i class="fas fa-trash"></i>
+                                {{'form.button.remove'|trans}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

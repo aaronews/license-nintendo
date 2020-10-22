@@ -6,15 +6,15 @@
 {% block title %}{{license.name}}{% endblock %}
 
 {% block body %}
-    <section class="license" role="main">
+    <main class="license">
         <div class="container-fluid p-0">
-            <div class="row ml-0 mr-0 license-description justify-content-center">
+            <section class="row ml-0 mr-0 license-description justify-content-center">
                 <h2 class="mt-5 text-center">{{license.name}}</h2>
                 <div class="col-12 text-center">
                     <p>{{license.description|raw}}</p>
                 </div>
-            </div>
-            <div class="row ml-0 mr-0 justify-content-center license-best-games">
+            </section>
+            <section class="row ml-0 mr-0 justify-content-center license-best-games">
                 <h2 class="p-3 text-center col-md-12">{{'licenses.view.best_games.title'|trans}}</h2>
                 {% for game in bestGames %}
                     {% include 'layout/animated-card-content.html.twig' with {
@@ -29,7 +29,7 @@
                         {{'licenses.view.best_games.btn_see_all'|trans}}
                     </a>
                 </div>
-            </div>
+            </section>
         </div>
-    </section>
+    </main>
 {% endblock %}

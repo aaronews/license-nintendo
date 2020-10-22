@@ -1,0 +1,30 @@
+.list .block-content{
+    font-size : 15px;
+}
+
+.list .block-content > .row{
+    align-items: center;
+}
+
+.list .block-content.list-header,
+.list .list-group .block-content span{
+    font-weight: bold;
+}
+
+.list .block-content:not(.list-header):nth-of-type(2n +1){
+    background: #eeeeee;
+}
+
+.truncated-text{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.truncated-text br{
+    display: none;
+}
+
+.view-full-text{
+    cursor: pointer;
+}

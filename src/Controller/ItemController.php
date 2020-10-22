@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Item;
 use App\Form\Search\ItemType;
 use App\Service\ItemsService;
+use App\Entity\AbstractDisplayableEntity;
 use App\Entity\Search\Item as SearchItem;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;

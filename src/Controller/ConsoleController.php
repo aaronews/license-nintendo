@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Console;
 use App\Form\Search\ConsoleType;
 use App\Service\ConsolesService;
+use App\Entity\AbstractDisplayableEntity;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Search\Console as SearchConsole;

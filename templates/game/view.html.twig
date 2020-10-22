@@ -6,21 +6,21 @@
 {% block title %}{{game.name}}{% endblock %}
 
 {% block body %}
-    <section class="game" role="main">
+    <main class="game">
         <div class="container-fluid p-0">
-            <div class="row ml-0 mr-0 game-description justify-content-center">
+            <section class="row ml-0 mr-0 game-description justify-content-center">
                 <h2 class="mt-5 text-center">{{game.name}}</h2>
                 <div class="col-12 text-center">
                     <p>{{game.description|raw}}</p>
                 </div>
-            </div>
-            <div class="row ml-0 mr-0 justify-content-center game-history">
+            </section>
+            <section class="row ml-0 mr-0 justify-content-center game-history">
                 <h2 class="p-3 text-center col-md-12">{{'games.view.history.title'|trans}}</h2>
                 <div class="col-12 text-center">
                     <p>{{game.history|raw}}</p>
                 </div>
-            </div>
-            <div class="row ml-0 mr-0 justify-content-center game-character">
+            </section>
+            <section class="row ml-0 mr-0 justify-content-center game-character">
                 <h2 class="p-3 text-center col-md-12">{{'games.view.characters.title'|trans}}</h2>
                 {% for gameCharacter in game.gameCharacters %}
                     {% include 'layout/animated-card-content.html.twig' with {
@@ -29,8 +29,8 @@
                         'cardUrl' : path('characters_view', {slug : gameCharacter.currentCharacter.slug}),
                     }%}
                 {% endfor %}
-            </div>
-            <div class="row ml-0 mr-0 justify-content-center game-items">
+            </section>
+            <section class="row ml-0 mr-0 justify-content-center game-items">
                 <h2 class="p-3 text-center col-md-12">{{'games.view.items.title'|trans}}</h2>
                 {% for gameItem in game.gameItems %}
                     {% include 'layout/animated-card-content.html.twig' with {
@@ -39,8 +39,8 @@
                         'cardUrl' : path('items_view', {slug : gameItem.item.slug}),
                     }%}
                 {% endfor %}
-            </div>
-            <div class="row ml-0 mr-0 justify-content-center game-characteristics">
+            </section>
+            <section class="row ml-0 mr-0 justify-content-center game-characteristics">
                 <h2 class="p-3 text-center col-md-12">{{'games.view.characteristics.title'|trans}}</h2>
                 <div class="col-md-12 characteristics-list">
                     <div class="row">
@@ -91,7 +91,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
-    </section>
+    </main>
 {% endblock %}

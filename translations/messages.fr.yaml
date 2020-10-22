@@ -7,6 +7,41 @@ layout:
       games: Jeux
       licenses: Licences
       consoles: Consoles
+      admin: Administration
+
+admin:
+  layout:
+    header:
+      links:
+        home: Accueil
+        dashboard: Tableau de bord
+  consoles:
+    add:
+      title: Ajouter une console
+    list:
+      title: Liste des consoles
+  licenses:
+    add:
+      title: Ajouter une licence
+    list:
+      title: Liste des licences
+  games:
+    add:
+      title: Ajouter un jeu
+    list:
+      title: Liste des jeux
+  items:
+    add:
+      title: Ajouter un objet
+    list:
+      title: Liste des objets
+  characters:
+    add:
+      title: Ajouter un personnage
+    list:
+      title: Liste des personnages
+
+
 
 homepage:
   title: Accueil
@@ -25,6 +60,8 @@ licenses:
     name:
       label: Nom de la licence
       placeholder: Nom
+    description:
+      label: Description
   view:
     best_games:
       title: Meilleurs jeux
@@ -49,6 +86,8 @@ characters:
     name:
       label: Nom du personnage
       placeholder: Nom
+    description:
+      label: Description
   view:
     game_characters:
       title: Apparait dans les jeux
@@ -71,6 +110,9 @@ consoles:
       label: >
         Date de sortie maximale :
       placeholder: JJ/MM/AAAA
+    release_date:
+      label: Date de sortie
+      placeholder: JJ/MM/AAAA
     release_price_min:
       label: >
        Prix de lancement minimun :
@@ -79,6 +121,11 @@ consoles:
       label: >
         Prix de lancement maximun :
       placeholder: 0
+    release_price:
+      label: Prix de lancement
+      placeholder: 0
+    description:
+      label: Description
   view:
     console_games:
       title: Jeux
@@ -86,6 +133,7 @@ consoles:
 games:
   list:
     title: Liste des jeux Nintendo
+    name_and_license: Nom et licence
   form:
     console:
       label: Jouable sur
@@ -105,6 +153,9 @@ games:
     player_numbers_max:
       label: Nombre de joueur maximum
       placeholder: 0
+    player_numbers:
+      label: Nombre de joueur
+      placeholder: 0
     release_date_min:
       label: >
         Date de sortie de :
@@ -112,6 +163,9 @@ games:
     release_date_max:
       label: >
         Date de sortie à :
+      placeholder: JJ/MM/YYYY
+    release_date:
+      label: Date de sortie
       placeholder: JJ/MM/YYYY
   view:
     history:
@@ -144,6 +198,8 @@ items:
     game:
       label: Est présent dans le jeu
       placeholder: Séléctionner un jeu
+    description:
+      label: Description
   view:
     items_games:
       title: Apparait dans les jeux
@@ -155,6 +211,8 @@ search:
 form:
   button:
     filter: Filtrer
+    edit: Modifier
+    remove: Supprimer
   sorting:
     ASC: Croissant
     DESC: Décroissant
