@@ -6,19 +6,28 @@ function init(){
     for(var index = 0; index < fullViewIcons.length; ++index){
         fullViewIcons[index].addEventListener('click', manageTextFullView);
     }
+    var RemoveLinks = document.querySelectorAll('.remove-entity');
+    for(var index = 0; index < RemoveLinks.length; ++index){
+        RemoveLinks[index].addEventListener('click', confirmRemove);
+    }
 }
 
+/**
+ * Display or hide truncated text
+ * @param {Event} event - Click event
+ * @return {void}
+ */
 function manageTextFullView(event){
     var target = event.currentTarget;
-    var paragraph = target.closest('.row').querySelector('p');
+    var textContainer = target.closest('.row').querySelector('.text-container');
     var iconToRemove, iconToAdd;
     
-    if(paragraph.classList.contains('truncated-text')){
-        paragraph.classList.remove('truncated-text');
+    if(textContainer.classList.contains('truncated-text')){
+        textContainer.classList.remove('truncated-text');
         iconToRemove = 'fa-search-plus';
         iconToAdd = 'fa-search-minus';
     }else{
-        paragraph.classList.add('truncated-text');
+        textContainer.classList.add('truncated-text');
         iconToRemove = 'fa-search-minus';
         iconToAdd = 'fa-search-plus';
     }
@@ -26,4 +35,15 @@ function manageTextFullView(event){
     target.classList.remove(iconToRemove);
     target.classList.add(iconToAdd);
     return;
+}
+
+/**
+ * Display dialog to confirm remove
+ * @param {Event} event - Click event
+ * @return {void}
+ */
+function confirmRemove(event){
+    if(!confirm(document.querySelector('main').getAttribute('data-text-confirm-remove-entity'))){
+        event.preventDefault();
+    }
 }

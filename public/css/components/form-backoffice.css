@@ -1,0 +1,41 @@
+.thumbnail img{
+    max-width: 100%;
+    max-height: 200px;
+}
+
+.clear-upload-preview{
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    color: #ffffff;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.clear-upload-preview:hover{
+    filter: brightness(150%);
+}
+
+.current-thumbnail.old-thumbnail{
+    background-color: rgba(0,0,0, 0.9);
+}
+
+.current-thumbnail.old-thumbnail img{
+    opacity: 0.2;
+}
+
+.tox.tox-tinymce{
+    min-height: 300px;
+}
+
+.custom-file-label{
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+}
+.custom-file-label::after{
+    content: '\f093';
+}
+
+.generate-slug{
+    color: #000 !important;
+}

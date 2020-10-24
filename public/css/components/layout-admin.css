@@ -1,0 +1,27 @@
+.admin main{
+    min-height: 100vh;
+}
+
+.admin h1{
+    background-color: #E1E1E1;
+}
+
+.admin section > div:not(.flash-message){
+    border-radius: 0 0 10px 10px;
+}
+
+.btn.btn-primary{
+    color : #fff;
+    background-color: #000;
+    border-color: #000;
+}
+.btn.btn-default{
+    color : #000;
+    background-color: #B1B1B1;
+}
+
+@media screen and (max-width: 992px) {
+    .admin h1{
+        font-size: 25px;
+    }
+}

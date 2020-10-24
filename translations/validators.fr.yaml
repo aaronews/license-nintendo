@@ -24,8 +24,8 @@ errors:
         is_required_if_min_set: Ce champ est requit si nombre de joueur minimun le est renseigné
     common:
       name:
-        to_short: Le nom doit contenir au moins {{limit}} caractères
-        to_long: Le nom doit contenir moins de {{limit}} caractères
+        to_short: Le nom doit contenir au moins {{ limit }} caractères
+        to_long: Le nom doit contenir moins de {{ limit }} caractères
       slug:
         already_used: Ce slug existe déjà
         bad_format: Format non respécté, veillez n'utiliser que des caractères miniscules non spéciaux, des chiffres et des tirets

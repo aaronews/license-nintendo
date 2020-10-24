@@ -1,0 +1,28 @@
+
+{% extends 'admin/layout/layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/components/form-backoffice.css')}}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{asset('js/admin/form.js')}}"></script>
+{% endblock %}
+
+{% block body %}
+    <main class="edit pt-0">
+        {% include 'admin/layout/menu-toogle.html.twig' %}
+        <div class="container-fluid">
+            <section class="form">
+                {% include 'admin/layout/flash-messages.html.twig' %}
+                <h1 class="text-center pt-3 pb-3 m-0">{% block title %}{% endblock %}</h1>
+                <div class="row justify-content-center border-top-0 border m-0">
+                    <div class="col-11 mt-4">
+                        {% block form %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}

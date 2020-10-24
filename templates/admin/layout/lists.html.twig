@@ -9,15 +9,19 @@
 {% endblock %}
 
 {% block body %}
-    <main class="list">
-        <div class="container-fluid p-0">
-            {% include 'admin/layout/menu-toogle.html.twig' %}
+    <main class="list pt-0"
+        {% block mainDataAttributes %}
+        {% endblock %}
+    >
+        {% include 'admin/layout/menu-toogle.html.twig' %}
+        <div class="container-fluid">
             <section class="list-content">
-                <h2 class="p-3 text-center">
+                {% include 'admin/layout/flash-messages.html.twig' %}
+                <h1 class="pt-3 pb-3 m-0 text-center">
                     {% block title %}
                     {% endblock %}
                 </h2>
-                <div class="row justify-content-center p-2">
+                <div class="row justify-content-md-center border-top-0 border m-0 p-3">
                     <div class="col-md-11">
                         <div class="list-header block-content list-group-item">
                             {% block listHeader %}

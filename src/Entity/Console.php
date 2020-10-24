@@ -7,9 +7,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * @ORM\Entity(repositoryClass=ConsoleRepository::class)
+ * @Vich\Uploadable
  */
 class Console extends AbstractDisplayableEntity
 {
@@ -24,7 +27,6 @@ class Console extends AbstractDisplayableEntity
     /**
      * @var \DateTimeInterface
      * @ORM\Column(type="date")
-     * @Assert\Date
      */
     private $releaseDate;
 
@@ -40,6 +42,12 @@ class Console extends AbstractDisplayableEntity
      * @ORM\ManyToMany(targetEntity=Game::class, mappedBy="consoles", fetch="EXTRA_LAZY")
      */
     private $games;
+
+    /**
+     * @Vich\UploadableField(mapping="consoles_images", fileNameProperty="thumbnail")
+     * @var File|null
+     */
+    private $imageFile;
 
     public function __construct()
     {
@@ -61,7 +69,7 @@ class Console extends AbstractDisplayableEntity
      *
      * @return \DateTimeInterface
      */
-    public function getReleaseDate(): \DateTimeInterface
+    public function getReleaseDate(): ?\DateTimeInterface
     {
         return $this->releaseDate;
     }
@@ -142,5 +150,30 @@ class Console extends AbstractDisplayableEntity
         }
 
         return $this;
+    }
+
+    /**
+     * Set imega file value
+     *
+     * @param File|null $imageFile
+     * @return void
+     */
+    public function setImageFile(?File $imageFile): void
+    {
+        $this->imageFile = $imageFile;
+
+        if($this->imageFile){
+            $this->setUpdateAt(new \Datetime());
+        }
+    }
+
+    /**
+     * Get image file value
+     *
+     * @return File|null
+     */
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
     }
 }

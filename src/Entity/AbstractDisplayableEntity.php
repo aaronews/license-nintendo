@@ -40,8 +40,6 @@ abstract class AbstractDisplayableEntity extends AbstractEntity
     /**
      * @var string
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotNull
-     * @Assert\Image
      */
     private $thumbnail;
 
@@ -49,8 +47,8 @@ abstract class AbstractDisplayableEntity extends AbstractEntity
      * @var string
      * @ORM\Column(type="string", length=255)
      * @Assert\NotNull
-     * @Assert\Expression(
-     *     "preg_match(self::SLUG_PATTERN, value)",
+     * @Assert\Regex(
+     *     pattern="/^[a-z0-9]+(\-{1}[a-z0-9]+)*$/",
      *     message="errors.form.common.slug.bad_format"
      * )
      */
@@ -118,7 +116,7 @@ abstract class AbstractDisplayableEntity extends AbstractEntity
      * @param string $thumbnail
      * @return self
      */
-    public function setThumbnail(string $thumbnail): self
+    public function setThumbnail(?string $thumbnail): self
     {
         $this->thumbnail = $thumbnail;
 

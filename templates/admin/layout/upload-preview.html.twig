@@ -1,0 +1,11 @@
+<div class="col-sm-6 col-12">
+    <div class="row justify-content-md-center text-center">
+        <div class="col-6 current-thumbnail {% if not thumbnailUrl %}d-none{% endif %} thumbnail p-0">
+            <img src="{{thumbnailUrl}}" alt="{{'form.img.alt.current_thumbnail'|trans}}">
+        </div>
+        <div class="col-6 preview-upload d-none thumbnail">
+            <i class="fas fa-2x fa-times bg-danger clear-upload-preview"></i>
+            <img alt="{{'form.img.alt.preview_upload'|trans}}">
+        </div>
+    </div>
+</div>

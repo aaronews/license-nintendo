@@ -1,7 +1,24 @@
+{% extends 'admin/layout/form.html.twig' %}
 
-{% extends 'admin/layout/layout.html.twig' %}
+{% block title %}{{'admin.consoles.edit.title'|trans}} "{{console.name}}"{% endblock %}
 
-{% block title %}{% endblock %}
-
-{% block body %}
+{% block form %}
+    {{ form_start(form)}}
+        <div class="row">
+            {{ form_row(form.name)}}
+            {{ form_row(form.slug)}}
+            {{ form_row(form.description)}}
+            {{ form_row(form.releasePrice)}}
+            {{ form_row(form.releaseDate)}}
+            <div class="col-12">
+                <div class="row align-items-center">
+                    {{ form_row(form.imageFile)}}
+                    {% include 'admin/layout/upload-preview.html.twig' with {
+                        'thumbnailUrl' : asset(vich_uploader_asset(console, 'imageFile'))
+                    }%}
+                </div>
+            </div>
+            {{ form_row(form.submit)}}
+        </div>
+    {{ form_end(form)}}
 {% endblock %}

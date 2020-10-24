@@ -18,8 +18,15 @@ admin:
   consoles:
     add:
       title: Ajouter une console
+      flash_success: Console ajoutée
+    edit:
+      title: Modifier la console
+      flash_success: Console modifiée
+    remove:
+      flash_success: Console supprimée
     list:
       title: Liste des consoles
+      confirm_remove: Êtes-vous sûr de vouloir supprimer cette console ?
   licenses:
     add:
       title: Ajouter une licence
@@ -126,6 +133,11 @@ consoles:
       placeholder: 0
     description:
       label: Description
+    thumbnail:
+      label: Vignette
+    slug:
+      label: Slug
+      placeholder: nom-de-la-console
   view:
     console_games:
       title: Jeux
@@ -213,6 +225,7 @@ form:
     filter: Filtrer
     edit: Modifier
     remove: Supprimer
+    create: Ajouter
   sorting:
     ASC: Croissant
     DESC: Décroissant
@@ -220,3 +233,9 @@ form:
     label: Sens du tri
   order_by:
     label: Trier par
+  img:
+    alt:
+      current_thumbnail: Vignette actuelle
+      preview_upload: Pré-visualisation de l'image uploadée
+  slug:
+    help: Générer à partir du nom
