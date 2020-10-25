@@ -2,13 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\LicenseRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\LicenseRepository;
+use Doctrine\Common\Collections\Collection;
+use Symfony\Component\HttpFoundation\File\File;
+use Doctrine\Common\Collections\ArrayCollection;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=LicenseRepository::class)
+ * @Vich\Uploadable
  */
 class License extends AbstractDisplayableEntity
 {
@@ -26,6 +29,12 @@ class License extends AbstractDisplayableEntity
      * @ORM\OrderBy({"releaseDate"="DESC"})
      */
     private $games;
+
+    /**
+     * @Vich\UploadableField(mapping="licenses_images", fileNameProperty="thumbnail")
+     * @var File|null
+     */
+    private $imageFile;
 
     public function __construct()
     {

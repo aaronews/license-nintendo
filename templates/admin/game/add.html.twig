@@ -1,6 +1,30 @@
+{% extends 'admin/layout/form.html.twig' %}
 
-{% extends 'admin/layout/layout.html.twig' %}
+{% block title %}{{'admin.games.add.title'|trans}}{% endblock %}
 
-{% block title %}{% endblock %}
-{% block body %}
+{% block form %}
+    {{ form_start(form)}}
+        <div class="row">
+            {{ form_row(form.name)}}
+            {{ form_row(form.slug)}}
+            {{ form_row(form.license)}}
+            {{ form_row(form.nbPlayers)}}
+            {{ form_row(form.consoles)}}
+            {{ form_row(form.genres)}}
+            {{ form_row(form.releaseDate)}}
+            {{ form_row(form.copiesSold)}}
+            {{ form_row(form.description)}}
+            {{ form_row(form.history)}}
+            <div class="col-12">
+                <div class="row align-items-center">
+                    {{ form_row(form.imageFile)}}
+                    {% include 'admin/layout/upload-preview.html.twig' with {
+                        'thumbnailUrl' : null
+                    } %}
+                </div>
+            </div>
+            {{ form_row(form.submit)}}
+        </div>
+    {{ form_end(form)}}
 {% endblock %}
+

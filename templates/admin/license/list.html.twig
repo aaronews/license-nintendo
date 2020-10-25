@@ -2,6 +2,10 @@
 
 {% block title %}{{ 'licenses.list.title'|trans }}{% endblock %}
 
+{% block mainDataAttributes %}
+    data-text-confirm-remove-entity="{{'admin.licenses.list.confirm_remove'|trans}}"
+{% endblock %}
+
 {% block listHeader %}
     <div class="row">
         <div class="col-md-2">
@@ -24,10 +28,8 @@
                     </p>
                 </div>
                 <div class="col-md-9 row">
-                    <div class="col-md-11">
-                        <p class="truncated-text">
-                            {{ license.description|raw }}
-                        </p>
+                    <div class="col-md-11 truncated-text text-container">
+                        {{ license.description|raw }}
                     </div>
                     <div class="col-md-1">
                         <i class="fas fa-search-plus view-full-text"></i>
@@ -44,7 +46,7 @@
                                 {{'form.button.edit'|trans}}
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{path('admin_licenses_remove', {id : license.id})}}">
+                            <a class="dropdown-item remove-entity" href="{{path('admin_licenses_remove', {id : license.id})}}">
                                <i class="fas fa-trash"></i>
                                 {{'form.button.remove'|trans}}
                             </a>

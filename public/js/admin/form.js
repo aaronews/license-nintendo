@@ -25,9 +25,9 @@ function init(){
         format: 'dd/mm/yyyy'
     });
 
-    tinymce.init({
+    /* tinymce.init({
         selector: '.tynimce-editor textarea'
-    });
+    }); */
 }
 
 /**

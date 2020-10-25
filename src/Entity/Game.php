@@ -7,9 +7,11 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=GameRepository::class)
+ * @Vich\Uploadable
  */
 class Game extends AbstractDisplayableEntity
 {
@@ -32,7 +34,7 @@ class Game extends AbstractDisplayableEntity
     /**
      * @var \DateTimeInterface
      * @ORM\Column(type="date")
-     * @Assert\Date
+     * @Assert\Type(\DateTimeInterface::class)
      */
     private $releaseDate;
 
@@ -76,10 +78,17 @@ class Game extends AbstractDisplayableEntity
     private $gameCharacters;
 
     /**
+     * @var integer
      * @ORM\Column(type="integer")
      * @Assert\Positive
      */
     private $copiesSold;
+
+    /**
+     * @Vich\UploadableField(mapping="games_images", fileNameProperty="thumbnail")
+     * @var File|null
+     */
+    private $imageFile;
 
     public function __construct()
     {
@@ -127,7 +136,7 @@ class Game extends AbstractDisplayableEntity
      *
      * @return \DateTimeInterface
      */
-    public function getReleaseDate(): \DateTimeInterface
+    public function getReleaseDate(): ?\DateTimeInterface
     {
         return $this->releaseDate;
     }
@@ -173,7 +182,7 @@ class Game extends AbstractDisplayableEntity
      *
      * @return License
      */
-    public function getLicense(): License
+    public function getLicense(): ?License
     {
         return $this->license;
     }

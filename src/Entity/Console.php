@@ -151,29 +151,4 @@ class Console extends AbstractDisplayableEntity
 
         return $this;
     }
-
-    /**
-     * Set imega file value
-     *
-     * @param File|null $imageFile
-     * @return void
-     */
-    public function setImageFile(?File $imageFile): void
-    {
-        $this->imageFile = $imageFile;
-
-        if($this->imageFile){
-            $this->setUpdateAt(new \Datetime());
-        }
-    }
-
-    /**
-     * Get image file value
-     *
-     * @return File|null
-     */
-    public function getImageFile(): ?File
-    {
-        return $this->imageFile;
-    }
 }

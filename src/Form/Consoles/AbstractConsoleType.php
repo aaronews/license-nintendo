@@ -27,7 +27,7 @@ class AbstractConsoleType extends AbstractType
                 ),
             ))
             ->add('description', TextareaType::class, array(
-                'required' => false,
+                'required' => true,
                 'label' => 'consoles.form.description.label',
                 'row_attr' => array(
                     'class' => 'col-sm-12 tynimce-editor'

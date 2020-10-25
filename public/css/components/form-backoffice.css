@@ -24,6 +24,7 @@
     opacity: 0.2;
 }
 
+textarea,
 .tox.tox-tinymce{
     min-height: 300px;
 }

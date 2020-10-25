@@ -17,6 +17,11 @@ main{
     transition:all .5s;
 }
 
+main,
+.menu-toogle-container{
+    animation: closeMenu 0.5s forwards;
+}
+
 #menu-toggle{
     transition:all .3s;
     font-size:2em;
@@ -26,8 +31,9 @@ body.menuDisplayed #sidebar-wrapper{
     width:250px;
 }
 
-body.menuDisplayed main{
-    padding-left:250px;
+body.menuDisplayed main,
+body.menuDisplayed .menu-toogle-container{
+    animation: openMenu 0.5s forwards;
     overflow-y: hidden;
 }
 

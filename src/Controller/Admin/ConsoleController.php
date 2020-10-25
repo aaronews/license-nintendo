@@ -38,7 +38,7 @@ class ConsoleController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
             $consoleService->saveEntity($console, false);
             $this->addFlash('success', 'admin.consoles.add.flash_success');
-            $form = $this->createForm(ConsoleType::class, new Console());
+            $form = $this->createForm(AddConsoleType::class, new Console());
         }
 
         return $this->render('admin/console/add.html.twig', [

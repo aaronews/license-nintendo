@@ -2,9 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\GameCharacterRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\GameCharacterRepository;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=GameCharacterRepository::class)
@@ -42,6 +44,12 @@ class GameCharacter extends AbstractEntity
      * @Assert\Image
      */
     private $thumbnail;
+
+    /**
+     * @Vich\UploadableField(mapping="game_characters_images", fileNameProperty="thumbnail")
+     * @var File|null
+     */
+    private $imageFile;
 
     /**
      * Get id value
@@ -120,5 +128,30 @@ class GameCharacter extends AbstractEntity
         $this->thumbnail = $thumbnail;
 
         return $this;
+    }
+
+    /**
+     * Set imega file value
+     *
+     * @param File|null $imageFile
+     * @return void
+     */
+    public function setImageFile(?File $imageFile): void
+    {
+        $this->imageFile = $imageFile;
+
+        if($this->imageFile){
+            $this->setUpdateAt(new \Datetime());
+        }
+    }
+
+    /**
+     * Get image file value
+     *
+     * @return File|null
+     */
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
     }
 }

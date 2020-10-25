@@ -30,23 +30,51 @@ admin:
   licenses:
     add:
       title: Ajouter une licence
+      flash_success: Licence ajoutée
+    edit:
+      title: Modifier la licence
+      flash_success: Licence modifiée
+    remove:
+      flash_success: Licence supprimée
     list:
       title: Liste des licences
+      confirm_remove: Êtes-vous sûr de vouloir supprimer cette licence ?
   games:
     add:
       title: Ajouter un jeu
+      flash_success: Jeu ajouté
+    edit:
+      title: Modifier le jeu
+      flash_success: Jeu modifié
+    remove:
+      flash_success: Jeu supprimé
     list:
       title: Liste des jeux
+      confirm_remove: Êtes-vous sûr de vouloir supprimer ce jeu ?
   items:
     add:
       title: Ajouter un objet
+      flash_success: Objet ajouté
+    edit:
+      title: Modifier l'objet
+      flash_success: Objet modifié
+    remove:
+      flash_success: Objet supprimé
     list:
       title: Liste des objets
+      confirm_remove: Êtes-vous sûr de vouloir supprimer cet objet ?
   characters:
     add:
       title: Ajouter un personnage
+      flash_success: Personnage ajouté
+    edit:
+      title: Modifier le personnage
+      flash_success: Personnage modifié
+    remove:
+      flash_success: Personnage supprimé
     list:
       title: Liste des personnages
+      confirm_remove: Êtes-vous sûr de vouloir supprimer ce personnage ?
 
 
 
@@ -69,6 +97,11 @@ licenses:
       placeholder: Nom
     description:
       label: Description
+    thumbnail:
+      label: Vignette de la licence
+    slug:
+      label: Slug
+      placeholder: nom-de-la-licence
   view:
     best_games:
       title: Meilleurs jeux
@@ -95,6 +128,11 @@ characters:
       placeholder: Nom
     description:
       label: Description
+    thumbnail:
+      label: Vignette du personnage
+    slug:
+      label: Slug
+      placeholder: nom-du-personnage
   view:
     game_characters:
       title: Apparait dans les jeux
@@ -134,7 +172,7 @@ consoles:
     description:
       label: Description
     thumbnail:
-      label: Vignette
+      label: Vignette de la console
     slug:
       label: Slug
       placeholder: nom-de-la-console
@@ -179,6 +217,18 @@ games:
     release_date:
       label: Date de sortie
       placeholder: JJ/MM/YYYY
+    description:
+      label: Description
+    thumbnail:
+      label: Vignette du jeu
+    slug:
+      label: Slug
+      placeholder: nom-du-jeu
+    copied_sold:
+      label: Nombre de copie vendu
+      placeholder: 0
+    history:
+      label: Histoire
   view:
     history:
       title: Histoire
@@ -212,6 +262,11 @@ items:
       placeholder: Séléctionner un jeu
     description:
       label: Description
+    thumbnail:
+      label: Vignette de l'objet
+    slug:
+      label: Slug
+      placeholder: nom-de-l-objet
   view:
     items_games:
       title: Apparait dans les jeux

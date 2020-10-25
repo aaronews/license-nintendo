@@ -6,10 +6,12 @@ use App\Repository\CharacterRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=CharacterRepository::class)
  * @ORM\Table(name="`character`")
+ * @Vich\Uploadable
  */
 class Character extends AbstractDisplayableEntity
 {
@@ -32,6 +34,12 @@ class Character extends AbstractDisplayableEntity
      * @ORM\OneToMany(targetEntity=GameCharacter::class, mappedBy="currentCharacter", fetch="EXTRA_LAZY")
      */
     private $gameCharacters;
+
+    /**
+     * @Vich\UploadableField(mapping="characters_images", fileNameProperty="thumbnail")
+     * @var File|null
+     */
+    private $imageFile;
 
     public function __construct()
     {

@@ -2,6 +2,10 @@
 
 {% block title %}{{ 'items.list.title'|trans }}{% endblock %}
 
+{% block mainDataAttributes %}
+    data-text-confirm-remove-entity="{{'admin.items.list.confirm_remove'|trans}}"
+{% endblock %}
+
 {% block listHeader %}
     <div class="row">
         <div class="col-md-2">
@@ -44,7 +48,7 @@
                                 {{'form.button.edit'|trans}}
                             </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="{{path('admin_items_remove', {id : item.id})}}">
+                            <a class="dropdown-item remove-entity" href="{{path('admin_items_remove', {id : item.id})}}">
                                <i class="fas fa-trash"></i>
                                 {{'form.button.remove'|trans}}
                             </a>

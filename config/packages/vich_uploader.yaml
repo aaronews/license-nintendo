@@ -5,3 +5,19 @@ vich_uploader:
             uri_prefix: img/uploads/consoles
             upload_destination: '%kernel.project_dir%/public/img/uploads/consoles'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+        licenses_images:
+            uri_prefix: img/uploads/licenses
+            upload_destination: '%kernel.project_dir%/public/img/uploads/licenses'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+        items_images:
+            uri_prefix: img/uploads/items
+            upload_destination: '%kernel.project_dir%/public/img/uploads/items'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+        characters_images:
+            uri_prefix: img/uploads/characters
+            upload_destination: '%kernel.project_dir%/public/img/uploads/characters'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+        games_images:
+            uri_prefix: img/uploads/games
+            upload_destination: '%kernel.project_dir%/public/img/uploads/games'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

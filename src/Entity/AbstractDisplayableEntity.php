@@ -3,8 +3,9 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\MappedSuperclass
@@ -53,6 +54,11 @@ abstract class AbstractDisplayableEntity extends AbstractEntity
      * )
      */
     private $slug;
+
+    /**
+     * @var File|null
+     */
+    private $imageFile;
 
     /**
      * Get name value
@@ -144,5 +150,30 @@ abstract class AbstractDisplayableEntity extends AbstractEntity
         $this->slug = $slug;
 
         return $this;
+    }
+
+    /**
+     * Set imega file value
+     *
+     * @param File|null $imageFile
+     * @return void
+     */
+    public function setImageFile(?File $imageFile): void
+    {
+        $this->imageFile = $imageFile;
+
+        if($this->imageFile){
+            $this->setUpdateAt(new \Datetime());
+        }
+    }
+
+    /**
+     * Get image file value
+     *
+     * @return File|null
+     */
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
     }
 }

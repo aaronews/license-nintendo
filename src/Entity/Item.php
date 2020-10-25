@@ -2,13 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\ItemRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\ItemRepository;
+use Doctrine\Common\Collections\Collection;
+use Symfony\Component\HttpFoundation\File\File;
+use Doctrine\Common\Collections\ArrayCollection;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=ItemRepository::class)
+ * @Vich\Uploadable
  */
 class Item extends AbstractDisplayableEntity
 {
@@ -25,6 +28,12 @@ class Item extends AbstractDisplayableEntity
      * @ORM\OneToMany(targetEntity=GameItem::class, mappedBy="item", fetch="EXTRA_LAZY")
      */
     private $gameItems;
+
+    /**
+     * @Vich\UploadableField(mapping="items_images", fileNameProperty="thumbnail")
+     * @var File|null
+     */
+    private $imageFile;
 
     public function __construct()
     {
