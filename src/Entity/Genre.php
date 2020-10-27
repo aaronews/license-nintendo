@@ -49,9 +49,9 @@ class Genre
     /**
      * Get id value
      *
-     * @return integer
+     * @return integer|null
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -59,9 +59,9 @@ class Genre
     /**
      * Get name value
      *
-     * @return string
+     * @return string|null
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }

@@ -3,7 +3,11 @@
 }
 
 .admin h1{
-    background-color: #E1E1E1;
+    background-color: #D1D1D1;
+}
+
+.admin h2{
+    background-color: #EFEFEF;
 }
 
 .admin section > div:not(.flash-message){

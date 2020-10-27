@@ -1,0 +1,25 @@
+{% extends 'admin/layout/form.html.twig' %}
+
+{% block title %}
+    {{'admin.games.characters.edit.title'|trans|replace({
+        '%GAME_NAME%' : gameCharacter.game.name,
+        '%CHARACTER_NAME%' : gameCharacter.currentCharacter.name
+    })}}
+{% endblock %}
+
+{% block form %}
+    {{ form_start(form)}}
+        <div class="row">
+            {{ form_row(form.currentCharacter)}}
+            <div class="col-12">
+                <div class="row align-items-center">
+                    {{ form_row(form.imageFile)}}
+                    {% include 'admin/layout/upload-preview.html.twig' with {
+                        'thumbnailUrl' : asset(vich_uploader_asset(gameCharacter, 'imageFile'))
+                    }%}
+                </div>
+            </div>
+            {{ form_row(form.submit)}}
+        </div>
+    {{ form_end(form)}}
+{% endblock %}

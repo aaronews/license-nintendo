@@ -63,9 +63,9 @@ abstract class AbstractDisplayableEntity extends AbstractEntity
     /**
      * Get name value
      *
-     * @return string
+     * @return string|null
      */
-    public function getName(): string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -86,9 +86,9 @@ abstract class AbstractDisplayableEntity extends AbstractEntity
     /**
      * Get description value
      *
-     * @return string
+     * @return string|null
      */
-    public function getDescription(): string
+    public function getDescription(): ?string
     {
         return $this->description;
     }
@@ -109,9 +109,9 @@ abstract class AbstractDisplayableEntity extends AbstractEntity
     /**
      * Get thumbnail value
      *
-     * @return string
+     * @return string|null
      */
-    public function getThumbnail(): string
+    public function getThumbnail(): ?string
     {
         return $this->thumbnail;
     }
@@ -119,7 +119,7 @@ abstract class AbstractDisplayableEntity extends AbstractEntity
     /**
      * Set thumbnail value
      *
-     * @param string $thumbnail
+     * @param string|null $thumbnail
      * @return self
      */
     public function setThumbnail(?string $thumbnail): self
@@ -132,9 +132,9 @@ abstract class AbstractDisplayableEntity extends AbstractEntity
     /**
      * Get slug value
      *
-     * @return string
+     * @return string|null
      */
-    public function getSlug(): string
+    public function getSlug(): ?string
     {
         return $this->slug;
     }

@@ -2,6 +2,8 @@
 
 namespace App\Service;
 
+use App\Entity\Game;
+use App\Entity\GameCharacter;
 use App\Entity\License;
 use App\Repository\GameRepository;
 

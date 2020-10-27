@@ -21,3 +21,11 @@ vich_uploader:
             uri_prefix: img/uploads/games
             upload_destination: '%kernel.project_dir%/public/img/uploads/games'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+        game_characters_images:
+            uri_prefix: img/uploads/game_characters
+            upload_destination: '%kernel.project_dir%/public/img/uploads/game_characters'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+        game_items_images:
+            uri_prefix: img/uploads/game_items
+            upload_destination: '%kernel.project_dir%/public/img/uploads/game_items'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer

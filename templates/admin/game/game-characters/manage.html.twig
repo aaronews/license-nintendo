@@ -1,0 +1,83 @@
+{% extends 'admin/layout/manage-entity.html.twig' %}
+
+{% block mainDataAttributes %}
+    data-text-confirm-remove-entity="{{'admin.games.characters.manage.confirm_remove'|trans}}"
+{% endblock %}
+
+{% block title %}
+    {{'admin.games.characters.manage.title'|trans}} : "{{game.name}}"
+{% endblock %}
+
+{% block titleForm %}
+    {{'admin.games.characters.manage.title_form'|trans}}
+{% endblock %}
+
+{% block titleList %}
+    {{'admin.games.characters.manage.title_list'|trans}}
+{% endblock %}
+
+{% block form %}
+    {{ form_start(form)}}
+        <div class="row">
+            {{ form_row(form.currentCharacter)}}
+            <div class="col-12">
+                <div class="row align-items-center">
+                    {{ form_row(form.imageFile)}}
+                    {% include 'admin/layout/upload-preview.html.twig' with {
+                        'thumbnailUrl' : null
+                    }%}
+                </div>
+            </div>
+            {{ form_row(form.submit)}}
+        </div>
+    {{ form_end(form)}}
+{% endblock %}
+
+{% block listHeader %}
+    <div class="row">
+        <div class="col-md-7">
+            <span>{{ 'game_characters.form.character.label'|trans }}</span>
+        </div>
+        <div class="col-md-4">
+            <span>{{ 'game_characters.form.thumbnail.label'|trans }}</span>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+{% endblock %}
+
+{% block listRows %}
+    {% for gameCharacter in gameCharacters %}
+        <div class="block-content list-group-item" >
+			<div class="row">
+                <div class="col-md-7">
+                    <p>
+                        {{ gameCharacter.currentCharacter.name }}
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <p>
+                        {{ gameCharacter.thumbnail }}
+                    </p>
+                </div>
+                <div class="col-md-1 list-action">
+                    <div class="btn-group dropbottom">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-bars" aria-hidden="true"></i>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="{{path('admin_games_characters_edit', {id : gameCharacter.id})}}">
+                               <i class="fas fa-edit"></i>
+                                {{'form.button.edit'|trans}}
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item remove-entity" href="{{path('admin_games_characters_remove', {id : gameCharacter.id})}}">
+                               <i class="fas fa-trash"></i>
+                                {{'form.button.remove'|trans}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'admin/layout/layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/components/lists-backoffice.css')}}">
+    <link rel="stylesheet" href="{{asset('css/components/form-backoffice.css')}}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{asset('js/admin/lists.js')}}"></script>
+    <script src="{{asset('js/admin/form.js')}}"></script>
+{% endblock %}
+
+{% block body %}
+    <main class="list manage-entity pt-0"
+        {% block mainDataAttributes %}
+        {% endblock %}
+    >
+        <div class="container-fluid">
+            <h1 class="pt-3 pb-3 m-0 text-center">
+                {% block title %}
+                {% endblock %}
+            </h1>
+            {% include 'admin/layout/flash-messages.html.twig' %}
+            <section class="form mt-4">
+                <h2 class="m-0 pt-2 pl-3 pb-2">{% block titleForm %}{% endblock %}</h2>
+                <div class="row justify-content-center border m-0">
+                    <div class="col-11 mt-4">
+                        {% block form %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </section>
+            <section class="list-content mt-4">
+                <h2 class="m-0 pt-2 pl-3 pb-2">{% block titleList %}{% endblock %}</h2>
+                <div class="row justify-content-md-center border m-0 p-3">
+                    <div class="col-md-11">
+                        <div class="list-header block-content list-group-item">
+                            {% block listHeader %}
+                            {% endblock %}
+                        </div>
+                        <div class="list-group">
+                            {% block listRows %}
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}

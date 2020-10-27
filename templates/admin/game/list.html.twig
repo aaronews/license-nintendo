@@ -80,6 +80,16 @@
                                 {{'form.button.edit'|trans}}
                             </a>
                             <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{path('admin_games_characters_manage', {id : game.id})}}">
+                               <i class="fas fa-users"></i>
+                                {{'admin.games.list.manage_characters_btn'|trans}}
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{path('admin_games_items_manage', {id : game.id})}}">
+                               <i class="fas fa-tools"></i>
+                                {{'admin.games.list.manage_items_btn'|trans}}
+                            </a>
+                            <div class="dropdown-divider"></div>
                             <a class="dropdown-item remove-entity" href="{{path('admin_games_remove', {id : game.id})}}">
                                <i class="fas fa-trash"></i>
                                 {{'form.button.remove'|trans}}

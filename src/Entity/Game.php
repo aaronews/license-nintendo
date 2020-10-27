@@ -56,6 +56,7 @@ class Game extends AbstractDisplayableEntity
     /**
      * @var ArrayCollection
      * @ORM\ManyToMany(targetEntity=Console::class, inversedBy="games", fetch="EXTRA_LAZY")
+     * @ORM\OrderBy({"name"="DESC"})
      */
     private $consoles;
 
@@ -68,12 +69,14 @@ class Game extends AbstractDisplayableEntity
     /**
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity=GameItem::class, mappedBy="game", fetch="EXTRA_LAZY")
+     * @ORM\OrderBy({"item.name"="ASC"})
      */
     private $gameItems;
 
     /**
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity=GameCharacter::class, mappedBy="game", fetch="EXTRA_LAZY")
+     * @ORM\OrderBy({"currentCharacter->getName()"="ASC"})
      */
     private $gameCharacters;
 
@@ -101,9 +104,9 @@ class Game extends AbstractDisplayableEntity
     /**
      * Get id value
      *
-     * @return integer
+     * @return integer|null
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -111,9 +114,9 @@ class Game extends AbstractDisplayableEntity
     /**
      * Get history value
      *
-     * @return string
+     * @return string|null
      */
-    public function getHistory(): string
+    public function getHistory(): ?string
     {
         return $this->history;
     }
@@ -134,7 +137,7 @@ class Game extends AbstractDisplayableEntity
     /**
      * Get release date value
      *
-     * @return \DateTimeInterface
+     * @return \DateTimeInterface|null
      */
     public function getReleaseDate(): ?\DateTimeInterface
     {
@@ -157,9 +160,9 @@ class Game extends AbstractDisplayableEntity
     /**
      * Get maximum player numbers value
      *
-     * @return integer
+     * @return integer|null
      */
-    public function getNbPlayers(): int
+    public function getNbPlayers(): ?int
     {
         return $this->nbPlayers;
     }
@@ -180,7 +183,7 @@ class Game extends AbstractDisplayableEntity
     /**
      * Get license value
      *
-     * @return License
+     * @return License|null
      */
     public function getLicense(): ?License
     {
@@ -370,11 +373,22 @@ class Game extends AbstractDisplayableEntity
         return $this;
     }
 
+    /**
+     * Get copies sold value
+     *
+     * @return integer|null
+     */
     public function getCopiesSold(): ?int
     {
         return $this->copiesSold;
     }
 
+    /**
+     * Set copies sold value
+     *
+     * @param integer $copiesSold
+     * @return self
+     */
     public function setCopiesSold(int $copiesSold): self
     {
         $this->copiesSold = $copiesSold;

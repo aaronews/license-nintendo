@@ -51,6 +51,32 @@ admin:
     list:
       title: Liste des jeux
       confirm_remove: Êtes-vous sûr de vouloir supprimer ce jeu ?
+      manage_characters_btn: Gestion des personnages
+      manage_items_btn: Gestion des objets
+    characters:
+      manage:
+        title: Liste des personnages du jeu
+        title_form: Ajouter un personnage
+        title_list: Liste des personnages
+        flash_success: Personnage ajouté au jeu
+        confirm_remove: Êtes-vous sûr de vouloir supprimer ce personnage du jeu ?
+      edit:
+        title: Modification du personnage "%CHARACTER_NAME%" dans le jeu "%GAME_NAME%"
+        flash_success: Personnage de jeu modifié
+      remove:
+        flash_success: Personnage supprimé du jeu
+    items:
+      manage:
+        title: Liste des objets du jeu
+        title_form: Ajouter un objet
+        title_list: Liste des objets
+        flash_success: Objet ajouté au jeu
+        confirm_remove: Êtes-vous sûr de vouloir supprimer cette objet du jeu ?
+      edit:
+        title: Modification de l'objet "%ITEM_NAME%" dans le jeu "%GAME_NAME%"
+        flash_success: Objet de jeu modifié
+      remove:
+        flash_success: Objet supprimé du jeu
   items:
     add:
       title: Ajouter un objet
@@ -249,6 +275,21 @@ games:
       copies_sold: >
         Nombre d'exemplaire vendu
 
+game_characters:
+  form:
+    character:
+      label: Personnage
+      placeholder: Séléctionner un personnage
+    thumbnail:
+      label: Vignette du personnage dans le jeu
+
+game_items:
+  form:
+    item:
+      label: Objet
+      placeholder: Séléctionner un objet
+    thumbnail:
+      label: Vignette de l'objet dans le jeu
     
 items:
   list:

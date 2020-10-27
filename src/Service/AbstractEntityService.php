@@ -46,11 +46,24 @@ abstract class AbstractEntityService{
     /**
      * Finds all entities in the repository.
      *
+     * @param array $sortOptions
      * @return AbstractEntity[]
      */
     public function findAll(array $sortOptions = array())
     {
         return $this->repository->findBy(array(), $sortOptions);
+    }
+
+    /**
+     * Finds entities by criterias in the repository.
+     *
+     * @param array $criterias
+     * @param array $sortOptions
+     * @return AbstractEntity[]
+     */
+    public function findBy(array $criterias = array(), array $sortOptions = array())
+    {
+        return $this->repository->findBy($criterias, $sortOptions);
     }
 
     /**

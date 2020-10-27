@@ -63,5 +63,17 @@ services:
             - App\Repository\GenreRepository
         ]
 
+    app.game_characters_service:
+        class : App\Service\GameCharactersService
+        arguments : [
+            - App\Repository\GameCharacterRepository
+        ]
+
+    app.game_items_service:
+        class : App\Service\GameItemsService
+        arguments : [
+            - App\Repository\GameItemRepository
+        ]
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

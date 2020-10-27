@@ -10,6 +10,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=GameCharacterRepository::class)
+ * @Vich\Uploadable
  */
 class GameCharacter extends AbstractEntity
 {
@@ -25,7 +26,6 @@ class GameCharacter extends AbstractEntity
      * @var Game
      * @ORM\ManyToOne(targetEntity=Game::class, inversedBy="gameCharacters")
      * @ORM\JoinColumn(nullable=false)
-     * @Assert\NotNull
      */
     private $game;
 
@@ -40,8 +40,6 @@ class GameCharacter extends AbstractEntity
     /**
      * @var string
      * @ORM\Column(type="string", length=255)
-     * @Assert\NotNull
-     * @Assert\Image
      */
     private $thumbnail;
 
@@ -54,9 +52,9 @@ class GameCharacter extends AbstractEntity
     /**
      * Get id value
      *
-     * @return integer
+     * @return integer|null
      */
-    public function getId(): int
+    public function getId(): ?int
     {
         return $this->id;
     }
@@ -64,9 +62,9 @@ class GameCharacter extends AbstractEntity
     /**
      * Get game value
      *
-     * @return Game
+     * @return Game|null
      */
-    public function getGame(): Game
+    public function getGame(): ?Game
     {
         return $this->game;
     }
@@ -87,9 +85,9 @@ class GameCharacter extends AbstractEntity
     /**
      * Get character value
      *
-     * @return Character
+     * @return Character|null
      */
-    public function getCurrentCharacter(): Character
+    public function getCurrentCharacter(): ?Character
     {
         return $this->currentCharacter;
     }
@@ -110,9 +108,9 @@ class GameCharacter extends AbstractEntity
     /**
      * Get thumbnail value
      *
-     * @return string
+     * @return string|null
      */
-    public function getThumbnail(): string
+    public function getThumbnail(): ?string
     {
         return $this->thumbnail;
     }
@@ -120,10 +118,10 @@ class GameCharacter extends AbstractEntity
     /**
      * Set thumbnail value
      *
-     * @param string $thumbnail
+     * @param string|null $thumbnail
      * @return self
      */
-    public function setThumbnail(string $thumbnail): self
+    public function setThumbnail(?string $thumbnail): self
     {
         $this->thumbnail = $thumbnail;
 
