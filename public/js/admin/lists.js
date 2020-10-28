@@ -6,9 +6,14 @@ function init(){
     for(var index = 0; index < fullViewIcons.length; ++index){
         fullViewIcons[index].addEventListener('click', manageTextFullView);
     }
-    var RemoveLinks = document.querySelectorAll('.remove-entity');
-    for(var index = 0; index < RemoveLinks.length; ++index){
-        RemoveLinks[index].addEventListener('click', confirmRemove);
+    var removeLinks = document.querySelectorAll('.remove-entity');
+    for(var index = 0; index < removeLinks.length; ++index){
+        removeLinks[index].addEventListener('click', confirmRemove);
+    }
+
+    var seeThumbnail = document.querySelectorAll('.see-thumbnail');
+    for(var index = 0; index < seeThumbnail.length; ++index){
+        seeThumbnail[index].addEventListener('click', applyThumbnailInModal);
     }
 }
 
@@ -19,7 +24,7 @@ function init(){
  */
 function manageTextFullView(event){
     var target = event.currentTarget;
-    var textContainer = target.closest('.row').querySelector('.text-container');
+    var textContainer = target.closest('.row').querySelector('p');
     var iconToRemove, iconToAdd;
     
     if(textContainer.classList.contains('truncated-text')){
@@ -46,4 +51,13 @@ function confirmRemove(event){
     if(!confirm(document.querySelector('main').getAttribute('data-text-confirm-remove-entity'))){
         event.preventDefault();
     }
+}
+
+/**
+ * Change src attribute of img tag in modal with thumbnail path
+ * @param {Event} event - Click event
+ * @return {void}
+ */
+function applyThumbnailInModal(event){
+    document.querySelector('#thumbnail-modal img').setAttribute('src', event.currentTarget.getAttribute('data-thumbnail'));
 }

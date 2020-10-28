@@ -12,14 +12,4 @@ class GameItemsService extends AbstractEntityService
     {
         $this->repository = $repository;
     }
-
-    /**
-     * Get all characters of game sort by name 
-     *
-     * @param Game $game
-     * @return Item[]
-     */
-    public function getItemsByGame(Game $game){
-        return $this->repository->findItemsByGame($game);
-    }
 }

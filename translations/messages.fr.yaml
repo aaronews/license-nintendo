@@ -210,6 +210,8 @@ games:
   list:
     title: Liste des jeux Nintendo
     name_and_license: Nom et licence
+    informations: Informations
+    see_thumbnail: Voir la vignette
   form:
     console:
       label: Jouable sur

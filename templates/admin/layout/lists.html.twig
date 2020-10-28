@@ -30,9 +30,14 @@
                             {% block listRows %}
                             {% endblock %}
                         </div>
+                        <div class="navigation mt-3">
+                            {% block navigation %}
+                            {% endblock %}
+                        </div>
                     </div>
                 </div>
             </section>
         </div>
     </main>
+    {% include 'admin/layout/thumbnail-modal.html.twig' %}
 {% endblock %}

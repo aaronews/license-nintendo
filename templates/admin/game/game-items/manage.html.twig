@@ -55,9 +55,9 @@
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <p>
-                        {{ gameItem.thumbnail }}
-                    </p>
+                    <a data-thumbnail="{{asset(vich_uploader_asset(gameItem, 'imageFile'))}}" data-toggle="modal" data-target="#thumbnail-modal" href="#" title="{{ 'games.list.see_thumbnail'|trans }}" class="text-dark row m-0 align-items-center text-decoration-none see-thumbnail">
+                        <i class="fas fa-image fa-2x"></i>
+                    </a>
                 </div>
                 <div class="col-md-1 list-action">
                     <div class="btn-group dropbottom">
@@ -80,4 +80,8 @@
             </div>
         </div>
     {% endfor %}
+{% endblock %}
+
+{% block navigation %}
+    {{ knp_pagination_render(gameItems) }}
 {% endblock %}

@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use Doctrine\ORM\Query;
 use App\Entity\AbstractEntity;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
@@ -66,6 +67,16 @@ abstract class AbstractEntityRepository extends ServiceEntityRepository
      */
     public function getColumnNames(){
         return $this->getEntityManager()->getClassMetadata($this->getEntityName())->getColumnNames();
+    }
+
+    /**
+     * Return query without parameters
+     * @return Query
+     */
+    public function getQueryForPagination(){
+        return $this->createQueryBuilder('E')
+        ->orderBy('E.name', 'ASC')
+        ->getQuery();
     }
 
 }

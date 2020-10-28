@@ -28,3 +28,7 @@
 .view-full-text{
     cursor: pointer;
 }
+
+.pagination{
+    justify-content: center;
+}

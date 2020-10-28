@@ -8,19 +8,16 @@
 
 {% block listHeader %}
     <div class="row">
+        <div class="col-md-4">
+            <span>{{ 'games.list.informations'|trans }}</span>
+        </div>
         <div class="col-md-3">
-            <span>{{ 'games.list.name_and_license'|trans }}</span>
+            <span>{{ 'games.form.description.label'|trans }}</span>
         </div>
-        <div class="col-md-2">
-            <span>{{ 'games.form.genre.label'|trans }}</span>
+        <div class="col-md-3">
+            <span>{{ 'games.form.history.label'|trans }}</span>
         </div>
-        <div class="col-md-2">
-            <span>{{ 'games.form.console.label'|trans }}</span>
-        </div>
-        <div class="col-md-2">
-            <span>{{ 'games.form.player_numbers.label'|trans }}</span>
-        </div>
-        <div class="col-md-2">
+        <div class="col-md-1">
             <span>{{ 'games.form.release_date.label'|trans }}</span>
         </div>
         <div class="col-md-1"></div>
@@ -31,42 +28,61 @@
     {% for game in games %}
         <div class="block-content list-group-item" >
 			<div class="row">
-                <div class="col-md-3">
-                    <p>
-                        <span>{{ 'games.form.name.label'|trans }}</span> : {{ game.name }}<br/>
-                        <span>{{ 'games.form.licence.label'|trans }}</span> : {{ game.license.name }}
-                    </p>
-                </div>
-                <div class="col-md-2">
+                <div class="col-md-4">
                     <p>
                         {% set countGenres = game.genres.count() %}
                         {% set genres = '' %}
                         {% for genre in game.genres %}
                             {% set genres = genres ~ genre.name %}
                             {% if loop.index < countGenres %}
-                                {% set genres = genres ~ '<br/>' %}
+                                {% set genres = genres ~ ', ' %}
                             {% endif %}
                         {% endfor %}
-                        {{genres|raw}}
-                    </p>
-                </div>
-                <div class="col-md-2">
-                    <p>
+
                         {% set countConsoles = game.consoles.count() %}
                         {% set consoles = '' %}
                         {% for console in game.consoles %}
                             {% set consoles = consoles ~ console.name %}
                             {% if loop.index < countConsoles %}
-                                {% set consoles = consoles ~ '<br/>' %}
+                                {% set consoles = consoles ~ ', ' %}
                             {% endif %}
                         {% endfor %}
-                        {{consoles|raw}}
+
+                        <span>{{ 'games.form.name.label'|trans }}</span> : {{ game.name }}<br/>
+                        <span>{{ 'games.form.licence.label'|trans }}</span> : {{ game.license.name }}<br/>
+                        <span>{{ 'games.form.console.label'|trans }}</span> : {{ consoles }}<br/>
+                        <span>{{ 'games.form.genre.label'|trans }}</span> : {{ genres }}<br/>
+                        <span>{{ 'games.form.player_numbers.label'|trans }}</span> : {{ game.nbPlayers }}<br/>
+                        <a data-thumbnail="{{asset(vich_uploader_asset(game, 'imageFile'))}}" data-toggle="modal" data-target="#thumbnail-modal" href="#" title="{{ 'games.list.see_thumbnail'|trans }}" class="text-dark row m-0 align-items-center text-decoration-none see-thumbnail">
+                            {{ 'games.list.see_thumbnail'|trans }} :&nbsp;<i class="fas fa-image fa-2x"></i>
+                        </a>
                     </p>
                 </div>
-                <div class="col-md-2">
-                    <p>{{ game.nbPlayers }}</p>
+                <div class="col-md-3">
+                    <div class="row align-items-center">
+                        <div class="col-md-11">
+                            <p class="truncated-text">
+                                {{ game.description|raw }}
+                            </p>
+                        </div>
+                        <div class="col-md-1">
+                            <i class="fas fa-search-plus view-full-text"></i>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-3">
+                    <div class="row align-items-center">
+                        <div class="col-md-11">
+                            <p class="truncated-text">
+                                {{ game.history|raw }}
+                            </p>
+                        </div>
+                        <div class="col-md-1">
+                            <i class="fas fa-search-plus view-full-text"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
                     <p>{{ game.releaseDate|date('d/m/Y') }}</p>
                 </div>
                 <div class="col-md-1 list-action">
@@ -100,4 +116,8 @@
             </div>
         </div>
     {% endfor %}
+{% endblock %}
+
+{% block navigation %}
+    {{ knp_pagination_render(games) }}
 {% endblock %}

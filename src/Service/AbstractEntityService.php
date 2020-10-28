@@ -77,6 +77,14 @@ abstract class AbstractEntityService{
     }
 
     /**
+     * Return query without parameters
+     * @return Query
+     */
+    public function getPaginateElements(){
+        return $this->repository->getQueryForPagination();
+    }
+
+    /**
      * Get columns list for sort
      *
      * @return array

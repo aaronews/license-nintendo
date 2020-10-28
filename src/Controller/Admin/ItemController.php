@@ -6,6 +6,7 @@ use App\Entity\Item;
 use App\Service\ItemsService;
 use App\Form\Items\AddItemType;
 use App\Form\Items\EditItemType;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,15 +15,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 /**
  * @Route("/admin/items", name="admin_items_")
  */
-class ItemController extends AbstractController
+class ItemController extends AbtsractAdminController
 {
     /**
      * @Route("/list", name="list")
      */
-    public function list(ItemsService $itemsService)
+    public function list(ItemsService $itemsService, PaginatorInterface $paginator, Request $request)
     {
         return $this->render('admin/item/list.html.twig', [
-            'items' => $itemsService->findAll(array('name' => 'ASC'))
+            'breadcrumbs' => $this->buildBreadcrumbs(),
+            'items' => $paginator->paginate(
+                $itemsService->getPaginateElements(),
+                $request->query->getInt('page', 1), 
+                10
+            )
         ]);
     }
 
@@ -41,6 +47,7 @@ class ItemController extends AbstractController
         }
         return $this->render('admin/item/add.html.twig', [
             'form' => $form->createView(),
+            'breadcrumbs' => $this->buildBreadcrumbs(),
         ]);
     }
 
@@ -59,6 +66,7 @@ class ItemController extends AbstractController
         return $this->render('admin/item/edit.html.twig', [
             'form' => $form->createView(),
             'item' => $item,
+            'breadcrumbs' => $this->buildBreadcrumbs($item),
         ]);
     }
 
@@ -69,5 +77,27 @@ class ItemController extends AbstractController
         $itemsService->removeEntity($item);
         $this->addFlash('success', 'admin.items.remove.flash_success');
         return $this->redirectToRoute('admin_items_list');
+    }
+
+    /**
+     * @param Item|null $item
+     * @return Breadcrumbs
+     */
+    protected function buildBreadcrumbs(?Item $item = null){
+        parent::buildBreadcrumbs();
+        $this->breadcrumbs->addItem($this->translator->trans('layout.header.links.items'), $this->router->generate('admin_items_list'));
+
+        switch($this->request->get('_route')){
+            case 'admin_items_add':
+                $this->breadcrumbs->addItem($this->translator->trans('admin.items.add.title'));
+                break;
+            case 'admin_items_edit':
+                $this->breadcrumbs->addItem($item->getName());
+                break;
+            default:
+                break;
+        }
+
+        return $this->breadcrumbs;
     }
 }

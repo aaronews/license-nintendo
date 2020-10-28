@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Game;
 use App\Entity\GameCharacter;
+use App\Entity\Search\EntityInGame;
 use Doctrine\Persistence\ManagerRegistry;
 
 class GameCharacterRepository extends AbstractEntityRepository
@@ -14,20 +15,21 @@ class GameCharacterRepository extends AbstractEntityRepository
     }
 
     /**
-     * Get all characters of game sort by name 
+     * Undocumented function
      *
-     * @param Game $game
-     * @return Character[]
+     * @param EntityInGame $search
+     * @return Query
      */
-    public function findCharactersByGame(Game $game){
-        return $this
-            ->createQueryBuilder('GC')
-            ->join('GC.currentCharacter', 'C')
-            ->where('GC.game = :game')
-            ->setParameter('game', $game)
-            ->orderBy('C.name', 'ASC')
-            ->getQuery()
-            ->getResult()
-        ;
+    public function findBySearchCriterias(EntityInGame $search){
+        $query = $this->createQueryBuilder('GC');
+
+        if($game = $search->getGame()){
+            $query
+                ->andWhere('GC.game = :game')
+                ->setParameter('game', $game)
+            ;
+        }
+
+        return $query->getQuery();
     }
 }

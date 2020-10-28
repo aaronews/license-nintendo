@@ -6,23 +6,28 @@ use App\Entity\Console;
 use App\Service\ConsolesService;
 use App\Form\Consoles\AddConsoleType;
 use App\Form\Consoles\EditConsoleType;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 /**
  * @Route("/admin/consoles", name="admin_consoles_")
  */
-class ConsoleController extends AbstractController
+class ConsoleController extends AbtsractAdminController
 {
     /**
      * @Route("/list", name="list")
      */
-    public function list(ConsolesService $consoleService)
+    public function list(ConsolesService $consoleService, PaginatorInterface $paginator, Request $request)
     {
         return $this->render('admin/console/list.html.twig', [
-            'consoles' => $consoleService->findAll(array('releaseDate' => 'DESC'))
+            'breadcrumbs' => $this->buildBreadcrumbs(),
+            'consoles' => $paginator->paginate(
+                $consoleService->getPaginateElements(),
+                $request->query->getInt('page', 1), 
+                10
+            )
         ]);
     }
 
@@ -43,6 +48,7 @@ class ConsoleController extends AbstractController
 
         return $this->render('admin/console/add.html.twig', [
             'form' => $form->createView(),
+            'breadcrumbs' => $this->buildBreadcrumbs(),
         ]);
     }
 
@@ -60,6 +66,7 @@ class ConsoleController extends AbstractController
         return $this->render('admin/console/edit.html.twig', [
             'form' => $form->createView(),
             'console' => $console,
+            'breadcrumbs' => $this->buildBreadcrumbs($console),
         ]);
     }
 
@@ -70,5 +77,27 @@ class ConsoleController extends AbstractController
         $consoleService->removeEntity($console);
         $this->addFlash('success', 'admin.consoles.remove.flash_success');
         return $this->redirectToRoute('admin_consoles_list');
+    }
+
+    /**
+     * @param Console|null $console
+     * @return Breadcrumbs
+     */
+    protected function buildBreadcrumbs(?Console $console = null){
+        parent::buildBreadcrumbs();
+        $this->breadcrumbs->addItem($this->translator->trans('layout.header.links.consoles'), $this->router->generate('admin_consoles_list'));
+
+        switch($this->request->get('_route')){
+            case 'admin_consoles_add':
+                $this->breadcrumbs->addItem($this->translator->trans('admin.consoles.add.title'));
+                break;
+            case 'admin_consoles_edit':
+                $this->breadcrumbs->addItem($console->getName());
+                break;
+            default:
+                break;
+        }
+
+        return $this->breadcrumbs;
     }
 }

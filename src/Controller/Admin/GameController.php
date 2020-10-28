@@ -6,31 +6,39 @@ use App\Entity\Game;
 use App\Entity\GameItem;
 use App\Entity\GameCharacter;
 use App\Service\GamesService;
+use App\Entity\AbstractEntity;
 use App\Form\Games\AddGameType;
 use App\Form\Games\EditGameType;
 use App\Service\GameItemsService;
+use App\Entity\Search\EntityInGame;
 use App\Service\GameCharactersService;
+use App\Entity\AbstractDisplayableEntity;
+use Knp\Component\Pager\PaginatorInterface;
 use App\Form\Games\GameItems\AddGameItemType;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\Games\GameItems\EditGameItemType;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\Games\GameCharacters\AddGameCharacterType;
 use App\Form\Games\GameCharacters\EditGameCharacterType;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 /**
  * @Route("/admin/games", name="admin_games_")
  */
-class GameController extends AbstractController
+class GameController extends AbtsractAdminController
 {
     /**
      * @Route("/list", name="list")
      */
-    public function list(GamesService $gamesService)
+    public function list(GamesService $gamesService, PaginatorInterface $paginator, Request $request)
     {
         return $this->render('admin/game/list.html.twig', [
-            'games' => $gamesService->findAll(array('releaseDate' => 'DESC'))
+            'breadcrumbs' => $this->buildBreadcrumbs(),
+            'games' => $paginator->paginate(
+                $gamesService->getPaginateElements(),
+                $request->query->getInt('page', 1), 
+                5
+            )
         ]);
     }
 
@@ -51,6 +59,7 @@ class GameController extends AbstractController
 
         return $this->render('admin/game/add.html.twig', [
             'form' => $form->createView(),
+            'breadcrumbs' => $this->buildBreadcrumbs(),
         ]);
     }
 
@@ -68,6 +77,7 @@ class GameController extends AbstractController
         return $this->render('admin/game/edit.html.twig', [
             'form' => $form->createView(),
             'game' => $game,
+            'breadcrumbs' => $this->buildBreadcrumbs($game),
         ]);
     }
 
@@ -83,7 +93,7 @@ class GameController extends AbstractController
     /**
      * @Route("/manage-characters/{id}", name="characters_manage", requirements={"id"="\d+"})
      */
-    public function manageCharacters(Game $game, GameCharactersService $gameCharactersService, Request $request){
+    public function manageCharacters(Game $game, GameCharactersService $gameCharactersService, PaginatorInterface $paginator, Request $request){
         $gameCharacter = new GameCharacter();
         $form = $this->createForm(AddGameCharacterType::class, $gameCharacter);
         $form->handleRequest($request);
@@ -97,7 +107,12 @@ class GameController extends AbstractController
         return $this->render('admin/game/game-characters/manage.html.twig', [
             'form' => $form->createView(),
             'game' => $game,
-            'gameCharacters' => $gameCharactersService->getCharactersByGame($game)
+            'breadcrumbs' => $this->buildBreadcrumbs(null, $game),
+            'gameCharacters' => $paginator->paginate(
+                $gameCharactersService->findBySearchCriterias((new EntityInGame)->setGame($game)),
+                $request->query->getInt('page', 1), 
+                5
+            )
         ]);
     }
 
@@ -116,6 +131,7 @@ class GameController extends AbstractController
         return $this->render('admin/game/game-characters/edit.html.twig', [
             'form' => $form->createView(),
             'gameCharacter' => $gameCharacter,
+            'breadcrumbs' => $this->buildBreadcrumbs($gameCharacter, $gameCharacter->getGame()),
         ]);
     }
 
@@ -131,7 +147,7 @@ class GameController extends AbstractController
     /**
      * @Route("/manage-items/{id}", name="items_manage", requirements={"id"="\d+"})
      */
-    public function manageItems(Game $game, GameItemsService $gameItemsService, Request $request){
+    public function manageItems(Game $game, GameItemsService $gameItemsService, PaginatorInterface $paginator, Request $request){
         $gameItem = new GameItem();
         $form = $this->createForm(AddGameItemType::class, $gameItem);
         $form->handleRequest($request);
@@ -145,7 +161,12 @@ class GameController extends AbstractController
         return $this->render('admin/game/game-items/manage.html.twig', [
             'form' => $form->createView(),
             'game' => $game,
-            'gameItems' => $gameItemsService->getItemsByGame($game)
+            'breadcrumbs' => $this->buildBreadcrumbs(null, $game),
+            'gameItems' => $paginator->paginate(
+                $gameItemsService->findBySearchCriterias((new EntityInGame)->setGame($game)),
+                $request->query->getInt('page', 1), 
+                5
+            )
         ]);
     }
 
@@ -164,6 +185,7 @@ class GameController extends AbstractController
         return $this->render('admin/game/game-items/edit.html.twig', [
             'form' => $form->createView(),
             'gameItem' => $gameItem,
+            'breadcrumbs' => $this->buildBreadcrumbs($gameItem, $gameItem->getGame()),
         ]);
     }
 
@@ -174,5 +196,53 @@ class GameController extends AbstractController
         $gameItemsService->removeEntity($gameItem);
         $this->addFlash('success', 'admin.games.items.remove.flash_success');
         return $this->redirectToRoute('admin_games_items_manage', array('id' => $gameItem->getGame()->getId()));
+    }
+
+    /**
+     * @param AbstractEntity|null $entity
+     * @param Game|null $game
+     * @return Breadcrumbs
+     */
+    protected function buildBreadcrumbs(?AbstractEntity $entity = null, ?Game $game = null){
+        parent::buildBreadcrumbs();
+        $this->breadcrumbs->addItem($this->translator->trans('layout.header.links.games'), $this->router->generate('admin_games_list'));
+
+        $routeName = $this->request->get('_route');
+        $managementRoutes =  array(
+            'admin_games_items_manage', 
+            'admin_games_items_edit', 
+            'admin_games_characters_manage',
+            'admin_games_characters_edit'
+        );
+
+        if(in_array($routeName, $managementRoutes)){
+            $this->breadcrumbs->addItem($game->getName());
+        }
+        
+        switch($routeName){
+            case 'admin_games_add':
+                $this->breadcrumbs->addItem($this->translator->trans('admin.games.add.title'));
+                break;
+            case 'admin_games_edit':
+                $this->breadcrumbs->addItem($entity->getName());
+                break;
+            case 'admin_games_items_manage':
+                $this->breadcrumbs->addItem($this->translator->trans('admin.games.list.manage_items_btn'));
+                break;
+            case 'admin_games_items_edit':
+                $this->breadcrumbs->addItem($this->translator->trans('admin.games.list.manage_items_btn'), $this->router->generate('admin_games_items_manage', array('id' => $game->getId())));
+                $this->breadcrumbs->addItem($entity->getItem()->getName());
+                break;
+            case 'admin_games_characters_manage':
+                $this->breadcrumbs->addItem($this->translator->trans('admin.games.list.manage_characters_btn'));
+                break;
+            case 'admin_games_characters_edit':
+                $this->breadcrumbs->addItem($this->translator->trans('admin.games.list.manage_characters_btn'), $this->router->generate('admin_games_characters_manage', array('id' => $game->getId())));
+                $this->breadcrumbs->addItem($entity->getCurrentCharacter()->getName());
+                break;
+            default:
+                break;
+        }
+        return $this->breadcrumbs;
     }
 }

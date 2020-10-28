@@ -6,23 +6,29 @@ use App\Entity\Character;
 use App\Service\CharactersService;
 use App\Form\Characters\AddCharacterType;
 use App\Form\Characters\EditCharacterType;
+use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
 
 
 /**
  * @Route("/admin/characters", name="admin_characters_")
  */
-class CharacterController extends AbstractController
+class CharacterController extends AbtsractAdminController
 {
     /**
      * @Route("/list", name="list")
      */
-    public function list(CharactersService $charactersService)
+    public function list(CharactersService $charactersService, PaginatorInterface $paginator, Request $request)
     {
         return $this->render('admin/character/list.html.twig', [
-            'characters' => $charactersService->findAll(array('name' => 'ASC'))
+            'breadcrumbs' => $this->buildBreadcrumbs(),
+            'characters' => $paginator->paginate(
+                $charactersService->getPaginateElements(),
+                $request->query->getInt('page', 1), 
+                10
+            )
         ]);
     }
 
@@ -41,6 +47,7 @@ class CharacterController extends AbstractController
         }
         return $this->render('admin/character/add.html.twig', [
             'form' => $form->createView(),
+            'breadcrumbs' => $this->buildBreadcrumbs(),
         ]);
     }
 
@@ -59,6 +66,7 @@ class CharacterController extends AbstractController
         return $this->render('admin/character/edit.html.twig', [
             'form' => $form->createView(),
             'character' => $character,
+            'breadcrumbs' => $this->buildBreadcrumbs($character),
         ]);
     }
 
@@ -69,5 +77,27 @@ class CharacterController extends AbstractController
         $charactersService->removeEntity($character);
         $this->addFlash('success', 'admin.characters.remove.flash_success');
         return $this->redirectToRoute('admin_characters_list');
+    }
+
+    /**
+     * @param Character|null $character
+     * @return Breadcrumbs
+     */
+    protected function buildBreadcrumbs(?Character $character = null){
+        parent::buildBreadcrumbs();
+        $this->breadcrumbs->addItem($this->translator->trans('layout.header.links.characters'), $this->router->generate('admin_characters_list'));
+
+        switch($this->request->get('_route')){
+            case 'admin_characters_add':
+                $this->breadcrumbs->addItem($this->translator->trans('admin.characters.add.title'));
+                break;
+            case 'admin_characters_edit':
+                $this->breadcrumbs->addItem($character->getName());
+                break;
+            default:
+                break;
+        }
+
+        return $this->breadcrumbs;
     }
 }

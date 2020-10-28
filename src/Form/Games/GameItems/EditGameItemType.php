@@ -22,7 +22,7 @@ class EditGameItemType extends AbstractType
                 ),
             ))
             ->add('submit', SubmitType::class, array(
-                'label' => 'form.button.create',
+                'label' => 'form.button.edit',
                 'row_attr' => array(
                     'class' => 'col-sm-12 text-center mt-3 '
                 ),
