@@ -1,6 +1,70 @@
 {% extends 'admin/layout/layout.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
+{% endblock %}
+
 {% block body %}
-     <main class="list">
+    {% set entitiesData  = {
+        0: {
+            urlAdd: path('admin_consoles_add'),
+            urlList: path('admin_consoles_list'),
+            number: countEntity('\\App\\Entity\\Console'),
+            name: 'layout.header.links.consoles'|trans,
+            description: 'admin.index.dashboard.consoles_description'|trans
+        },
+        1: {
+            urlAdd: path('admin_licenses_add'),
+            urlList: path('admin_licenses_list'),
+            number: countEntity('\\App\\Entity\\License'),
+            name: 'layout.header.links.licenses'|trans,
+            description: 'admin.index.dashboard.licenses_description'|trans
+        },
+        2: {
+            urlAdd: path('admin_games_add'),
+            urlList: path('admin_games_list'),
+            number: countEntity('\\App\\Entity\\Game'),
+            name: 'layout.header.links.games'|trans,
+            description: 'admin.index.dashboard.games_description'|trans
+        },
+        3: {
+            urlAdd: path('admin_items_add'),
+            urlList: path('admin_items_list'),
+            number: countEntity('\\App\\Entity\\Item'),
+            name: 'layout.header.links.items'|trans,
+            description: 'admin.index.dashboard.items_description'|trans
+        },
+        4: {
+            urlAdd: path('admin_characters_add'),
+            urlList: path('admin_characters_list'),
+            number: countEntity('\\App\\Entity\\Character'),
+            name: 'layout.header.links.characters'|trans,
+            description: 'admin.index.dashboard.characters_description'|trans
+        },
+    }%}
+     <main>
+        <section class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-md-11 row justify-content-center">
+                    {% for data in entitiesData %}
+                        <div class="col-md-4 mb-4">
+                            <div class="card text-center">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{data.name}}</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">{{data.number}}</h6>
+                                    <p class="card-text">{{data.description}}</p>
+                                    <a href="{{data.urlList}}" class="card-link btn btn-primary" title="Liste">
+                                        <i class="fas fa-list"></i>
+                                    </a>
+                                    <a href="{{data.urlAdd}}" class="card-link btn btn-primary mr-0" title="Ajouter">
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %} 
+                </div>
+            </div>
+        </section>
     </main>
 {% endblock %}

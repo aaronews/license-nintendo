@@ -6,14 +6,20 @@
     background: #1a1a1a;
     color: #fff;
     overflow-x: hidden;
-    opacity:0.9;
     transition:all .5s;
     display:flex;
+}
+
+.header-backoffice{
+    position: fixed;
+    z-index: 999;
+    background-color: #1a1a1a;
+    opacity: 0.9;
 }
   
 main{
     width: 100%;	
-    padding:15px;
+    padding:130px 15px 15px 15px;
     transition:all .5s;
 }
 
@@ -25,6 +31,10 @@ main,
 #menu-toggle{
     transition:all .3s;
     font-size:2em;
+}
+
+#menu-toggle .fas{
+    color: #ffffff
 }
 
 body.menuDisplayed #sidebar-wrapper{
@@ -96,4 +106,24 @@ body.menuDisplayed .menu-toogle-container{
 .sidebar-nav .header::before {
     background-color: transparent;
 }
-  
+
+#breadcrumbs{
+    background-color: transparent;
+    margin-bottom: 0;
+}
+
+#breadcrumbs .separator{
+    padding: 5px;
+}
+
+#breadcrumbs a, #breadcrumbs span{
+    color: #ffffff;
+}
+
+#breadcrumbs a:hover{
+    text-decoration: none;
+}
+
+#breadcrumbs a:hover, #breadcrumbs li:last-child span{
+    font-weight: bold;
+}

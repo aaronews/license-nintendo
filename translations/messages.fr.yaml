@@ -15,6 +15,13 @@ admin:
       links:
         home: Accueil
         dashboard: Tableau de bord
+  index:
+    dashboard:
+      games_description: Jeux vidéo créées par Nintendo
+      consoles_description: Consoles de jeux créées par Nintendo
+      characters_description: Personnages présents dans les jeux Nintendo
+      licenses_description: Licences de jeux créées par Nintendo
+      items_description: Objets apparaissants dans les jeux Nintendo
   consoles:
     add:
       title: Ajouter une console

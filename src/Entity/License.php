@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Symfony\Component\HttpFoundation\File\File;
 use Doctrine\Common\Collections\ArrayCollection;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=LicenseRepository::class)
@@ -31,6 +32,15 @@ class License extends AbstractDisplayableEntity
     private $games;
 
     /**
+     * @Assert\File(
+     *     maxSize = "2M",
+     * )
+     * @Assert\Image(
+     *     minWidth = 1000,
+     *     maxWidth = 1000,
+     *     minHeight = 1000,
+     *     maxHeight = 1000
+     * )
      * @Vich\UploadableField(mapping="licenses_images", fileNameProperty="thumbnail")
      * @var File|null
      */

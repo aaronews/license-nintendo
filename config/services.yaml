@@ -84,5 +84,11 @@ services:
             - App\Repository\GameItemRepository
         ]
 
+    app.count_entity_helper:
+        class : App\Twig\CountEntity
+        arguments : [
+            - Doctrine\ORM\EntityManagerInterface
+        ]
+
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

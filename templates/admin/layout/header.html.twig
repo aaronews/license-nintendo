@@ -1,4 +1,4 @@
-<header class="header-backoffice">
+<header class="header-backoffice w-100">
     <nav id="sidebar-wrapper">
         <ul class="sidebar-nav">
             <li>
@@ -80,10 +80,12 @@
             </li>
         </ul>
     </nav>
-    <div class="row mb-2 menu-toogle-container">
-        <div class="col-md-12">
+    <div class="row mr-0 menu-toogle-container">
+        <div class="col-md-2 col-12">
             <a href="#" class="btn" id="menu-toggle"><i class="fas fa-bars"></i></a>
         </div>
-        {{ wo_render_breadcrumbs({separator: '>', listId: 'breadcrumbs'}) }}
+        <div class="col-md-10 col-12 d-flex justify-content-center align-items-center">
+            {{ wo_render_breadcrumbs({separator: '>', listId: 'breadcrumbs'}) }}
+        </div>
     </div>
 </header>

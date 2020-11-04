@@ -55,7 +55,7 @@ abstract class AbstractDisplayableEntity extends AbstractEntity
      */
     private $slug;
 
-    /**
+    /** 
      * @var File|null
      */
     private $imageFile;

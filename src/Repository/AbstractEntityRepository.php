@@ -79,4 +79,18 @@ abstract class AbstractEntityRepository extends ServiceEntityRepository
         ->getQuery();
     }
 
+    /**
+     * Count all entity
+     *
+     * @return integer
+     */
+    public function countAll(){
+        return $this
+            ->createQueryBuilder('E')
+            ->select('COUNT(E.id)')
+            ->getQuery()
+            ->getSingleScalarResult()
+        ;
+    }
+
 }
