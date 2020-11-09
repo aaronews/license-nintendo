@@ -1,0 +1,58 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/signup.css')}}">
+{% endblock %}
+
+{% block title %}{{'security.login.title'|trans}}{% endblock %}
+
+{% block body %}
+    <main class="signup d-flex align-items-center">
+        <div class="container">
+            <section class="row justify-content-center">
+                <h1 class="text-center content-title">{{'security.login.title'|trans}}</h1>
+                <div class="col-12">
+                    <form method="post">
+                        {% if error %}
+                            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                        {% endif %}
+                        {% for fashSuccess in app.flashes('reset_password_success') %}
+                            <div class="alert alert-success" role="alert">{{ fashSuccess|trans }}</div>
+                        {% endfor %}
+                        <div class="row">
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                            <div class="col-12 form-group">
+                                <label for="inputUsername">{{'form.labels.username'|trans}}</label>
+                                <input type="text" value="{{ last_username }}" name="username" placeholder="{{'security.login.form.username.placeholder'|trans}}" id="inputUsername" class="form-control" required autofocus>
+                            </div>
+                            <div class="col-12 form-group">
+                                <label for="inputPassword">{{'security.login.form.password.label'|trans}}</label>
+                                <input type="password" name="password" id="inputPassword" class="form-control" required>
+                            </div>
+                            <div class="col-6 form-group">
+                                <label>
+                                    <input type="checkbox" name="_remember_me"> {{'security.login.form.remenber_me.label'|trans}}
+                                </label>
+                            </div>
+                            <div class="col-6 form-group text-right">
+                                <a class="" href="{{path('forgot_password')}}">{{'users.lost_password.title'|trans}}</a>
+                            </div>
+                            <div class="col-sm-12 text-center mt-3  form-group">
+                                <button class="btn btn-lg btn-primary" type="submit">{{'form.button.login'|trans}}</button>
+                            </div>
+                        </div>
+
+                        {#
+                            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                            See https://symfony.com/doc/current/security/remember_me.html
+
+                            <div class="checkbox mb-3">
+                            </div>
+                        #}
+
+                    </form>
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}

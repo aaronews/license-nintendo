@@ -6,9 +6,25 @@
     margin-left: 20px;
 }
 
+.header-front .header-right{
+    display: flex;
+}
+
+.header-front .user-links{
+    display: none;
+}
+
 @media screen and (max-width: 992px) {
     .header .navbar-nav .nav-item:first-child{
         margin-left: 0;
         
+    }
+
+    .header-front .user-links{
+        display: block;
+    }
+
+    .header-front .header-right{
+        display: none;
     }
 }

@@ -1,0 +1,27 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/signup.css')}}">
+{% endblock %}
+
+{% block title %}{{'users.signup.title'|trans}}{% endblock %}
+
+{% block body %}
+    <main class="signup d-flex align-items-center">
+        <div class="container">
+            <section class="row justify-content-center">
+                <h1 class="text-center content-title">{{'users.signup.title'|trans}}</h1>
+                <div class="col-12">
+                    {{form_start(form)}}
+                        <div class="row">
+                            {{form_row(form.username)}}
+                            {{form_row(form.password)}}
+                            {{form_row(form.confirmPassword)}}
+                            {{form_row(form.submit)}}
+                        </div>
+                    {{form_end(form)}}
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}

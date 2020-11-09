@@ -8,6 +8,9 @@ layout:
       licenses: Licences
       consoles: Consoles
       admin: Administration
+      login: Connexion
+      signup: Inscription
+      logout: Déconnexion
 
 admin:
   layout:
@@ -325,12 +328,58 @@ search:
   licenses:
     name: Nom de la licence
 
+users:
+  signup:
+    title: Inscription
+  lost_password:
+    title: Mot de passe perdu
+  form:
+    username:
+      placeholder: exemple@gmail.com
+    password:
+      label: Mot de passe
+    confirm_password:
+      label: Confirmation du mot de passe
+
+security:
+  login:
+    title: Connexion
+    form:
+      username:
+        placeholder: exemple@gmail.com
+      password:
+        label: Mot de passe
+      remenber_me:
+        label: Se souvenir de moi
+
+reset_password:
+  forgot_password:
+    title: Mot de passe oublié
+    error: Une erreur est survenue lors de l'envois de l'email de réinitialisation de mot de passe
+  forgot_password_confirm:
+    title: Demande de mot de passe envoyée
+    text: >
+      Un email à été envoyé, il contient un lien vous permettant de réinitialiser votre mot de passe. Il expirera dans %DURATION_VALUE% heure<br/>
+      Si vous ne recevez l'email, veillez vérifier vos spam ou <a href="%URL_FORGOT_PASSWORD%">réessayer</a>
+  reset_password:
+    token_not_found: Aucun token d'accès trouvé dans l'url ou en session
+    fail_validate_request: Une erreur est survenue lors de votre demande de réinitialisation de mot de passe
+    success: Mot de passe modifié
+    title: Réinitialisation du mot de passe
+    form:
+      password:
+        label: Nouveau mot de passe
+      confirm_password:
+        label: Confirmation du mot de passe
 form:
   button:
     filter: Filtrer
     edit: Modifier
     remove: Supprimer
     create: Ajouter
+    signup: S'inscrire
+    login: Connexion
+    validate: Valider
   sorting:
     ASC: Croissant
     DESC: Décroissant
@@ -344,3 +393,5 @@ form:
       preview_upload: Pré-visualisation de l'image uploadée
   slug:
     help: Générer à partir du nom
+  labels:
+    username: Adresse email

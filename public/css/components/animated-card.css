@@ -18,7 +18,8 @@
     max-width: 100%;
 }
 
-.animated-card:hover .animated-card-content{
+.animated-card:hover .animated-card-content,
+.animated-card.focused .animated-card-content{
     animation: slideIn 0.5s forwards;
 }
 

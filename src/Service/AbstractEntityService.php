@@ -67,6 +67,18 @@ abstract class AbstractEntityService{
     }
 
     /**
+     * Finds one entity by criterias in the repository.
+     *
+     * @param array $criterias
+     * @param array $sortOptions
+     * @return AbstractEntity
+     */
+    public function findOneBy(array $criterias = array(), array $sortOptions = array())
+    {
+        return $this->repository->findOneBy($criterias, $sortOptions);
+    }
+
+    /**
      * Find entities by criterias
      *
      * @param AbstractSearch $search

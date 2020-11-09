@@ -22,9 +22,39 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{path('consoles_list')}}">{{'layout.header.links.consoles'|trans}}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{path('admin_dashboard')}}">{{'layout.header.links.admin'|trans}}</a>
-                </li>
+                {% if app.user %}
+                    <li class="nav-item user-links">
+                        <a class="nav-link" href="{{path('logout')}}">{{'layout.header.links.logout'|trans}}</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item user-links">
+                        <a class="nav-link" href="{{path('login')}}">{{'layout.header.links.login'|trans}}</a>
+                    </li>
+                    <li class="nav-item user-links">
+                        <a class="nav-link" href="{{path('sign_up')}}">{{'layout.header.links.signup'|trans}}</a>
+                    </li>
+                {% endif %}
+                {% if is_granted('ROLE_ADMIN') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path('admin_dashboard')}}">{{'layout.header.links.admin'|trans}}</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="align-items-center text-right justify-content-end header-right">
+            <ul class="navbar-nav">
+                {% if app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path('logout')}}">{{'layout.header.links.logout'|trans}}</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item border-right">
+                        <a class="nav-link" href="{{path('login')}}">{{'layout.header.links.login'|trans}}</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="{{path('sign_up')}}">{{'layout.header.links.signup'|trans}}</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </nav>

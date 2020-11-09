@@ -1,0 +1,26 @@
+.signup{
+    background-image: url(/img/signup-bkg.png);
+    min-height: calc(100vh - 56px);
+    background-size: cover;
+
+    
+}
+
+.signup .container{
+    background-color: #ffffff;
+    border-radius: 15px;
+}
+
+.signup .container .content-title{
+    padding: 30px 0 25px 0;
+}
+
+.signup .container form{
+    margin: 0 30px;
+}
+
+@media screen and (max-width: 768px) {
+    .signup{
+        background-image: url(/img/signup-bkg-mobile.jpg);
+    }
+}
