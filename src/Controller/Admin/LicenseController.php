@@ -10,6 +10,7 @@ use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
 
 
 /**
@@ -74,8 +75,12 @@ class LicenseController extends AbtsractAdminController
      * @Route("/remove/{id}", name="remove", requirements={"id"="\d+"})
      */
     public function remove(License $license, LicensesService $licensesService){
-        $licensesService->removeEntity($license);
-        $this->addFlash('success', 'admin.licenses.remove.flash_success');
+        try{
+            $licensesService->removeEntity($license);
+            $this->addFlash('success', 'admin.licenses.remove.flash_success');
+        }catch(ForeignKeyConstraintViolationException  $e){
+            $this->addFlash('danger', 'admin.licenses.remove.flash_error');
+        }
         return $this->redirectToRoute('admin_licenses_list');
     }
 

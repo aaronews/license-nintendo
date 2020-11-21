@@ -37,6 +37,7 @@ admin:
     list:
       title: Liste des consoles
       confirm_remove: Êtes-vous sûr de vouloir supprimer cette console ?
+      empty: Aucune console trouvée
   licenses:
     add:
       title: Ajouter une licence
@@ -46,9 +47,11 @@ admin:
       flash_success: Licence modifiée
     remove:
       flash_success: Licence supprimée
+      flash_error: Impossible de supprimer la license car elle est liée à un ou plusieurs jeux
     list:
       title: Liste des licences
       confirm_remove: Êtes-vous sûr de vouloir supprimer cette licence ?
+      empty: Aucune license trouvée
   games:
     add:
       title: Ajouter un jeu
@@ -63,6 +66,7 @@ admin:
       confirm_remove: Êtes-vous sûr de vouloir supprimer ce jeu ?
       manage_characters_btn: Gestion des personnages
       manage_items_btn: Gestion des objets
+      empty: Aucun jeu trouvé
     characters:
       manage:
         title: Liste des personnages du jeu
@@ -70,6 +74,7 @@ admin:
         title_list: Liste des personnages
         flash_success: Personnage ajouté au jeu
         confirm_remove: Êtes-vous sûr de vouloir supprimer ce personnage du jeu ?
+        empty: Aucun personnage trouvé
       edit:
         title: Modification du personnage "%CHARACTER_NAME%" dans le jeu "%GAME_NAME%"
         flash_success: Personnage de jeu modifié
@@ -82,6 +87,7 @@ admin:
         title_list: Liste des objets
         flash_success: Objet ajouté au jeu
         confirm_remove: Êtes-vous sûr de vouloir supprimer cette objet du jeu ?
+        empty: Aucun objet trouvé
       edit:
         title: Modification de l'objet "%ITEM_NAME%" dans le jeu "%GAME_NAME%"
         flash_success: Objet de jeu modifié
@@ -96,9 +102,11 @@ admin:
       flash_success: Objet modifié
     remove:
       flash_success: Objet supprimé
+      flash_error: Impossible de supprimer l'objet car il est lié à un ou plusieurs jeux
     list:
       title: Liste des objets
       confirm_remove: Êtes-vous sûr de vouloir supprimer cet objet ?
+      empty: Aucun objet trouvé
   characters:
     add:
       title: Ajouter un personnage
@@ -108,9 +116,11 @@ admin:
       flash_success: Personnage modifié
     remove:
       flash_success: Personnage supprimé
+      flash_error: Impossible de supprimer le personnage car il est lié à un ou plusieurs jeux
     list:
       title: Liste des personnages
       confirm_remove: Êtes-vous sûr de vouloir supprimer ce personnage ?
+      empty: Aucun personnage trouvé
 
 
 

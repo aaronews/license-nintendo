@@ -18,7 +18,7 @@
                 <h2 class="p-3 text-center col-md-12">{{'characters.view.game_characters.title'|trans}}</h2>
                 {% for gameCharacter in character.gameCharacters %}
                     {% include 'layout/animated-card-content.html.twig' with {
-                        'cardThumbnail' : gameCharacter.thumbnail,
+                        'cardThumbnail' : asset(vich_uploader_asset(gameCharacter, 'imageFile')),
                         'cardTitle' : gameCharacter.game.name,
                         'cardUrl' :  path('games_view', {slug: gameCharacter.game.slug}),
                     }%}

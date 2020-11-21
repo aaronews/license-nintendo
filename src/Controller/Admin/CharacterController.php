@@ -10,6 +10,7 @@ use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
+use Doctrine\DBAL\Exception\ForeignKeyConstraintViolationException;
 
 
 /**
@@ -74,8 +75,12 @@ class CharacterController extends AbtsractAdminController
      * @Route("/remove/{id}", name="remove", requirements={"id"="\d+"})
      */
     public function remove(Character $character, CharactersService $charactersService){
-        $charactersService->removeEntity($character);
-        $this->addFlash('success', 'admin.characters.remove.flash_success');
+        try{
+            $charactersService->removeEntity($character);
+            $this->addFlash('success', 'admin.characters.remove.flash_success');
+        }catch(ForeignKeyConstraintViolationException  $e){
+            $this->addFlash('danger', 'admin.characters.remove.flash_error');
+        }
         return $this->redirectToRoute('admin_characters_list');
     }
 

@@ -22,21 +22,21 @@
             </section>
             <section class="row ml-0 mr-0 justify-content-center game-character">
                 <h2 class="p-3 text-center col-md-12">{{'games.view.characters.title'|trans}}</h2>
-                {% for gameCharacter in game.gameCharacters %}
+                {% for character in characters %}
                     {% include 'layout/animated-card-content.html.twig' with {
-                        'cardThumbnail' : gameCharacter.currentCharacter.thumbnail,
-                        'cardTitle' : gameCharacter.currentCharacter.name,
-                        'cardUrl' : path('characters_view', {slug : gameCharacter.currentCharacter.slug}),
+                        'cardThumbnail' : asset(vich_uploader_asset(character, 'imageFile')),
+                        'cardTitle' : character.name,
+                        'cardUrl' : path('characters_view', {slug : character.slug}),
                     }%}
                 {% endfor %}
             </section>
             <section class="row ml-0 mr-0 justify-content-center game-items">
                 <h2 class="p-3 text-center col-md-12">{{'games.view.items.title'|trans}}</h2>
-                {% for gameItem in game.gameItems %}
+                {% for item in items %}
                     {% include 'layout/animated-card-content.html.twig' with {
-                        'cardThumbnail' : gameItem.item.thumbnail,
-                        'cardTitle' : gameItem.item.name,
-                        'cardUrl' : path('items_view', {slug : gameItem.item.slug}),
+                        'cardThumbnail' : asset(vich_uploader_asset(item, 'imageFile')),
+                        'cardTitle' : item.name,
+                        'cardUrl' : path('items_view', {slug : item.slug}),
                     }%}
                 {% endfor %}
             </section>

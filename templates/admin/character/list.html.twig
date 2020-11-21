@@ -68,6 +68,11 @@
             </div>
         </div>
     {% endfor %}
+    {% if characters is empty %}
+        <div class="alert alert-info text-center">
+            {{ 'admin.characters.list.empty'|trans }}
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block navigation %}

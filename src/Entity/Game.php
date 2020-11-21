@@ -68,15 +68,13 @@ class Game extends AbstractDisplayableEntity
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity=GameItem::class, mappedBy="game", fetch="EXTRA_LAZY")
-     * @ORM\OrderBy({"item.name"="ASC"})
+     * @ORM\OneToMany(targetEntity=GameItem::class, mappedBy="game", cascade={"all"}, fetch="EXTRA_LAZY")
      */
     private $gameItems;
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity=GameCharacter::class, mappedBy="game", fetch="EXTRA_LAZY")
-     * @ORM\OrderBy({"currentCharacter->getName()"="ASC"})
+     * @ORM\OneToMany(targetEntity=GameCharacter::class, mappedBy="game", cascade={"all"}, fetch="EXTRA_LAZY")
      */
     private $gameCharacters;
 

@@ -18,7 +18,7 @@
                 <h2 class="p-3 text-center col-md-12">{{'licenses.view.best_games.title'|trans}}</h2>
                 {% for game in bestGames %}
                     {% include 'layout/animated-card-content.html.twig' with {
-                        'cardThumbnail' : game.thumbnail,
+                        'cardThumbnail' : asset(vich_uploader_asset(game, 'imageFile')),
                         'cardTitle' : game.name,
                         'cardUrl' :  path('games_view', {slug: game.slug}),
                     }%}

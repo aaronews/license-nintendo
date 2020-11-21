@@ -16,7 +16,7 @@
 {% block listBlock %}
     {% for character in characters %}
         {% include 'layout/animated-card-content.html.twig' with {
-            'cardThumbnail' : character.thumbnail,
+            'cardThumbnail' : asset(vich_uploader_asset(character, 'imageFile')),
             'cardTitle' : character.name,
             'cardUrl' : path('characters_view', {slug : character.slug}),
         }%}

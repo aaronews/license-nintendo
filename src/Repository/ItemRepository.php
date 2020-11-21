@@ -2,9 +2,10 @@
 
 namespace App\Repository;
 
+use App\Entity\Game;
 use App\Entity\Item;
-use Doctrine\Persistence\ManagerRegistry;
 use App\Entity\Search\Item as SearchItem;
+use Doctrine\Persistence\ManagerRegistry;
 
 class ItemRepository extends AbstractEntityRepository
 {
@@ -38,5 +39,23 @@ class ItemRepository extends AbstractEntityRepository
         }
 
         return $query->getQuery();
+    }
+
+    /**
+     * Get all items of game sort by name
+     *
+     * @param Game $game
+     * @return Item[]
+     */
+    public function findItemsByGame(Game $game){
+        return $this
+            ->createQueryBuilder('I')
+            ->join('I.gameItems', 'GI')
+            ->where('GI.game = :game')
+            ->setParameter('game', $game)
+            ->orderBy('I.name', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
     }
 }

@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -59,6 +61,7 @@ class User extends AbstractEntity implements UserInterface
 
     /**
      * @var array
+     * @ORM\Column(type="json", length=255)
      */
     private $roles;
 
@@ -200,19 +203,19 @@ class User extends AbstractEntity implements UserInterface
      */
     public function getRoles(): array
     {
-        return array($this->roles);
+        return array_unique(array_merge(['ROLE_USER'], $this->roles));
     }
 
     /**
      * Set roles value
      *
-     * @param string|null $roles
+     * @param array|null $roles
      * @return self
      */
-    public function setRoles(?string $roles): self
+    public function setRoles(?array $roles): self
     {
         if($roles === null){
-            $this->roles = 'ROLE_USER';
+            $this->roles = ['ROLE_USER'];
         }else{
             $this->roles = $roles;
         }

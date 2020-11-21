@@ -78,6 +78,11 @@
             </div>
         </div>
     {% endfor %}
+    {% if consoles is empty %}
+        <div class="alert alert-info text-center">
+            {{ 'admin.consoles.list.empty'|trans }}
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block navigation %}

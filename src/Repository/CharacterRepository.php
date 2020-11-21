@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Character;
+use App\Entity\Game;
 use Doctrine\Persistence\ManagerRegistry;
 use App\Entity\Search\Character as SearchCharacter;
 
@@ -45,5 +46,23 @@ class CharacterRepository extends AbstractEntityRepository
         }
 
         return $query->getQuery();
+    }
+
+    /**
+     * Get all characaters of game sort by name
+     *
+     * @param Game $game
+     * @return Character[]
+     */
+    public function findCharactersByGame(Game $game){
+        return $this
+            ->createQueryBuilder('C')
+            ->join('C.gameCharacters', 'GC')
+            ->where('GC.game = :game')
+            ->setParameter('game', $game)
+            ->orderBy('C.name', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
     }
 }

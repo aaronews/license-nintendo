@@ -80,6 +80,11 @@
             </div>
         </div>
     {% endfor %}
+    {% if gameItems is empty %}
+        <div class="alert alert-info text-center">
+            {{ 'admin.games.items.manage.empty'|trans }}
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block navigation %}

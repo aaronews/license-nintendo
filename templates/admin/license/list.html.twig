@@ -66,6 +66,11 @@
             </div>
         </div>
     {% endfor %}
+    {% if licenses is empty %}
+        <div class="alert alert-info text-center">
+            {{ 'admin.licenses.list.empty'|trans }}
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block navigation %}

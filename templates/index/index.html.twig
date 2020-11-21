@@ -23,7 +23,7 @@
                 <h2 class="p-3 text-center col-md-12">{{'homepage.licenses.title'|trans}}</h2>
                 {% for license in licenses %}
                     {% include 'layout/animated-card-content.html.twig' with {
-                        'cardThumbnail' : license.thumbnail,
+                        'cardThumbnail' : asset(vich_uploader_asset(license, 'imageFile')),
                         'cardTitle' : license.name,
                         'cardUrl' : path('licenses_view', {slug : license.slug}),
                     }%}

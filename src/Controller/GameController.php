@@ -7,6 +7,8 @@ use App\Form\Search\GameType;
 use App\Service\GamesService;
 use App\Entity\AbstractDisplayableEntity;
 use App\Entity\Search\Game as SearchGame;
+use App\Service\CharactersService;
+use App\Service\ItemsService;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -45,10 +47,12 @@ class GameController extends AbstractController
     /**
      * @Route("/{slug}", name="view", requirements={"slug"=AbstractDisplayableEntity::SLUG_PATTERN})
      */
-    public function view(Game $game)
+    public function view(Game $game, CharactersService $charactersService, ItemsService $itemsService)
     {
         return $this->render('game/view.html.twig', [
-            'game' => $game
+            'game' => $game,
+            'characters' => $charactersService->getCharactersByGame($game),
+            'items' => $itemsService->getItemsByGame($game),
         ]);
     }
 }

@@ -21,7 +21,7 @@
 {% block listBlock %}
     {% for game in games %}
         {% include 'layout/animated-card-content.html.twig' with {
-            'cardThumbnail' : game.thumbnail,
+            'cardThumbnail' : asset(vich_uploader_asset(game, 'imageFile')),
             'cardTitle' : game.name,
             'cardUrl' : path('games_view', {slug: game.slug}),
         }%}
