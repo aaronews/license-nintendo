@@ -33,7 +33,7 @@ class Item extends AbstractDisplayableEntity
      * @Vich\UploadableField(mapping="items_images", fileNameProperty="thumbnail")
      * @var File|null
      */
-    private $imageFile;
+    private $uploadThumbnail;
 
     public function __construct()
     {

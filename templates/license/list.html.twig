@@ -12,11 +12,13 @@
 {% endblock %}
 
 {% block listBlock %}
-    {% for license in licenses %}
-        {% include 'layout/animated-card-content.html.twig' with {
-            'cardThumbnail' : asset(vich_uploader_asset(license, 'imageFile')),
-            'cardTitle' : license.name,
-            'cardUrl' : path('licenses_view', {slug : license.slug}),
-        }%}
-    {% endfor %}
+    <div class="slick-container col-12 p-0">
+        {% for license in licenses %}
+            {% include 'layout/animated-card-content.html.twig' with {
+                'cardThumbnail' : asset(vich_uploader_asset(license, 'uploadThumbnail')),
+                'cardTitle' : license.name,
+                'cardUrl' : path('licenses_view', {slug : license.slug}),
+            }%}
+        {% endfor %}
+    </div>
 {% endblock %}

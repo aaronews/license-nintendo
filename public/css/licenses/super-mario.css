@@ -1,0 +1,40 @@
+.license.super-mario{
+    background-image: url(/img/licenses/super-mario/background.png),linear-gradient(to bottom, #139dd4 0%, #1340d4 50%, #5d13d4 100%);
+    color: #ffffff;
+}
+
+.license.super-mario .license-logo{
+    background-image: url(/img/licenses/super-mario/first-block-bkg.jpg);
+}
+
+.license.super-mario .license-best-games .animated-card-title,
+.license.super-mario .bloc-title{
+    font-family: "Catamaran bold";
+}
+
+.license.super-mario .license-description .license-description-text{
+    font-family: "Catamaran regular";
+}
+
+.license.super-mario .license-best-games .btn-primary{
+    color: #ffffff;
+    background-color: #e71e07;
+    border-color: #e71e07;
+    font-family: "Catamaran bold";
+}
+
+@media screen and (max-width: 767px) {
+    .license.super-mario .bloc-title{
+        display: block;
+    }
+
+    .license.super-mario .license-logo{
+        min-height: 400px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .license.super-mario .license-logo{
+        min-height: 300px;
+    }
+}

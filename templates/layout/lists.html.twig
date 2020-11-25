@@ -1,5 +1,9 @@
 {% extends 'layout/layout.html.twig' %}
 
+{% block javascripts %}
+    <script src="{{asset('js/animated-card.js')}}"></script>
+{% endblock %}
+
 {% block body %}
     <main class="licenses-list list animated-mario-background" role="main">
         <div class="container-fluid p-0">

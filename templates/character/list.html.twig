@@ -14,11 +14,13 @@
 {% endblock %}
 
 {% block listBlock %}
-    {% for character in characters %}
-        {% include 'layout/animated-card-content.html.twig' with {
-            'cardThumbnail' : asset(vich_uploader_asset(character, 'imageFile')),
-            'cardTitle' : character.name,
-            'cardUrl' : path('characters_view', {slug : character.slug}),
-        }%}
-    {% endfor %}
+    <div class="slick-container col-12 p-0">
+        {% for character in characters %}
+            {% include 'layout/animated-card-content.html.twig' with {
+                'cardThumbnail' : asset(vich_uploader_asset(character, 'uploadThumbnail')),
+                'cardTitle' : character.name,
+                'cardUrl' : path('characters_view', {slug : character.slug}),
+            }%}
+        {% endfor %}
+    </div>
 {% endblock %}

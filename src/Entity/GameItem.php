@@ -47,7 +47,7 @@ class GameItem extends AbstractEntity
      * @Vich\UploadableField(mapping="game_items_images", fileNameProperty="thumbnail")
      * @var File|null
      */
-    private $imageFile;
+    private $uploadThumbnail;
 
     /**
      * Get id value
@@ -131,14 +131,14 @@ class GameItem extends AbstractEntity
     /**
      * Set imega file value
      *
-     * @param File|null $imageFile
+     * @param File|null $uploadThumbnail
      * @return void
      */
-    public function setImageFile(?File $imageFile): void
+    public function setUploadThumbnail(?File $uploadThumbnail): void
     {
-        $this->imageFile = $imageFile;
+        $this->uploadThumbnail = $uploadThumbnail;
 
-        if($this->imageFile){
+        if($this->uploadThumbnail){
             $this->setUpdateAt(new \Datetime());
         }
     }
@@ -148,8 +148,8 @@ class GameItem extends AbstractEntity
      *
      * @return File|null
      */
-    public function getImageFile(): ?File
+    public function getUploadThumbnail(): ?File
     {
-        return $this->imageFile;
+        return $this->uploadThumbnail;
     }
 }

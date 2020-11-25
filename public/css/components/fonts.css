@@ -11,3 +11,38 @@
     font-weight: normal;
     font-style : normal;
 }
+
+@font-face {
+    font-family: 'Bitter bold';
+    src: url('/fonts/bold/Bitter-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style : normal;
+}
+
+@font-face {
+    font-family: 'Bitter regular';
+    src: url('/fonts/regular/Bitter-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style : normal;
+}
+
+@font-face {
+    font-family: 'Catamaran bold';
+    src: url('/fonts/bold/Catamaran-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style : normal;
+}
+
+@font-face {
+    font-family: 'Catamaran regular';
+    src: url('/fonts/regular/Catamaran-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style : normal;
+}
+
+@font-face {
+    font-family: 'Triforce regular';
+    src: url('/fonts/regular/Triforce.ttf') format('truetype');
+    font-weight: normal;
+    font-style : normal;
+}

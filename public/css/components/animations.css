@@ -44,3 +44,52 @@
         padding-left:250px;
     }
 }
+
+@keyframes closeCustomAlert{
+    0%{
+        right: 20px;
+    }
+    100%{
+        right: -270px;
+    }
+}
+
+@keyframes openCustomAlert{
+    0%{
+        right: -270px;
+    }
+    100%{
+        right: 20px;
+    }
+}
+
+@keyframes rotate180{
+    0%{
+        transform : rotate(0);
+
+    }
+
+    100%{
+        transform : translate(180deg);
+    }
+}
+
+@keyframes slide-left-background {
+    0%{
+        background-position: 0%;
+    }
+
+    100%{
+        background-position: 100%;
+    }
+}
+
+@keyframes slide-right-background {
+    0%{
+        background-position: 100%;
+    }
+
+    100%{
+        background-position: 0%;
+    }
+}

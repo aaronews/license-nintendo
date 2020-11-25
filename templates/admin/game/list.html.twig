@@ -53,7 +53,7 @@
                         <span>{{ 'games.form.console.label'|trans }}</span> : {{ consoles }}<br/>
                         <span>{{ 'games.form.genre.label'|trans }}</span> : {{ genres }}<br/>
                         <span>{{ 'games.form.player_numbers.label'|trans }}</span> : {{ game.nbPlayers }}<br/>
-                        <a data-thumbnail="{{asset(vich_uploader_asset(game, 'imageFile'))}}" data-toggle="modal" data-target="#thumbnail-modal" href="#" title="{{ 'games.list.see_thumbnail'|trans }}" class="text-dark row m-0 align-items-center text-decoration-none see-thumbnail">
+                        <a data-thumbnail="{{asset(vich_uploader_asset(game, 'uploadThumbnail'))}}" data-toggle="modal" data-target="#thumbnail-modal" href="#" title="{{ 'games.list.see_thumbnail'|trans }}" class="text-dark row m-0 align-items-center text-decoration-none see-thumbnail">
                             {{ 'games.list.see_thumbnail'|trans }} :&nbsp;<i class="fas fa-image fa-2x"></i>
                         </a>
                     </p>

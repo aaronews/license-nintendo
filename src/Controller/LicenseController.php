@@ -34,7 +34,7 @@ class LicenseController extends AbstractController
         $licenses = $paginator->paginate(
             $licensesService->findBySearchCriterias($search),
             $request->query->getInt('page', 1), 
-            10
+            100
         );
 
         return $this->render('license/list.html.twig', [

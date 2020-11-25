@@ -1,3 +1,30 @@
+html{
+    overflow-x: hidden;
+}
+
 .front main .container-fluid{
     min-height: calc(100vh - 56px);
+}
+
+.custom-alert{
+    position: fixed; 
+    margin: 0px; 
+    z-index: 9999; 
+    width: 250px; 
+    animation: closeCustomAlert 0.5s forwards;
+}
+
+.custom-alert.show{
+    animation: openCustomAlert 0.5s forwards;
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
 }

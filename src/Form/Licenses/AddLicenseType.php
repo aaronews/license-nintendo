@@ -14,7 +14,7 @@ class AddLicenseType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('imageFile', FileType::class, array(
+            ->add('uploadThumbnail', FileType::class, array(
                 'required' => true,
                 'label' => 'licenses.form.thumbnail.label',
                 'row_attr' => array(

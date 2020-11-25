@@ -1,5 +1,6 @@
 .animated-card{
     overflow : hidden;
+    border-radius: 0px;
 }
 
 .animated-card .animated-card-content{
@@ -11,6 +12,7 @@
     color : #ffffff;
     font-size: 35px;
     margin-bottom: 10vh;
+    padding: 5px;
 }
 
 .animated-card .animated-card-thumbnail{
@@ -26,4 +28,22 @@
 .animated-card .animated-card-content .btn{
     padding: 10px 20px;
     font-size: 1.5em;
+}
+
+.animated-card .animated-card-content a:focus{
+    outline: none;
+}
+
+.animated-card .animated-card-content a:focus .btn,
+.animated-card .animated-card-content a:hover .btn{
+    filter: brightness(1.5);
+}
+
+.slick-dots li button:before, .slick-dots li.slick-active button:before {
+    color: #ffffff;
+    font-size: 10px;
+}
+
+.slick-dots li button:focus{
+    box-shadow: 0px 0px 10px 5px rgba(66,136,204,1);
 }

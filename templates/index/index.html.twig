@@ -14,20 +14,22 @@
     <main class="homepage">
         <div class="container-fluid p-0">
             <section class="row ml-0 mr-0 homepage-description justify-content-center">
-                <h2 class="mt-5 text-center">{{'homepage.licenses.title'|trans}}</h2>
+                <h2 class="mt-5 text-center" onclick="toast.info('Hi! I am info message.');">{{'homepage.licenses.title'|trans}}</h2>
                 <div class="col-12 text-center">
                     <p>{{'homepage.description.text'|trans|raw}}</p>
                 </div>
             </section>
             <section class="row ml-0 mr-0 justify-content-center homepage-licenses">
                 <h2 class="p-3 text-center col-md-12">{{'homepage.licenses.title'|trans}}</h2>
-                {% for license in licenses %}
-                    {% include 'layout/animated-card-content.html.twig' with {
-                        'cardThumbnail' : asset(vich_uploader_asset(license, 'imageFile')),
-                        'cardTitle' : license.name,
-                        'cardUrl' : path('licenses_view', {slug : license.slug}),
-                    }%}
-                {% endfor %}
+                <div class="slick-container col-12 p-0">
+                    {% for license in licenses %}
+                        {% include 'layout/animated-card-content.html.twig' with {
+                            'cardThumbnail' : asset(vich_uploader_asset(license, 'uploadThumbnail')),
+                            'cardTitle' : license.name,
+                            'cardUrl' : path('licenses_view', {slug : license.slug}),
+                        }%}
+                    {% endfor %}
+                </div>
             </section>
         </div>
     </main>

@@ -16,10 +16,10 @@
             {{ form_row(form.description)}}
             {{ form_row(form.history)}}
             <div class="col-12">
-                <div class="row align-items-center">
-                    {{ form_row(form.imageFile)}}
+                <div class="row align-items-center upload-container">
+                    {{ form_row(form.uploadThumbnail)}}
                     {% include 'admin/layout/upload-preview.html.twig' with {
-                        'thumbnailUrl' : asset(vich_uploader_asset(game, 'imageFile'))
+                        'thumbnailUrl' : asset(vich_uploader_asset(game, 'uploadThumbnail'))
                     }%}
                 </div>
             </div>

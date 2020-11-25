@@ -21,8 +21,8 @@
         <div class="row">
             {{ form_row(form.item)}}
             <div class="col-12">
-                <div class="row align-items-center">
-                    {{ form_row(form.imageFile)}}
+                <div class="row align-items-center upload-container">
+                    {{ form_row(form.uploadThumbnail)}}
                     {% include 'admin/layout/upload-preview.html.twig' with {
                         'thumbnailUrl' : null
                     }%}
@@ -55,7 +55,7 @@
                     </p>
                 </div>
                 <div class="col-md-4">
-                    <a data-thumbnail="{{asset(vich_uploader_asset(gameItem, 'imageFile'))}}" data-toggle="modal" data-target="#thumbnail-modal" href="#" title="{{ 'games.list.see_thumbnail'|trans }}" class="text-dark row m-0 align-items-center text-decoration-none see-thumbnail">
+                    <a data-thumbnail="{{asset(vich_uploader_asset(gameItem, 'uploadThumbnail'))}}" data-toggle="modal" data-target="#thumbnail-modal" href="#" title="{{ 'games.list.see_thumbnail'|trans }}" class="text-dark row m-0 align-items-center text-decoration-none see-thumbnail">
                         <i class="fas fa-image fa-2x"></i>
                     </a>
                 </div>

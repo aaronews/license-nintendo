@@ -33,7 +33,7 @@ class ItemController extends AbstractController
         $items = $paginator->paginate(
             $itemsService->findBySearchCriterias($search),
             $request->query->getInt('page', 1), 
-            10
+            100
         );
 
         return $this->render('item/list.html.twig', [

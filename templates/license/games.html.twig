@@ -1,18 +1,19 @@
 {% extends 'layout/layout.html.twig' %}
 
 {% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/licenses/the-legend-of-zelda.css')}}">
 {% endblock %}
 
 {% block title %}{{'licenses.games.title'|trans ~ license.name}}{% endblock %}
 
 {% block body %}
-    <main class="license">
+    <main class="license {{license.slug}}">
         <div class="container-fluid p-0">
             <section class="row ml-0 mr-0 license-games justify-content-center">
                 <h2 class="p-3 text-center col-md-12">{{'licenses.games.title'|trans ~ license.name}}</h2>
                 {% for game in license.games %}
                     {% include 'layout/animated-card-content.html.twig' with {
-                        'cardThumbnail' : asset(vich_uploader_asset(game, 'imageFile')),
+                        'cardThumbnail' : asset(vich_uploader_asset(game, 'uploadThumbnail')),
                         'cardTitle' : game.name,
                         'cardUrl' :  path('games_view', {slug: game.slug}),
                     }%}

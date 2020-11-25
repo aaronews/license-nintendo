@@ -19,11 +19,13 @@
 {% endblock %}
 
 {% block listBlock %}
-    {% for game in games %}
-        {% include 'layout/animated-card-content.html.twig' with {
-            'cardThumbnail' : asset(vich_uploader_asset(game, 'imageFile')),
-            'cardTitle' : game.name,
-            'cardUrl' : path('games_view', {slug: game.slug}),
-        }%}
-    {% endfor %}
+    <div class="slick-container col-12 p-0">
+        {% for game in games %}
+            {% include 'layout/animated-card-content.html.twig' with {
+                'cardThumbnail' : asset(vich_uploader_asset(game, 'uploadThumbnail')),
+                'cardTitle' : game.name,
+                'cardUrl' : path('games_view', {slug: game.slug}),
+            }%}
+        {% endfor %}
+    </div>
 {% endblock %}

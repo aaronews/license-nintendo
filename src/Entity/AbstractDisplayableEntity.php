@@ -58,7 +58,7 @@ abstract class AbstractDisplayableEntity extends AbstractEntity
     /** 
      * @var File|null
      */
-    private $imageFile;
+    private $uploadThumbnail;
 
     /**
      * Get name value
@@ -155,14 +155,14 @@ abstract class AbstractDisplayableEntity extends AbstractEntity
     /**
      * Set imega file value
      *
-     * @param File|null $imageFile
+     * @param File|null $uploadThumbnail
      * @return void
      */
-    public function setImageFile(?File $imageFile): void
+    public function setUploadThumbnail(?File $uploadThumbnail): void
     {
-        $this->imageFile = $imageFile;
+        $this->uploadThumbnail = $uploadThumbnail;
 
-        if($this->imageFile){
+        if($this->uploadThumbnail){
             $this->setUpdateAt(new \Datetime());
         }
     }
@@ -172,8 +172,8 @@ abstract class AbstractDisplayableEntity extends AbstractEntity
      *
      * @return File|null
      */
-    public function getImageFile(): ?File
+    public function getUploadThumbnail(): ?File
     {
-        return $this->imageFile;
+        return $this->uploadThumbnail;
     }
 }

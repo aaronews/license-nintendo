@@ -42,6 +42,7 @@ class UsersService extends AbstractEntityService
         $this
             ->encodePassword($user, $user->getPassword())
             ->setToken($this->generateHashKeyForUserEntity($user, 'singup'))
+            ->setRoles(array('ROLE_USER'))
         ;
 
         parent::saveEntity($user, false);

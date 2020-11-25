@@ -1,0 +1,88 @@
+.license.super-smash-bros{
+    background-image: url(/img/licenses/super-smash-bros/background.png);
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #000000;
+}
+
+.license.super-smash-bros .license-logo{
+    background-image: url(/img/licenses/super-smash-bros/first-block-bkg.jpg);
+    background-position: 0%;
+    animation: slide-left-background 60s forwards;
+}
+
+.license.super-smash-bros .license-logo.animation-finish{
+    animation: slide-right-background 20s forwards;
+}
+
+.license.super-smash-bros .license-logo .logo img{
+    filter: drop-shadow(1px 1px 8px #000);
+}
+
+.license.super-smash-bros .license-best-games .animated-card-title,
+.license.super-smash-bros .bloc-title{
+    font-family: "Bitter bold";
+}
+
+
+.license.super-smash-bros .license-description .license-description-text{
+    font-family: "Bitter regular";
+}
+
+.license.super-smash-bros .license-best-games .btn-primary{
+    background: #000 url(/img/licenses/super-smash-bros/btn-bkg.png) repeat-x 50% 100%;
+    border: none;
+    background-size: auto 58px;
+    font-family: "Bitter bold";
+}
+
+.license.super-smash-bros .slick-dots {
+    bottom: -50px;
+}
+
+.license.super-smash-bros .slick-dots li button, 
+.license.super-smash-bros .slick-dots li button:before, 
+.license.super-smash-bros .slick-dots li.slick-active button,
+.license.super-smash-bros .slick-dots li.slick-active button:before {
+    font-size: 40px;
+}
+
+.license.super-smash-bros .slick-dots li, 
+.license.super-smash-bros .slick-dots li button,
+.license.super-smash-bros .slick-dots li button:before{
+    width: 40px;
+    height: 40px;
+}
+
+.license.super-smash-bros .slick-dots li button:before{
+    background-image: url(/img/licenses/super-smash-bros/dots.png);    
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.license.super-smash-bros .slick-dots li.slick-active button:before{
+    background-image: url(/img/licenses/super-smash-bros/dots-active.png);
+}
+
+
+@media screen and (max-width: 767px) {
+    .license.super-smash-bros .bloc-title{
+        display: block;
+    }
+
+    .license.super-smash-bros .license-logo{
+        min-height: 400px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .license.super-smash-bros .license-logo{
+        min-height: 300px;
+    }
+}

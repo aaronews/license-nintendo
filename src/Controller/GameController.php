@@ -35,7 +35,7 @@ class GameController extends AbstractController
         $games = $paginator->paginate(
             $gamesService->findBySearchCriterias($search),
             $request->query->getInt('page', 1), 
-            10
+            100
         );
         
         return $this->render('game/list.html.twig', [

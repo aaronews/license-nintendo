@@ -39,7 +39,7 @@ class Character extends AbstractDisplayableEntity
      * @Vich\UploadableField(mapping="characters_images", fileNameProperty="thumbnail")
      * @var File|null
      */
-    private $imageFile;
+    private $uploadThumbnail;
 
     public function __construct()
     {

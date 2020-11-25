@@ -34,7 +34,7 @@ class CharacterController extends AbstractController
         $characters = $paginator->paginate(
             $itemsService->findBySearchCriterias($search),
             $request->query->getInt('page', 1), 
-            10
+            100
         );
         return $this->render('character/list.html.twig', [
             'characters' => $characters,

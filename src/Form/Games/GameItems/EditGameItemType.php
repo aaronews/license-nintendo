@@ -14,7 +14,7 @@ class EditGameItemType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('imageFile', FileType::class, array(
+            ->add('uploadThumbnail', FileType::class, array(
                 'required' => false,
                 'label' => 'game_items.form.thumbnail.label',
                 'row_attr' => array(

@@ -18,7 +18,7 @@
                 <h2 class="p-3 text-center col-md-12">{{'consoles.view.console_games.title'|trans}}</h2>
                 {% for game in console.games %}
                     {% include 'layout/animated-card-content.html.twig' with {
-                        'cardThumbnail' : asset(vich_uploader_asset(game, 'imageFile')),
+                        'cardThumbnail' : asset(vich_uploader_asset(game, 'uploadThumbnail')),
                         'cardTitle' : game.name,
                         'cardUrl' :  path('games_view', {slug: game.slug}),
                     }%}

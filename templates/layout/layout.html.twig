@@ -6,6 +6,8 @@
         <link rel="icon" href="{{asset('img/favicon.ico')}}">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('css/slick.css')}}">
+        <link rel="stylesheet" href="{{asset('css/slick-theme.css')}}">
         <link rel="stylesheet" href="{{asset('css/components/variables.css')}}">
         <link rel="stylesheet" href="{{asset('css/components/animations.css')}}">
         <link rel="stylesheet" href="{{asset('css/components/layout.css')}}">
@@ -19,12 +21,23 @@
     <body>
         {% include 'layout/header.html.twig' %}
         {% block body %}{% endblock %}
+
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="custom-alert alert alert-{{ label }}">
+                    <p class="mb-0"><strong>{{ message|trans }}</strong></p>
+                </div>
+            {% endfor %}
+        {% endfor %}
+        
         {% include 'layout/footer.html.twig' %}
         
         <script src="{{asset('js/jquery-3.5.1.slim.min.js')}}"></script>
         <script src="{{asset('js/popper.min.js')}}"></script>
         <script src="{{asset('js/bootstrap.min.js')}}"></script>
         <script src="{{asset('js/fontawesome.js')}}"></script>
+        <script src="{{asset('js/slick.min.js')}}"></script>
+        <script src="{{asset('js/layout.js')}}"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

@@ -33,7 +33,7 @@ class ConsoleController extends AbstractController
         $consoles = $paginator->paginate(
             $consolesService->findBySearchCriterias($search),
             $request->query->getInt('page', 1), 
-            10
+            100
         );
         
         return $this->render('console/list.html.twig', [

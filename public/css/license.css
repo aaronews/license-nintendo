@@ -1,0 +1,33 @@
+.license.the-legend-of-zelda .bloc-title{
+    font-size: 2.5em;
+}
+
+.license .license-best-games .btn-primary:hover,
+.license .license-best-games .btn-primary:hover{
+    filter : brightness(150%)
+}
+
+.license .license-best-games .btn-wrapper .btn-more .fa-plus{
+     transition: all 1s ease;
+}
+
+.license .license-best-games .btn-wrapper .btn-more:hover .fa-plus,
+.license .license-best-games .btn-wrapper .btn-more:focus .fa-plus{
+	transform: rotate(180deg) ;
+}
+
+.license .license-description .license-description-text{
+    text-align: justify;
+    font-size: 20px;
+}
+
+.license .license-logo{
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    min-height: 640px;
+}
+
+.license .license-logo img{
+    max-width: 100%;
+}

@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * @ORM\Entity(repositoryClass=GameRepository::class)
@@ -89,7 +90,13 @@ class Game extends AbstractDisplayableEntity
      * @Vich\UploadableField(mapping="games_images", fileNameProperty="thumbnail")
      * @var File|null
      */
-    private $imageFile;
+    private $uploadThumbnail;
+
+    /**
+     * @Vich\UploadableField(mapping="licenses_images", fileNameProperty="logo")
+     * @var File|null
+     */
+    private $uploadLogo;
 
     public function __construct()
     {
@@ -390,6 +397,54 @@ class Game extends AbstractDisplayableEntity
     public function setCopiesSold(int $copiesSold): self
     {
         $this->copiesSold = $copiesSold;
+
+        return $this;
+    }
+
+    /**
+     * Set logo file value
+     *
+     * @param File|null $uploadLogo
+     * @return void
+     */
+    public function setUploadLogo(?File $uploadLogo): void
+    {
+        $this->uploadLogo = $uploadLogo;
+
+        if($this->uploadLogo){
+            $this->setUpdateAt(new \Datetime());
+        }
+    }
+
+    /**
+     * Get logo file value
+     *
+     * @return File|null
+     */
+    public function getUploadLogo(): ?File
+    {
+        return $this->uploadLogo;
+    }
+
+    /**
+     * Get logo value
+     *
+     * @return string|null
+     */
+    public function getLogo(): ?string
+    {
+        return $this->logo;
+    }
+
+    /**
+     * Set logo value
+     *
+     * @param string|null $logo
+     * @return self
+     */
+    public function setLogo(?string $logo): self
+    {
+        $this->logo = $logo;
 
         return $this;
     }

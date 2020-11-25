@@ -11,6 +11,8 @@ layout:
       login: Connexion
       signup: Inscription
       logout: Déconnexion
+  footer:
+    developed_by : Développé par Alexandre Chantraine
 
 admin:
   layout:
@@ -145,13 +147,17 @@ licenses:
       label: Description
     thumbnail:
       label: Vignette de la licence
+    logo:
+      label: Logo de la licence
     slug:
       label: Slug
       placeholder: nom-de-la-licence
   view:
     best_games:
-      title: Meilleurs jeux
+      title: Les jeux les plus populaires
       btn_see_all: Voir tout les jeux
+    description:
+      title: Histoire
   games:
     title: >
       Jeux :
@@ -269,6 +275,8 @@ games:
       label: Description
     thumbnail:
       label: Vignette du jeu
+    logo:
+      label: Logo du jeu
     slug:
       label: Slug
       placeholder: nom-du-jeu
@@ -341,6 +349,7 @@ search:
 users:
   signup:
     title: Inscription
+    success: Votre compté est créé vous allez recevoir un mail pour l'activer
   lost_password:
     title: Mot de passe perdu
   form:

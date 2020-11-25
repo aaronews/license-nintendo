@@ -6,6 +6,7 @@ use App\Entity\License;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
@@ -44,6 +45,13 @@ class AbstractLicenseType extends AbstractType
                 'help_attr' => array(
                     'class' => 'generate-slug btn btn-default'
                 )
+            ))
+            ->add('uploadLogo', FileType::class, array(
+                'required' => false,
+                'label' => 'licenses.form.logo.label',
+                'row_attr' => array(
+                    'class' => 'col-sm-6 col-12'
+                ),
             ))
         ;
     }

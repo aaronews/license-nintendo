@@ -1,29 +1,57 @@
 {% extends 'layout/layout.html.twig' %}
 
 {% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/licenses/the-legend-of-zelda.css')}}">
+    <link rel="stylesheet" href="{{asset('css/licenses/super-mario.css')}}">
+    <link rel="stylesheet" href="{{asset('css/licenses/super-smash-bros.css')}}">
+    <link rel="stylesheet" href="{{asset('css/license.css')}}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{asset('js/license.js')}}"></script>
+    <script src="{{asset('js/animated-card.js')}}"></script>
 {% endblock %}
 
 {% block title %}{{license.name}}{% endblock %}
 
 {% block body %}
-    <main class="license">
+    <main class="license {{license.slug}}">
         <div class="container-fluid p-0">
-            <section class="row ml-0 mr-0 license-description justify-content-center">
-                <h2 class="mt-5 text-center">{{license.name}}</h2>
-                <div class="col-12 text-center">
-                    <p>{{license.description|raw}}</p>
+            <h1 class="visually-hidden">{{license.name}}</h1>
+            <section class="row license-logo mr-0 ml-0">
+                <div class="col-12 row justify-content-center align-items-center mr-0 ml-0">
+                    {% if license.logo %}
+                        <div class="col-12 col-lg-4 col-md-8 text-center logo">
+                        {#  <img src="/img/licenses/the-legend-of-zelda/logo.svg" alt="{{license.name}}"> #}
+                            <img src="{{asset(vich_uploader_asset(license, 'uploadLogo'))}}" alt="{{license.name}}">
+                        </div>
+                    {% endif %}
                 </div>
             </section>
-            <section class="row ml-0 mr-0 justify-content-center license-best-games">
-                <h2 class="p-3 text-center col-md-12">{{'licenses.view.best_games.title'|trans}}</h2>
-                {% for game in bestGames %}
-                    {% include 'layout/animated-card-content.html.twig' with {
-                        'cardThumbnail' : asset(vich_uploader_asset(game, 'imageFile')),
-                        'cardTitle' : game.name,
-                        'cardUrl' :  path('games_view', {slug: game.slug}),
-                    }%}
-                {% endfor %}
-                <div class="col-12 text-center btn-wrapper">
+            <section class="row ml-0 mr-0 license-description justify-content-center">
+                <div class="bloc-title-container col-md-12 text-center p-3 mt-5">
+                    <h2 class="bloc-title position-relative">{{'licenses.view.description.title'|trans}}</h2>
+                </div>
+                <div class="col-12 text-center pb-4 row justify-content-center mr-0 ml-0">
+                    <div class="col-12 col-md-10">
+                        <p class="license-description-text">{{license.description|raw}}</p>
+                    </div>
+                </div>
+            </section>
+            <section class="row ml-0 mr-0 justify-content-center license-best-games mt-4">
+                <div class="bloc-title-container col-md-12 text-center p-3">
+                    <h2 class="bloc-title position-relative">{{'licenses.view.best_games.title'|trans}}</h2>
+                </div>
+                <div class="slick-container col-12 p-0">
+                    {% for game in bestGames %}
+                        {% include 'layout/animated-card-content.html.twig' with {
+                            'cardThumbnail' : asset(vich_uploader_asset(game, 'uploadThumbnail')),
+                            'cardTitle' : game.name,
+                            'cardUrl' :  path('games_view', {slug: game.slug}),
+                        }%}
+                    {% endfor %}
+                </div>
+                <div class="col-12 text-center btn-wrapper m-5">
                     <a class="btn btn-lg btn-more btn-primary" href="{{path('licenses_games', {slug : license.slug})}}">
                         <i class="fa fa-2x fa-plus align-middle mr-2"></i>
                         {{'licenses.view.best_games.btn_see_all'|trans}}

@@ -24,7 +24,7 @@
                 <h2 class="p-3 text-center col-md-12">{{'games.view.characters.title'|trans}}</h2>
                 {% for character in characters %}
                     {% include 'layout/animated-card-content.html.twig' with {
-                        'cardThumbnail' : asset(vich_uploader_asset(character, 'imageFile')),
+                        'cardThumbnail' : asset(vich_uploader_asset(character, 'uploadThumbnail')),
                         'cardTitle' : character.name,
                         'cardUrl' : path('characters_view', {slug : character.slug}),
                     }%}
@@ -34,7 +34,7 @@
                 <h2 class="p-3 text-center col-md-12">{{'games.view.items.title'|trans}}</h2>
                 {% for item in items %}
                     {% include 'layout/animated-card-content.html.twig' with {
-                        'cardThumbnail' : asset(vich_uploader_asset(item, 'imageFile')),
+                        'cardThumbnail' : asset(vich_uploader_asset(item, 'uploadThumbnail')),
                         'cardTitle' : item.name,
                         'cardUrl' : path('items_view', {slug : item.slug}),
                     }%}

@@ -32,19 +32,22 @@ class License extends AbstractDisplayableEntity
     private $games;
 
     /**
-     * @Assert\File(
-     *     maxSize = "2M",
-     * )
-     * @Assert\Image(
-     *     minWidth = 1000,
-     *     maxWidth = 1000,
-     *     minHeight = 1000,
-     *     maxHeight = 1000
-     * )
      * @Vich\UploadableField(mapping="licenses_images", fileNameProperty="thumbnail")
      * @var File|null
      */
-    private $imageFile;
+    private $uploadThumbnail;
+
+    /**
+     * @Vich\UploadableField(mapping="licenses_images", fileNameProperty="logo")
+     * @var File|null
+     */
+    private $uploadLogo;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $logo;
 
     public function __construct()
     {
@@ -102,6 +105,54 @@ class License extends AbstractDisplayableEntity
                 $game->setLicense(null);
             }
         }
+
+        return $this;
+    }
+
+    /**
+     * Set logo file value
+     *
+     * @param File|null $uploadLogo
+     * @return void
+     */
+    public function setUploadLogo(?File $uploadLogo): void
+    {
+        $this->uploadLogo = $uploadLogo;
+
+        if($this->uploadLogo){
+            $this->setUpdateAt(new \Datetime());
+        }
+    }
+
+    /**
+     * Get logo file value
+     *
+     * @return File|null
+     */
+    public function getUploadLogo(): ?File
+    {
+        return $this->uploadLogo;
+    }
+
+    /**
+     * Get logo value
+     *
+     * @return string|null
+     */
+    public function getLogo(): ?string
+    {
+        return $this->logo;
+    }
+
+    /**
+     * Set logo value
+     *
+     * @param string|null $logo
+     * @return self
+     */
+    public function setLogo(?string $logo): self
+    {
+        $this->logo = $logo;
 
         return $this;
     }
