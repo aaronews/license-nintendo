@@ -121,21 +121,13 @@ class GameType extends AbstractType
             ))
             ->add('submit', SubmitType::class, array(
                 'label' => 'form.button.filter',
+                'attr' => array(
+                    'class' => 'btn-lg btn-primary btn',
+                ),
                 'row_attr' => array(
                     'class' => 'col-sm-12 text-center'
                 ),
             ))
-            /* ->add('orderBy', ChoiceType::class,array(
-                'required' => false,
-                'label' => 'form.order_by.label',
-                'placeholder' => false,
-                'choice_value' => function(GamesService $gamesService = null){
-                    return ($gamesService ? $gamesService->getMappingFieldsForSort() : 'a');
-                },
-                'row_attr' => array(
-                    'class' => 'col-sm-6'
-                ),
-            )) */
         ;
     }
 
@@ -144,10 +136,5 @@ class GameType extends AbstractType
         $resolver->setDefaults([
             'data_class' => Game::class,
         ]);
-    }
-
-    public function getParent()
-    {
-        return AbstractSearchType::class;
     }
 }

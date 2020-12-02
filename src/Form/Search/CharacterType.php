@@ -56,6 +56,9 @@ class CharacterType extends AbstractType
             ))
             ->add('submit', SubmitType::class, array(
                 'label' => 'form.button.filter',
+                'attr' => array(
+                    'class' => 'btn-lg btn-primary btn',
+                ),
                 'row_attr' => array(
                     'class' => 'col-sm-12 text-center m-auto'
                 ),
@@ -68,10 +71,5 @@ class CharacterType extends AbstractType
         $resolver->setDefaults([
             'data_class' => Character::class,
         ]);
-    }
-
-    public function getParent()
-    {
-        return AbstractSearchType::class;
     }
 }

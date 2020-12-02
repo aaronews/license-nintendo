@@ -32,4 +32,30 @@ class GameCharacterRepository extends AbstractEntityRepository
 
         return $query->getQuery();
     }
+
+    /**
+     * Get all characaters of game sort by name
+     *
+     * @param Game $game
+     * @param int|null $limit
+     * @return Character[]
+     */
+    public function findCharactersByGame(Game $game, ?int $limit = null){
+        $queryBuilder = $this
+            ->createQueryBuilder('GC')
+            ->join('GC.currentCharacter', 'C')
+            ->where('GC.game = :game')
+            ->setParameter('game', $game)
+            ->orderBy('C.name', 'ASC')
+        ;
+
+        if($limit){
+            $queryBuilder->setMaxResults($limit);
+        }
+        
+        return $queryBuilder
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

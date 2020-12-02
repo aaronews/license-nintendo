@@ -43,6 +43,7 @@ services:
             - Symfony\Contracts\Translation\TranslatorInterface
         ]
 
+
     app.licenses_service:
         class : App\Service\LicensesService
         arguments : [
@@ -59,6 +60,9 @@ services:
         class : App\Service\GamesService
         arguments : [
             - App\Repository\GameRepository
+            - App\Repository\GenreRepository
+            - App\Repository\ConsoleRepository
+            - App\Repository\LicenseRepository
         ]
 
     app.consoles_service:

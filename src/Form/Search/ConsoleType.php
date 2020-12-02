@@ -91,6 +91,9 @@ class ConsoleType extends AbstractType
             ))
             ->add('submit', SubmitType::class, array(
                 'label' => 'form.button.filter',
+                'attr' => array(
+                    'class' => 'btn-lg btn-primary btn',
+                ),
                 'row_attr' => array(
                     'class' => 'col-sm-12 text-center'
                 ),
@@ -103,10 +106,5 @@ class ConsoleType extends AbstractType
         $resolver->setDefaults([
             'data_class' => Console::class,
         ]);
-    }
-
-    public function getParent()
-    {
-        return AbstractSearchType::class;
     }
 }

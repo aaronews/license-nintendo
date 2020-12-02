@@ -5,13 +5,35 @@ namespace App\Service;
 use App\Entity\Game;
 use App\Entity\GameCharacter;
 use App\Entity\License;
+use App\Entity\Search\Game as SearchGame;
+use App\Repository\ConsoleRepository;
 use App\Repository\GameRepository;
+use App\Repository\GenreRepository;
+use App\Repository\LicenseRepository;
 
 class GamesService extends AbstractEntityService 
 {
-    public function __construct(GameRepository $repository)
+    /**
+     * @var GenreRepository
+     */
+    private $genreRepository;
+
+    /**
+     * @var ConsoleRepository
+     */
+    private $consoleRepository;
+
+    /**
+     * @var LicenseRepository
+     */
+    private $licenseRepository;
+
+    public function __construct(GameRepository $repository, GenreRepository	$genreRepository, ConsoleRepository	$consoleRepository, LicenseRepository $licenseRepository)
     {
         $this->repository = $repository;
+        $this->genreRepository = $genreRepository;
+        $this->consoleRepository = $consoleRepository;
+        $this->licenseRepository = $licenseRepository;
     }
 
     /**
@@ -25,18 +47,39 @@ class GamesService extends AbstractEntityService
         return $this->repository->findBy(array('license' => $license), array('copiesSold' => 'DESC'), 4);
     }
 
-    public function getMappingFieldsForSort()
+    /**
+     * Hydrate search entity with array data
+     *
+     * @param array $data
+     * @param SearchGame $search
+     * @return SearchGame
+     */
+    public function hydrateSearch(array $data, SearchGame $search):SearchGame
     {
-        $columns = parent::getMappingFieldsForSort();
-        $ignoreColumns = array('description','thumbnail','slug', 'history');
-        $sortOptions = array();
-
-        foreach($columns as $column){
-            if(!in_array($column, $ignoreColumns)){
-                $sortOptions['games.fields.' . $column] = $column;
+        foreach($data as $key => $value){
+            $repository = null;
+            $setter = 'set' . ucfirst($key);
+            switch($key){
+                case 'genre':
+                    $repository = $this->genreRepository;
+                    break;
+                case 'license':
+                    $repository = $this->licenseRepository;
+                    break;
+                case 'console':
+                    $repository = $this->consoleRepository;
+                    break;
+                default:
+                    break;
+            }
+            
+            if($repository && isset($data[$key])){
+                $search->$setter(isset($data[$key]) ? $repository->find($data[$key]) : null);
+            }else{
+                $search->$setter($data[$key] ?? null);
             }
         }
-        
-        return $sortOptions;
+
+        return $search;
     }
 }

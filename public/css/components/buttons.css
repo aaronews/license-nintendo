@@ -1,13 +1,38 @@
 .btn.btn-lg{
     font-size : 20px;
     border-radius: 5px;
-   /* font-family : @font-family-sans-serif-bold;*/
     position:relative;
     padding:15px 40px;
     overflow : hidden;
     line-height: 1;
 }
 
-.btn:hover:not(:disabled), .btn:focus:not(:disabled){
+.btn.btn-primary{
+    color: #ffffff;
+    background-color: #000000;
+    border-color: #ffffff;
+    font-family: "Roboto bold";
+}
+
+.btn:hover:not(:disabled), 
+.btn:focus:not(:disabled),
+.btn:active:not(:disabled){
     filter: brightness(110%);
+}
+
+.btn.btn-primary:hover:not(:disabled):not(:disabled), 
+.btn.btn-primary:focus:not(:disabled):not(:disabled),
+.btn.btn-primary:active:not(:disabled):not(:disabled){
+    color: #ffffff;
+    background-color: #000000;
+    border-color: #ffffff;
+}
+
+main .btn-wrapper .btn-more .fa-plus{
+     transition: all 1s ease;
+}
+
+main .btn-wrapper .btn-more:hover .fa-plus,
+main .btn-wrapper .btn-more:focus .fa-plus{
+	transform: rotate(180deg) ;
 }

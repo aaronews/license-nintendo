@@ -32,4 +32,30 @@ class GameItemRepository extends AbstractEntityRepository
 
         return $query->getQuery();
     }
+
+    /**
+     * Get all items of game sort by name
+     *
+     * @param Game $game
+     * @param int|null $limit
+     * @return Item[]
+     */
+    public function findItemsByGame(Game $game, ?int $limit = null){
+        $queryBuilder = $this
+            ->createQueryBuilder('GI')
+            ->join('GI.item', 'I')
+            ->where('GI.game = :game')
+            ->setParameter('game', $game)
+            ->orderBy('I.name', 'ASC')
+        ;
+
+        if($limit){
+            $queryBuilder->setMaxResults($limit);
+        }
+        
+        return $queryBuilder
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

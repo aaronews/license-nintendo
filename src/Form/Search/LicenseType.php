@@ -3,6 +3,7 @@
 namespace App\Form\Search;
 
 use App\Entity\Search\License;
+use App\Service\LicensesService;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -26,6 +27,9 @@ class LicenseType extends AbstractType
             ))
             ->add('submit', SubmitType::class, array(
                 'label' => 'form.button.filter',
+                'attr' => array(
+                    'class' => 'btn-lg btn-primary btn',
+                ),
                 'row_attr' => array(
                     'class' => 'col-sm-2 text-center m-auto'
                 ),
@@ -38,10 +42,5 @@ class LicenseType extends AbstractType
         $resolver->setDefaults([
             'data_class' => License::class,
         ]);
-    }
-
-    public function getParent()
-    {
-        return AbstractSearchType::class;
     }
 }

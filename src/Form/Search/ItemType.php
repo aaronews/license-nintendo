@@ -42,6 +42,9 @@ class ItemType extends AbstractType
             ))
             ->add('submit', SubmitType::class, array(
                 'label' => 'form.button.filter',
+                'attr' => array(
+                    'class' => 'btn-lg btn-primary btn',
+                ),
                 'row_attr' => array(
                     'class' => 'col-sm-2 text-center m-auto'
                 ),
@@ -54,10 +57,5 @@ class ItemType extends AbstractType
         $resolver->setDefaults([
             'data_class' => Item::class,
         ]);
-    }
-
-    public function getParent()
-    {
-        return AbstractSearchType::class;
     }
 }

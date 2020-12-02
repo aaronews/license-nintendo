@@ -1,10 +1,12 @@
 {% extends 'layout/layout.html.twig' %}
 
 {% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/license.css')}}">
     <link rel="stylesheet" href="{{asset('css/licenses/the-legend-of-zelda.css')}}">
     <link rel="stylesheet" href="{{asset('css/licenses/super-mario.css')}}">
     <link rel="stylesheet" href="{{asset('css/licenses/super-smash-bros.css')}}">
-    <link rel="stylesheet" href="{{asset('css/license.css')}}">
+    <link rel="stylesheet" href="{{asset('css/licenses/pokemon.css')}}">
+    <link rel="stylesheet" href="{{asset('css/licenses/donkey-kong.css')}}">
 {% endblock %}
 
 {% block javascripts %}
@@ -22,7 +24,6 @@
                 <div class="col-12 row justify-content-center align-items-center mr-0 ml-0">
                     {% if license.logo %}
                         <div class="col-12 col-lg-4 col-md-8 text-center logo">
-                        {#  <img src="/img/licenses/the-legend-of-zelda/logo.svg" alt="{{license.name}}"> #}
                             <img src="{{asset(vich_uploader_asset(license, 'uploadLogo'))}}" alt="{{license.name}}">
                         </div>
                     {% endif %}
@@ -48,10 +49,11 @@
                             'cardThumbnail' : asset(vich_uploader_asset(game, 'uploadThumbnail')),
                             'cardTitle' : game.name,
                             'cardUrl' :  path('games_view', {slug: game.slug}),
+                            'cardClass' : '',
                         }%}
                     {% endfor %}
                 </div>
-                <div class="col-12 text-center btn-wrapper m-5">
+                <div class="col-12 text-center btn-wrapper m-3">
                     <a class="btn btn-lg btn-more btn-primary" href="{{path('licenses_games', {slug : license.slug})}}">
                         <i class="fa fa-2x fa-plus align-middle mr-2"></i>
                         {{'licenses.view.best_games.btn_see_all'|trans}}

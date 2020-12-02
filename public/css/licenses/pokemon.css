@@ -1,0 +1,82 @@
+main.pokemon{
+    background-image: url(/img/licenses/pokemon/background.jpg);
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    color: #ffffff;
+}
+
+main.pokemon .license-logo{
+    background-image: url(/img/licenses/pokemon/first-block-bkg.jpg);
+    background-position: center center;
+}
+
+main.pokemon .license-best-games .animated-card-title,
+main.pokemon .bloc-title,
+main.pokemon .btn-primary{
+    font-family: "Catamaran bold";
+}
+
+main.pokemon .license-description .license-description-text{
+    font-family: "Catamaran regular";
+}
+
+main.pokemon .btn-primary,
+main.pokemon .btn-primary:hover:not(:disabled):not(:disabled), 
+main.pokemon .btn-primary:focus:not(:disabled):not(:disabled),
+main.pokemon .btn-primary:active:not(:disabled):not(:disabled){
+    color: #ffffff;
+    background-color: #e71e07;
+    border-color: #e71e07;
+}
+
+main.pokemon .slick-dots {
+    bottom: -50px;
+}
+
+main.pokemon .slick-dots li button, 
+main.pokemon .slick-dots li button:before, 
+main.pokemon .slick-dots li.slick-active button,
+main.pokemon .slick-dots li.slick-active button:before {
+    font-size: 40px;
+}
+
+main.pokemon .slick-dots li, 
+main.pokemon .slick-dots li button,
+main.pokemon .slick-dots li button:before{
+    width: 40px;
+    height: 40px;
+}
+
+main.pokemon .slick-dots li button:before{
+    background-image: url(/img/licenses/pokemon/dots.png);    
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main.pokemon .slick-dots li.slick-active button:before{
+    background-image: url(/img/licenses/pokemon/dots-active.png);
+}
+
+@media screen and (max-width: 767px) {
+    main.pokemon .bloc-title{
+        display: block;
+    }
+
+    main.pokemon .license-logo{
+        min-height: 400px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    main.pokemon .license-logo{
+        min-height: 300px;
+    }
+}

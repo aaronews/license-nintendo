@@ -12,4 +12,15 @@ class GameItemsService extends AbstractEntityService
     {
         $this->repository = $repository;
     }
+
+    /**
+     * Get all items of game
+     *
+     * @param Game $game
+     * @param int|null $limit
+     * @return Item[]
+     */
+    public function getItemsByGame(Game $game, ?int $limit = null){
+        return $this->repository->findItemsByGame($game, $limit);
+    }
 }

@@ -27,6 +27,7 @@
                             'cardThumbnail' : asset(vich_uploader_asset(license, 'uploadThumbnail')),
                             'cardTitle' : license.name,
                             'cardUrl' : path('licenses_view', {slug : license.slug}),
+                            'cardClass' : '',
                         }%}
                     {% endfor %}
                 </div>

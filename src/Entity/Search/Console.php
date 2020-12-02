@@ -168,4 +168,20 @@ class Console extends AbstractSearch
 
         return $this;
     }
+
+    /**
+     * Convert entity to array
+     *
+     * @return array
+     */
+    public  function toArray(): array{
+        return [
+            'name' => $this->name,
+            'game' => $this->game ? $this->game->getId() : null,
+            'releaseDateMax' => $this->releaseDateMax,
+            'releaseDateMin' => $this->releaseDateMin,
+            'releasePriceMax' => $this->releasePriceMax,
+            'releasePriceMin' => $this->releasePriceMin,
+        ];
+    }
 }

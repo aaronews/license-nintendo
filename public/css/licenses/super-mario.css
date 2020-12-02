@@ -1,40 +1,77 @@
-.license.super-mario{
+main.super-mario{
     background-image: url(/img/licenses/super-mario/background.png),linear-gradient(to bottom, #139dd4 0%, #1340d4 50%, #5d13d4 100%);
     color: #ffffff;
 }
 
-.license.super-mario .license-logo{
+main.super-mario .license-logo{
     background-image: url(/img/licenses/super-mario/first-block-bkg.jpg);
+    background-position: top center;
 }
 
-.license.super-mario .license-best-games .animated-card-title,
-.license.super-mario .bloc-title{
+main.super-mario .animated-card-title,
+main.super-mario .bloc-title,
+main.super-mario .btn-primary{
     font-family: "Catamaran bold";
 }
 
-.license.super-mario .license-description .license-description-text{
+main.super-mario .license-description .license-description-text{
     font-family: "Catamaran regular";
 }
 
-.license.super-mario .license-best-games .btn-primary{
+main.super-mario .btn-primary,
+main.super-mario .btn-primary:hover:not(:disabled):not(:disabled), 
+main.super-mario .btn-primary:focus:not(:disabled):not(:disabled),
+main.super-mario .btn-primary:active:not(:disabled):not(:disabled){
     color: #ffffff;
     background-color: #e71e07;
     border-color: #e71e07;
-    font-family: "Catamaran bold";
+}
+
+main.super-mario .slick-dots {
+    bottom: -50px;
+}
+
+main.super-mario .slick-dots li button, 
+main.super-mario .slick-dots li button:before, 
+main.super-mario .slick-dots li.slick-active button,
+main.super-mario .slick-dots li.slick-active button:before {
+    font-size: 40px;
+}
+
+main.super-mario .slick-dots li, 
+main.super-mario .slick-dots li button,
+main.super-mario .slick-dots li button:before{
+    width: 40px;
+    height: 40px;
+}
+
+main.super-mario .slick-dots li button:before{
+    background-image: url(/img/licenses/super-mario/dots.png);    
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main.super-mario .slick-dots li.slick-active button:before{
+    background-image: url(/img/licenses/super-mario/dots-active.png);
 }
 
 @media screen and (max-width: 767px) {
-    .license.super-mario .bloc-title{
+    main.super-mario .bloc-title{
         display: block;
     }
 
-    .license.super-mario .license-logo{
+    main.super-mario .license-logo{
         min-height: 400px;
     }
 }
 
 @media screen and (max-width: 575px) {
-    .license.super-mario .license-logo{
+    main.super-mario .license-logo{
         min-height: 300px;
     }
 }

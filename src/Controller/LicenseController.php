@@ -11,6 +11,7 @@ use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Search\License as SearchLicense;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
@@ -21,20 +22,29 @@ class LicenseController extends AbstractController
     /**
      * @Route("/list", name="list")
      */
-    public function list(LicensesService $licensesService, PaginatorInterface $paginator, Request $request)
+    public function list(LicensesService $licensesService, PaginatorInterface $paginator, Request $request, SessionInterface $session)
     {
         $search = new SearchLicense();
         $form = $this->createForm(LicenseType::class, $search);
         $form->handleRequest($request);
+        $page = $request->query->getInt('page', 1);
 
-        if($form->isSubmitted() && !$form->isValid()){
-            $search = new SearchLicense();
+        if($form->isSubmitted()){
+            if($form->isValid()){
+                $page = 1;
+                $session->set('licenseSearchData', $form->getData($search)->toArray());
+            }else{
+                $search = new SearchLicense();
+            }
+        }elseif($session->has('licenseSearchData')){
+            $licensesService->hydrateSearch($session->get('licenseSearchData'), $search);
+            $form->setData($search);
         }
 
         $licenses = $paginator->paginate(
             $licensesService->findBySearchCriterias($search),
-            $request->query->getInt('page', 1), 
-            100
+            $page, 
+            8
         );
 
         return $this->render('license/list.html.twig', [

@@ -1,0 +1,66 @@
+.game .game-characteristics .characteristics-list .row:nth-child(2n) > div{
+    background-color: #dddddd;
+}
+.game .game-characteristics .characteristics-list .row:nth-child(2n+1) > div{
+    background-color: #aaaaaa;
+}
+
+.game .game-characteristics .characteristics-list .row > div > span{
+    font-family: "Roboto regular";
+}
+
+.game .game-characteristics .characteristics-list .row > div > span:not(:last-child){
+    font-family: "Roboto bold";
+    font-size: 20px;
+}
+
+.game .game-characteristics .characteristics-list .row > div > span:last-child{
+    font-size: 18px;
+}
+
+.game .game-characteristics .characteristics-list .row:last-child > div:last-child{
+    display:flex;
+}
+
+.game .game-characteristics .characteristics-list .row{
+    color: #000000;
+}
+
+main.game .btn-wrapper{
+    margin-top: 1em;
+}
+
+@media screen and (max-width: 1200px) {
+    main.game .btn-wrapper{
+        margin-top: 1.5em;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .game .game-characteristics .characteristics-list .row > div:nth-child(2n){
+        background-color: #dddddd;
+    }
+    
+    .game .game-characteristics .characteristics-list .row > div:nth-child(2n+1){
+        background-color: #aaaaaa;
+    }
+
+    .game .game-characteristics .characteristics-list .row:last-child > div:last-child{
+        display:none;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    main.game .bloc-title{
+        font-size: 23px
+    }
+
+    .game .game-characteristics .characteristics-list .row > div > span:not(:last-child){
+        font-family: "Roboto bold";
+        font-size: 16px;
+    }
+    
+    .game .game-characteristics .characteristics-list .row > div > span:last-child{
+        font-size: 15px;
+    }
+}

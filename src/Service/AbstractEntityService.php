@@ -95,23 +95,4 @@ abstract class AbstractEntityService{
     public function getPaginateElements(){
         return $this->repository->getQueryForPagination();
     }
-
-    /**
-     * Get columns list for sort
-     *
-     * @return array
-     */
-    public function getMappingFieldsForSort()
-    {
-        $columns = $this->repository->getColumnNames();
-        
-        $ignoreColumns = array('create_at','update_at','id');
-
-        foreach($columns as $key => $column){
-            if(in_array($column, $ignoreColumns)){
-                unset($columns[$key]);
-            }
-        }
-        return $columns;
-    }
 }

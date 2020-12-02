@@ -226,4 +226,22 @@ class Game extends AbstractSearch
 
         return $this;
     }
+
+    /**
+     * Convert entity to array
+     *
+     * @return array
+     */
+    public  function toArray(): array{
+        return [
+            'name' => $this->name,
+            'genre' => $this->genre ? $this->genre->getId() : null,
+            'console' => $this->console ? $this->console->getId() : null,
+            'license' => $this->license ? $this->license->getId() : null,
+            'nbPlayersMax' => $this->nbPlayersMax,
+            'nbPlayersMin' => $this->nbPlayersMin,
+            'releaseDateMax' => $this->releaseDateMax,
+            'releaseDateMin' => $this->releaseDateMin,
+        ];
+    }
 }

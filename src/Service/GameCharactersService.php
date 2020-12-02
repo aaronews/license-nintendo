@@ -12,4 +12,15 @@ class GameCharactersService extends AbstractEntityService
     {
         $this->repository = $repository;
     }
+
+    /**
+     * Get all characters of game
+     *
+     * @param Game $game
+     * @param int|null $limit
+     * @return Character[]
+     */
+    public function getCharactersByGame(Game $game, ?int $limit = null){
+        return $this->repository->findCharactersByGame($game, $limit);
+    }
 }

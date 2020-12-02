@@ -238,6 +238,12 @@ games:
     name_and_license: Nom et licence
     informations: Informations
     see_thumbnail: Voir la vignette
+  characters:
+    title: >
+      Personnages du jeu "%GAME_NAME%"
+  items:
+    title: >
+      Objet du jeu "%GAME_NAME%"
   form:
     console:
       label: Jouable sur
@@ -290,8 +296,10 @@ games:
       title: Histoire
     characters:
       title: Personnages
+      btn_see_all: Voir tout les personnages
     items:
       title: Objets
+      btn_see_all : Voir tout les objets
     characteristics:
       title: Caractéristiques téchniques
       release_date: >
@@ -303,7 +311,7 @@ games:
       consoles: >
         Jouable sur :
       copies_sold: >
-        Nombre d'exemplaire vendu
+        Nombre d'exemplaire vendu :
 
 game_characters:
   form:

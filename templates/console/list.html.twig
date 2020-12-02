@@ -19,13 +19,15 @@
 {% endblock %}
 
 {% block listBlock %}
-    <div class="slick-container col-12 p-0">
-        {% for console in consoles %}
-            {% include 'layout/animated-card-content.html.twig' with {
-                'cardThumbnail' : asset(vich_uploader_asset(console, 'uploadThumbnail')),
-                'cardTitle' : console.name,
-                'cardUrl' :  path('consoles_view', {slug: console.slug}),
-            }%}
-        {% endfor %}
-    </div>
+    {% for console in consoles %}
+        {% include 'layout/animated-card-content.html.twig' with {
+            'cardThumbnail' : asset(vich_uploader_asset(console, 'uploadThumbnail')),
+            'cardTitle' : console.name,
+            'cardUrl' :  path('consoles_view', {slug: console.slug}),
+            'cardClass' : 'col-lg-3 col-md-4 col-sm-6 col-xs-12 p-0',
+        }%}
+    {% endfor %}
+    {% include 'layout/pagination.html.twig' with {
+        'list' : consoles,
+    }%}
 {% endblock %}

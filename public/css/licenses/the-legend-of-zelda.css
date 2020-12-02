@@ -1,17 +1,18 @@
-.license.the-legend-of-zelda{
+main.the-legend-of-zelda{
     background-image: url(/img/licenses/the-legend-of-zelda/background.png),linear-gradient(to bottom, #023326 0%, #053335 50%, #0a1928 100%);
     color: #ffffff;
 }
 
-.license.the-legend-of-zelda .license-logo{
+main.the-legend-of-zelda .license-logo{
     background-image: url(/img/licenses/the-legend-of-zelda/first-block-bkg.jpg);
+    background-position: top center;
 }
-.license.the-legend-of-zelda .license-logo .logo img{
+main.the-legend-of-zelda .license-logo .logo img{
     filter: drop-shadow(1px 1px 8px #000);
 }
 
-.license.the-legend-of-zelda .license-logo > div:after,
-.license.the-legend-of-zelda .license-description >div:last-child:after{
+main.the-legend-of-zelda .license-logo > div:after,
+main.the-legend-of-zelda .license-description >div:last-child:after{
     background: url(/img/licenses/the-legend-of-zelda/border.png) bottom center;
     content: "";
     height: 86px;
@@ -21,18 +22,19 @@
     bottom: -47px
 }
 
-.license.the-legend-of-zelda .license-best-games .animated-card-title,
-.license.the-legend-of-zelda .bloc-title{
+main.the-legend-of-zelda .animated-card-title,
+main.the-legend-of-zelda .bloc-title,
+main.the-legend-of-zelda .btn-primary{
     font-family: "Bitter bold";
 }
 
-.license.the-legend-of-zelda .bloc-title{
+main.the-legend-of-zelda .bloc-title{
     padding: 0 3.125rem;
     display: inline-block;
 }
 
-.license.the-legend-of-zelda .bloc-title:before,
-.license.the-legend-of-zelda .bloc-title:after{
+main.the-legend-of-zelda .bloc-title:before,
+main.the-legend-of-zelda .bloc-title:after{
     background: url(/img/licenses/the-legend-of-zelda/title-decoration.png) center center no-repeat;
     content: '';
     position: absolute;
@@ -41,69 +43,69 @@
     top: 3px;
 }
 
-.license.the-legend-of-zelda .license-description h2:before,
-.license.the-legend-of-zelda .license-best-games h2:before{
+main.the-legend-of-zelda .bloc-title:before{
     left: 0;
 }
 
-.license.the-legend-of-zelda .license-description h2:after,
-.license.the-legend-of-zelda .license-best-games h2:after{
+main.the-legend-of-zelda .bloc-title:after{
     transform: scaleX(-1);
     right: 0;
 }
 
-.license.the-legend-of-zelda .license-description .license-description-text{
+main.the-legend-of-zelda .license-description .license-description-text{
     font-family: "Bitter regular";
 }
 
-.license.the-legend-of-zelda .license-best-games .btn-primary{
+main.the-legend-of-zelda .btn-primary,
+main.the-legend-of-zelda .btn-primary:hover:not(:disabled):not(:disabled), 
+main.the-legend-of-zelda .btn-primary:focus:not(:disabled):not(:disabled),
+main.the-legend-of-zelda .btn-primary:active:not(:disabled):not(:disabled){
     color: #B99658;
     background-color: #000000;
     border-color: #B99658;
-    font-family: "Bitter bold";
 }
 
-.license.the-legend-of-zelda .slick-dots {
+main.the-legend-of-zelda .slick-dots {
     bottom: -50px;
 }
 
-.license.the-legend-of-zelda .slick-dots li button, 
-.license.the-legend-of-zelda .slick-dots li button:before, 
-.license.the-legend-of-zelda .slick-dots li.slick-active button,
-.license.the-legend-of-zelda .slick-dots li.slick-active button:before {
+main.the-legend-of-zelda .slick-dots li button, 
+main.the-legend-of-zelda .slick-dots li button:before, 
+main.the-legend-of-zelda .slick-dots li.slick-active button,
+main.the-legend-of-zelda .slick-dots li.slick-active button:before {
     font-family: "Triforce regular";
     content: "*";
     font-size: 40px;
 }
 
-.license.the-legend-of-zelda .slick-dots li, 
-.license.the-legend-of-zelda .slick-dots li button,
-.license.the-legend-of-zelda .slick-dots li button:before{
+main.the-legend-of-zelda .slick-dots li, 
+main.the-legend-of-zelda .slick-dots li button,
+main.the-legend-of-zelda .slick-dots li button:before{
     width: 40px;
     height: 40px;
 }
 
-.license.the-legend-of-zelda .slick-dots li button:before{
+main.the-legend-of-zelda .slick-dots li button:before{
     color: #B99658;
     line-height: 40px;
 }
 
-.license.the-legend-of-zelda .slick-dots li.slick-active button:before{
+main.the-legend-of-zelda .slick-dots li.slick-active button:before{
     color: #f3ef0b;
 }
 
 @media screen and (max-width: 767px) {
-    .license.the-legend-of-zelda .bloc-title{
+    main.the-legend-of-zelda .bloc-title{
         display: block;
     }
 
-    .license.the-legend-of-zelda .license-logo{
+    main.the-legend-of-zelda .license-logo{
         min-height: 400px;
     }
 }
 
 @media screen and (max-width: 575px) {
-    .license.the-legend-of-zelda .license-logo{
+    main.the-legend-of-zelda .license-logo{
         min-height: 300px;
     }
 }

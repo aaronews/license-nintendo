@@ -61,4 +61,17 @@ class Character extends AbstractSearch
 
         return $this;
     }
+
+    /**
+     * Convert entity to array
+     *
+     * @return array
+     */
+    public  function toArray(): array{
+        return [
+            'name' => $this->name,
+            'gender' => $this->gender ?? null,
+            'game' => $this->game ? $this->game->getId() : null,
+        ];
+    }
 }

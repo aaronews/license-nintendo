@@ -1,0 +1,77 @@
+main.donkey-kong{
+    background-image: url(/img/licenses/donkey-kong/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+main.donkey-kong .container-fluid{
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+main.donkey-kong .license-best-games{
+    margin-top: 0 !important;
+}
+
+main.donkey-kong .license-logo{
+    background-image: url(/img/licenses/donkey-kong/first-block-bkg.jpg);
+    background-position: top center;
+}
+
+main.donkey-kong .btn-primary,
+main.donkey-kong .btn-primary:hover:not(:disabled):not(:disabled), 
+main.donkey-kong .btn-primary:focus:not(:disabled):not(:disabled),
+main.donkey-kong .btn-primary:active:not(:disabled):not(:disabled){
+    color: #FFF900;
+    background-color: #C3742F;
+    border-color: #C3742F;
+}
+
+main.donkey-kong .slick-dots {
+    bottom: -50px;
+}
+
+main.donkey-kong .slick-dots li button, 
+main.donkey-kong .slick-dots li button:before, 
+main.donkey-kong .slick-dots li.slick-active button,
+main.donkey-kong .slick-dots li.slick-active button:before {
+    font-size: 40px;
+}
+
+main.donkey-kong .slick-dots li, 
+main.donkey-kong .slick-dots li button,
+main.donkey-kong .slick-dots li button:before{
+    width: 40px;
+    height: 40px;
+}
+
+main.donkey-kong .slick-dots li button:before{
+    background-image: url(/img/licenses/donkey-kong/dots.png);    
+    content: "";
+    display: block;
+    width: 100%;
+    padding-top: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+main.donkey-kong .slick-dots li.slick-active button:before{
+    background-image: url(/img/licenses/donkey-kong/dots-active.png);
+}
+
+@media screen and (max-width: 767px) {
+    main.donkey-kong .bloc-title{
+        display: block;
+    }
+
+    main.donkey-kong .license-logo{
+        min-height: 400px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    main.donkey-kong .license-logo{
+        min-height: 300px;
+    }
+}

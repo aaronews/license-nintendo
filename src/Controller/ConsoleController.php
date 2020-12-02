@@ -10,6 +10,7 @@ use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Search\Console as SearchConsole;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
@@ -20,20 +21,29 @@ class ConsoleController extends AbstractController
     /**
      * @Route("/list", name="list")
      */
-    public function list(ConsolesService $consolesService, PaginatorInterface $paginator, Request $request)
+    public function list(ConsolesService $consolesService, PaginatorInterface $paginator, Request $request, SessionInterface $session)
     {
         $search = new SearchConsole();
         $form = $this->createForm(ConsoleType::class, $search);
         $form->handleRequest($request);
+        $page = $request->query->getInt('page', 1);
 
-        if($form->isSubmitted() && !$form->isValid()){
-            $search = new SearchConsole();
+        if($form->isSubmitted()){
+            if($form->isValid()){
+                $page = 1;
+                $session->set('consoleSearchData', $form->getData($search)->toArray());
+            }else{
+                $search = new SearchConsole();
+            }
+        }elseif($session->has('consoleSearchData')){
+            $consolesService->hydrateSearch($session->get('consoleSearchData'), $search);
+            $form->setData($search);
         }
 
         $consoles = $paginator->paginate(
             $consolesService->findBySearchCriterias($search),
-            $request->query->getInt('page', 1), 
-            100
+            $page, 
+            8
         );
         
         return $this->render('console/list.html.twig', [

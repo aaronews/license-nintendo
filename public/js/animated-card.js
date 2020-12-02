@@ -15,17 +15,25 @@ function init(){
     sliderContainer.slick({
         dots: true,
         infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 4,
+        slidesToScroll: 4,
         arrows: false,
         accessibility: true,
         responsive: [
+          {
+            breakpoint: 1200,
+            settings: {
+              arrows: false,
+              slidesToShow: 3,
+              slidesToScroll: 3,
+            }
+          },
           {
             breakpoint: 768,
             settings: {
               arrows: false,
               slidesToShow: 2,
-              slidesToScroll: 1,
+              slidesToScroll: 2,
             }
           },
           {
@@ -48,15 +56,17 @@ function init(){
 
 function displayDots(){
   setTimeout(function(){
-    console.log(document.querySelector('.slick-dots'))
-    var dotsContainer =  document.querySelector('.slick-dots');
     
-    if(dotsContainer){
-      var displayClass = 'd-none';
-      if(dotsContainer.querySelectorAll('.slick-dots li').length > 1){
-        displayClass = 'd-block';
+    var dotsContainers =  document.querySelectorAll('.slick-dots');
+    for(var index = 0; index < dotsContainers.length; ++index){
+    
+      if(dotsContainers[index]){
+        var displayClass = 'd-none';
+        if(dotsContainers[index].querySelectorAll('.slick-dots li').length > 1){
+          displayClass = 'd-block';
+        }
+        dotsContainers[index].classList.add(displayClass);
       }
-      dotsContainer.classList.add(displayClass);
     }
   }, 500)
 }

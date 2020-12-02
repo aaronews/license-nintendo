@@ -10,6 +10,7 @@ use App\Entity\Search\Item as SearchItem;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
@@ -20,20 +21,29 @@ class ItemController extends AbstractController
     /**
      * @Route("/list", name="list")
      */
-    public function list(ItemsService $itemsService, PaginatorInterface $paginator, Request $request)
+    public function list(ItemsService $itemsService, PaginatorInterface $paginator, Request $request, SessionInterface $session)
     {
         $search = new SearchItem();
         $form = $this->createForm(ItemType::class, $search);
         $form->handleRequest($request);
+        $page = $request->query->getInt('page', 1);
 
-        if($form->isSubmitted() && !$form->isValid()){
-            $search = new SearchItem();
+        if($form->isSubmitted()){
+            if($form->isValid()){
+                $page = 1;
+                $session->set('itemSearchData', $form->getData($search)->toArray());
+            }else{
+                $search = new SearchItem();
+            }
+        }elseif($session->has('itemSearchData')){
+            $itemsService->hydrateSearch($session->get('itemSearchData'), $search);
+            $form->setData($search);
         }
 
         $items = $paginator->paginate(
             $itemsService->findBySearchCriterias($search),
-            $request->query->getInt('page', 1), 
-            100
+            $page, 
+            8
         );
 
         return $this->render('item/list.html.twig', [

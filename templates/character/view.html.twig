@@ -3,6 +3,10 @@
 {% block stylesheets %}
 {% endblock %}
 
+{% block javascripts %}
+    <script src="{{asset('js/animated-card.js')}}"></script>
+{% endblock %}
+
 {% block title %}{{character.name}}{% endblock %}
 
 {% block body %}
@@ -21,6 +25,7 @@
                         'cardThumbnail' : asset(vich_uploader_asset(gameCharacter, 'uploadThumbnail')),
                         'cardTitle' : gameCharacter.game.name,
                         'cardUrl' :  path('games_view', {slug: gameCharacter.game.slug}),
+                        'cardClass' : 'col-lg-3 col-md-4 col-sm-6 col-xs-12 p-0',
                     }%}
                 {% endfor %}
             </section>

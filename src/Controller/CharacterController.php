@@ -10,6 +10,7 @@ use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Search\Character as SearchCharacter;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
@@ -21,20 +22,29 @@ class CharacterController extends AbstractController
     /**
      * @Route("/list", name="list")
      */
-    public function list(CharactersService $itemsService, PaginatorInterface $paginator, Request $request)
+    public function list(CharactersService $charactersService, PaginatorInterface $paginator, Request $request, SessionInterface $session)
     {
         $search = new SearchCharacter();
         $form = $this->createForm(CharacterType::class, $search);
         $form->handleRequest($request);
+        $page = $request->query->getInt('page', 1);
 
-        if($form->isSubmitted() && !$form->isValid()){
-            $search = new SearchCharacter();
+        if($form->isSubmitted()){
+            if($form->isValid()){
+                $page = 1;
+                $session->set('characterSearchData', $form->getData($search)->toArray());
+            }else{
+                $search = new SearchCharacter();
+            }
+        }elseif($session->has('characterSearchData')){
+            $charactersService->hydrateSearch($session->get('characterSearchData'), $search);
+            $form->setData($search);
         }
 
         $characters = $paginator->paginate(
-            $itemsService->findBySearchCriterias($search),
-            $request->query->getInt('page', 1), 
-            100
+            $charactersService->findBySearchCriterias($search),
+            $page, 
+            8
         );
         return $this->render('character/list.html.twig', [
             'characters' => $characters,
