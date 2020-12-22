@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="{{asset('css/licenses/super-smash-bros.css')}}">
     <link rel="stylesheet" href="{{asset('css/licenses/pokemon.css')}}">
     <link rel="stylesheet" href="{{asset('css/licenses/donkey-kong.css')}}">
+    <style>
+        {{getGameStyle(game)}}
+    </style>
 {% endblock %}
 
 {% block javascripts %}
@@ -18,25 +21,36 @@
 {% block title %}{{game.name}}{% endblock %}
 
 {% block body %}
+    {% set displayFirstBlock = game.getBackgroundDesktop() != null %}
     <main class="game {{game.license.slug}} {{game.slug}}">
         <div class="container-fluid p-0">
-            <section class="row ml-0 mr-0 game-description justify-content-center">
+            {% if displayFirstBlock %}
+                <section class="row ml-0 mr-0 game-logo justify-content-center align-items-center bordered-container">
+                        <div class="col-12 row justify-content-center align-items-center mr-0 ml-0 logo-container">
+                            <div class="col-12 col-lg-4 col-md-8 text-center logo">
+                            </div>
+                        </div>
+                </section>
+            {% endif %}
+            <section class="row ml-0 mr-0 game-description justify-content-center bordered-container {{displayFirstBlock ? 'mt-4' : ''}}">
                 <div class="bloc-title-container col-md-12 text-center p-3 mt-2">
-                    <h2 class="bloc-title position-relative">{{game.name}}</h2>
+                    <h1 class="bloc-title position-relative">{{game.name}}</h1>
                 </div>
-                <div class="col-12 text-center">
+                <div class="col-12 text-justify">
                     <p>{{game.description|raw}}</p>
                 </div>
             </section>
-            <section class="row ml-0 mr-0 justify-content-center game-history">
-                <div class="bloc-title-container col-md-12 text-center p-3 mt-2">
-                    <h2 class="bloc-title position-relative">{{'games.view.history.title'|trans}}</h2>
-                </div>
-                <div class="col-12 text-center">
-                    <p>{{game.history|raw}}</p>
-                </div>
-            </section>
-            <section class="row ml-0 mr-0 justify-content-center game-character">
+            {% if game.history %}
+                <section class="row ml-0 mr-0 justify-content-center game-history bordered-container mt-5">
+                    <div class="bloc-title-container col-md-12 text-center p-3 mt-2">
+                        <h2 class="bloc-title position-relative">{{'games.view.history.title'|trans}}</h2>
+                    </div>
+                    <div class="col-12 text-justify">
+                        <p>{{game.history|raw}}</p>
+                    </div>
+                </section>
+            {% endif %}
+            <section class="row ml-0 mr-0 justify-content-center game-character bordered-container mt-5">
                 <div class="bloc-title-container col-md-12 text-center p-3 mt-2">
                     <h2 class="bloc-title position-relative">{{'games.view.characters.title'|trans}}</h2>
                 </div>
@@ -57,7 +71,7 @@
                     </a>
                 </div>
             </section>
-            <section class="row ml-0 mr-0 justify-content-center game-items">
+            <section class="row ml-0 mr-0 justify-content-center game-items bordered-container mt-5">
                 <div class="bloc-title-container col-md-12 text-center p-3 mt-2">
                     <h2 class="bloc-title position-relative">{{'games.view.items.title'|trans}}</h2>
                 </div>
@@ -78,27 +92,27 @@
                     </a>
                 </div>
             </section>
-            <section class="row ml-0 mr-0 justify-content-center game-characteristics">
+            <section class="row ml-0 mr-0 justify-content-center game-characteristics mt-5">
                 <div class="bloc-title-container col-md-12 text-center p-3 mt-2">
                     <h2 class="bloc-title position-relative">{{'games.view.characteristics.title'|trans}}</h2>
                 </div>
                 <div class="col-md-12 characteristics-list">
                     <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-6 col-12 p-3 d-flex align-items-center m-0">
+                        <div class="col-lg-4 col-12 p-3 d-flex align-items-center m-0">
                             <i class="far fa-2x fa-calendar-alt mr-2"></i>
-                            <span>{{'games.view.characteristics.release_date'|trans}}&nbsp;</span>
+                            <span class="mr-2">{{'games.view.characteristics.release_date'|trans}}&nbsp;</span>
                             <span>{{game.releaseDate|date('d/m/Y')}}</span>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12 p-3 d-flex align-items-center m-0">
+                        <div class="col-lg-4 col-12 p-3 d-flex align-items-center m-0">
                             <i class="fas fa-2x fa-users mr-2"></i>
-                            <span>{{'games.view.characteristics.players'|trans}}&nbsp;</span>
+                            <span class="mr-2">{{'games.view.characteristics.players'|trans}}&nbsp;</span>
                             <span>{{game.nbPlayers}}</span>
                         </div>
                     </div>
                     <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-6 col-12 p-3 d-flex align-items-center m-0">
+                        <div class="col-lg-4 col-12 p-3 d-flex align-items-center m-0">
                             <i class="fas fa-2x fa-cog mr-2"></i>
-                            <span>{{'games.view.characteristics.genres'|trans}}&nbsp;</span>
+                            <span class="mr-2">{{'games.view.characteristics.genres'|trans}}&nbsp;</span>
                             <span>
                                 {% set countGenres = game.genres.count() %}
                                 {% set genres = '' %}
@@ -111,9 +125,9 @@
                                 {{genres}}
                             </span>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12 p-3 d-flex align-items-center m-0">
+                        <div class="col-lg-4 col-12 p-3 d-flex align-items-center m-0">
                             <i class="fas fa-2x fa-gamepad mr-2"></i>
-                            <span>{{'games.view.characteristics.consoles'|trans}}&nbsp;</span>
+                            <span class="mr-2">{{'games.view.characteristics.consoles'|trans}}&nbsp;</span>
                             <span>
                                 {% set countConsoles = game.consoles.count() %}
                                 {% set consoles = '' %}
@@ -128,12 +142,12 @@
                         </div>
                     </div>
                     <div class="row justify-content-center mb-5">
-                        <div class="col-lg-4 col-md-6 col-12 p-3 d-flex align-items-center m-0">
+                        <div class="col-lg-4 col-12 p-3 d-flex align-items-center m-0">
                             <i class="fas fa-2x fa-shopping-basket mr-2"></i>
-                            <span>{{'games.view.characteristics.copies_sold'|trans}}&nbsp;</span>
+                            <span class="mr-2">{{'games.view.characteristics.copies_sold'|trans}}&nbsp;</span>
                             <span>{{game.copiesSold|number_format(0, '.', ' ')}}</span>
                         </div>
-                        <div class="col-lg-4 col-md-6 col-12 p-3 align-items-center m-0">
+                        <div class="col-lg-4 col-12 p-3 align-items-center m-0">
                             &nbsp;
                         </div>
                     </div>

@@ -11,8 +11,7 @@ main.the-legend-of-zelda .license-logo .logo img{
     filter: drop-shadow(1px 1px 8px #000);
 }
 
-main.the-legend-of-zelda .license-logo > div:after,
-main.the-legend-of-zelda .license-description >div:last-child:after{
+main.the-legend-of-zelda .bordered-container > div:last-child:after{
     background: url(/img/licenses/the-legend-of-zelda/border.png) bottom center;
     content: "";
     height: 86px;
@@ -20,6 +19,10 @@ main.the-legend-of-zelda .license-description >div:last-child:after{
     position: absolute;
     width: 100%;
     bottom: -47px
+}
+
+.game.the-legend-of-zelda .bordered-container > div:last-child:after{
+    bottom: -80px;
 }
 
 main.the-legend-of-zelda .animated-card-title,

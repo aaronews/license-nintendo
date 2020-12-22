@@ -23,6 +23,22 @@
                     } %}
                 </div>
             </div>
+            <div class="col-12">
+                <div class="row align-items-center upload-container">
+                    {{ form_row(form.uploadBackgroundDesktop)}}
+                    {% include 'admin/layout/upload-preview.html.twig' with {
+                        'thumbnailUrl' : null
+                    } %}
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row align-items-center upload-container">
+                    {{ form_row(form.uploadBackgroundMobile)}}
+                    {% include 'admin/layout/upload-preview.html.twig' with {
+                        'thumbnailUrl' : null
+                    } %}
+                </div>
+            </div>
             {{ form_row(form.submit)}}
         </div>
     {{ form_end(form)}}

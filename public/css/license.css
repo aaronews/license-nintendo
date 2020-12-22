@@ -1,5 +1,6 @@
 main{
     background: var(--bg-mario-object);
+    background-size: cover;
     color: #ffffff;
 }
 

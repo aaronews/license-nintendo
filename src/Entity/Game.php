@@ -25,10 +25,8 @@ class Game extends AbstractDisplayableEntity
     private $id;
 
     /**
-     * @var string
-     * @ORM\Column(type="text")
-     * @Assert\NotBlank
-     * @Assert\NotNull
+     * @var string|null
+     * @ORM\Column(type="text", nullable=true)
      */
     private $history;
 
@@ -87,16 +85,52 @@ class Game extends AbstractDisplayableEntity
     private $copiesSold;
 
     /**
+     * @var string
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $backgroundDesktop;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $backgroundMobile;
+
+    /**
      * @Vich\UploadableField(mapping="games_images", fileNameProperty="thumbnail")
      * @var File|null
      */
     private $uploadThumbnail;
 
     /**
-     * @Vich\UploadableField(mapping="licenses_images", fileNameProperty="logo")
+     * @Vich\UploadableField(mapping="games_images", fileNameProperty="backgroundDesktop")
      * @var File|null
      */
-    private $uploadLogo;
+    private $uploadBackgroundDesktop;
+
+    /**
+     * @Vich\UploadableField(mapping="games_images", fileNameProperty="backgroundMobile")
+     * @var File|null
+     */
+    private $uploadBackgroundMobile;
+
+    /**
+     * @var string
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $backgroundPosition;
+
+    /**
+     * @var string
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $firstBlockMinHeight;
+
+    /**
+     * @var int
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $afterBottom;
 
     public function __construct()
     {
@@ -129,10 +163,10 @@ class Game extends AbstractDisplayableEntity
     /**
      * Set history value
      *
-     * @param string $history
+     * @param string|null $history
      * @return self
      */
-    public function setHistory(string $history): self
+    public function setHistory(?string $history): self
     {
         $this->history = $history;
 
@@ -402,49 +436,166 @@ class Game extends AbstractDisplayableEntity
     }
 
     /**
-     * Set logo file value
+     * Set backgroundDesktop file value
      *
-     * @param File|null $uploadLogo
+     * @param File|null $uploadBackgroundDesktop
      * @return void
      */
-    public function setUploadLogo(?File $uploadLogo): void
+    public function setUploadBackgroundDesktop(?File $uploadBackgroundDesktop): void
     {
-        $this->uploadLogo = $uploadLogo;
+        $this->uploadBackgroundDesktop = $uploadBackgroundDesktop;
 
-        if($this->uploadLogo){
+        if($this->uploadBackgroundDesktop){
             $this->setUpdateAt(new \Datetime());
         }
     }
 
     /**
-     * Get logo file value
+     * Get backgroundDesktop file value
      *
      * @return File|null
      */
-    public function getUploadLogo(): ?File
+    public function getUploadBackgroundDesktop(): ?File
     {
-        return $this->uploadLogo;
+        return $this->uploadBackgroundDesktop;
     }
 
     /**
-     * Get logo value
+     * Get backgroundDesktop value
      *
      * @return string|null
      */
-    public function getLogo(): ?string
+    public function getBackgroundDesktop(): ?string
     {
-        return $this->logo;
+        return $this->backgroundDesktop;
     }
 
     /**
-     * Set logo value
+     * Set backgroundDesktop value
      *
-     * @param string|null $logo
+     * @param string|null $backgroundDesktop
      * @return self
      */
-    public function setLogo(?string $logo): self
+    public function setBackgroundDesktop(?string $backgroundDesktop): self
     {
-        $this->logo = $logo;
+        $this->backgroundDesktop = $backgroundDesktop;
+
+        return $this;
+    }
+
+    /**
+     * Set backgroundMobile file value
+     *
+     * @param File|null $uploadBackgroundMobile
+     * @return void
+     */
+    public function setUploadBackgroundMobile(?File $uploadBackgroundMobile): void
+    {
+        $this->uploadBackgroundMobile = $uploadBackgroundMobile;
+
+        if($this->uploadBackgroundMobile){
+            $this->setUpdateAt(new \Datetime());
+        }
+    }
+
+    /**
+     * Get backgroundMobile file value
+     *
+     * @return File|null
+     */
+    public function getUploadBackgroundMobile(): ?File
+    {
+        return $this->uploadBackgroundMobile;
+    }
+
+    /**
+     * Get backgroundMobile value
+     *
+     * @return string|null
+     */
+    public function getBackgroundMobile(): ?string
+    {
+        return $this->backgroundMobile;
+    }
+
+    /**
+     * Set backgroundMobile value
+     *
+     * @param string|null $backgroundMobile
+     * @return self
+     */
+    public function setBackgroundMobile(?string $backgroundMobile): self
+    {
+        $this->backgroundMobile = $backgroundMobile;
+
+        return $this;
+    }
+
+    /**
+     * Get backgroundPosition value
+     *
+     * @return string|null
+     */
+    public function getBackgroundPosition(): ?string
+    {
+        return $this->backgroundPosition;
+    }
+
+    /**
+     * Set backgroundPosition value
+     *
+     * @param string|null $backgroundPosition
+     * @return self
+     */
+    public function setBackgroundPosition(?string $backgroundPosition): self
+    {
+        $this->backgroundPosition = $backgroundPosition;
+
+        return $this;
+    }
+
+    /**
+     * Get first block minimal height value
+     *
+     * @return integer|null
+     */
+    public function getFirstBlockMinHeight(): ?int
+    {
+        return $this->firstBlockMinHeight;
+    }
+
+    /**
+     * Set first block minimal height value
+     *
+     * @param integer|null $firstBlockMinHeight
+     * @return self
+     */
+    public function setFirstBlockMinHeight(?int $firstBlockMinHeight): self
+    {
+        $this->firstBlockMinHeight = $firstBlockMinHeight;
+
+        return $this;
+    }
+
+    /**
+     * Get after bottom value
+     *
+     * @return integer|null
+     */
+    public function getAfterBottom(): ?int
+    {
+        return $this->afterBottom;
+    }
+
+    /**
+     * Set after bottom value
+     *
+     * @param integer $afterBottom
+     * @return self
+     */
+    public function setAfterBottom(int $afterBottom): self
+    {
+        $this->afterBottom = $afterBottom;
 
         return $this;
     }

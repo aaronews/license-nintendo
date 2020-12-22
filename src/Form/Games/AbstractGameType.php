@@ -57,7 +57,7 @@ class AbstractGameType extends AbstractType
                 )
             ))
             ->add('history', TextareaType::class, array(
-                'required' => true,
+                'required' => false,
                 'label' => 'games.form.history.label',
                 'row_attr' => array(
                     'class' => 'col-sm-6 tynimce-editor'
@@ -138,11 +138,38 @@ class AbstractGameType extends AbstractType
                     'class' => 'col-sm-6'
                 ),
             ))
-            ->add('uploadLogo', FileType::class, array(
+            ->add('uploadBackgroundDesktop', FileType::class, array(
                 'required' => false,
-                'label' => 'games.form.logo.label',
+                'label' => 'games.form.background_desktop.label',
                 'row_attr' => array(
                     'class' => 'col-sm-6 col-12'
+                ),
+            ))
+            ->add('uploadBackgroundMobile', FileType::class, array(
+                'required' => false,
+                'label' => 'games.form.background_mobile.label',
+                'row_attr' => array(
+                    'class' => 'col-sm-6 col-12'
+                ),
+            ))
+            ->add('backgroundPosition', TextType::class, array(
+                'required' => true,
+                'label' => 'games.form.background_position.label',
+                'attr' => array(
+                    'placeholder' => 'games.form.background_position.placeholder',
+                ),
+                'row_attr' => array(
+                    'class' => 'col-sm-6'
+                ),
+            ))
+            ->add('firstBlockMinHeight', TextType::class, array(
+                'required' => true,
+                'label' => 'games.form.first_block_min_height.label',
+                'attr' => array(
+                    'placeholder' => 'games.form.first_block_min_height.placeholder',
+                ),
+                'row_attr' => array(
+                    'class' => 'col-sm-6'
                 ),
             ))
         ;

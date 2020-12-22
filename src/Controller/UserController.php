@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\SignUpType;
+use App\Form\EditUserType;
 use App\Service\UsersService;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -49,5 +50,28 @@ class UserController extends AbstractController
         $usersService->saveEntity($user->setActive(true)->setToken(null), true);
         $this->addFlash('success','users.activate_user.success');
         return $this->redirectToRoute('log_in');
+    }
+    /**
+     * @Route("/edit-user", name="edit_user")
+     */
+    public function editUser(Request $request, UsersService $usersService)
+    {
+        if($this->getUser()){
+            return $this->redirectToRoute('homepage');
+        }
+        
+        $user = new User();
+        $form = $this->createForm(EditUserType::class, $user);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid()){
+            $usersService->modifyUser($user);
+            $this->addFlash('success','users.editUser.success');
+            return $this->redirectToRoute('homepage');
+        }
+
+        return $this->render('user/edit-user.html.twig', [
+            'form' => $form->createView()
+        ]);
     }
 }

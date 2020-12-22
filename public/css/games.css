@@ -1,3 +1,14 @@
+.game-logo{
+    background-size:cover;
+
+
+}
+
+.game .game-history p,
+.game .game-description p{
+    font-size: 20px;
+}
+
 .game .game-characteristics .characteristics-list .row:nth-child(2n) > div{
     background-color: #dddddd;
 }
@@ -36,7 +47,7 @@ main.game .btn-wrapper{
     }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 992px) {
     .game .game-characteristics .characteristics-list .row > div:nth-child(2n){
         background-color: #dddddd;
     }

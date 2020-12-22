@@ -20,7 +20,7 @@
     <main class="license {{license.slug}}">
         <div class="container-fluid p-0">
             <h1 class="visually-hidden">{{license.name}}</h1>
-            <section class="row license-logo mr-0 ml-0">
+            <section class="row license-logo mr-0 ml-0 bordered-container">
                 <div class="col-12 row justify-content-center align-items-center mr-0 ml-0">
                     {% if license.logo %}
                         <div class="col-12 col-lg-4 col-md-8 text-center logo">
@@ -29,9 +29,9 @@
                     {% endif %}
                 </div>
             </section>
-            <section class="row ml-0 mr-0 license-description justify-content-center">
+            <section class="row ml-0 mr-0 license-description justify-content-center bordered-container">
                 <div class="bloc-title-container col-md-12 text-center p-3 mt-5">
-                    <h2 class="bloc-title position-relative">{{'licenses.view.description.title'|trans}}</h2>
+                    <h2 class="bloc-title position-relative">{{license.name}}</h2>
                 </div>
                 <div class="col-12 text-center pb-4 row justify-content-center mr-0 ml-0">
                     <div class="col-12 col-md-10">

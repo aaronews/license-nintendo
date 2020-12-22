@@ -291,6 +291,16 @@ games:
       placeholder: 0
     history:
       label: Histoire
+    background_desktop:
+      label: Image de fond du premier bloc
+    background_mobile:
+      label: Image de fond du premier bloc pour les petits écrans
+    background_position:
+      label: Position de l'image de fond
+      placeholder: center
+    first_block_min_height:
+      label: Taille minimale du premier bloc
+      placeholder: 500px/100vh
   view:
     history:
       title: Histoire

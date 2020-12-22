@@ -1,8 +1,8 @@
-.signup{
+.front main.signup{
     background-image: url(/img/signup-bkg.png);
     min-height: calc(100vh - 56px);
     background-size: cover;
-
+    color: #000000;
     
 }
 

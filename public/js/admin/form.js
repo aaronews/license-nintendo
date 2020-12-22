@@ -5,7 +5,7 @@ window.addEventListener("DOMContentLoaded", init);
  * @return {void}
  */
 function init(){
-    var inputFiles = document.querySelectorAll('input[type="file"][name*="[uploadThumbnail]"], input[type="file"][name*="[uploadLogo]"]');
+    var inputFiles = document.querySelectorAll('input[type="file"][name*="[uploadThumbnail]"], input[type="file"][name*="[uploadLogo]"], input[type="file"][name*="[uploadBackgroundDesktop]"], input[type="file"][name*="[uploadBackgroundMobile]"]');
     for(var i = 0; i < inputFiles.length; ++i){
         inputFiles[i].addEventListener('change', displayUploadPreview);
     }

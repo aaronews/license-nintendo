@@ -28,8 +28,10 @@ main.super-smash-bros .btn-primary{
 }
 
 
-main.super-smash-bros .license-description .license-description-text{
-    font-family: "Bitter regular";
+main.super-smash-bros .license-description p,
+main.super-smash-bros .game-history p{
+    font-family: "Bitter regular";    
+    font-size: 20px;
 }
 
 main.super-smash-bros .btn-primary,

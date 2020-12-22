@@ -21,7 +21,10 @@ class CharacterRepository extends AbstractEntityRepository
      * @return Query
      */
     public function findBySearchCriterias(SearchCharacter $search){
-        $query = $this->createQueryBuilder('C');
+        $query = $this
+            ->createQueryBuilder('C')
+            ->addOrderBy('C.name', 'ASC')
+        ;
 
         if($name = $search->getName()){
             $query

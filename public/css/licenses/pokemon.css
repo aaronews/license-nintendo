@@ -19,8 +19,12 @@ main.pokemon .btn-primary{
     font-family: "Catamaran bold";
 }
 
-main.pokemon .license-description .license-description-text{
+main.pokemon .license-description .license-description-text,
+main.pokemon .game-description p,
+main.pokemon .game-history p,
+main.pokemon .game-history li{
     font-family: "Catamaran regular";
+    font-size: 20px;
 }
 
 main.pokemon .btn-primary,

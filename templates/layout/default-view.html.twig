@@ -1,0 +1,31 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/view-entity.css')}}">
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{asset('js/animated-card.js')}}"></script>
+{% endblock %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block body %}
+    <main class="{{mainClass}}">
+        <div class="container-fluid p-0">
+            <section class="row ml-0 mr-0 entity-description justify-content-center align-items-center">
+                <h1 class="mt-5 text-center col-12">{{title}}</h1>
+                <div class="col-lg-8 text-justify">
+                    <p>{{description|raw}}</p>
+                </div>
+                <div class="col-lg-4 p-5">
+                    <img src="{{thumbnail}}" title="{{title}}" alt="{{title}}" class="w-100"/>
+                </div>
+            </section>
+            <section class="row ml-0 mr-0 justify-content-center item-games">
+                {% block listInGame %}
+                {% endblock %}
+            </section>
+        </div>
+    </main>
+{% endblock %}

@@ -2,6 +2,7 @@
 
 namespace App\Service;
 
+use App\Entity\AbstractEntity;
 use App\Entity\Game;
 use App\Entity\GameCharacter;
 use App\Entity\License;
@@ -34,6 +35,24 @@ class GamesService extends AbstractEntityService
         $this->genreRepository = $genreRepository;
         $this->consoleRepository = $consoleRepository;
         $this->licenseRepository = $licenseRepository;
+    }
+
+    /**
+     * save game entity
+     *
+     * @param AbstractEntity $entity
+     * @param boolean $exist
+     * @return void
+     */
+    public function saveEntity(AbstractEntity $entity, bool $exist)
+    {
+        if($firstBlockMinHeight = $entity->getFirstBlockMinHeight()){
+            $entity->setAfterBottom(($firstBlockMinHeight / 2 + 47) * (-1));
+        }
+
+        parent::saveEntity($entity, $exist);
+
+        return;
     }
 
     /**

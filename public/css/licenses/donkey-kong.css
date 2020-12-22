@@ -2,6 +2,7 @@ main.donkey-kong{
     background-image: url(/img/licenses/donkey-kong/background.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
     color: #ffffff;
 }
 

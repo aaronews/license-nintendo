@@ -15,11 +15,29 @@
             {{ form_row(form.copiesSold)}}
             {{ form_row(form.description)}}
             {{ form_row(form.history)}}
+            {{ form_row(form.backgroundPosition)}}
+            {{ form_row(form.firstBlockMinHeight)}}
             <div class="col-12">
                 <div class="row align-items-center upload-container">
                     {{ form_row(form.uploadThumbnail)}}
                     {% include 'admin/layout/upload-preview.html.twig' with {
                         'thumbnailUrl' : asset(vich_uploader_asset(game, 'uploadThumbnail'))
+                    }%}
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row align-items-center upload-container">
+                    {{ form_row(form.uploadBackgroundDesktop)}}
+                    {% include 'admin/layout/upload-preview.html.twig' with {
+                        'thumbnailUrl' : game.backgroundDesktop ? asset(vich_uploader_asset(game, 'uploadBackgroundDesktop')) : null
+                    }%}
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="row align-items-center upload-container">
+                    {{ form_row(form.uploadBackgroundMobile)}}
+                    {% include 'admin/layout/upload-preview.html.twig' with {
+                        'thumbnailUrl' : game.backgroundMobile ? asset(vich_uploader_asset(game, 'uploadBackgroundMobile')) : null
                     }%}
                 </div>
             </div>

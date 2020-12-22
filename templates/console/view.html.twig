@@ -1,34 +1,18 @@
-{% extends 'layout/layout.html.twig' %}
+{% extends 'layout/default-view.html.twig' %}
 
-{% block stylesheets %}
-{% endblock %}
+{% set title = console.name %}
+{% set mainClass = 'console' %}
+{% set thumbnail = asset(vich_uploader_asset(console, 'uploadThumbnail')) %}
+{% set description = console.description %}
 
-{% block javascripts %}
-    <script src="{{asset('js/animated-card.js')}}"></script>
-{% endblock %}
-
-{% block title %}{{console.name}}{% endblock %}
-
-{% block body %}
-    <main class="console">
-        <div class="container-fluid p-0">
-            <section class="row ml-0 mr-0 console-description justify-content-center">
-                <h2 class="mt-5 text-center">{{console.name}}</h2>
-                <div class="col-12 text-center">
-                    <p>{{console.description|raw}}</p>
-                </div>
-            </section>
-            <section class="row ml-0 mr-0 justify-content-center console-games">
-                <h2 class="p-3 text-center col-md-12">{{'consoles.view.console_games.title'|trans}}</h2>
-                {% for game in console.games %}
-                    {% include 'layout/animated-card-content.html.twig' with {
-                        'cardThumbnail' : asset(vich_uploader_asset(game, 'uploadThumbnail')),
-                        'cardTitle' : game.name,
-                        'cardUrl' :  path('games_view', {slug: game.slug}),
-                        'cardClass' : 'col-lg-3 col-md-4 col-sm-6 col-xs-12 p-0',
-                    }%}
-                {% endfor %}
-            </section>
-        </div>
-    </main>
+{% block listInGame %}
+    <h2 class="p-3 text-center col-md-12">{{'consoles.view.console_games.title'|trans}}</h2>
+    {% for game in console.games %}
+        {% include 'layout/animated-card-content.html.twig' with {
+            'cardThumbnail' : asset(vich_uploader_asset(game, 'uploadThumbnail')),
+            'cardTitle' : game.name,
+            'cardUrl' :  path('games_view', {slug: game.slug}),
+            'cardClass' : 'col-lg-3 col-md-4 col-sm-6 col-xs-12 p-0',
+        }%}
+    {% endfor %}
 {% endblock %}

@@ -51,6 +51,18 @@ class UsersService extends AbstractEntityService
         return;
     }
 
+    public function modifyUser(User $user)
+    {
+        $this
+            ->encodePassword($user, $user->getPassword())
+            ->setToken($this->generateHashKeyForUserEntity($user, 'edit'))
+        ;
+
+        parent::saveEntity($user, true);
+
+        return;
+    }
+
     /**
      * @param User $user
      * @param string $sPrefix

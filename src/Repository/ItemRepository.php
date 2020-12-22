@@ -21,7 +21,10 @@ class ItemRepository extends AbstractEntityRepository
      * @return Query
      */
     public function findBySearchCriterias(SearchItem $search){
-        $query = $this->createQueryBuilder('I');
+        $query = $this
+            ->createQueryBuilder('I')
+            ->addOrderBy('I.name', 'ASC')
+        ;
 
         if($name = $search->getName()){
             $query

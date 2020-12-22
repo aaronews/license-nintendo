@@ -1,0 +1,27 @@
+.game-logo{
+    {% if game.getBackgroundDesktop() %}
+        background-image: url({{asset(vich_uploader_asset(game, 'uploadBackgroundDesktop'))|raw}}); 
+    {% endif %}
+    
+    {% if game.getBackgroundPosition() %}
+        background-position: {{game.getBackgroundPosition()|raw}};
+    {% endif %}
+    
+    {% if game.getFirstBlockMinHeight() %}
+        min-height: {{game.getFirstBlockMinHeight()}}px;
+    {% endif %}
+}
+
+{% if game.getAfterBottom() %}
+    .game.the-legend-of-zelda .game-logo div:last-child:after{
+        bottom: {{game.getAfterBottom()}}px;
+    }
+{% endif %}
+
+@media screen and (max-width: 767px) {
+    .game-logo{
+        {% if game.getBackgroundMobile() %}
+            background-image: url({{asset(vich_uploader_asset(game, 'uploadBackgroundMobile'))|raw}}); 
+        {% endif %}
+    }
+}
