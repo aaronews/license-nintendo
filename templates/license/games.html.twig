@@ -20,7 +20,7 @@
         <div class="container-fluid p-0">
             <section class="row ml-0 mr-0 license-games justify-content-center">
                 <div class="bloc-title-container col-md-12 text-center p-3 mt-2">
-                    <h2 class="bloc-title position-relative">{{'licenses.games.title'|trans ~ license.name}}</h2>
+                    <h1 class="bloc-title position-relative">{{'licenses.games.title'|trans ~ ' ' ~ license.name}}</h1>
                 </div>
                 {% for game in license.games %}
                     {% include 'layout/animated-card-content.html.twig' with {

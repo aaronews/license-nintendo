@@ -13,10 +13,10 @@
     <script src="{{asset('js/animated-card.js')}}"></script>
 {% endblock %}
 
+{% set title = 'games.items.title'|trans|replace({'%GAME_NAME%' : game.name}) %}
+
 {% block title %}
-    {{'games.items.title'|trans|replace({
-        '%GAME_NAME%' : game.name,
-    })}}
+    {{title}}
 {% endblock %}
 
 {% block body %}
@@ -24,11 +24,7 @@
         <div class="container-fluid p-0">
             <section class="row ml-0 mr-0 license-games justify-content-center">
                 <div class="bloc-title-container col-md-12 text-center p-3 mt-2">
-                    <h2 class="bloc-title position-relative">
-                        {{'games.items.title'|trans|replace({
-                            '%GAME_NAME%' : game.name,
-                        })}}
-                    </h2>
+                    <h1 class="bloc-title position-relative">{{title}}</h1>
                 </div>
                 {% for gameItem in items %}
                     {% include 'layout/animated-card-content.html.twig' with {

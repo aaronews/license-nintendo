@@ -8,6 +8,7 @@ use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class MailsService
 {
@@ -44,7 +45,7 @@ class MailsService
      * @param TranslatorInterface $translator
      * @param string $adminEmail
      */
-    public function __construct(MailerInterface $mailer, Environment $twig, RouterInterface $router, TranslatorInterface $translator, string $adminEmail)
+    public function __construct(\Swift_Mailer  $mailer, Environment $twig, RouterInterface $router, TranslatorInterface $translator, string $adminEmail)
     {
         $this->mailer = $mailer;
         $this->twig = $twig;
@@ -62,16 +63,21 @@ class MailsService
      */
     public function sendMailSignUp(User $user)
     {
-        return;
+        $subject = $this->translator->trans('mails.signup.subject');
         $this->mailer->send(
-            (new TemplatedEmail())
-            ->from($this->adminEmail)
-            ->to($user->getUsername())
-            ->subject($this->translator->trans('mails.signup.subject'))
-            ->htmlTemplate('mails/sign-up.html.twig')
-            ->context([
-                'activationUrl' => $this->router->generate('activate_user', array('token' => $user->getToken()))
-            ])
+            (new \Swift_Message($subject))
+            ->setFrom($this->adminEmail)
+            ->setTo($user->getUsername())
+            ->setBody(
+                $this->twig->render(
+                    'mails/sign-up.html.twig',
+                    [
+                        'activationUrl' => $this->router->generate('activate_user', ['token' => $user->getToken()], UrlGeneratorInterface::ABSOLUTE_URL),
+                        'subject' => $subject
+                    ]
+                ),
+                'text/html'
+            )
         );
         return;
     }
@@ -84,16 +90,21 @@ class MailsService
      * @param array $data
      * @return void
      */
-    public function sendMailResetPassword(User $user, array $data){
-        return;
-
-        $this->mailer->send((new TemplatedEmail())
-            //->from(new Address('alexandre.chantraine11@gmail.com', 'Licences Nintendo'))
-            ->from($this->adminEmail)
-            ->to($user->getUsername())
-            ->subject($this->translator->trans('mails.reset_password.subject'))
-            ->htmlTemplate('mails/reset_password.html.twig')
-            ->context($data)
+    public function sendMailResetPassword(User $user, array $data)
+    {
+        $subject = $this->translator->trans('mails.reset_password.subject');
+        $data['subject'] = $subject;
+        $this->mailer->send(
+            (new \Swift_Message($subject))
+            ->setFrom($this->adminEmail)
+            ->setTo($user->getUsername())
+            ->setBody(
+                $this->twig->render(
+                    'mails/reset_password.html.twig',
+                    $data,
+                ),
+                'text/html'
+            )
         );
         return;
     }

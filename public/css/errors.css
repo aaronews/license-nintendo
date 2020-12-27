@@ -1,0 +1,34 @@
+.front .error-404{
+    background: #3C3C54;
+    color: #ffffff;
+}
+
+.front .error-403{
+    background: #E8E1D8;
+    color: #212529;
+}
+
+.front .error-500{
+    background: #212429;
+    color: #ffffff;
+}
+
+.errors h1{
+    font-size: 50px;
+    font-family: 'Roboto bold';
+}
+
+.errors p{
+    font-size: 30px;
+    font-family: 'Roboto regular';
+}
+
+@media screen and (max-width: 767px) {
+    .errors h1{
+        font-size: 40px;
+    }
+    
+    .errors p{
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,30 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block title %}{{'errors.403.title'|trans }}{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('css/errors.css')}}">
+{% endblock %}
+
+{% block body %}
+    <main class="error-403 errors" role="main">
+        <div class="container-fluid p-0">
+            <section class="row justify-content-center p-5">
+                <div class="col-12">
+                    <h1 class="text-center">{{'errors.403.title'|trans }}</h1>
+                </div>
+                <div class="col-md-8 col-12">
+                    <p class="text-center">
+                        {{'errors.403.text'|trans }}
+                        <br/>
+                        <br/>
+                        <a href="{{path('homepage')}}" title="{{'errors.403.button'|trans }}" class="btn btn-lg btn-primary">{{'errors.403.button'|trans }}</a>
+                    </p>
+                </div>
+                <div class="col-md-8 col-12 text-center">
+                    <img src="{{asset('img/forbidden-page.jpg')}}" alt="{{'errors.403.img_description'|trans }}" title="{{'errors.403.img_description'|trans }}" class="w-100"/>
+                </div>
+            </section>
+        </div>
+    </main>
+{% endblock %}

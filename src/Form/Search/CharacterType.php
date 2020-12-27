@@ -34,8 +34,9 @@ class CharacterType extends AbstractType
                 'label' => 'characters.form.gender.label',
                 'placeholder' => 'characters.form.gender.placeholder',
                 'choices' => array(
-                    'characters.form.gender.options.M' => 'H',
+                    'characters.form.gender.options.M' => 'M',
                     'characters.form.gender.options.F' => 'F',
+                    'characters.form.gender.options.Neutre' => 'N',
                 ),
                 'row_attr' => array(
                     'class' => 'col-sm-3'

@@ -25,14 +25,14 @@ class GameItem extends AbstractEntity
     /**
      * @var Game
      * @ORM\ManyToOne(targetEntity=Game::class, inversedBy="gameItems")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
     private $game;
 
     /**
      * @var Item
      * @ORM\ManyToOne(targetEntity=Item::class, inversedBy="gameItems")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      * @Assert\NotNull
      */
     private $item;
@@ -72,10 +72,10 @@ class GameItem extends AbstractEntity
     /**
      * Set game value
      *
-     * @param Game $game
+     * @param Game|null $game
      * @return self
      */
-    public function setGame(Game $game): self
+    public function setGame(?Game $game): self
     {
         $this->game = $game;
 
@@ -95,10 +95,10 @@ class GameItem extends AbstractEntity
     /**
      * Set item value
      *
-     * @param Item $item
+     * @param Item|null $item
      * @return self
      */
-    public function setItem(Item $item): self
+    public function setItem(?Item $item): self
     {
         $this->item = $item;
 

@@ -14,7 +14,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Entity(repositoryClass=UserRepository::class)
  * @UniqueEntity(
  *  fields={"username"},
- *  message="errors.form.user.not_unique"
+ *  message="errors.form.users.not_unique"
  * )
  */
 class User extends AbstractEntity implements UserInterface

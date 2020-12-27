@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use Doctrine\ORM\Query;
 use App\Entity\AbstractEntity;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 abstract class AbstractEntityRepository extends ServiceEntityRepository
@@ -50,7 +51,7 @@ abstract class AbstractEntityRepository extends ServiceEntityRepository
      *
      * @param string $property
      * @param string $sort
-     * @return AbstractEntity[]|null
+     * @return QueryBuilder|null
      */
     public function findAllSortByProperty(string $property, string $sort = 'ASC'){
         if(in_array($property, $this->getColumnNames())){
@@ -85,7 +86,7 @@ abstract class AbstractEntityRepository extends ServiceEntityRepository
      * @return integer
      */
     public function countAll(){
-        return $this
+        return (int) $this
             ->createQueryBuilder('E')
             ->select('COUNT(E.id)')
             ->getQuery()

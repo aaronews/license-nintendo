@@ -47,7 +47,7 @@ class Game extends AbstractDisplayableEntity
     /**
      * @var License
      * @ORM\ManyToOne(targetEntity=License::class, inversedBy="games", fetch="EXTRA_LAZY")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      * @Assert\NotNull
      */
     private $license;
@@ -232,10 +232,10 @@ class Game extends AbstractDisplayableEntity
     /**
      * Set license value
      *
-     * @param License $license
+     * @param License|null $license
      * @return self
      */
-    public function setLicense(License $license): self
+    public function setLicense(?License $license): self
     {
         $this->license = $license;
 

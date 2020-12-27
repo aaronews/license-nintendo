@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d078d53c996cd0a966bf4025fd799a59",
+    "content-hash": "30ff7b604aa5bc0e2a22efe921b26605",
     "packages": [
         {
             "name": "composer/package-versions-deprecated",
@@ -398,33 +398,32 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "2.11.1",
+            "version": "2.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "6e6903cd5e3a5be60a79439e3ee8fe126f78fe86"
+                "reference": "adce7a954a1c2f14f85e94aed90c8489af204086"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/6e6903cd5e3a5be60a79439e3ee8fe126f78fe86",
-                "reference": "6e6903cd5e3a5be60a79439e3ee8fe126f78fe86",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/adce7a954a1c2f14f85e94aed90c8489af204086",
+                "reference": "adce7a954a1c2f14f85e94aed90c8489af204086",
                 "shasum": ""
             },
             "require": {
                 "doctrine/cache": "^1.0",
                 "doctrine/event-manager": "^1.0",
                 "ext-pdo": "*",
-                "php": "^7.3"
+                "php": "^7.3 || ^8"
             },
             "require-dev": {
                 "doctrine/coding-standard": "^8.1",
                 "jetbrains/phpstorm-stubs": "^2019.1",
-                "nikic/php-parser": "^4.4",
                 "phpstan/phpstan": "^0.12.40",
-                "phpunit/phpunit": "^9.3",
+                "phpunit/phpunit": "^9.4",
                 "psalm/plugin-phpunit": "^0.10.0",
                 "symfony/console": "^2.0.5|^3.0|^4.0|^5.0",
-                "vimeo/psalm": "^3.14.2"
+                "vimeo/psalm": "^3.17.2"
             },
             "suggest": {
                 "symfony/console": "For helpful console commands such as SQL execution and import of files."
@@ -502,7 +501,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-27T04:09:41+00:00"
+            "time": "2020-11-14T20:26:58+00:00"
         },
         {
             "name": "doctrine/doctrine-bundle",
@@ -2583,6 +2582,77 @@
                 "controllers"
             ],
             "time": "2020-08-25T19:10:18+00:00"
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "version": "v6.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swiftmailer/swiftmailer.git",
+                "reference": "56f0ab23f54c4ccbb0d5dcc67ff8552e0c98d59e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/56f0ab23f54c4ccbb0d5dcc67ff8552e0c98d59e",
+                "reference": "56f0ab23f54c4ccbb0d5dcc67ff8552e0c98d59e",
+                "shasum": ""
+            },
+            "require": {
+                "egulias/email-validator": "^2.0",
+                "php": ">=7.0.0",
+                "symfony/polyfill-iconv": "^1.0",
+                "symfony/polyfill-intl-idn": "^1.10",
+                "symfony/polyfill-mbstring": "^1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.0",
+                "symfony/phpunit-bridge": "^4.4|^5.0"
+            },
+            "suggest": {
+                "ext-intl": "Needed to support internationalized email addresses"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.2-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "lib/swift_required.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Corbyn"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "homepage": "https://swiftmailer.symfony.com",
+            "keywords": [
+                "email",
+                "mail",
+                "mailer"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/swiftmailer/swiftmailer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-12-08T18:02:06+00:00"
         },
         {
             "name": "symfony/asset",
@@ -6545,6 +6615,82 @@
             "time": "2020-09-15T12:23:47+00:00"
         },
         {
+            "name": "symfony/swiftmailer-bundle",
+            "version": "v3.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/swiftmailer-bundle.git",
+                "reference": "933be6a3196fb354615290f53ff7ff61e0bdde58"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/swiftmailer-bundle/zipball/933be6a3196fb354615290f53ff7ff61e0bdde58",
+                "reference": "933be6a3196fb354615290f53ff7ff61e0bdde58",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1",
+                "swiftmailer/swiftmailer": "^6.1.3",
+                "symfony/config": "^4.4|^5.0",
+                "symfony/dependency-injection": "^4.4|^5.0",
+                "symfony/http-kernel": "^4.4|^5.0"
+            },
+            "conflict": {
+                "twig/twig": "<1.41|<2.10"
+            },
+            "require-dev": {
+                "symfony/console": "^4.4|^5.0",
+                "symfony/framework-bundle": "^4.4|^5.0",
+                "symfony/phpunit-bridge": "^4.4|^5.0",
+                "symfony/yaml": "^4.4|^5.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Bundle\\SwiftmailerBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony SwiftmailerBundle",
+            "homepage": "http://symfony.com",
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-10-06T05:51:35+00:00"
+        },
+        {
             "name": "symfony/templating",
             "version": "v5.1.8",
             "source": {
@@ -7828,6 +7974,65 @@
     ],
     "packages-dev": [
         {
+            "name": "dama/doctrine-test-bundle",
+            "version": "v6.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dmaicher/doctrine-test-bundle.git",
+                "reference": "a43f79239f446bb85ffa34e799878156a43b590b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dmaicher/doctrine-test-bundle/zipball/a43f79239f446bb85ffa34e799878156a43b590b",
+                "reference": "a43f79239f446bb85ffa34e799878156a43b590b",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^2.9.3 || ^3.0",
+                "doctrine/doctrine-bundle": "^1.11 || ^2.0",
+                "php": "^7.1 || ^8.0",
+                "symfony/framework-bundle": "^3.4 || ^4.4 || ^5.1"
+            },
+            "require-dev": {
+                "behat/behat": "^3.0",
+                "phpstan/phpstan": "^0.12",
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+                "symfony/phpunit-bridge": "^5.1",
+                "symfony/process": "^3.4 || ^4.4 || ^5.1",
+                "symfony/yaml": "^3.4 || ^4.4 || ^5.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "7.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DAMA\\DoctrineTestBundle\\": "src/DAMA/DoctrineTestBundle"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Maicher",
+                    "email": "mail@dmaicher.de"
+                }
+            ],
+            "description": "Symfony bundle to isolate doctrine database tests and improve test performance",
+            "keywords": [
+                "doctrine",
+                "isolation",
+                "performance",
+                "symfony",
+                "tests"
+            ],
+            "time": "2020-12-12T16:34:54+00:00"
+        },
+        {
             "name": "doctrine/data-fixtures",
             "version": "1.4.4",
             "source": {
@@ -8419,16 +8624,16 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v5.1.6",
+            "version": "v5.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "6753ea4cb2dab705e819b1ddd8833a5c98338650"
+                "reference": "235823f6d215c9bd930a47a496e62c1354cde55b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/6753ea4cb2dab705e819b1ddd8833a5c98338650",
-                "reference": "6753ea4cb2dab705e819b1ddd8833a5c98338650",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/235823f6d215c9bd930a47a496e62c1354cde55b",
+                "reference": "235823f6d215c9bd930a47a496e62c1354cde55b",
                 "shasum": ""
             },
             "require": {
@@ -8438,7 +8643,8 @@
                 "phpunit/phpunit": "<4.8.35|<5.4.3,>=5.0|<6.4,>=6.0|9.1.2"
             },
             "require-dev": {
-                "symfony/deprecation-contracts": "^2.1"
+                "symfony/deprecation-contracts": "^2.1",
+                "symfony/error-handler": "^4.4|^5.0"
             },
             "suggest": {
                 "symfony/error-handler": "For tracking deprecated interfaces usages at runtime with DebugClassLoader"
@@ -8448,9 +8654,6 @@
             ],
             "type": "symfony-bridge",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "5.1-dev"
-                },
                 "thanks": {
                     "name": "phpunit/phpunit",
                     "url": "https://github.com/sebastianbergmann/phpunit"
@@ -8497,7 +8700,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-09-18T14:27:32+00:00"
+            "time": "2020-12-14T22:27:17+00:00"
         },
         {
             "name": "symfony/web-profiler-bundle",

@@ -63,7 +63,7 @@ class GamesService extends AbstractEntityService
      */
     public function getBestGamesByLicense(License $license)
     {
-        return $this->repository->findBy(array('license' => $license), array('copiesSold' => 'DESC'), 4);
+        return $this->repository->findBy(['license' => $license], ['copiesSold' => 'DESC'], 4);
     }
 
     /**

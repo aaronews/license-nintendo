@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <title>{{ subject }}</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    </head>
+    <body style="background-color: #eeeeee;" vlink="#020202" topmargin="0" rightmargin="0" marginwidth="0" marginheight="0" link="#020202" leftmargin="0" bottommargin="0" bgcolor="#fff" alink="#020202">
+        <table style="min-width:320px;" width="100%" cellspacing="0" cellpadding="0" bgcolor="#eaeced">
+            <!-- fix for gmail -->
+            <tbody>
+                <tr>
+                    <td class="hide">
+                        <table width="600" cellpadding="0" cellspacing="0" style="width:600px !important;">
+                            <tbody>
+                                <tr>
+                                    <td style="min-width:600px; font-size:0; line-height:0;">&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="wrapper" style="padding:0 10px;">
+                        <table data-module="module-2" data-thumb="thumbnails/02.png" width="100%" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td data-bgcolor="bg-module" bgcolor="#eaeced">
+                                        <table class="flexible" width="600" align="center" style="margin:0 auto;" cellpadding="0" cellspacing="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td>
+                                                        <img src="{{absolute_url(asset('img/background-licenses-homepage.jpg'))}}" style="vertical-align:top;" width="600" height="306" alt="">
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding:58px 60px 52px; background-color:#f9f9f9;">
+                                                        <table width="100%" cellpadding="0" cellspacing="0">
+                                                            <tbody>
+                                                                {% block mailBody %}
+                                                                {% endblock %}
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="28"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <!-- fix for gmail -->
+                <tr>
+                    <td style="line-height:0;">
+                        <div style="display:none; white-space:nowrap; font:15px/1px courier;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

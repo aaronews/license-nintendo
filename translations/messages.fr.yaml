@@ -159,9 +159,7 @@ licenses:
     description:
       title: Histoire
   games:
-    title: >
-      Jeux :
-
+    title: Jeux :
 characters:
   list:
     title: Liste des personnages de jeux Nintendo
@@ -175,6 +173,7 @@ characters:
       options:
         M: Masculin
         F: Feminin
+        Neutre: Neutre
     name:
       label: Nom du personnage
       placeholder: Nom
@@ -239,11 +238,9 @@ games:
     informations: Informations
     see_thumbnail: Voir la vignette
   characters:
-    title: >
-      Personnages du jeu "%GAME_NAME%"
+    title: Personnages du jeu "%GAME_NAME%"
   items:
-    title: >
-      Objet du jeu "%GAME_NAME%"
+    title: Objets du jeu "%GAME_NAME%"
   form:
     console:
       label: Jouable sur
@@ -299,8 +296,8 @@ games:
       label: Position de l'image de fond
       placeholder: center
     first_block_min_height:
-      label: Taille minimale du premier bloc
-      placeholder: 500px/100vh
+      label: Taille minimale du premier bloc en pixel
+      placeholder: 500
   view:
     history:
       title: Histoire
@@ -432,3 +429,97 @@ form:
     help: Générer à partir du nom
   labels:
     username: Adresse email
+
+errors:
+  404:
+    title: Erreur 404
+    text: Il semblerait que vous ayez trouvé un lien mort. Utilisez le bouton ci-desous pour revenir à la page d'accueil.
+    img_description: Lien mort
+    button: Accueil
+  403:
+    title: Erreur 403
+    text: Il semblerait que vous essayez d'accèder une page protégée. Utilisez le bouton ci-desous pour revenir à la page d'accueil.
+    img_description: Accès refusé
+    button: Accueil
+  500:
+    title: Erreur 500
+    text: Une erreur est survenue sur cette page. Veuillez nous excuser pour la gêne occasionnée. Vous pouvez utiliser le bouton ci-desous pour revenir à la page d'accueil.
+    img_description: Page cassée
+    button: Accueil
+
+mails:
+  signup:
+    subject: Activer mon compte
+    body: >
+       	<tr>
+          <td style="font:18px Arial, Helvetica, sans-serif; color:#292c34; padding:0 0 24px;">
+            <p>
+                Bonjour ! 
+                <br/>
+                <br/>
+                Merci de vous être inscrit à notre site. Afin d'activer votre compte, veuillez cliquez sur le bouton ci-dessous.
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:0 0 20px;">
+            <table align="center" style="margin:0 auto;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td style="font:20px Arial, Helvetica, sans-serif; color:#f8f9fb; text-transform:uppercase; border-radius:2px; background-color:#000000">
+                            <a target="_blank" style="text-decoration:none; color:#f8f9fb; display:block; padding:12px 10px 10px;" href="%ACTIVATE_ACCOUNT_URL%">Activer mon compte</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td style="font:18px Arial, Helvetica, sans-serif; color:#292c34; padding:0 0 23px;">
+            <p>
+                Ce bouton ne fonctionne pas ? Copiez le lien suivant dans votre navigateur pour activer votre compte : %ACTIVATE_ACCOUNT_URL%
+                <br/>
+                <br/>
+                Bonne journée !
+            </p>
+          </td>
+        </tr>
+  reset_password:
+    subject: Demande de réinitialisation du mot de passe
+    body: >
+        <tr>
+          <td style="font:18px Arial, Helvetica, sans-serif; color:#292c34; padding:0 0 24px;">
+            <p>
+                Bonjour ! 
+                <br/>
+                <br/>
+                Pour réinitialiser votre mot de passe, veuillez cliquer sur le bouton ci-dessous
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:0 0 20px;">
+            <table align="center" style="margin:0 auto;" cellpadding="0" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <td style="font:20px Arial, Helvetica, sans-serif; color:#f8f9fb; text-transform:uppercase; border-radius:2px; background-color:#000000">
+                            <a target="_blank" style="text-decoration:none; color:#f8f9fb; display:block; padding:12px 10px 10px;" href="%RESET_PASSWORD_URL%">Réinitialiser mon mot de passe</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td style="font:18px Arial, Helvetica, sans-serif; color:#292c34; padding:0 0 23px;">
+            <p>
+                Ce bouton ne fonctionne pas ? Copiez le lien suivant dans votre navigateur pour réinitialisser votre mot de passe : %RESET_PASSWORD_URL%
+                <br/>
+                <br/>
+                <span style="font-weight: bold">Attention, ce lien expirera dans %EXPIRATION_DELAY% heure.</span>
+                <br/>
+                <br/>
+                Bonne journée !
+            </p>
+          </td>
+        </tr>

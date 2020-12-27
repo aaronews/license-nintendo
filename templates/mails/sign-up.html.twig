@@ -1,3 +1,7 @@
-<a href="{{activationUrl}}">
-Activer mon compte
-</a>
+{% extends 'mails/layout.html.twig' %}
+
+{% block mailBody %}
+    {{'mails.signup.body'|trans|replace({
+        '%ACTIVATE_ACCOUNT_URL%' : activationUrl,
+    })|raw}}
+{% endblock %}

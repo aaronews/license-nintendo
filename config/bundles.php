@@ -17,4 +17,6 @@ return [
     Vich\UploaderBundle\VichUploaderBundle::class => ['all' => true],
     WhiteOctober\BreadcrumbsBundle\WhiteOctoberBreadcrumbsBundle::class => ['all' => true],
     SymfonyCasts\Bundle\ResetPassword\SymfonyCastsResetPasswordBundle::class => ['all' => true],
+    DAMA\DoctrineTestBundle\DAMADoctrineTestBundle::class => ['test' => true],
+    Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle::class => ['all' => true],
 ];

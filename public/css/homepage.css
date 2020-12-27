@@ -6,7 +6,7 @@
     animation: var(--animation-mario-object);
 }
 
-.homepage .homepage-description h2{
+.homepage .homepage-description h1{
     font-size: 50px;
 }
 

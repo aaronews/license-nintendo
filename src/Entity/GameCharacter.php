@@ -25,14 +25,14 @@ class GameCharacter extends AbstractEntity
     /**
      * @var Game
      * @ORM\ManyToOne(targetEntity=Game::class, inversedBy="gameCharacters")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
     private $game;
 
     /**
      * @var Character
      * @ORM\ManyToOne(targetEntity=Character::class, inversedBy="gameCharacters")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      * @Assert\NotNull
      */
     private $currentCharacter;
@@ -72,10 +72,10 @@ class GameCharacter extends AbstractEntity
     /**
      * Set game value
      *
-     * @param Game $game
+     * @param Game|null $game
      * @return self
      */
-    public function setGame(Game $game): self
+    public function setGame(?Game $game): self
     {
         $this->game = $game;
 
@@ -95,10 +95,10 @@ class GameCharacter extends AbstractEntity
     /**
      * Set character value
      *
-     * @param Character $currentCharacter
+     * @param Character|null $currentCharacter
      * @return self
      */
-    public function setCurrentCharacter(Character $currentCharacter): self
+    public function setCurrentCharacter(?Character $currentCharacter): self
     {
         $this->currentCharacter = $currentCharacter;
 
