@@ -15,39 +15,39 @@ class SignUpType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username',EmailType::class, array(
+            ->add('username',EmailType::class, [
                 'required' => true,
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'users.form.username.placeholder'
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-12'
-                ),
+                ],
                 'label' => 'form.labels.username'
-            ))
-            ->add('password',PasswordType::class, array(
+            ])
+            ->add('password',PasswordType::class, [
                 'required' => true,
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-12 col-sm-6'
-                ),
+                ],
                 'label' => 'users.form.password.label'
-            ))
-            ->add('confirmPassword',PasswordType::class, array(
+            ])
+            ->add('confirmPassword',PasswordType::class, [
                 'required' => true,
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-12 col-sm-6'
-                ),
+                ],
                 'label' => 'users.form.confirm_password.label'
-            ))
-            ->add('submit', SubmitType::class, array(
+            ])
+            ->add('submit', SubmitType::class, [
                 'label' => 'form.button.signup',
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-12 text-center mt-3 '
-                ),
-                'attr' => array(
+                ],
+                'attr' => [
                     'class' => 'btn-lg btn btn-primary',
-                ),
-            ))
+                ],
+            ])
         ;
     }
 

@@ -24,63 +24,63 @@ class GameType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class,array(
+            ->add('name', TextType::class,[
                 'required' => false,
                 'label' => 'games.form.name.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'games.form.name.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('releaseDateMin', DateType::class, array(
+                ],
+            ])
+            ->add('releaseDateMin', DateType::class, [
                 'required' => false,
                 'label' => 'games.form.release_date_min.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'games.form.release_date_min.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
+                ],
                 'widget' => 'single_text',
                 'format' => 'dd/mm/yyyy',
                 'html5' => false,
-            ))
-            ->add('releaseDateMax', DateType::class, array(
+            ])
+            ->add('releaseDateMax', DateType::class, [
                 'required' => false,
                 'label' => 'games.form.release_date_max.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'games.form.release_date_max.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
+                ],
                 'widget' => 'single_text',
                 'format' => 'dd/mm/yyyy',
                 'html5' => false,
-            ))
-            ->add('nbPlayersMin', IntegerType::class, array(
+            ])
+            ->add('nbPlayersMin', IntegerType::class, [
                 'required' => false,
                 'label' => 'games.form.player_numbers_min.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'games.form.player_numbers_min.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('nbPlayersMax', IntegerType::class, array(
+                ],
+            ])
+            ->add('nbPlayersMax', IntegerType::class, [
                 'required' => false,
                 'label' => 'games.form.player_numbers_max.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'games.form.player_numbers_max.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('license', EntityType::class, array(
+                ],
+            ])
+            ->add('license', EntityType::class, [
                 'required' => false,
                 'label' => 'games.form.licence.label',
                 'placeholder' => 'games.form.licence.placeholder',
@@ -89,11 +89,11 @@ class GameType extends AbstractType
                 'query_builder' => function(LicenseRepository $licenseRepository){
                     return $licenseRepository->findAllSortByProperty('name');
                 },
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('console', EntityType::class, array(
+                ],
+            ])
+            ->add('console', EntityType::class, [
                 'required' => false,
                 'label' => 'games.form.console.label',
                 'placeholder' => 'games.form.console.placeholder',
@@ -102,11 +102,11 @@ class GameType extends AbstractType
                 'query_builder' => function(ConsoleRepository $consoleRepository){
                     return $consoleRepository->findAllSortByProperty('name');
                 },
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('genre', EntityType::class, array(
+                ],
+            ])
+            ->add('genre', EntityType::class, [
                 'required' => false,
                 'label' => 'games.form.genre.label',
                 'placeholder' => 'games.form.genre.placeholder',
@@ -115,19 +115,19 @@ class GameType extends AbstractType
                 'query_builder' => function(GenreRepository $genreRepository){
                     return $genreRepository->findAllSortByProperty('name');
                 },
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('submit', SubmitType::class, array(
+                ],
+            ])
+            ->add('submit', SubmitType::class, [
                 'label' => 'form.button.filter',
-                'attr' => array(
+                'attr' => [
                     'class' => 'btn-lg btn-primary btn',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-12 text-center'
-                ),
-            ))
+                ],
+            ])
         ;
     }
 

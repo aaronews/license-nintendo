@@ -14,7 +14,7 @@ class IndexController extends AbstractController
     public function index(LicensesService $licensesService)
     {
         return $this->render('index/index.html.twig', [
-            'licenses' => $licensesService->findAll(array('name' => 'ASC'))
+            'licenses' => $licensesService->findAll(['name' => 'ASC'])
         ]);
     }
 }

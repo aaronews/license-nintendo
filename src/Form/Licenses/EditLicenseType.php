@@ -14,22 +14,22 @@ class EditLicenseType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('uploadThumbnail', FileType::class, array(
+            ->add('uploadThumbnail', FileType::class, [
                 'required' => false,
                 'label' => 'licenses.form.thumbnail.label',
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-6 col-12'
-                ),
-            ))
-            ->add('submit', SubmitType::class, array(
+                ],
+            ])
+            ->add('submit', SubmitType::class, [
                 'label' => 'form.button.edit',
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-12 text-center mt-3 '
-                ),
-                'attr' => array(
+                ],
+                'attr' => [
                     'class' => 'btn-lg btn btn-primary',
-                ),
-            ))
+                ],
+            ])
         ;
     }
 

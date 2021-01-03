@@ -74,7 +74,7 @@ class AppFixtures extends Fixture
         $licensePokemon
             ->setName('Pokémon')
             ->setSlug('pokemon')
-            ->setDescription("Les jeux Pokémon principaux sont des RPG mettent en scène un(e) jeune adolescent(e), souhaitant devenir maître de la ligue Pokémon. Pour ce faire il va quitter son village natal et choisir son premier Pokémon et partir à la conquête des badges d'arène afin de pour accéder à la ligue. Tout aux long des jeux le joueur pourra agrandir son équipe de combat pour avoir jusqu'à 6 Pokémons. Dans certain de ces jeux, on plus du l'objectif ultime qu'est la ligue, le personnage principale sera mêlé à une intrigue parallèle impliquant un groupe de personnes mal intentionné se faisant appelé \"Team\", la plus célébré d'entre elles est la Team Rocket faisait du trafic de Pokémon pour les revendre aux plus offrant ou les utiliser à leurs propres fins.<br/><br/>D'autres jeux sont également disponible dans l'univers de Pokémon, comme les Pokémon Ranger, les Pokémon Donjon Mystère, Détective Pikachu ou encore Pokémon Snap.")
+            ->setDescription("Les jeux Pokémon principaux sont des RPG mettent en scène un(e) jeune adolescent(e], souhaitant devenir maître de la ligue Pokémon. Pour ce faire il va quitter son village natal et choisir son premier Pokémon et partir à la conquête des badges d'arène afin de pour accéder à la ligue. Tout aux long des jeux le joueur pourra agrandir son équipe de combat pour avoir jusqu'à 6 Pokémons. Dans certain de ces jeux, on plus du l'objectif ultime qu'est la ligue, le personnage principale sera mêlé à une intrigue parallèle impliquant un groupe de personnes mal intentionné se faisant appelé \"Team\", la plus célébré d'entre elles est la Team Rocket faisait du trafic de Pokémon pour les revendre aux plus offrant ou les utiliser à leurs propres fins.<br/><br/>D'autres jeux sont également disponible dans l'univers de Pokémon, comme les Pokémon Ranger, les Pokémon Donjon Mystère, Détective Pikachu ou encore Pokémon Snap.")
             ->setThumbnail('pokemon-5fb569547bd06476306870.png')
             ->setLogo(null)
         ;
@@ -120,7 +120,7 @@ class AppFixtures extends Fixture
             ->setThumbnail('3ds-5fb562b742606269920968.png')
             ->setReleasePrice(220)
             ->setReleaseDate((new DateTime())->setDate(2011, 3, 25))
-            ->setDescription("La Nintendo 3DS est une console portable de Nintendo sortie entre février et mars 2011 dans le monde. Elle succède à la Nintendo DS et possède une rétrocompatibilité avec les jeux de la DS. <br/><br/>Cette console possède deux écrans : celui du bas est tactile, et celui du haut affiche des graphismes en 3D sans lunettes (l'intensité de la 3D est réglable avec une molette). Elle dispose également de deux caméras à l'arrière, pour prendre des photos en 3D, et d'une caméra en façade. Un joystick a été ajouté à la classique croix directionnelle, et une carte SD de 2 Go est fournie avec la console.<br/><br/>La Nintendo 3DS a connu plusieurs déclinaisons : la Nintendo 3DS XL, sortie le 28 juillet 2012 en Europe ; la Nintendo 2DS, sortie le 12 octobre 2013 ; la New Nintendo 3DS (et XL), sortie le 13 février 2015 en Europe et la New Nintendo 2DS XL, sortie le 28 juillet 2017 en Europe.")
+            ->setDescription("La Nintendo 3DS est une console portable de Nintendo sortie entre février et mars 2011 dans le monde. Elle succède à la Nintendo DS et possède une rétrocompatibilité avec les jeux de la DS. <br/><br/>Cette console possède deux écrans : celui du bas est tactile, et celui du haut affiche des graphismes en 3D sans lunettes (l'intensité de la 3D est réglable avec une molette). Elle dispose également de deux caméras à l'arrière, pour prendre des photos en 3D, et d'une caméra en façade. Un joystick a été ajouté à la classique croix directionnelle, et une carte SD de 2 Go est fournie avec la console.<br/><br/>La Nintendo 3DS a connu plusieurs déclinaisons : la Nintendo 3DS XL, sortie le 28 juillet 2012 en Europe ; la Nintendo 2DS, sortie le 12 octobre 2013 ; la New Nintendo 3DS (et XL], sortie le 13 février 2015 en Europe et la New Nintendo 2DS XL, sortie le 28 juillet 2017 en Europe.")
         ;
         $manager->persist($console3ds);
         
@@ -142,7 +142,7 @@ class AppFixtures extends Fixture
             ->setThumbnail('ds-5fb56332972b1568888636.png')
             ->setReleasePrice(145)
             ->setReleaseDate((new DateTime())->setDate(2005, 3, 11))
-            ->setDescription("La Nintendo DS, DS pour Dual Screen, est une console portable créée par Nintendo, sortie fin 2004 au Japon et en Amérique du Nord et en 2005 en Europe. Elle est équipée de plusieurs fonctions auparavant rares, voire inédites dans le domaine du jeu vidéo portable, telles que deux écrans rétro-éclairés simultanément dont un écran tactile, un microphone, deux ports cartouche (un pour les jeux Nintendo DS, un autre pour les cartouches de jeu Game Boy Advance et les accessoires), deux haut-parleurs compatibles surround (virtuel), ou encore le Wi-Fi intégré.<br/><br/>À l'origine, l'idée était de mettre sur le marché une machine pour faire patienter les joueurs en attendant une nouvelle version de la Game Boy. Le 13 novembre 2003, Nintendo a annoncé qu'il allait sortir une nouvelle console pour 2004. Le 20 janvier 2004, la console a été annoncée sous le nom de code Nintendo DS (Developer's System), le nom de code a été changé en Nitro en mars 2004. Mais elle obtient son nom et aspect définit le 28 juillet 2004, DS veut désormais dire Dual Screen.")
+            ->setDescription("La Nintendo DS, DS pour Dual Screen, est une console portable créée par Nintendo, sortie fin 2004 au Japon et en Amérique du Nord et en 2005 en Europe. Elle est équipée de plusieurs fonctions auparavant rares, voire inédites dans le domaine du jeu vidéo portable, telles que deux écrans rétro-éclairés simultanément dont un écran tactile, un microphone, deux ports cartouche (un pour les jeux Nintendo DS, un autre pour les cartouches de jeu Game Boy Advance et les accessoires], deux haut-parleurs compatibles surround (virtuel], ou encore le Wi-Fi intégré.<br/><br/>À l'origine, l'idée était de mettre sur le marché une machine pour faire patienter les joueurs en attendant une nouvelle version de la Game Boy. Le 13 novembre 2003, Nintendo a annoncé qu'il allait sortir une nouvelle console pour 2004. Le 20 janvier 2004, la console a été annoncée sous le nom de code Nintendo DS (Developer's System], le nom de code a été changé en Nitro en mars 2004. Mais elle obtient son nom et aspect définit le 28 juillet 2004, DS veut désormais dire Dual Screen.")
         ;
         $manager->persist($consoleDs);
         
@@ -230,7 +230,7 @@ class AppFixtures extends Fixture
             ->setThumbnail('snes-5fd1410d414f9150702818.png')
             ->setReleasePrice(294)
             ->setReleaseDate((new DateTime())->setDate(1992, 4, 11))
-            ->setDescription("La Super Nintendo Entertainment System (couramment abrégée Super NES ou SNES ou encore Super Nintendo), ou Super Famicom au Japon, est une console de jeux vidéo du constructeur japonais Nintendo commercialisée à partir de novembre 1990. En Amérique du Nord, la console est sortie avec une apparence différente.<br/><br/>Conçue pour rivaliser avec la PC-Engine de NEC, et  la Mega Drive de Sega, la Super NES se vendra mieux que ses rivales et Nintendo va se réaffirmer comme le leader sur le marché japonais des consoles. Au lancement, elle fut vendue en pack avec deux manettes et Super Mario World et accompagnée par quatre jeux optionnels : F-Zero, Super R-Type, Super Tennis et Super Soccer. À partir d'octobre 1992, la Super Nintendo sera vendue au choix soit seule, soit avec Super Mario World, soit avec Street Fighter 2, soit avec le Super Scope.")
+            ->setDescription("La Super Nintendo Entertainment System (couramment abrégée Super NES ou SNES ou encore Super Nintendo], ou Super Famicom au Japon, est une console de jeux vidéo du constructeur japonais Nintendo commercialisée à partir de novembre 1990. En Amérique du Nord, la console est sortie avec une apparence différente.<br/><br/>Conçue pour rivaliser avec la PC-Engine de NEC, et  la Mega Drive de Sega, la Super NES se vendra mieux que ses rivales et Nintendo va se réaffirmer comme le leader sur le marché japonais des consoles. Au lancement, elle fut vendue en pack avec deux manettes et Super Mario World et accompagnée par quatre jeux optionnels : F-Zero, Super R-Type, Super Tennis et Super Soccer. À partir d'octobre 1992, la Super Nintendo sera vendue au choix soit seule, soit avec Super Mario World, soit avec Street Fighter 2, soit avec le Super Scope.")
         ;
         $manager->persist($consoleSnes);
         
@@ -316,7 +316,7 @@ class AppFixtures extends Fixture
             ->setName('Cranky Kong')
             ->setSlug('cranky-kong')
             ->setThumbnail('kranky-kong-5fb56d3dd92cc784085255.png')
-            ->setDescription("Cranky Kong, aussi appelé Donkey Kong Sr., est un personnage de la franchise Donkey Kong. D'abord antagoniste de la série face à Mario  (qui se nommait Jumpman sur arcade), il finit par vieillir et par prendre sa retraite. Il est le plus âgé de la famille Kong, étant le père de Donkey Kong Jr. et le grand-père de l'actuel Donkey Kong. Il est aussi veuf depuis le décès de sa femme Wrinkly Kong. Cranky Kong est aujourd'hui un personnage secondaire, et grâce à son expérience, il guide son petit-fils le long de ses aventures, malgré son caractère grincheux.<br/><br/>Sur arcade, Cranky a exercé le métier de kidnappeur de princesse, il a capturé sans relâche Pauline, combattu Mario ou bien s'est fait aider par son fils, Donkey Kong Jr. Comme il le dit lui-même dans les Donkey Kong Country, il était trop vieux pour continuer cela et a décidé de prendre sa retraite")
+            ->setDescription("Cranky Kong, aussi appelé Donkey Kong Sr., est un personnage de la franchise Donkey Kong. D'abord antagoniste de la série face à Mario  (qui se nommait Jumpman sur arcade], il finit par vieillir et par prendre sa retraite. Il est le plus âgé de la famille Kong, étant le père de Donkey Kong Jr. et le grand-père de l'actuel Donkey Kong. Il est aussi veuf depuis le décès de sa femme Wrinkly Kong. Cranky Kong est aujourd'hui un personnage secondaire, et grâce à son expérience, il guide son petit-fils le long de ses aventures, malgré son caractère grincheux.<br/><br/>Sur arcade, Cranky a exercé le métier de kidnappeur de princesse, il a capturé sans relâche Pauline, combattu Mario ou bien s'est fait aider par son fils, Donkey Kong Jr. Comme il le dit lui-même dans les Donkey Kong Country, il était trop vieux pour continuer cela et a décidé de prendre sa retraite")
             ->setGender('M');
         $manager->persist($characterCrankyKong);
         
@@ -352,7 +352,7 @@ class AppFixtures extends Fixture
             ->setName('Dracaufeu')
             ->setSlug('dracaufeu')
             ->setThumbnail('dracaufeu-5fd6141260d08421886607.png')
-            ->setDescription("Dracaufeu est un dragon (ou un dinosaure si on se réfère à son nom japonais), de type Feu et Vol de la première génération des jeux Pokemon. On le retrouve sur les jaquettes des jeux Pokémon Rouge et Pokémon Rouge Feu.<br/><br/>Pokémon noble, il n'attaque pas les plus faibles que lui et cherche toujours des adversaires plus forts. Après un combat difficile ou s'il est en colère, sa flamme s'intensifie et devient blanche-bleue. Dracaufeu est aussi réputé pour avoir un sale caractère. Il crache d'impressionnants jets de flammes, et ses ailes lui permettent de voler à 1400 mètres d'altitude. Cependant, si son dresseur possède assez de détermination pour lui prouver que c'est lui le maître, il peut devenir extrêmement puissant.")
+            ->setDescription("Dracaufeu est un dragon (ou un dinosaure si on se réfère à son nom japonais], de type Feu et Vol de la première génération des jeux Pokemon. On le retrouve sur les jaquettes des jeux Pokémon Rouge et Pokémon Rouge Feu.<br/><br/>Pokémon noble, il n'attaque pas les plus faibles que lui et cherche toujours des adversaires plus forts. Après un combat difficile ou s'il est en colère, sa flamme s'intensifie et devient blanche-bleue. Dracaufeu est aussi réputé pour avoir un sale caractère. Il crache d'impressionnants jets de flammes, et ses ailes lui permettent de voler à 1400 mètres d'altitude. Cependant, si son dresseur possède assez de détermination pour lui prouver que c'est lui le maître, il peut devenir extrêmement puissant.")
             ->setGender('N');
         $manager->persist($characterDracaufeu);
         
@@ -397,7 +397,7 @@ class AppFixtures extends Fixture
             ->setName('Link')
             ->setSlug('link')
             ->setThumbnail('link-5fd616beb1eaa432595002.png')
-            ->setDescription("Link est le nom que porte le héros de la série The Legend of Zelda. Il est reconnaissable au premier coup d'oeil à sa tunique et son bonnet vert (bien qu'il débute avec d'autres vêtements dans certains épisodes), et à la caractéristique de ne pas prononcer une seule parole pendant toute l'aventure. Détenteur de la Triforce du Courage et descendant des chevaliers Hyliens, comme en témoignent ses oreilles pointues, il prend également en une occasion notable (Majora's Mask) l'apparence propre à d'autres races d'Hyrule, à l'aide de masques qui le métamorphosent.<br/><br/>Il est généralement admis qu'en dehors des suites directes, chaque jeu Zelda met en scène un Link différent, ancêtre ou descendant de celui d'un autre épisode. Certaines de ses incarnations sont restées célèbres sous un titre particulier - citons notamment le Héros du Temps d'Ocarina of Time ou le Héros du Vent de The Wind Waker. L'âge de Link varie en fonction du jeu où il apparait, pouvant aller de petit enfant à jeune adulte ; si certains membres de sa famille, font parfois partie du scénario, une constante dans la série est d'en faire un orphelin.<br/><br/>Débutant le plus souvent son aventure comme un habitant ordinaire de son village natal, Link doit traverser des donjons remplis d'énigmes, triompher de puissants ennemis, maîtriser des armes de légende et mettre la main sur des reliques sacrées pour vaincre Ganondorf (ou, selon les épisodes, les autres ennemis qui se dressent sur son chemin) et sauver la Princesse Zelda.")
+            ->setDescription("Link est le nom que porte le héros de la série The Legend of Zelda. Il est reconnaissable au premier coup d'oeil à sa tunique et son bonnet vert (bien qu'il débute avec d'autres vêtements dans certains épisodes], et à la caractéristique de ne pas prononcer une seule parole pendant toute l'aventure. Détenteur de la Triforce du Courage et descendant des chevaliers Hyliens, comme en témoignent ses oreilles pointues, il prend également en une occasion notable (Majora's Mask) l'apparence propre à d'autres races d'Hyrule, à l'aide de masques qui le métamorphosent.<br/><br/>Il est généralement admis qu'en dehors des suites directes, chaque jeu Zelda met en scène un Link différent, ancêtre ou descendant de celui d'un autre épisode. Certaines de ses incarnations sont restées célèbres sous un titre particulier - citons notamment le Héros du Temps d'Ocarina of Time ou le Héros du Vent de The Wind Waker. L'âge de Link varie en fonction du jeu où il apparait, pouvant aller de petit enfant à jeune adulte ; si certains membres de sa famille, font parfois partie du scénario, une constante dans la série est d'en faire un orphelin.<br/><br/>Débutant le plus souvent son aventure comme un habitant ordinaire de son village natal, Link doit traverser des donjons remplis d'énigmes, triompher de puissants ennemis, maîtriser des armes de légende et mettre la main sur des reliques sacrées pour vaincre Ganondorf (ou, selon les épisodes, les autres ennemis qui se dressent sur son chemin) et sauver la Princesse Zelda.")
             ->setGender('M');
         $manager->persist($characterLink);
         
@@ -563,7 +563,7 @@ class AppFixtures extends Fixture
             ->setName('Marteau')
             ->setSlug('marteau')
             ->setThumbnail('marteau-5fd1340b5ce5e751544641.png')
-            ->setDescription("Dans les jeux Paper Mario, le marteau est l'une des deux attaques principales que Mario pourra utiliser avec le saut.<br/><br/>Dans les jeux Smash Bros, le marteau est une arme de frappe. Une fois attrapé, le joueur se met à frapper rapidement avec, sans arrêt, pour quelques instants . Si un adversaire le touche, il sera éjecté et souffrira de 22% dommages (30% dans Smash Bros. 64), ce qui le rend l'une des armes les plus \"effrayantes\" de la série.");
+            ->setDescription("Dans les jeux Paper Mario, le marteau est l'une des deux attaques principales que Mario pourra utiliser avec le saut.<br/><br/>Dans les jeux Smash Bros, le marteau est une arme de frappe. Une fois attrapé, le joueur se met à frapper rapidement avec, sans arrêt, pour quelques instants . Si un adversaire le touche, il sera éjecté et souffrira de 22% dommages (30% dans Smash Bros. 64], ce qui le rend l'une des armes les plus \"effrayantes\" de la série.");
         $manager->persist($itemMarteau);
         
         $itemMasterBall = new Item();
@@ -619,7 +619,7 @@ class AppFixtures extends Fixture
             ->setName('Rappel')
             ->setSlug('rappel')
             ->setThumbnail('rappel-5fd134559cb23772082721.png')
-            ->setDescription("Le Rappel est un objet de soin apparu dans la première génération. Lorsqu'il est utilisé sur un Pokémon K.O. (en combat ou bien en dehors), cet objet le réanime et lui redonne la moitié de ses PV max. Dans toutes les générations, le Rappel peut être acheté dans la plupart des Boutiques Pokémon.");
+            ->setDescription("Le Rappel est un objet de soin apparu dans la première génération. Lorsqu'il est utilisé sur un Pokémon K.O. (en combat ou bien en dehors], cet objet le réanime et lui redonne la moitié de ses PV max. Dans toutes les générations, le Rappel peut être acheté dans la plupart des Boutiques Pokémon.");
         $manager->persist($itemRappel);
         
         $itemReceptaclesCoeur = new Item();
@@ -627,7 +627,7 @@ class AppFixtures extends Fixture
             ->setName('Réceptacles de Cœur')
             ->setSlug('receptacles-de-coeur')
             ->setThumbnail('receptacle-coeur-5fd13459b42fc576102619.png')
-            ->setDescription("Les Réceptacles de Cœur constituent la barre de vie de Link. Plus il en collecte, plus sa barre de vie est grande. Ils sont traditionnellement visibles en haut à gauche de l'écran. Ils sont rouges, mais quand Link se fait toucher, la couleur disparaît au minimum d'un quart, voire d'un réceptacle entier. En général, l'aventure commence avec trois réceptacles de cœurs et le maximum de réceptacles qu'il peut avoir dépend des jeux. On obtient des réceptacles après avoir vaincu un boss et, dans la plupart des jeux, après avoir récolté quatre quarts de cœurs ou cinq fragments de cœurs (selon les jeux), qui sont soit cachés, soit donnés après avoir accompli une quête annexe.");
+            ->setDescription("Les Réceptacles de Cœur constituent la barre de vie de Link. Plus il en collecte, plus sa barre de vie est grande. Ils sont traditionnellement visibles en haut à gauche de l'écran. Ils sont rouges, mais quand Link se fait toucher, la couleur disparaît au minimum d'un quart, voire d'un réceptacle entier. En général, l'aventure commence avec trois réceptacles de cœurs et le maximum de réceptacles qu'il peut avoir dépend des jeux. On obtient des réceptacles après avoir vaincu un boss et, dans la plupart des jeux, après avoir récolté quatre quarts de cœurs ou cinq fragments de cœurs (selon les jeux], qui sont soit cachés, soit donnés après avoir accompli une quête annexe.");
         $manager->persist($itemReceptaclesCoeur);
         
         $itemSuperChampi = new Item();
@@ -660,7 +660,7 @@ class AppFixtures extends Fixture
             ->setName('Triforce')
             ->setSlug('triforce')
             ->setThumbnail('triforce-5fd1346b31add767640534.png')
-            ->setDescription("La Triforce une relique sacrée qui apparaît tout au long de la saga The Legend of Zelda. Elle est composée de trois triangles d'or sacrés nommés Triforce de la Force (triangle du haut, associé à Ganondorf), Triforce de la Sagesse (triangle de gauche, associé à Zelda), et Triforce du Courage (triangle de droite, associé à Link).<br/><br/>Elle n'est pas toujours présente dans les jeux mais est souvent évoquée. Cette relique est le but ultime de Ganondorf, car quiconque touche la Triforce verra l'un de ses vœux exaucé. Mais ce dernier n'a jamais réussit à l'obtenir, seul Link et Zelda ont déjà réussit à réunir les trois fragment dans certains jeux et eu ainsi la possibilité de réaliser un vœu.");
+            ->setDescription("La Triforce une relique sacrée qui apparaît tout au long de la saga The Legend of Zelda. Elle est composée de trois triangles d'or sacrés nommés Triforce de la Force (triangle du haut, associé à Ganondorf], Triforce de la Sagesse (triangle de gauche, associé à Zelda], et Triforce du Courage (triangle de droite, associé à Link).<br/><br/>Elle n'est pas toujours présente dans les jeux mais est souvent évoquée. Cette relique est le but ultime de Ganondorf, car quiconque touche la Triforce verra l'un de ses vœux exaucé. Mais ce dernier n'a jamais réussit à l'obtenir, seul Link et Zelda ont déjà réussit à réunir les trois fragment dans certains jeux et eu ainsi la possibilité de réaliser un vœu.");
         $manager->persist($itemTriforce);
         
         $itemTropheAide = new Item();
@@ -980,7 +980,7 @@ class AppFixtures extends Fixture
             ->setNbPlayers(1)
             ->setReleaseDate((new DateTime())->setDate(1988, 10, 23))
             ->setLicense($licenseSuperMario)
-            ->setDescription("Le développement de Super Mario Bros. 3 est assuré par Nintendo EAD et dure plus de deux ans. Shigeru Miyamoto est à la tête des concepteurs et des développeurs, avec lesquels il travaille de façon très proche pendant les phases initiale et finale du développement. Il encourage une grande liberté dans l'échange d'idées à l'intérieur de l'équipe, et considère que les idées intrigantes et originales sont la clé du succès d'un jeu vidéo.<br/><br/>Le jeu est conçu pour des joueurs de niveaux très variés. Les pièces bonus et les vies sont abondamment présentes dans les premiers mondes, tandis que les mondes suivants offrent des défis plus compliqués destinés aux joueurs expérimentés. Il est initialement prévu que Mario puisse se changer en centaure, mais cette transformation est ensuite abandonnée et remplacée par celle en raton laveur qui permet à Mario de voler temporairement. En plus des ennemis tirés des épisodes précédents comme les Goombas et les Koopas Troopas, de nouveaux ennemis font leur apparition dans Super Mario Bros.. Ces derniers sont en partie inspirés par de véritables expériences vécues par Miyamoto et le reste de l'équipe. Par exemple, l'idée de Chomp, une tête de chien enchaînée, vient d'une mauvaise expérience qu'a eue Miyamoto avec un chien lorsqu'il était enfant. Les sbires de Bowser ont chacun leurs propres apparence et personnalité ; en guise d'hommage à leurs efforts, Miyamoto se base sur sept de ses programmeurs pour les concevoir. Les noms des Koopalings sont plus tard changés pour ressembler à des noms de célébrités occidentales de la musique, telles que Ludwig van Beethoven ou Iggy Pop, pour l'internationalisation anglaise.<br/><br/>Super Mario Bros. 3 est commercialisé le 23 octobre 1988 au Japon. La même année, une pénurie de puces ROM, avec la préparation de Nintendo of America d'une version de Super Mario Bros. 2 pour les joueurs occidentaux (la version japonaise est jugée trop difficile), empêchent Nintendo de sortir Super Mario Bros. 3 et d'autres jeux en Amérique du Nord dans les délais prévus. En Europe, le jeu est commercialisé dès le 29 août 1991.")
+            ->setDescription("Le développement de Super Mario Bros. 3 est assuré par Nintendo EAD et dure plus de deux ans. Shigeru Miyamoto est à la tête des concepteurs et des développeurs, avec lesquels il travaille de façon très proche pendant les phases initiale et finale du développement. Il encourage une grande liberté dans l'échange d'idées à l'intérieur de l'équipe, et considère que les idées intrigantes et originales sont la clé du succès d'un jeu vidéo.<br/><br/>Le jeu est conçu pour des joueurs de niveaux très variés. Les pièces bonus et les vies sont abondamment présentes dans les premiers mondes, tandis que les mondes suivants offrent des défis plus compliqués destinés aux joueurs expérimentés. Il est initialement prévu que Mario puisse se changer en centaure, mais cette transformation est ensuite abandonnée et remplacée par celle en raton laveur qui permet à Mario de voler temporairement. En plus des ennemis tirés des épisodes précédents comme les Goombas et les Koopas Troopas, de nouveaux ennemis font leur apparition dans Super Mario Bros.. Ces derniers sont en partie inspirés par de véritables expériences vécues par Miyamoto et le reste de l'équipe. Par exemple, l'idée de Chomp, une tête de chien enchaînée, vient d'une mauvaise expérience qu'a eue Miyamoto avec un chien lorsqu'il était enfant. Les sbires de Bowser ont chacun leurs propres apparence et personnalité ; en guise d'hommage à leurs efforts, Miyamoto se base sur sept de ses programmeurs pour les concevoir. Les noms des Koopalings sont plus tard changés pour ressembler à des noms de célébrités occidentales de la musique, telles que Ludwig van Beethoven ou Iggy Pop, pour l'internationalisation anglaise.<br/><br/>Super Mario Bros. 3 est commercialisé le 23 octobre 1988 au Japon. La même année, une pénurie de puces ROM, avec la préparation de Nintendo of America d'une version de Super Mario Bros. 2 pour les joueurs occidentaux (la version japonaise est jugée trop difficile], empêchent Nintendo de sortir Super Mario Bros. 3 et d'autres jeux en Amérique du Nord dans les délais prévus. En Europe, le jeu est commercialisé dès le 29 août 1991.")
             ->setHistory("Grâce aux frères Mario, la princesse Peach a été sauvée des griffes de Bowser dans Super Mario Bros. Pour se venger, le roi Koopa envoie ses sept sbires koopa,les Koopalings, à différents endroits du royaume. Ceux-ci attaquent chacun un roi avec leur bateau volant, lui volent son sceptre magique et le transforment en animal. Les frères plombiers partent ainsi à la rescousse des sept souverains.<br/><br/>Après avoir terminé leur lourde tâche, les deux héros reçoivent une lettre via le roi du Pays des Tuyau. Celle-ci vient de Bowser, qui a kidnappé la princesse. Les frères se rendent donc dans un ultime monde, le Pays Obscure, où réside le roi maléfique.")
             ->setCopiesSold(18000000)
             ->setThumbnail('super-mario-bros-3-5fb58c30b8a97710272855.jpg')
@@ -1215,7 +1215,7 @@ class AppFixtures extends Fixture
             ->setNbPlayers(1)
             ->setReleaseDate((new DateTime())->setDate(2000, 11, 17))
             ->setLicense($licenseZelda)
-            ->setDescription("Comment succéder à Ocarina of Time et son succès sans précédent : c’est la difficile question à laquelle Eiji Aonuma et son équipe doivent répondre au début du développement du jeu qui allait devenir Majora’s Mask.<br/><br/>En mai 1999, le magazine japonais Famitsu parle de l’arrivée prochaine sur l’archipel de l’extension d’Ocarina of Time pour le 64DD : c’est le projet Ura Zelda, finalement annulé vu le manque d’engouement pour le périphérique et qui refera surface plus tard sous les traits de Master Quest. Toujours est-il qu’il y a un temps une confusion entre ce Ura Zelda et le Zelda Gaiden (Gaiden désignant en gros une histoire complémentaire), qui apparaît en août 1999 au Nintendo Space World. C’est bien ce Zelda Gaiden qui deviendra Majora’s Mask. C’est à ce SpaceWorld 1999 qu’on peut pour la première fois apercevoir des éléments caractéristiques du jeu, tels que Bourg-Clocher ou le Masque Goron. C’est là les prémices de tout le système de masques du jeu final, chacun conférant à Link une habileté particulière et certains permettant même de le changer en Mojo, Goron ou Zora, modifiant du coup radicalement la façon dont on contrôle le personnage.<br/><br/>Le jeu utilise l’Expansion Pak de la Nintendo 64 : ainsi, bien que les graphismes et le moteur soient directement repris d’Ocarina of Time, divers éléments d’ordre technique comme la distance d’affichage, les détails des textures ou le nombre de personnages à l’écran sont améliorés. C’est en mars 2000 que le titre définitif du jeu, Majora’s Mask, est officiellement annoncé. Le jeu est finalement lancé en mai au Japon, en octobre en Amérique du Nord et le 17 novembre 2000 en Europe. Beaucoup s’attendaient à voir le jeu se retrouver dans l’ombre de son prédécesseur Ocarina of Time, mais les critiques sont largement positives.<br/><br/>Il n’en reste pas moins que par ses choix audacieux pour ce qui est de l’ambiance et de la progression de l’aventure, Majora’s Mask est de nature à diviser. La lune menaçante qui pèse en permanence sur le joueur et le décompte fatidique des 72 heures qui poursuit inlassablement sa course rend le jeu très sombre. Les uns se réjouissent de cette ambiance apocalyptique si nouvelle pour Zelda, tandis que d’autres trouvent plus difficile de rentrer dans le jeu. Le fort accent mis sur les quêtes annexes est parfois jugé être trop au détriment de l’aventure principale, même si globalement il s’agit plutôt d’un point fort apprécié de Majora’s Mask. Le monde de Termina et ses habitants sont en apparence très semblables à l’Hyrule d’Ocarina of Time, mais comme vus au travers d’un étrange miroir. On croit être en terrain connu, mais tout est en même temps clairement différent.")
+            ->setDescription("Comment succéder à Ocarina of Time et son succès sans précédent : c’est la difficile question à laquelle Eiji Aonuma et son équipe doivent répondre au début du développement du jeu qui allait devenir Majora’s Mask.<br/><br/>En mai 1999, le magazine japonais Famitsu parle de l’arrivée prochaine sur l’archipel de l’extension d’Ocarina of Time pour le 64DD : c’est le projet Ura Zelda, finalement annulé vu le manque d’engouement pour le périphérique et qui refera surface plus tard sous les traits de Master Quest. Toujours est-il qu’il y a un temps une confusion entre ce Ura Zelda et le Zelda Gaiden (Gaiden désignant en gros une histoire complémentaire], qui apparaît en août 1999 au Nintendo Space World. C’est bien ce Zelda Gaiden qui deviendra Majora’s Mask. C’est à ce SpaceWorld 1999 qu’on peut pour la première fois apercevoir des éléments caractéristiques du jeu, tels que Bourg-Clocher ou le Masque Goron. C’est là les prémices de tout le système de masques du jeu final, chacun conférant à Link une habileté particulière et certains permettant même de le changer en Mojo, Goron ou Zora, modifiant du coup radicalement la façon dont on contrôle le personnage.<br/><br/>Le jeu utilise l’Expansion Pak de la Nintendo 64 : ainsi, bien que les graphismes et le moteur soient directement repris d’Ocarina of Time, divers éléments d’ordre technique comme la distance d’affichage, les détails des textures ou le nombre de personnages à l’écran sont améliorés. C’est en mars 2000 que le titre définitif du jeu, Majora’s Mask, est officiellement annoncé. Le jeu est finalement lancé en mai au Japon, en octobre en Amérique du Nord et le 17 novembre 2000 en Europe. Beaucoup s’attendaient à voir le jeu se retrouver dans l’ombre de son prédécesseur Ocarina of Time, mais les critiques sont largement positives.<br/><br/>Il n’en reste pas moins que par ses choix audacieux pour ce qui est de l’ambiance et de la progression de l’aventure, Majora’s Mask est de nature à diviser. La lune menaçante qui pèse en permanence sur le joueur et le décompte fatidique des 72 heures qui poursuit inlassablement sa course rend le jeu très sombre. Les uns se réjouissent de cette ambiance apocalyptique si nouvelle pour Zelda, tandis que d’autres trouvent plus difficile de rentrer dans le jeu. Le fort accent mis sur les quêtes annexes est parfois jugé être trop au détriment de l’aventure principale, même si globalement il s’agit plutôt d’un point fort apprécié de Majora’s Mask. Le monde de Termina et ses habitants sont en apparence très semblables à l’Hyrule d’Ocarina of Time, mais comme vus au travers d’un étrange miroir. On croit être en terrain connu, mais tout est en même temps clairement différent.")
             ->setHistory("Après avoir vaincu Ganondorf, Link part dans une quête secrète pour retrouver un ancien ami (sûrement Navi) et son périple l'amène à croiser un Skull Kid au fin fond des bois Perdus. Ce dernier lui vole sa jument, Epona, ainsi que l'ocarina du Temps, avant de s'enfuir. En partant à sa poursuite, notre héros tombe dans un monde parallèle à Hyrule : Termina, et il fait la connaissance de Taya, fée de compagnie de Skull Kid, qui a été séparée de son frère Tael et qui souhaite le retrouver, en s'alliant d'abord temporairement à Link.<br/><br/>Dans un premier temps, transformé par Skull Kid en Peste Mojo, Link apprend des habitants de Termina que la lune va s'écraser sur la terre et qu'il ne dispose que de trois jours pour stopper l'apocalypse. Apocalypse provoquée par Skull Kid, qui possède d'ailleurs un étrange masque : le masque de Majora. En premier lieu, Link remet la main sur son ocarina du Temps, et Taya décide de continuer à l'accompagner dans sa quête, car Skull Kid est en train de devenir fou et elle veut l'arrêter. Ils devront alors remettre la main sur le masque de Majora, à la requête du vendeur de Masques, et ce en collectant les masques des boss du jeu, pour réveiller les quatre Géants.")
             ->setCopiesSold(6360000)
             ->setThumbnail('zelda-mm-5fb59b1c0d712404305844.jpg')
@@ -1325,563 +1325,563 @@ class AppFixtures extends Fixture
         $manager->persist($gameZeldaWw);
         
 
-        $aGamesItemsData = array(
-            array(
+        $aGamesItemsData = [
+            [
                 'item' => $itemBanane,
                 'game' => $gameDk64,
                 'thumbnail' => 'banane-dk-64-5fb59eaf288c0383924680.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemTonneau,
                 'game' => $gameDk64,
                 'thumbnail' => 'taunneau-dk64-5fb59f6378da9495975284.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBanane,
                 'game' => $gameDkCountry,
                 'thumbnail' => 'banane-dk-country-5fb59f880c3b0545442403.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemTonneau,
                 'game' => $gameDkCountry,
                 'thumbnail' => 'tauneaux-dk-country-5fd1488ab10db500054638.png',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBanane,
                 'game' => $gameDkCountryTropcial,
                 'thumbnail' => 'banane-dk-country-tropical-freeze-5fb5a05ee896b912550250.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemTonneau,
                 'game' => $gameDkCountryTropcial,
                 'thumbnail' => 'taunneau-dk-country-tf-5fb5a153ed997987106023.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBanane,
                 'game' => $gameDkCountry2,
                 'thumbnail' => 'banane-dk-country-2-5fb5a1a25a5b7105557922.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemTonneau,
                 'game' => $gameDkCountry2,
                 'thumbnail' => 'taunneau-dk-country2-5fb5a18d7cc04716667737.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemMarteau,
                 'game' => $gamePaperMario,
                 'thumbnail' => 'marto-paper-mario-porte-millenaire-5fb5a2490cc23266241582.png',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemSuperChampi,
                 'game' => $gamePaperMario,
                 'thumbnail' => 'champi-paper-mario-porte-millenaire-5fb5a254c52fb020678990.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemFleurFeu,
                 'game' => $gamePaperMario,
                 'thumbnail' => 'fleur-feu-paper-mario-porte-millenaire-5fd1452e4c7a9350457161.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPiece,
                 'game' => $gamePaperMario,
                 'thumbnail' => 'piece-paper-mario-porte-millenaire-5fb5a6c7c5398832274156.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPokeBall,
                 'game' => $gamePokemonEmeraude,
                 'thumbnail' => 'pokeball-emeraude-5fb5a2ad68f92428714862.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPotion,
                 'game' => $gamePokemonEmeraude,
                 'thumbnail' => 'potion-emeraude-5fb5a29718625756784416.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemMasterBall,
                 'game' => $gamePokemonEmeraude,
                 'thumbnail' => 'masterball-emeraude-5fb5a290472b4724532514.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemRappel,
                 'game' => $gamePokemonEmeraude,
                 'thumbnail' => 'rappel-emeraude-5fb5a29d95d92808363547.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemMasterBall,
                 'game' => $gamePokemonEpee,
                 'thumbnail' => 'masterball-epee-5fb5a38e77953804065910.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPokeBall,
                 'game' => $gamePokemonEpee,
                 'thumbnail' => 'pokeball-epee-5fb5a3841b8c0548910438.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPotion,
                 'game' => $gamePokemonEpee,
                 'thumbnail' => 'potion-epee-5fb5a36df332e707632536.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemRappel,
                 'game' => $gamePokemonEpee,
                 'thumbnail' => 'rappel-emeraude-5fb5a374dbbbe533123353.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemMasterBall,
                 'game' => $gamePokemonPlatine,
                 'thumbnail' => 'masterball-platine-5fb5a3d24ddcd268615232.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPokeBall,
                 'game' => $gamePokemonPlatine,
                 'thumbnail' => 'pokeball-platine-5fd1458d702cf972130603.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPotion,
                 'game' => $gamePokemonPlatine,
                 'thumbnail' => 'potion-platine-5fb5a3af9bddf243685334.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemRappel,
                 'game' => $gamePokemonPlatine,
                 'thumbnail' => 'rappel-emeraude-5fb5a3bce6c87601805605.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemMasterBall,
                 'game' => $gamePokemonRfVf,
                 'thumbnail' => 'masterball-rf-vf-5fb5a4cc83027334095445.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPokeBall,
                 'game' => $gamePokemonRfVf,
                 'thumbnail' => 'pokeball-rf-vf-5fb5a4791ce0e855316542.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPotion,
                 'game' => $gamePokemonRfVf,
                 'thumbnail' => 'potion-emeraude-5fb5a481087e2248967796.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemRappel,
                 'game' => $gamePokemonRfVf,
                 'thumbnail' => 'rappel-emeraude-5fb5a48d9ff78088491664.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemMasterBall,
                 'game' => $gamePokemonSoleil,
                 'thumbnail' => 'masterball-sl-5fb5a4ee3550b551129723.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPokeBall,
                 'game' => $gamePokemonSoleil,
                 'thumbnail' => 'pokeball-sl-5fb5a51c0cb33031405816.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPotion,
                 'game' => $gamePokemonSoleil,
                 'thumbnail' => 'potion-epee-5fb5a4f6bacff907398236.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemRappel,
                 'game' => $gamePokemonSoleil,
                 'thumbnail' => 'rappel-emeraude-5fb5a4ff70e32940798096.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $item1up,
                 'game' => $gameMario64,
                 'thumbnail' => '1up-mario-64-5fb5a66a8fbed916204677.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPiece,
                 'game' => $gameMario64,
                 'thumbnail' => 'piece-mario-64-5fb5a5eb0d0e0714238509.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemSuperEtoile,
                 'game' => $gameMario64,
                 'thumbnail' => 'etoile-mario-64-5fb5a5d743c49764969001.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemSuperEtoile,
                 'game' => $gameMarioBros3,
                 'thumbnail' => 'etoile-mario-bros-3-5fd14b5d9805d665363198.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPiece,
                 'game' => $gameMarioBros3,
                 'thumbnail' => 'piece-mario-bros-3-5fb5a69360980919335598.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $item1up,
                 'game' => $gameMarioBros3,
                 'thumbnail' => '1up-mario-bros-3-5fb5a6583b851243256089.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemFleurFeu,
                 'game' => $gameMarioBros3,
                 'thumbnail' => 'fleur-feu-mario-bros-3-5fb5a632a573d803021515.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemSuperChampi,
                 'game' => $gameMarioBros3,
                 'thumbnail' => 'champi-mario-bros-3-5fb5a6418e47a766675986.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemSuperEtoile,
                 'game' => $gameMarioGalaxy,
                 'thumbnail' => 'etoile-mario-galaxy-5fb5a7ccd1968845599896.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPiece,
                 'game' => $gameMarioGalaxy,
                 'thumbnail' => 'piece-mario-galaxy-5fb5a7d7d3179142979189.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $item1up,
                 'game' => $gameMarioGalaxy,
                 'thumbnail' => '1up-mario-galaxy-5fb5a80fb5bbb603198524.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemFleurFeu,
                 'game' => $gameMarioGalaxy,
                 'thumbnail' => 'fleur-feu-mario-galaxy-5fb5a7eaedb38690146093.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemSuperEtoile,
                 'game' => $gameMarioOdyssey,
                 'thumbnail' => 'etoile-mario-odyssey-5fb5a8598a999901704834.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPiece,
                 'game' => $gameMarioOdyssey,
                 'thumbnail' => 'piece-mario-odyssey-5fb5a8683273b460884340.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemMarteau,
                 'game' => $gameSmashBros,
                 'thumbnail' => 'marto-sb64-5fd14ea5e601c960643554.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPokeBall,
                 'game' => $gameSmashBros,
                 'thumbnail' => 'pokeball-ssb64-5fd154ac706ac848165043.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBalleSmash,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'balle-smash-sswiiu-5fb5aa648667a414356840.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBanane,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'banane-ssbwiiu-5fb5aa6fbe488717710313.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemMarteau,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'marto-sbwiiu-5fd14edac2f84342883612.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemNoixMojo,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'noi-mojo-ssbwiiu-5fb5aa9d6aa83956851379.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemReceptaclesCoeur,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'receptacle-coeur-ssbwiiu-5fb5aaaa3ec3f462472961.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemTonneau,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'taunneau-ssbwiiu-5fb5aab5ec41e783977452.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemSuperChampi,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'champi-ssbb-5fd1448dcd3aa498801597.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemTropheAide,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'trophee-aide-ssbwiiu-5fb5aac31efdc650572971.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPokeBall,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'pokeball-ssb4-5fd153de69fbd375070264.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemFleurFeu,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'fleur-feu-ssb4-5fd15706d4775057092149.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBalleSmash,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'balle-smash-ssbb-5fb5acc07b7b2675605514.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBanane,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'banane-ssbb-5fb5ad7b933a0569406909.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemMarteau,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'marto-ssbb-5fd14ed5c3971810321917.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemNoixMojo,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'noi-mojo-ssbb-5fb5ad9226d54460339854.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemReceptaclesCoeur,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'receptacle-coeur-ssbb-5fb5ab3b0d2d3375370871.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemTonneau,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'taunneau-ssbb-5fb5ab4a58278727785776.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemSuperChampi,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'champi-ssbu-5fd144c7c0171093143923.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemTropheAide,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'trophee-aide-ssbb-5fb5ab53e7927171330956.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPokeBall,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'pokeball-ssbb-5fd153d076eec212557381.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBanane,
                 'game' => $gameSmashBrosMelee,
                 'thumbnail' => 'banane-bbsmelle-5fb5ac70b4fac531269037.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemMarteau,
                 'game' => $gameSmashBrosMelee,
                 'thumbnail' => 'marto-ssbm-5fd14eb64c4a4836407786.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemReceptaclesCoeur,
                 'game' => $gameSmashBrosMelee,
                 'thumbnail' => 'receptacle-coeur-ssbm-5fb5ac87e7d1c623761602.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPokeBall,
                 'game' => $gameSmashBrosMelee,
                 'thumbnail' => 'pokeball-ssbm-5fd15409d1521304164553.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemFleurFeu,
                 'game' => $gameSmashBrosMelee,
                 'thumbnail' => 'fleur-feu-ssbm-5fd144a4c5ea3214736258.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBalleSmash,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'balle-smash-ssu-5fb5acfec2951377324651.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBanane,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'banane-ssbu-5fb5ad06c3f3a468364475.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemMarteau,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'marto-ssbu-5fd14ec1f07e1360016712.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemNoixMojo,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'noix-mojo-ssbu-5fd147cf75b63455933254.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemReceptaclesCoeur,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'receptacle-coeur-ssbu-5fb5ad3c11816734205667.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemTonneau,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'taunneau-ssbu-5fb5ad497d65d454062315.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemSuperChampi,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'champi-ssbu-5fd147c6302a2933841299.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemTropheAide,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'trophee-aide-ssbu-5fb5ad5428688059266232.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemPokeBall,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'pokeball-ssbu-5fd153c5672d6093027790.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemFleurFeu,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'fleur-feu-ssbu-5fd156f7c5c28276442099.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemArc,
                 'game' => $gameZeldaBotw,
                 'thumbnail' => 'arc-botw-5fb5ae8ae1d33418248544.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBombe,
                 'game' => $gameZeldaBotw,
                 'thumbnail' => 'bombe-botw-5fb5ae9238082051238548.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBouclierHylien,
                 'game' => $gameZeldaBotw,
                 'thumbnail' => 'bouclier-hylien-botw-5fb5ae97e5b5b101806322.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemMasterSword,
                 'game' => $gameZeldaBotw,
                 'thumbnail' => 'master-sword-botw-5fb5aea1bd124147182678.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemReceptaclesCoeur,
                 'game' => $gameZeldaBotw,
                 'thumbnail' => 'receptacle-coeur-botw-5fb5aeacc6b89959257827.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemArc,
                 'game' => $gameZeldaMajora,
                 'thumbnail' => 'arc-mm-5fb5aec49b71a914217416.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBombe,
                 'game' => $gameZeldaMajora,
                 'thumbnail' => 'bombe-mm-5fb5aecc8c5ac540507493.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemReceptaclesCoeur,
                 'game' => $gameZeldaMajora,
                 'thumbnail' => 'receptacle-coeur-mm-5fb5aedc6b0f4238961251.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemOcarina,
                 'game' => $gameZeldaMajora,
                 'thumbnail' => 'ocarina-mm-5fb5af3a4429c786095307.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemNoixMojo,
                 'game' => $gameZeldaMajora,
                 'thumbnail' => 'noi-mojo-oot-5fb5b09c13819519941854.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemArc,
                 'game' => $gameZeldaOcarina,
                 'thumbnail' => 'arc-oot-5fb5af66c33b4216115092.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBombe,
                 'game' => $gameZeldaOcarina,
                 'thumbnail' => 'bombe-oot-5fb5af6dc1627474240795.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBouclierHylien,
                 'game' => $gameZeldaOcarina,
                 'thumbnail' => 'bouclier-hylien-oot-5fb5af7475536631850910.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemMasterSword,
                 'game' => $gameZeldaOcarina,
                 'thumbnail' => 'master-sword-ott-5fb5af805f57f357404762.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemReceptaclesCoeur,
                 'game' => $gameZeldaOcarina,
                 'thumbnail' => 'receptacle-coeur-oot-5fb5af9c11e14988443940.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemOcarina,
                 'game' => $gameZeldaOcarina,
                 'thumbnail' => 'ocarina-oot-5fb5af8d88e4d444559659.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemNoixMojo,
                 'game' => $gameZeldaOcarina,
                 'thumbnail' => 'noi-mojo-oot-5fb5b07fe969a629547696.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemTriforce,
                 'game' => $gameZeldaOcarina,
                 'thumbnail' => 'triforce-ott-5fb5afa7b3e88141575153.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemArc,
                 'game' => $gameZeldaTp,
                 'thumbnail' => 'arc-tp-5fb5b02b8bf7d910574956.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBombe,
                 'game' => $gameZeldaTp,
                 'thumbnail' => 'bombe-tp-5fb5b035aaa2c445694788.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBouclierHylien,
                 'game' => $gameZeldaTp,
                 'thumbnail' => 'bouclier-hylien-tp-5fb5b03ee1b25279617911.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemMasterSword,
                 'game' => $gameZeldaTp,
                 'thumbnail' => 'master-sword-tp-5fb5b0489bbf2511904912.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemReceptaclesCoeur,
                 'game' => $gameZeldaTp,
                 'thumbnail' => 'receptacle-coeur-tp-5fb5b05f0124d950290753.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemTriforce,
                 'game' => $gameZeldaTp,
                 'thumbnail' => 'triforce-tp-5fb5b0690e169291244011.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemArc,
                 'game' => $gameZeldaWw,
                 'thumbnail' => 'arc-ww-5fb5b0ccb47cd078812877.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemBombe,
                 'game' => $gameZeldaWw,
                 'thumbnail' => 'bombe-ww-5fb5b0d9026a4839522981.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemMasterSword,
                 'game' => $gameZeldaWw,
                 'thumbnail' => 'master-sword-ww-5fb5b0e2657eb246453425.png',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemReceptaclesCoeur,
                 'game' => $gameZeldaWw,
                 'thumbnail' => 'receptacle-coeur-ww-5fb5b10548df2780772926.jpg',
-            ),
-            array(
+            ],
+            [
                 'item' => $itemTriforce,
                 'game' => $gameZeldaWw,
                 'thumbnail' => 'triforce-ww-5fb5b10fa2c3d247448265.jpg',
-            ),
-        );
+            ],
+        ];
 
         foreach($aGamesItemsData as $aData){
             $gameItem = new GameItem();
@@ -1898,653 +1898,653 @@ class AppFixtures extends Fixture
         /**
          * GameCharacter
          */
-        $aGamesCharactersData = array(
-            array(
+        $aGamesCharactersData = [
+            [
                 'character' => $characterDonkeyKong,
                 'game' => $gameDk64,
                 'thumbnail' => 'dk-dk-64-5fb59d59b96db363995888.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDiddyKong,
                 'game' => $gameDk64,
                 'thumbnail' => 'diddy-kong-dk-64-5fb59d480b1fd012747908.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterCrankyKong,
                 'game' => $gameDk64,
                 'thumbnail' => 'kranky-kong-dk-64-5fb59d7753556385014810.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterKingKRool,
                 'game' => $gameDk64,
                 'thumbnail' => 'king-k-rool-dk-64-5fb59d8d425d1687857812.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDonkeyKong,
                 'game' => $gameDkCountry,
                 'thumbnail' => 'dk-dk-country-5fb59fc2a43fb043600312.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDiddyKong,
                 'game' => $gameDkCountry,
                 'thumbnail' => 'diddy-kong-dk-country-5fb59fac07843441835527.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterCrankyKong,
                 'game' => $gameDkCountry,
                 'thumbnail' => 'kranky-kong-dk-country-5fb59fd56314c817661437.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterKingKRool,
                 'game' => $gameDkCountry,
                 'thumbnail' => 'king-k-rool-dk-country-5fb59fde2327f609076602.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDonkeyKong,
                 'game' => $gameDkCountryTropcial,
                 'thumbnail' => 'dk-dk-tropical-frezze-5fb5a0131b875084084227.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDiddyKong,
                 'game' => $gameDkCountryTropcial,
                 'thumbnail' => 'diddy-kong-dk-tropical-frezze-5fd14b21ba377553158390.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterCrankyKong,
                 'game' => $gameDkCountryTropcial,
                 'thumbnail' => 'kranky-kong-dk-tropical-frezze-5fb5a04a9290b694162582.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDixieKong,
                 'game' => $gameDkCountryTropcial,
                 'thumbnail' => 'dixie-kong-dk-tropical-frezze-5fb5a01ac582a128143900.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDonkeyKong,
                 'game' => $gameDkCountry2,
                 'thumbnail' => 'dk-dk-country-2-5fb5a1da30b60773485335.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDiddyKong,
                 'game' => $gameDkCountry2,
                 'thumbnail' => 'diddy-kong-dk-countr-2-5fd149c19e58f487140151.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterCrankyKong,
                 'game' => $gameDkCountry2,
                 'thumbnail' => 'kranky-kong-dk-country-2-5fb5a1e954377181779504.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterKingKRool,
                 'game' => $gameDkCountry2,
                 'thumbnail' => 'king-k-rool-dk-country-2-5fb5a1f386e86535799150.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDixieKong,
                 'game' => $gameDkCountry2,
                 'thumbnail' => 'dixie-kong-dk-countr-2-5fb5a1ce51b46907164042.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterBowser,
                 'game' => $gamePaperMario,
                 'thumbnail' => 'bowser-paper-mario-porte-millenaire-5fb5a208cd9ae082113268.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLuigi,
                 'game' => $gamePaperMario,
                 'thumbnail' => 'luigi-paper-mario-porte-millenaire-5fb5a233462f7780876663.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterMario,
                 'game' => $gamePaperMario,
                 'thumbnail' => 'mario-paper-mario-porte-millenaire-5fb5a21d01761478028456.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPeach,
                 'game' => $gamePaperMario,
                 'thumbnail' => 'peach-paper-mario-porte-millenaire-5fb5a225eb0c7069815871.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterYoshi,
                 'game' => $gamePaperMario,
                 'thumbnail' => 'yoshi-paper-mario-porte-millenaire-5fb5a78d7afc7162438513.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterEvolie,
                 'game' => $gamePokemonEmeraude,
                 'thumbnail' => 'evolie-emeraude-5fb5a2de6e8e6912437465.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPikachu,
                 'game' => $gamePokemonEmeraude,
                 'thumbnail' => 'pikachu-emeraude-5fb5a3064bc34044127517.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDracaufeu,
                 'game' => $gamePokemonEpee,
                 'thumbnail' => 'dracaufeu-epee-5fb5a349b1a3d852257961.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterEvolie,
                 'game' => $gamePokemonEpee,
                 'thumbnail' => 'evolie-epee-5fb5a35157b8a440145764.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPikachu,
                 'game' => $gamePokemonEpee,
                 'thumbnail' => 'pikachu-epee-5fb5a35e53545992783523.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterEvolie,
                 'game' => $gamePokemonPlatine,
                 'thumbnail' => 'evolie-platine-5fb5a3fae78ad731138903.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPikachu,
                 'game' => $gamePokemonPlatine,
                 'thumbnail' => 'pikachu-platine-5fb5a40c062e0550605045.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDracaufeu,
                 'game' => $gamePokemonRfVf,
                 'thumbnail' => 'dracaufeu-rf-vr-5fb5a42c96d5b717342903.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterEvolie,
                 'game' => $gamePokemonRfVf,
                 'thumbnail' => 'evolie-vf-rf-5fb5a43900091403690473.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPikachu,
                 'game' => $gamePokemonRfVf,
                 'thumbnail' => 'pikachu-rf-vf-5fb5a447be563357530351.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterProfChen,
                 'game' => $gamePokemonRfVf,
                 'thumbnail' => 'prof-chen-rf-vf-5fd1468ed454a504041653.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterRed,
                 'game' => $gamePokemonRfVf,
                 'thumbnail' => 'red-pokemon-rf-vr-5fb5a45f43008870470097.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDracaufeu,
                 'game' => $gamePokemonSoleil,
                 'thumbnail' => 'dracaufeu-sl-5fb5a53e6d992479243166.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterEvolie,
                 'game' => $gamePokemonSoleil,
                 'thumbnail' => 'evolie-sl-5fb5a54827f84475361857.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPikachu,
                 'game' => $gamePokemonSoleil,
                 'thumbnail' => 'pikachu-soleil-lube-5fb5a56463380440100647.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterRed,
                 'game' => $gamePokemonSoleil,
                 'thumbnail' => 'red-pokemon-sl-5fb5a56d4c469493123677.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterMario,
                 'game' => $gameMario64,
                 'thumbnail' => 'mario-mario-64-5fb5a58ce68ad618518209.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPeach,
                 'game' => $gameMario64,
                 'thumbnail' => 'peach-mario-64-5fb5a59732d3b923535912.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterBowser,
                 'game' => $gameMario64,
                 'thumbnail' => 'bowser-mario-64-5fb5a59e4dd36044706488.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterYoshi,
                 'game' => $gameMario64,
                 'thumbnail' => 'yoshi-mario-64-5fb5a5bf70e28848775180.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterMario,
                 'game' => $gameMarioBros3,
                 'thumbnail' => 'mario-mario-bros-3-5fb5a7113aa8a391413814.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPeach,
                 'game' => $gameMarioBros3,
                 'thumbnail' => 'peach-mario-bros-3-5fb5a7222e288184862264.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterBowser,
                 'game' => $gameMarioBros3,
                 'thumbnail' => 'bowser-mario-bros-3-5fb5a6f896523231668646.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLuigi,
                 'game' => $gameMarioBros3,
                 'thumbnail' => 'luigi-mario-bros-3-5fb5a7387658d104687064.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterMario,
                 'game' => $gameMarioGalaxy,
                 'thumbnail' => 'mario-mario-galaxy-5fb5a75cbe7ef323646840.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPeach,
                 'game' => $gameMarioGalaxy,
                 'thumbnail' => 'peach-mario-galaxy-5fb5a77b2849a881565254.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterBowser,
                 'game' => $gameMarioGalaxy,
                 'thumbnail' => 'bowser-mario-galaxy-5fb5a74de75fc411517702.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterHarmonie,
                 'game' => $gameMarioGalaxy,
                 'thumbnail' => 'harmonie-mario-galaxy-5fb5a8d9e0d40270622464.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLuigi,
                 'game' => $gameMarioGalaxy,
                 'thumbnail' => 'luigi-mario-galaxy-5fb5a764c3b6b171521458.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterMario,
                 'game' => $gameMarioOdyssey,
                 'thumbnail' => 'mario-mario-odyssey-5fb5a8982c6c0451717842.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPeach,
                 'game' => $gameMarioOdyssey,
                 'thumbnail' => 'peach-mario-odyssey-5fb5a8b3f1d88787266595.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterBowser,
                 'game' => $gameMarioOdyssey,
                 'thumbnail' => 'bowser-mario-odyssey-5fb5a8842d8cf223440127.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterYoshi,
                 'game' => $gameMarioOdyssey,
                 'thumbnail' => 'yoshi-mario-odyssey-5fb5a8ab3d95b168981984.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLuigi,
                 'game' => $gameMarioOdyssey,
                 'thumbnail' => 'luigi-mario-odyssey-5fb5a89eded3c542609574.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPikachu,
                 'game' => $gameSmashBros,
                 'thumbnail' => 'pikachu-smash-bros-5fb5aa498ab19264074891.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDonkeyKong,
                 'game' => $gameSmashBros,
                 'thumbnail' => 'dk-smash-bros-64-5fb5a90a88f95286888815.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLink,
                 'game' => $gameSmashBros,
                 'thumbnail' => 'link-smash-bros-5fb5a914d370e166361837.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterMario,
                 'game' => $gameSmashBros,
                 'thumbnail' => 'mario-mario-smash-bros-5fb5a931c56a8960997050.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDiddyKong,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'diddy-kong-smash-bros-wiiu-5fb5a989e6abd374450968.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterBowser,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'bowser-smash-bros-wiiu-5fb5a9916d23a331373582.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDonkeyKong,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'dk-smash-bros-wiiu-5fb5a99c51309170612814.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterGanondorf,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'ganondorf-smash-bros-wiiu-5fb5a9b218dbe057986230.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDracaufeu,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'dracaufeu-smash-bros-wiiu-5fb5a9a665403470524134.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterHarmonie,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'harmonie-super-smash-bros-wiiu-5fb5a9bb8c5ca781135029.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLink,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'link-smash-bros-wiiu-5fb5a9cc0d24b348154811.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLuigi,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'luigi-smash-bros-wiiu-5fb5a9d6bd4ef686601438.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterMario,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'mario-mario-smash-bros-wiiu-5fb5a9e14369d623806621.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPikachu,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'pikachu-smash-bros-wiiu-5fb5a9ed12c64902466725.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPeach,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'peach-smash-bros-wii-u-5fb5a9fecd849855796825.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterYoshi,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'yoshi-smash-bros-wiiu-5fb5aa29a0e07869186720.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterZelda,
                 'game' => $gameSmashBros4,
                 'thumbnail' => 'zelda-smash-bros-wiiu-5fb5aa34eff4c362269237.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDiddyKong,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'diddy-kong-smash-bros-brawl-5fb5ab748aad5653755755.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterBowser,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'bowser-smash-bros-brawl-5fb5ab6d2adb2557162385.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDonkeyKong,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'dk-smash-bros-brawl-5fb5ab7e4f55c992253977.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterGanondorf,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'ganondorf-smash-bros-brawl-5fb5ab96458d6209669516.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDracaufeu,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'dracaufeu-smash-bros-brawl-5fb5ab88b3cf0929356055.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLink,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'link-smash-bros-brawl-5fb5aba4cdd29105050245.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLuigi,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'luigi-smash-bros-brawl-5fb5abb280527373589572.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterMario,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'mario-mario-smash-bros-brawl-5fb5abb99ed12472464905.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPikachu,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'pikachu-smash-bros-brawl-5fb5abd052ba7477033989.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPeach,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'peach-smash-bros-brawl-5fb5abc2199bd656076130.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterYoshi,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'yoshi-smash-bros-brawl-5fb5abdc4a4de180046329.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterZelda,
                 'game' => $gameSmashBrosBrawl,
                 'thumbnail' => 'zelda-smash-bros-brawl-5fb5abe65f873928563713.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterBowser,
                 'game' => $gameSmashBrosMelee,
                 'thumbnail' => 'bowser-smash-bros-melee-5fb5abfbe5b15373780602.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDonkeyKong,
                 'game' => $gameSmashBrosMelee,
                 'thumbnail' => 'dk-smash-bros-melee-5fb5ac0bc1c84463635983.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterGanondorf,
                 'game' => $gameSmashBrosMelee,
                 'thumbnail' => 'ganondorf-smash-bros-melee-5fb5ac17dacc8180939879.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLink,
                 'game' => $gameSmashBrosMelee,
                 'thumbnail' => 'link-smash-bros-melee-5fb5ac23134cb500567447.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLuigi,
                 'game' => $gameSmashBrosMelee,
                 'thumbnail' => 'luigi-smash-bros-melee-5fb5ac2f44c9f691688018.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterMario,
                 'game' => $gameSmashBrosMelee,
                 'thumbnail' => 'mario-mario-smash-bros-melee-5fb5ac37eb60a719605473.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPikachu,
                 'game' => $gameSmashBrosMelee,
                 'thumbnail' => 'pikachu-smash-bros-melee-5fb5ac4bc6085214219773.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPeach,
                 'game' => $gameSmashBrosMelee,
                 'thumbnail' => 'peach-smash-bros-melle-5fb5ac4292d38457961639.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterYoshi,
                 'game' => $gameSmashBrosMelee,
                 'thumbnail' => 'yoshi-smash-bros-melee-5fb5ac5ce9193483675116.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterZelda,
                 'game' => $gameSmashBrosMelee,
                 'thumbnail' => 'zelda-smash-bros-melee-5fb5ac556985c993971233.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDiddyKong,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'diddy-kong-smash-bros-ultimate-5fb5adb039ef4783212201.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterBowser,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'bowser-smash-bros-ultimate-5fb5ada88a695228248384.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDonkeyKong,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'dk-smash-bros-ultimate-5fb5adb7e13a0633551932.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterGanondorf,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'ganondorf-smash-bros-ultimate-5fb5adc8caed0542834641.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterDracaufeu,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'dracaufeu-smash-bros-ultimate-5fb5adbf475a4199467669.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterHarmonie,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'harmonie-super-smash-bros-ultimate-5fb5add4e6f43193806368.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLink,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'link-smash-bros-ultimate-5fb5adeb04a6d775258331.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLuigi,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'luigi-smash-bros-ultimate-5fb5adf540737702140847.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterMario,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'mario-mario-smash-bros-ultimate-5fb5adfee3902258573213.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPikachu,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'pikachu-smash-bros-ultimate-5fb5ae1473d19825178278.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterPeach,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'peach-smash-bros-ultimate-5fb5ae0ac2774316747090.png',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterYoshi,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'yoshi-smash-bros-ultimate-5fb5ae23a17c4579551639.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterZelda,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'zelda-smash-bros-ultimate-5fb5ae30dc85d323047618.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterKingKRool,
                 'game' => $gameSmashBrosUltimate,
                 'thumbnail' => 'king-k-rool-smash-bros-ultimate-5fb5adde5226d230549916.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterArbreMojo,
                 'game' => $gameZeldaBotw,
                 'thumbnail' => 'arbre-mojo-botw-5fb5ae4ce5955287051165.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterRoiHyrule,
                 'game' => $gameZeldaBotw,
                 'thumbnail' => 'roi-dhyrule-botw-5fb5ae6cbd562577955621.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterGanondorf,
                 'game' => $gameZeldaBotw,
                 'thumbnail' => 'ganondorf-botw-5fb5ae57f2e8f970684728.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLink,
                 'game' => $gameZeldaBotw,
                 'thumbnail' => 'link-botw-5fb5ae61bcf4e179136529.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterZelda,
                 'game' => $gameZeldaBotw,
                 'thumbnail' => 'zelda-botw-5fb5ae78c5a9a120252878.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLink,
                 'game' => $gameZeldaMajora,
                 'thumbnail' => 'link-mm-5fb5af02c6176968948866.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterZelda,
                 'game' => $gameZeldaMajora,
                 'thumbnail' => 'zelda-mm-5fb5af14c0919662670301.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterArbreMojo,
                 'game' => $gameZeldaOcarina,
                 'thumbnail' => 'arbre-mojo-ott-5fb5afbb83a56945439956.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterGanondorf,
                 'game' => $gameZeldaOcarina,
                 'thumbnail' => 'ganondorf-ott-5fb5afc769e20647367889.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLink,
                 'game' => $gameZeldaOcarina,
                 'thumbnail' => 'link-ott-5fb5afd21369d039232332.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterZelda,
                 'game' => $gameZeldaOcarina,
                 'thumbnail' => 'zelda-ott-5fb5afe756fff466330993.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterMidona,
                 'game' => $gameZeldaTp,
                 'thumbnail' => 'midona-tp-5fb5b01d867c9187543186.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterGanondorf,
                 'game' => $gameZeldaTp,
                 'thumbnail' => 'ganondorf-tp-5fb5affeebdca790558033.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLink,
                 'game' => $gameZeldaTp,
                 'thumbnail' => 'link-tp-5fb5b0083e4c3698064596.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterZelda,
                 'game' => $gameZeldaTp,
                 'thumbnail' => 'zelda-tp-5fb5b011cc1ac731109700.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterArbreMojo,
                 'game' => $gameZeldaWw,
                 'thumbnail' => 'arbre-mojo-ww-5fd1439374cdd207262952.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterRoiHyrule,
                 'game' => $gameZeldaWw,
                 'thumbnail' => 'roi-dhyrule-ww-5fd61b7ce4fef216027061.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterGanondorf,
                 'game' => $gameZeldaWw,
                 'thumbnail' => 'ganondorf-ww-5fd14375c0c76312110723.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterLink,
                 'game' => $gameZeldaWw,
                 'thumbnail' => 'link-ww-5fd14365d951c986407635.jpg',
-            ),
-            array(
+            ],
+            [
                 'character' => $characterZelda,
                 'game' => $gameZeldaWw,
                 'thumbnail' => 'zelda-ww-5fd1437ee9ef1241161074.jpg',
-            ),
-        );
+            ],
+        ];
 
         foreach($aGamesCharactersData as $aData){
             $gameCharacter = new GameCharacter();

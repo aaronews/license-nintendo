@@ -15,7 +15,7 @@ class AbstractGameItemType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('item', EntityType::class, array(
+            ->add('item', EntityType::class, [
                 'required' => true,
                 'label' => 'game_items.form.item.label',
                 'placeholder' => 'game_items.form.item.placeholder',
@@ -24,10 +24,10 @@ class AbstractGameItemType extends AbstractType
                 'query_builder' => function(ItemRepository $itemRepository){
                     return $itemRepository->findAllSortByProperty('name');
                 },
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-12'
-                )
-            ))
+                ],
+            ])
         ;
     }
 

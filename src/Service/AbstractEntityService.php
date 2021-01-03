@@ -49,9 +49,9 @@ abstract class AbstractEntityService{
      * @param array $sortOptions
      * @return AbstractEntity[]
      */
-    public function findAll(array $sortOptions = array())
+    public function findAll(array $sortOptions = [])
     {
-        return $this->repository->findBy(array(), $sortOptions);
+        return $this->repository->findBy([], $sortOptions);
     }
 
     /**
@@ -61,7 +61,7 @@ abstract class AbstractEntityService{
      * @param array $sortOptions
      * @return AbstractEntity[]
      */
-    public function findBy(array $criterias = array(), array $sortOptions = array())
+    public function findBy(array $criterias = [], array $sortOptions = [])
     {
         return $this->repository->findBy($criterias, $sortOptions);
     }
@@ -73,7 +73,7 @@ abstract class AbstractEntityService{
      * @param array $sortOptions
      * @return AbstractEntity
      */
-    public function findOneBy(array $criterias = array(), array $sortOptions = array())
+    public function findOneBy(array $criterias = [], array $sortOptions = [])
     {
         return $this->repository->findOneBy($criterias, $sortOptions);
     }

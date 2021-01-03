@@ -15,25 +15,25 @@ class LicenseType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class,array(
+            ->add('name', TextType::class,[
                 'required' => false,
                 'label' => 'licenses.form.name.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'licenses.form.name.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-10'
-                ),
-            ))
-            ->add('submit', SubmitType::class, array(
+                ],
+            ])
+            ->add('submit', SubmitType::class, [
                 'label' => 'form.button.filter',
-                'attr' => array(
+                'attr' => [
                     'class' => 'btn-lg btn-primary btn',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-2 text-center m-auto'
-                ),
-            ))
+                ],
+            ])
         ;
     }
 

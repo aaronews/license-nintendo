@@ -24,79 +24,79 @@ class AbstractGameType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class, array(
+            ->add('name', TextType::class, [
                 'required' => true,
                 'label' => 'games.form.name.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'games.form.name.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('description', TextareaType::class, array(
+                ],
+            ])
+            ->add('description', TextareaType::class, [
                 'required' => true,
                 'label' => 'games.form.description.label',
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-6 tynimce-editor'
-                ),
-            ))
-            ->add('slug', TextType::class, array(
+                ],
+            ])
+            ->add('slug', TextType::class, [
                 'required' => true,
                 'label' => 'games.form.slug.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'games.form.slug.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
+                ],
                 'help' => 'form.slug.help',
-                'help_attr' => array(
+                'help_attr' => [
                     'class' => 'generate-slug btn btn-default'
-                )
-            ))
-            ->add('history', TextareaType::class, array(
+                ],
+            ])
+            ->add('history', TextareaType::class, [
                 'required' => false,
                 'label' => 'games.form.history.label',
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-6 tynimce-editor'
-                ),
-            ))
-            ->add('releaseDate', DateTimeType::class, array(
+                ],
+            ])
+            ->add('releaseDate', DateTimeType::class, [
                 'required' => true,
                 'label' => 'games.form.release_date.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'games.form.release_date.placeholder',
                     'class' => 'datepicker',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
+                ],
                 'widget' => 'single_text',
                 'format' => 'dd/MM/yyyy', 
                 'html5' => false,
-            ))
-            ->add('nbPlayers', IntegerType::class, array(
+            ])
+            ->add('nbPlayers', IntegerType::class, [
                 'required' => true,
                 'label' => 'games.form.player_numbers_min.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'games.form.player_numbers_min.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('copiesSold', IntegerType::class, array(
+                ],
+            ])
+            ->add('copiesSold', IntegerType::class, [
                 'required' => true,
                 'label' => 'games.form.copied_sold.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'games.form.copied_sold.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('license', EntityType::class, array(
+                ],
+            ])
+            ->add('license', EntityType::class, [
                 'required' => true,
                 'label' => 'games.form.licence.label',
                 'placeholder' => 'games.form.licence.placeholder',
@@ -105,11 +105,11 @@ class AbstractGameType extends AbstractType
                 'query_builder' => function(LicenseRepository $licenseRepository){
                     return $licenseRepository->findAllSortByProperty('name');
                 },
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('consoles', EntityType::class, array(
+                ],
+            ])
+            ->add('consoles', EntityType::class, [
                 'required' => true,
                 'label' => 'games.form.console.label',
                 'placeholder' => 'games.form.console.placeholder',
@@ -119,11 +119,11 @@ class AbstractGameType extends AbstractType
                 'query_builder' => function(ConsoleRepository $consoleRepository){
                     return $consoleRepository->findAllSortByProperty('name');
                 },
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('genres', EntityType::class, array(
+                ],
+            ])
+            ->add('genres', EntityType::class, [
                 'required' => true,
                 'label' => 'games.form.genre.label',
                 'placeholder' => 'games.form.genre.placeholder',
@@ -133,44 +133,44 @@ class AbstractGameType extends AbstractType
                 'query_builder' => function(GenreRepository $genreRepository){
                     return $genreRepository->findAllSortByProperty('name');
                 },
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('uploadBackgroundDesktop', FileType::class, array(
+                ],
+            ])
+            ->add('uploadBackgroundDesktop', FileType::class, [
                 'required' => false,
                 'label' => 'games.form.background_desktop.label',
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-6 col-12'
-                ),
-            ))
-            ->add('uploadBackgroundMobile', FileType::class, array(
+                ],
+            ])
+            ->add('uploadBackgroundMobile', FileType::class, [
                 'required' => false,
                 'label' => 'games.form.background_mobile.label',
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-6 col-12'
-                ),
-            ))
-            ->add('backgroundPosition', TextType::class, array(
+                ],
+            ])
+            ->add('backgroundPosition', TextType::class, [
                 'required' => true,
                 'label' => 'games.form.background_position.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'games.form.background_position.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('firstBlockMinHeight', IntegerType::class, array(
+                ],
+            ])
+            ->add('firstBlockMinHeight', IntegerType::class, [
                 'required' => true,
                 'label' => 'games.form.first_block_min_height.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'games.form.first_block_min_height.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
+                ],
+            ])
         ;
     }
 

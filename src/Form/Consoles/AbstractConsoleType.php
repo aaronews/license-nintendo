@@ -16,61 +16,61 @@ class AbstractConsoleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class, array(
+            ->add('name', TextType::class, [
                 'required' => true,
                 'label' => 'consoles.form.name.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'consoles.form.name.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('description', TextareaType::class, array(
+                ],
+            ])
+            ->add('description', TextareaType::class, [
                 'required' => true,
                 'label' => 'consoles.form.description.label',
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-12 tynimce-editor'
-                ),
-            ))
-            ->add('slug', TextType::class, array(
+                ],
+            ])
+            ->add('slug', TextType::class, [
                 'required' => true,
                 'label' => 'consoles.form.slug.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'consoles.form.slug.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
+                ],
                 'help' => 'form.slug.help',
-                'help_attr' => array(
+                'help_attr' => [
                     'class' => 'generate-slug btn btn-default'
-                )
-            ))
-            ->add('releasePrice', IntegerType::class, array(
+                ]
+            ])
+            ->add('releasePrice', IntegerType::class, [
                 'required' => true,
                 'label' => 'consoles.form.release_price.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'consoles.form.release_price.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('releaseDate', DateType::class, array(
+                ],
+            ])
+            ->add('releaseDate', DateType::class, [
                 'required' => true,
                 'label' => 'consoles.form.release_date.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'consoles.form.release_date.placeholder',
                     'class' => 'datepicker',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
+                ],
                 'widget' => 'single_text',
                  'format' => 'dd/MM/yyyy', 
                 'html5' => false,
-            ))
+            ])
         ;
     }
 

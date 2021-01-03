@@ -17,17 +17,17 @@ class ItemType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class,array(
+            ->add('name', TextType::class,[
                 'required' => false,
                 'label' => 'items.form.name.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'items.form.name.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-5'
-                ),
-            ))
-            ->add('game', EntityType::class, array(
+                ],
+            ])
+            ->add('game', EntityType::class, [
                 'required' => false,
                 'label' => 'items.form.game.label',
                 'placeholder' => 'items.form.game.placeholder',
@@ -36,19 +36,19 @@ class ItemType extends AbstractType
                 'query_builder' => function(GameRepository $gameRepository){
                     return $gameRepository->findAllSortByProperty('name');
                 },
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-5'
-                ),
-            ))
-            ->add('submit', SubmitType::class, array(
+                ],
+            ])
+            ->add('submit', SubmitType::class, [
                 'label' => 'form.button.filter',
-                'attr' => array(
+                'attr' => [
                     'class' => 'btn-lg btn-primary btn',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-2 text-center m-auto'
-                ),
-            ))
+                ],
+            ])
         ;
     }
 

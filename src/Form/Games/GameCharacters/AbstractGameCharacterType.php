@@ -16,7 +16,7 @@ class AbstractGameCharacterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('currentCharacter', EntityType::class, array(
+            ->add('currentCharacter', EntityType::class, [
                 'required' => true,
                 'label' => 'game_characters.form.character.label',
                 'placeholder' => 'game_characters.form.character.placeholder',
@@ -25,10 +25,10 @@ class AbstractGameCharacterType extends AbstractType
                 'query_builder' => function(CharacterRepository $characterRepository){
                     return $characterRepository->findAllSortByProperty('name');
                 },
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-12'
-                ),
-            ))
+                ],
+            ])
         ;
     }
 

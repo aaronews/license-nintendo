@@ -20,63 +20,63 @@ class ConsoleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class,array(
+            ->add('name', TextType::class,[
                 'required' => false,
                 'label' => 'consoles.form.name.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'consoles.form.name.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('releaseDateMin', DateType::class, array(
+                ],
+            ])
+            ->add('releaseDateMin', DateType::class, [
                 'required' => false,
                 'label' => 'consoles.form.release_date_min.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'consoles.form.release_date_min.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
+                ],
                 'widget' => 'single_text',
                 'format' => 'dd/mm/yyyy',
                 'html5' => false,
-            ))
-            ->add('releaseDateMax', DateType::class, array(
+            ])
+            ->add('releaseDateMax', DateType::class, [
                 'required' => false,
                 'label' => 'consoles.form.release_date_max.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'consoles.form.release_date_max.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
+                ],
                 'widget' => 'single_text',
                 'format' => 'dd/mm/yyyy',
                 'html5' => false,
-            ))
-            ->add('releasePriceMin', IntegerType::class, array(
+            ])
+            ->add('releasePriceMin', IntegerType::class, [
                 'required' => false,
                 'label' => 'consoles.form.release_price_min.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'consoles.form.release_price_min.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('releasePriceMax', IntegerType::class, array(
+                ],
+            ])
+            ->add('releasePriceMax', IntegerType::class, [
                 'required' => false,
                 'label' => 'consoles.form.release_price_max.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'consoles.form.release_price_max.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('game', EntityType::class, array(
+                ],
+            ])
+            ->add('game', EntityType::class, [
                 'required' => false,
                 'label' => 'consoles.form.game.label',
                 'placeholder' => 'consoles.form.game.placeholder',
@@ -85,19 +85,19 @@ class ConsoleType extends AbstractType
                 'query_builder' => function(GameRepository $gameRepository){
                     return $gameRepository->findAllSortByProperty('name');
                 },
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-6',
-                ),
-            ))
-            ->add('submit', SubmitType::class, array(
+                ],
+            ])
+            ->add('submit', SubmitType::class, [
                 'label' => 'form.button.filter',
-                'attr' => array(
+                'attr' => [
                     'class' => 'btn-lg btn-primary btn',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-12 text-center'
-                ),
-            ))
+                ],
+            ])
         ;
     }
 

@@ -141,7 +141,7 @@ class GameController extends AbtsractAdminController
     public function removeCharacter(GameCharacter $gameCharacter, GameCharactersService $gameCharactersService){
         $gameCharactersService->removeEntity($gameCharacter);
         $this->addFlash('success', 'admin.games.characters.remove.flash_success');
-        return $this->redirectToRoute('admin_games_characters_manage', array('id' => $gameCharacter->getGame()->getId()));
+        return $this->redirectToRoute('admin_games_characters_manage', ['id' => $gameCharacter->getGame()->getId()]);
     }
 
     /**
@@ -195,7 +195,7 @@ class GameController extends AbtsractAdminController
     public function removeItem(GameItem $gameItem, GameItemsService $gameItemsService){
         $gameItemsService->removeEntity($gameItem);
         $this->addFlash('success', 'admin.games.items.remove.flash_success');
-        return $this->redirectToRoute('admin_games_items_manage', array('id' => $gameItem->getGame()->getId()));
+        return $this->redirectToRoute('admin_games_items_manage', ['id' => $gameItem->getGame()->getId()]);
     }
 
     /**
@@ -208,12 +208,12 @@ class GameController extends AbtsractAdminController
         $this->breadcrumbs->addItem($this->translator->trans('layout.header.links.games'), $this->router->generate('admin_games_list'));
 
         $routeName = $this->request->get('_route');
-        $managementRoutes =  array(
+        $managementRoutes =  [
             'admin_games_items_manage', 
             'admin_games_items_edit', 
             'admin_games_characters_manage',
             'admin_games_characters_edit'
-        );
+        ];
 
         if(in_array($routeName, $managementRoutes)){
             $this->breadcrumbs->addItem($game->getName());
@@ -230,14 +230,14 @@ class GameController extends AbtsractAdminController
                 $this->breadcrumbs->addItem($this->translator->trans('admin.games.list.manage_items_btn'));
                 break;
             case 'admin_games_items_edit':
-                $this->breadcrumbs->addItem($this->translator->trans('admin.games.list.manage_items_btn'), $this->router->generate('admin_games_items_manage', array('id' => $game->getId())));
+                $this->breadcrumbs->addItem($this->translator->trans('admin.games.list.manage_items_btn'), $this->router->generate('admin_games_items_manage', ['id' => $game->getId()]));
                 $this->breadcrumbs->addItem($entity->getItem()->getName());
                 break;
             case 'admin_games_characters_manage':
                 $this->breadcrumbs->addItem($this->translator->trans('admin.games.list.manage_characters_btn'));
                 break;
             case 'admin_games_characters_edit':
-                $this->breadcrumbs->addItem($this->translator->trans('admin.games.list.manage_characters_btn'), $this->router->generate('admin_games_characters_manage', array('id' => $game->getId())));
+                $this->breadcrumbs->addItem($this->translator->trans('admin.games.list.manage_characters_btn'), $this->router->generate('admin_games_characters_manage', ['id' => $game->getId()]));
                 $this->breadcrumbs->addItem($entity->getCurrentCharacter()->getName());
                 break;
             default:

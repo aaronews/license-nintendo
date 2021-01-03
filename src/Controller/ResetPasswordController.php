@@ -52,10 +52,10 @@ class ResetPasswordController extends AbstractController
             }
 
             try {
-                $mailsService->sendMailResetPassword($user, array(
+                $mailsService->sendMailResetPassword($user, [
                     'resetToken' => $this->resetPasswordHelper->generateResetToken($user),
                     'tokenLifetime' => $this->resetPasswordHelper->getTokenLifetime(),
-                ));
+                ]);
                 return $this->redirectToRoute('forgot_password_confirm');
             } catch (ResetPasswordExceptionInterface $e) {
                 $this->addFlash('reset_password_error', 'reset_password.forgot_password.error');

@@ -14,37 +14,37 @@ class AbstractItemType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class, array(
+            ->add('name', TextType::class, [
                 'required' => true,
                 'label' => 'items.form.name.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'items.form.name.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('description', TextareaType::class, array(
+                ],
+            ])
+            ->add('description', TextareaType::class, [
                 'required' => true,
                 'label' => 'items.form.description.label',
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-12 tynimce-editor'
-                ),
-            ))
-            ->add('slug', TextType::class, array(
+                ],
+            ])
+            ->add('slug', TextType::class, [
                 'required' => true,
                 'label' => 'items.form.slug.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'items.form.slug.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
+                ],
                 'help' => 'form.slug.help',
-                'help_attr' => array(
+                'help_attr' => [
                     'class' => 'generate-slug btn btn-default'
-                )
-            ))
+                ],
+            ])
         ;
     }
 

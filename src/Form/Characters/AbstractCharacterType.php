@@ -15,50 +15,50 @@ class AbstractCharacterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class, array(
+            ->add('name', TextType::class, [
                 'required' => true,
                 'label' => 'characters.form.name.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'characters.form.name.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-4'
-                ),
-            ))
-            ->add('description', TextareaType::class, array(
+                ],
+            ])
+            ->add('description', TextareaType::class, [
                 'required' => true,
                 'label' => 'characters.form.description.label',
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-12 tynimce-editor'
-                ),
-            ))
-            ->add('slug', TextType::class, array(
+                ],
+            ])
+            ->add('slug', TextType::class, [
                 'required' => true,
                 'label' => 'characters.form.slug.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'characters.form.slug.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-4'
-                ),
+                ],
                 'help' => 'form.slug.help',
-                'help_attr' => array(
+                'help_attr' => [
                     'class' => 'generate-slug btn btn-default'
-                )
-            ))
-            ->add('gender', ChoiceType::class, array(
+                ]
+            ])
+            ->add('gender', ChoiceType::class, [
                 'required' => true,
                 'label' => 'characters.form.gender.label',
                 'placeholder' => 'characters.form.gender.placeholder',
-                'choices' => array(
+                'choices' => [
                     'characters.form.gender.options.M' => 'M',
                     'characters.form.gender.options.F' => 'F',
                     'characters.form.gender.options.Neutre' => 'N',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-4'
-                ),
-            ))
+                ],
+            ])
         ;
     }
 

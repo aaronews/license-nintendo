@@ -19,30 +19,30 @@ class CharacterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class,array(
+            ->add('name', TextType::class,[
                 'required' => false,
                 'label' => 'characters.form.name.label',
-                'attr' => array(
+                'attr' => [
                     'placeholder' => 'characters.form.name.placeholder',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-3'
-                ),
-            ))
-            ->add('gender', ChoiceType::class, array(
+                ],
+            ])
+            ->add('gender', ChoiceType::class, [
                 'required' => false,
                 'label' => 'characters.form.gender.label',
                 'placeholder' => 'characters.form.gender.placeholder',
-                'choices' => array(
+                'choices' => [
                     'characters.form.gender.options.M' => 'M',
                     'characters.form.gender.options.F' => 'F',
                     'characters.form.gender.options.Neutre' => 'N',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-3'
-                ),
-            ))
-            ->add('game', EntityType::class, array(
+                ],
+            ])
+            ->add('game', EntityType::class, [
                 'required' => false,
                 'label' => 'characters.form.game.label',
                 'placeholder' => 'characters.form.game.placeholder',
@@ -51,19 +51,19 @@ class CharacterType extends AbstractType
                 'query_builder' => function(GameRepository $gameRepository){
                     return $gameRepository->findAllSortByProperty('name');
                 },
-                'row_attr' => array(
+                'row_attr' => [
                     'class' => 'col-sm-6'
-                ),
-            ))
-            ->add('submit', SubmitType::class, array(
+                ],
+            ])
+            ->add('submit', SubmitType::class, [
                 'label' => 'form.button.filter',
-                'attr' => array(
+                'attr' => [
                     'class' => 'btn-lg btn-primary btn',
-                ),
-                'row_attr' => array(
+                ],
+                'row_attr' => [
                     'class' => 'col-sm-12 text-center m-auto'
-                ),
-            ))
+                ],
+            ])
         ;
     }
 
