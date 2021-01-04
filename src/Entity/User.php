@@ -61,7 +61,7 @@ class User extends AbstractEntity implements UserInterface
 
     /**
      * @var array
-     * @ORM\Column(type="json", length=255)
+     * @ORM\Column(type="text", length=255)
      */
     private $roles;
 
@@ -203,7 +203,7 @@ class User extends AbstractEntity implements UserInterface
      */
     public function getRoles(): array
     {
-        return array_unique(array_merge(['ROLE_USER'], $this->roles));
+        return array_unique(array_merge(['ROLE_USER'], json_decode($this->roles)));
     }
 
     /**
@@ -215,9 +215,9 @@ class User extends AbstractEntity implements UserInterface
     public function setRoles(?array $roles): self
     {
         if($roles === null){
-            $this->roles = ['ROLE_USER'];
+            $this->roles = json_encode(['ROLE_USER']);
         }else{
-            $this->roles = $roles;
+            $this->roles = json_encode($roles);
         }
 
         return $this;

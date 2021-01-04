@@ -367,6 +367,8 @@ users:
     success: Votre compté est créé vous allez recevoir un mail pour l'activer
   lost_password:
     title: Mot de passe perdu
+  activate_user:
+    success: Compte activé
   form:
     username:
       placeholder: exemple@gmail.com
