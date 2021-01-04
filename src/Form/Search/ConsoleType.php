@@ -35,6 +35,7 @@ class ConsoleType extends AbstractType
                 'label' => 'consoles.form.release_date_min.label',
                 'attr' => [
                     'placeholder' => 'consoles.form.release_date_min.placeholder',
+                    'class' => 'datepicker',
                 ],
                 'row_attr' => [
                     'class' => 'col-sm-6'
@@ -48,6 +49,7 @@ class ConsoleType extends AbstractType
                 'label' => 'consoles.form.release_date_max.label',
                 'attr' => [
                     'placeholder' => 'consoles.form.release_date_max.placeholder',
+                    'class' => 'datepicker',
                 ],
                 'row_attr' => [
                     'class' => 'col-sm-6'
