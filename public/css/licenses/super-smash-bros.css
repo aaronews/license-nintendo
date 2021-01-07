@@ -1,20 +1,26 @@
-main.super-smash-bros{
-    background-image: url(/img/licenses/super-smash-bros/background.png);
+.front main.super-smash-bros{
+    /* background-image: url(/img/licenses/super-smash-bros/background.png);
     background-color: #ffffff;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #000000;
+    background-attachment: fixed; */
+    background-image: url(/img/licenses/super-smash-bros/background.png) ,linear-gradient(to bottom, #000000 0%, #999999 50%, #ffffff 100%);
+    background-color: hsl(0, 0, 100%);
+    color: #ffffff;
+}
+
+main.super-smash-bros .container-fluid{
+    background-color: rgba(0, 0, 0, 0.45);
 }
 
 main.super-smash-bros .license-logo{
     background-image: url(/img/licenses/super-smash-bros/first-block-bkg.jpg);
     background-position: 0%;
     background-position: top center;
-    animation: slide-left-background 60s forwards;
+    animation: slide-left-background 120s forwards;
 }
 
 main.super-smash-bros .license-logo.animation-finish{
-    animation: slide-right-background 20s forwards;
+    animation: slide-right-background 40s forwards;
 }
 
 main.super-smash-bros .license-logo .logo img{

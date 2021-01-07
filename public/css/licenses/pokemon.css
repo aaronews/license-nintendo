@@ -1,11 +1,16 @@
 main.pokemon{
-    background-image: url(/img/licenses/pokemon/background.jpg);
-    background-color: #ffffff;
-    background-repeat: no-repeat;
+   /* background-image: url(/img/licenses/pokemon/background.jpg);*/
+    background-color: #000000;
+    background-image: url(/img/licenses/pokemon/background.png);
+/*     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
-    background-size: cover;
+    background-size: cover; */
     color: #ffffff;
+}
+
+main.pokemon .container-fluid{
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 main.pokemon .license-logo{
