@@ -1,15 +1,12 @@
 {% extends 'layout/layout.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker3.min.css')}}">
+    {{ encore_entry_link_tags('front-list') }}
 {% endblock %}
 
 
 {% block javascripts %}
-    <script src="{{asset('js/animated-card.js')}}"></script>
-    <script src="{{asset('js/bootstrap-datepicker.min.js')}}"></script>
-    <script src="{{asset('js/bootstrap-datepicker.fr.min.js')}}"></script>
-    <script src="{{asset('js/list.js')}}"></script>
+    {{ encore_entry_script_tags('front-list') }}
 {% endblock %}
 
 {% block body %}

@@ -5,26 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="icon" href="{{asset('img/favicon.ico')}}">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker3.min.css')}}">
-        <link rel="stylesheet" href="{{asset('css/components/animations.css')}}">
-        <link rel="stylesheet" href="{{asset('css/components/layout-admin.css')}}">
-        <link rel="stylesheet" href="{{asset('css/components/header-backoffice.css')}}">
-        <link rel="stylesheet" href="{{asset('css/components/fonts.css')}}">
-        <link rel="stylesheet" href="{{asset('css/components/buttons.css')}}">
+        {{ encore_entry_link_tags('layout-backoffice') }}
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
         {% include 'admin/layout/header.html.twig' %}
         {% block body %}{% endblock %}        
-        <script src="{{asset('js/jquery-3.5.1.slim.min.js')}}"></script>
-        <script src="{{asset('js/popper.min.js')}}"></script>
-        <script src="{{asset('js/bootstrap.min.js')}}"></script>
-        <script src="{{asset('js/bootstrap-datepicker.min.js')}}"></script>
-        <script src="{{asset('js/bootstrap-datepicker.fr.min.js')}}"></script>
-        <script src="{{asset('js/fontawesome.js')}}"></script>
         <script src="https://cdn.tiny.cloud/1/skqlok5z0mmc5pao6d8707cl857yi7rhxileuxd8yo5z2x2g/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-        <script src="{{asset('js/admin/header.js')}}"></script>
+        {{ encore_entry_script_tags('layout-backoffice') }}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

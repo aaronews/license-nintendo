@@ -1,7 +1,7 @@
 {% extends 'layout/layout.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{asset('css/signup.css')}}">
+    {{ encore_entry_link_tags('signup') }}
 {% endblock %}
 
 {% block title %}{{'security.login.title'|trans}}{% endblock %}

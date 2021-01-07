@@ -1,16 +1,11 @@
 {% extends 'layout/layout.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{asset('css/license.css')}}">
-    <link rel="stylesheet" href="{{asset('css/licenses/the-legend-of-zelda.css')}}">
-    <link rel="stylesheet" href="{{asset('css/licenses/super-mario.css')}}">
-    <link rel="stylesheet" href="{{asset('css/licenses/super-smash-bros.css')}}">
-    <link rel="stylesheet" href="{{asset('css/licenses/pokemon.css')}}">
-    <link rel="stylesheet" href="{{asset('css/licenses/donkey-kong.css')}}">
+    {{ encore_entry_link_tags('licenses') }}
 {% endblock %}
 
 {% block javascripts %}
-    <script src="{{asset('js/animated-card.js')}}"></script>
+    {{ encore_entry_script_tags('licenses') }}
 {% endblock %}
 
 {% block title %}{{'licenses.games.title'|trans ~ license.name}}{% endblock %}

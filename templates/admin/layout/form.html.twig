@@ -2,11 +2,11 @@
 {% extends 'admin/layout/layout.html.twig' %}
 
 {% block stylesheets %}
-    <link rel="stylesheet" href="{{asset('css/components/form-backoffice.css')}}">
+    {{ encore_entry_link_tags('form-backoffice') }}
 {% endblock %}
 
 {% block javascripts %}
-    <script src="{{asset('js/admin/form.js')}}"></script>
+    {{ encore_entry_script_tags('form-backoffice') }}
 {% endblock %}
 
 {% block body %}

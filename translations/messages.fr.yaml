@@ -131,7 +131,7 @@ homepage:
   description:
     title: Bienvenue
     text: >
-      Retrouvez les licences de Nintendo et les jeux qui les composent<br/>Tel que Super Mario, The Legend of Zelda, Donkey Kong et Pokemon
+      Retrouvez les licences de Nintendo et les jeux qui les composent<br/>Tels que Super Mario, The Legend of Zelda, Donkey Kong et Pokemon
   licenses: 
     title: Les licences de jeux Nintendo
 
@@ -255,7 +255,7 @@ games:
       label: Genre de jeu
       placeholder: Séléctionner un genre
     player_numbers_min:
-      label: Nombre de joueur minimum
+      label: Nombre de joueurs minimum
       placeholder: 0
     player_numbers_max:
       label: Nombre de joueur maximum
@@ -364,7 +364,7 @@ search:
 users:
   signup:
     title: Inscription
-    success: Votre compté est créé vous allez recevoir un mail pour l'activer
+    success: Votre compte est créé vous allez recevoir un mail pour l'activer
   lost_password:
     title: Mot de passe perdu
   activate_user:
@@ -515,7 +515,7 @@ mails:
         <tr>
           <td style="font:18px Arial, Helvetica, sans-serif; color:#292c34; padding:0 0 23px;">
             <p>
-                Ce bouton ne fonctionne pas ? Copiez le lien suivant dans votre navigateur pour réinitialisser votre mot de passe : %RESET_PASSWORD_URL%
+                Ce bouton ne fonctionne pas ? Copiez le lien suivant dans votre navigateur pour réinitialiser votre mot de passe : %RESET_PASSWORD_URL%
                 <br/>
                 <br/>
                 <span style="font-weight: bold">Attention, ce lien expirera dans %EXPIRATION_DELAY% heure.</span>
