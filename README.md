@@ -12,7 +12,7 @@ Pour lancer ce projet, il faudra au préalable avoir la commande [**Symfony**](h
 ### Installation
 
 
-Télécharger l'archive du projet et décompréssez là sur votre machine
+Téléchargez l'archive du projet et décompréssez là sur votre machine
 
 Allez dans le dossier du projet et installez les dépendences avec composer.
 ```shell
@@ -23,7 +23,7 @@ composer install
 ### Paramétrage de la base de données
 
 
-Modifiez la variable `DATABASE_URL` dans le fichier `.env` à la racine du projet, pour y mettre les informations de connexion à votre base de données MySQL (si vous tester le projet en local sur votre ordinateur, vous pouvez utilisez les bases de données MySQL de [**Wamp**](https://www.wampserver.com/#download-wrapper))
+Modifiez la variable `DATABASE_URL` dans le fichier `.env` à la racine du projet, pour y mettre les informations de connexion à votre base de données MySQL (si vous testez le projet en local sur votre ordinateur, vous pouvez utilisez les bases de données MySQL de [**Wamp**](https://www.wampserver.com/#download-wrapper))
 
 ```
 # Exemple avec les accès par défaut de Wamp
@@ -42,7 +42,7 @@ php bin/console doctrine:database:create
 
 php bin/console doctrine:migrations:migrate
 
-# Remplis la bases à partir des fixtures du projet
+# Remplis la base à partir des fixtures du projet
 
 php bin/console doctrine:fixtures:load
 ```
