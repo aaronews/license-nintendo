@@ -6,13 +6,15 @@
 {% set description = item.description %}
 
 {% block listInGame %}
-    <h2 class="p-3 text-center col-md-12">{{'items.view.items_games.title'|trans}}</h2>
-    {% for gameItem in item.gameItems %}
-        {% include 'layout/animated-card-content.html.twig' with {
-            'cardThumbnail' : asset(vich_uploader_asset(gameItem, 'uploadThumbnail')),
-            'cardTitle' : gameItem.game.name,
-            'cardUrl' :  path('games_view', {slug: gameItem.game.slug}),
-            'cardClass' : 'col-lg-3 col-md-4 col-sm-6 col-xs-12 p-0',
-        }%}
-    {% endfor %}
+    {% if item.gameItems.count() %}
+        <h2 class="p-3 text-center col-md-12">{{'items.view.items_games.title'|trans}}</h2>
+        {% for gameItem in item.gameItems %}
+            {% include 'layout/animated-card-content.html.twig' with {
+                'cardThumbnail' : asset(vich_uploader_asset(gameItem, 'uploadThumbnail')),
+                'cardTitle' : gameItem.game.name,
+                'cardUrl' :  path('games_view', {slug: gameItem.game.slug}),
+                'cardClass' : 'col-lg-3 col-md-4 col-sm-6 col-xs-12 p-0',
+            }%}
+        {% endfor %}
+    {% endif %}
 {% endblock %}

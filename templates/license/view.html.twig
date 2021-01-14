@@ -33,27 +33,29 @@
                     </div>
                 </div>
             </section>
-            <section class="row ml-0 mr-0 justify-content-center license-best-games mt-4">
-                <div class="bloc-title-container col-md-12 text-center p-3">
-                    <h2 class="bloc-title position-relative">{{'licenses.view.best_games.title'|trans}}</h2>
-                </div>
-                <div class="slick-container col-12 p-0">
-                    {% for game in bestGames %}
-                        {% include 'layout/animated-card-content.html.twig' with {
-                            'cardThumbnail' : asset(vich_uploader_asset(game, 'uploadThumbnail')),
-                            'cardTitle' : game.name,
-                            'cardUrl' :  path('games_view', {slug: game.slug}),
-                            'cardClass' : '',
-                        }%}
-                    {% endfor %}
-                </div>
-                <div class="col-12 text-center btn-wrapper m-4">
-                    <a class="btn btn-lg btn-more btn-primary" href="{{path('licenses_games', {slug : license.slug})}}">
-                        <i class="fa fa-2x fa-plus align-middle mr-2"></i>
-                        {{'licenses.view.best_games.btn_see_all'|trans}}
-                    </a>
-                </div>
-            </section>
+            {% if bestGames|length %}
+                <section class="row ml-0 mr-0 justify-content-center license-best-games mt-4">
+                    <div class="bloc-title-container col-md-12 text-center p-3">
+                        <h2 class="bloc-title position-relative">{{'licenses.view.best_games.title'|trans}}</h2>
+                    </div>
+                    <div class="slick-container col-12 p-0">
+                        {% for game in bestGames %}
+                            {% include 'layout/animated-card-content.html.twig' with {
+                                'cardThumbnail' : asset(vich_uploader_asset(game, 'uploadThumbnail')),
+                                'cardTitle' : game.name,
+                                'cardUrl' :  path('games_view', {slug: game.slug}),
+                                'cardClass' : '',
+                            }%}
+                        {% endfor %}
+                    </div>
+                    <div class="col-12 text-center btn-wrapper m-4">
+                        <a class="btn btn-lg btn-more btn-primary" href="{{path('licenses_games', {slug : license.slug})}}">
+                            <i class="fa fa-2x fa-plus align-middle mr-2"></i>
+                            {{'licenses.view.best_games.btn_see_all'|trans}}
+                        </a>
+                    </div>
+                </section>
+            {% endif %}
         </div>
     </main>
 {% endblock %}
