@@ -20,7 +20,10 @@ class GameRepository extends AbstractEntityRepository
      * @return Query
      */
     public function findBySearchCriterias(SearchGame $search){
-        $query = $this->createQueryBuilder('G');
+        $query = $this
+            ->createQueryBuilder('G')
+            ->addOrderBy('G.name', 'ASC')
+        ;
 
         if($name = $search->getName()){
             $query

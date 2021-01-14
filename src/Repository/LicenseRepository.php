@@ -21,7 +21,10 @@ class LicenseRepository extends AbstractEntityRepository
      * @return Query
      */
     public function findBySearchCriterias(SearchLicense $search){
-        $query = $this->createQueryBuilder('L');
+        $query = $this
+            ->createQueryBuilder('L')
+            ->addOrderBy('L.name', 'ASC')
+        ;
 
         if($name = $search->getName()){
             $query

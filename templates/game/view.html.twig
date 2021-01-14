@@ -44,48 +44,52 @@
                     </div>
                 </section>
             {% endif %}
-            <section class="row ml-0 mr-0 justify-content-center game-character bordered-container mt-5">
-                <div class="bloc-title-container col-md-12 text-center p-3 mt-2">
-                    <h2 class="bloc-title position-relative">{{'games.view.characters.title'|trans}}</h2>
-                </div>
-                <div class="slick-container col-12 p-0">
-                    {% for gameCharacter in characters %}
-                        {% include 'layout/animated-card-content.html.twig' with {
-                            'cardThumbnail' : asset(vich_uploader_asset(gameCharacter, 'uploadThumbnail')),
-                            'cardTitle' : gameCharacter.currentCharacter.name,
-                            'cardUrl' : path('characters_view', {slug : gameCharacter.currentCharacter.slug}),
-                            'cardClass' : '',
-                        }%}
-                    {% endfor %}
-                </div>
-                <div class="col-12 text-center btn-wrapper">
-                    <a class="btn btn-lg btn-more btn-primary" href="{{path('games_characters', {slug : game.slug})}}">
-                        <i class="fa fa-2x fa-plus align-middle mr-2"></i>
-                        {{'games.view.characters.btn_see_all'|trans}}
-                    </a>
-                </div>
-            </section>
-            <section class="row ml-0 mr-0 justify-content-center game-items bordered-container mt-5">
-                <div class="bloc-title-container col-md-12 text-center p-3 mt-2">
-                    <h2 class="bloc-title position-relative">{{'games.view.items.title'|trans}}</h2>
-                </div>
-                <div class="slick-container col-12 p-0">
-                    {% for gameItem in items %}
-                        {% include 'layout/animated-card-content.html.twig' with {
-                            'cardThumbnail' : asset(vich_uploader_asset(gameItem, 'uploadThumbnail')),
-                            'cardTitle' : gameItem.item.name,
-                            'cardUrl' : path('items_view', {slug : gameItem.item.slug}),
-                            'cardClass' : '',
-                        }%}
-                    {% endfor %}
-                </div>
-                <div class="col-12 text-center btn-wrapper">
-                    <a class="btn btn-lg btn-more btn-primary" href="{{path('games_items', {slug : game.slug})}}">
-                        <i class="fa fa-2x fa-plus align-middle mr-2"></i>
-                        {{'games.view.items.btn_see_all'|trans}}
-                    </a>
-                </div>
-            </section>
+            {% if characters|length %}
+                <section class="row ml-0 mr-0 justify-content-center game-character bordered-container mt-5">
+                    <div class="bloc-title-container col-md-12 text-center p-3 mt-2">
+                        <h2 class="bloc-title position-relative">{{'games.view.characters.title'|trans}}</h2>
+                    </div>
+                    <div class="slick-container col-12 p-0">
+                        {% for gameCharacter in characters %}
+                            {% include 'layout/animated-card-content.html.twig' with {
+                                'cardThumbnail' : asset(vich_uploader_asset(gameCharacter, 'uploadThumbnail')),
+                                'cardTitle' : gameCharacter.currentCharacter.name,
+                                'cardUrl' : path('characters_view', {slug : gameCharacter.currentCharacter.slug}),
+                                'cardClass' : '',
+                            }%}
+                        {% endfor %}
+                    </div>
+                    <div class="col-12 text-center btn-wrapper">
+                        <a class="btn btn-lg btn-more btn-primary" href="{{path('games_characters', {slug : game.slug})}}">
+                            <i class="fa fa-2x fa-plus align-middle mr-2"></i>
+                            {{'games.view.characters.btn_see_all'|trans}}
+                        </a>
+                    </div>
+                </section>
+            {% endif %}
+            {% if items|length %}
+                <section class="row ml-0 mr-0 justify-content-center game-items bordered-container mt-5">
+                    <div class="bloc-title-container col-md-12 text-center p-3 mt-2">
+                        <h2 class="bloc-title position-relative">{{'games.view.items.title'|trans}}</h2>
+                    </div>
+                    <div class="slick-container col-12 p-0">
+                        {% for gameItem in items %}
+                            {% include 'layout/animated-card-content.html.twig' with {
+                                'cardThumbnail' : asset(vich_uploader_asset(gameItem, 'uploadThumbnail')),
+                                'cardTitle' : gameItem.item.name,
+                                'cardUrl' : path('items_view', {slug : gameItem.item.slug}),
+                                'cardClass' : '',
+                            }%}
+                        {% endfor %}
+                    </div>
+                    <div class="col-12 text-center btn-wrapper">
+                        <a class="btn btn-lg btn-more btn-primary" href="{{path('games_items', {slug : game.slug})}}">
+                            <i class="fa fa-2x fa-plus align-middle mr-2"></i>
+                            {{'games.view.items.btn_see_all'|trans}}
+                        </a>
+                    </div>
+                </section>
+            {% endif %}
             <section class="row ml-0 mr-0 justify-content-center game-characteristics mt-5">
                 <div class="bloc-title-container col-md-12 text-center p-3 mt-2">
                     <h2 class="bloc-title position-relative">{{'games.view.characteristics.title'|trans}}</h2>
